@@ -17,9 +17,10 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential
 
 # Install application gems
-COPY Gemfile* .
-RUN bundle install
+COPY Gemfile Gemfile.lock ./
 
+# Install dependencies
+RUN bundle install
 
 # Final stage for app image
 FROM base
@@ -37,4 +38,4 @@ COPY --chown=ruby:ruby . .
 
 # Start the server
 EXPOSE 8080
-CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["bundle", "exec", "puma", "-p", "8080"]
