@@ -80,7 +80,7 @@ nav {
 .cta-button {
   display: inline-block;
   background: linear-gradient(to right, var(--primary), var(--accent));
-  color: white;
+  color: white !important;
   font-weight: 600;
   text-decoration: none;
   padding: 0.75rem 1.5rem;
