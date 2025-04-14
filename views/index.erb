@@ -15,16 +15,26 @@
     <div class="container">
       <nav>
         <a href="#" class="logo">Bookr<span>Hub</span></a>
-        <ul class="nav-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-        </ul>
-        <div class="nav-actions">
+
+        <div class="mobile-menu-container">
+          <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+          </ul>
+
+          <div class="mobile-buttons">
+            <a href="https://my.bookrhub.com/session/new" class="login-button">Log In</a>
+            <a href="https://my.bookrhub.com/signup" class="cta-button mobile-cta">Get Started</a>
+          </div>
+        </div>
+
+        <div class="desktop-buttons">
           <a href="https://my.bookrhub.com/session/new" class="login-button">Log In</a>
           <a href="https://my.bookrhub.com/signup" class="cta-button">Get Started</a>
         </div>
+
         <button class="menu-toggle">☰</button>
       </nav>
     </div>
@@ -200,7 +210,7 @@
     <div class="container">
       <h2>Ready to Streamline Your Booking Process?</h2>
       <p>Join thousands of businesses that trust BookrHub for their appointment scheduling needs. Start your 14-day free trial today, no credit card required.</p>
-      <a href="https://my.bookrhub.com/signup" class="cta-button">Get Started For Free</a>
+      <a href="https://my.bookrhub.com/signup" class="cta-button-gradient" data-text="Get Started For Free">Get Started For Free</a>
     </div>
   </section>
 
@@ -255,8 +265,26 @@
   <script>
     // Simple mobile menu toggle
     document.querySelector('.menu-toggle').addEventListener('click', function() {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+      const mobileMenu = document.querySelector('.mobile-menu-container');
+      mobileMenu.classList.toggle('active');
+
+      // Toggle the menu icon
+      if (mobileMenu.classList.contains('active')) {
+        this.textContent = '✕';
+      } else {
+        this.textContent = '☰';
+      }
+    });
+
+    // Close mobile menu when clicking on navigation links
+    document.querySelectorAll('.nav-links a, .mobile-buttons a').forEach(link => {
+      link.addEventListener('click', function() {
+        const mobileMenu = document.querySelector('.mobile-menu-container');
+        if (mobileMenu.classList.contains('active')) {
+          mobileMenu.classList.remove('active');
+          document.querySelector('.menu-toggle').textContent = '☰';
+        }
+      });
     });
 
     // Smooth scrolling for navigation links
