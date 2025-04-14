@@ -1,5 +1,6 @@
 :root {
-  --primary: #6366f1;
+  --primary: #8470ff;
+  /* --primary: #6366f1; */
   --primary-dark: #4f46e5;
   --secondary: #ec4899;
   --accent: #8b5cf6;
@@ -53,11 +54,11 @@ nav {
   align-items: center;
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--primary);
+  color: black !important;
 }
 
 .logo span {
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 .nav-links {
@@ -75,6 +76,53 @@ nav {
 
 .nav-links a:hover {
   color: var(--primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.login-button {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button:hover {
+  background-color: rgba(99, 102, 241, 0.1);
+}
+
+@media (max-width: 768px) {
+  .nav-actions {
+    display: none;
+  }
+
+  /* Show login button in mobile menu */
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active .login-mobile {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+  }
 }
 
 .cta-button {
@@ -496,7 +544,7 @@ footer {
 }
 
 .footer-logo span {
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 .footer-description {
