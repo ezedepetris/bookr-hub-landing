@@ -3,202 +3,272 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/styles.css">
   <link rel="icon" href="/images/icon.png" type="image/png">
   <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
 
-  <title>BookrHub - Simplified Appointment Booking</title>
+  <title>BookrHub - Modern Appointment Booking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <!-- Header Section -->
   <header>
     <div class="container">
-      <nav>
-        <a href="#" class="logo">Bookr<span>Hub</span></a>
+      <nav class="navbar">
+        <a href="https://bookrhub.com" class="logo">Bookr<span>Hub</span></a>
 
-        <div class="mobile-menu-container">
-          <ul class="nav-links">
-            <li><a href="#features">Features</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-          </ul>
+        <ul class="menu">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
 
-          <div class="mobile-buttons">
-            <a href="https://my.bookrhub.com/session/new" class="login-button">Log In</a>
-            <a href="https://my.bookrhub.com/signup" class="cta-button mobile-cta">Get Started</a>
-          </div>
+        <div class="nav-buttons">
+          <a href="https://my.bookrhub.com/session/new" class="button button-secondary">Log In</a>
+          <a href="https://my.bookrhub.com/signup" class="button button-primary">Get Started</a>
         </div>
 
-        <div class="desktop-buttons">
-          <a href="https://my.bookrhub.com/session/new" class="login-button">Log In</a>
-          <a href="https://my.bookrhub.com/signup" class="cta-button">Get Started</a>
-        </div>
-
-        <button class="menu-toggle">☰</button>
+        <button class="mobile-toggle">☰</button>
       </nav>
+    </div>
+
+    <div class="mobile-menu">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#testimonials">Testimonials</a>
+      <div class="button-group">
+        <a href="https://my.bookrhub.com/session/new" class="button button-secondary">Log In</a>
+        <a href="https://my.bookrhub.com/signup" class="button button-primary">Get Started</a>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-shape hero-shape-1"></div>
+    <div class="hero-shape hero-shape-2"></div>
+
     <div class="container">
       <div class="hero-content">
-        <h1>Simplify Your Appointment Booking</h1>
-        <p>BookrHub is the all-in-one solution for businesses looking to streamline their appointment scheduling. Say goodbye to phone tag and hello to effortless booking.</p>
-        <div class="hero-cta">
-          <a href="https://my.bookrhub.com/signup" class="cta-button">Start Free Trial</a>
-          <a href="#" class="secondary-button">Book a Demo</a>
+        <h1 class="hero-title">Simplify Your Appointment Booking</h1>
+        <p class="hero-subtitle">BookrHub is the all-in-one solution for businesses looking to streamline their appointment scheduling. Say goodbye to phone tag and hello to effortless booking.</p>
+        <div class="button-group hero-buttons">
+          <a href="https://my.bookrhub.com/signup" class="button button-primary button-large">Start Free Trial</a>
+          <a href="https://bookrhub.com/#demo" class="button button-secondary button-large">Book a Demo</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="lottie-container">
+          <!-- SVG Calendar Animation Placeholder -->
+          <svg width="500" height="300" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="500" height="300" fill="#F4F5F7" rx="12"/>
+            <rect x="50" y="50" width="400" height="70" rx="8" fill="#0068FF" opacity="0.9"/>
+            <rect x="70" y="70" width="150" height="30" rx="4" fill="white"/>
+            <rect x="230" y="70" width="80" height="30" rx="4" fill="white" opacity="0.7"/>
+            <rect x="320" y="70" width="80" height="30" rx="4" fill="white" opacity="0.5"/>
+
+            <rect x="50" y="140" width="90" height="90" rx="8" fill="white" stroke="#0068FF" stroke-width="2"/>
+            <rect x="160" y="140" width="90" height="90" rx="8" fill="white" stroke="#0068FF" stroke-width="2"/>
+            <rect x="270" y="140" width="90" height="90" rx="8" fill="#0068FF" opacity="0.9"/>
+            <rect x="380" y="140" width="90" height="90" rx="8" fill="white" stroke="#DDD" stroke-width="2"/>
+
+            <text x="95" y="185" text-anchor="middle" font-size="24" font-weight="bold" fill="#333">15</text>
+            <text x="205" y="185" text-anchor="middle" font-size="24" font-weight="bold" fill="#333">16</text>
+            <text x="315" y="185" text-anchor="middle" font-size="24" font-weight="bold" fill="white">17</text>
+            <text x="425" y="185" text-anchor="middle" font-size="24" font-weight="bold" fill="#AAA">18</text>
+
+            <circle cx="315" cy="225" r="8" fill="white"/>
+          </svg>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Features Section -->
-  <section class="features" id="features">
+  <section class="section" id="features">
     <div class="container">
-      <div class="section-title">
+      <div class="section-heading">
         <h2>Powerful Features for Your Business</h2>
         <p>Our platform is packed with everything you need to manage appointments and grow your business.</p>
       </div>
+
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">📅</div>
-          <h3>24/7 Online Booking</h3>
-          <p>Allow your clients to book appointments anytime, anywhere, even when you're not available to answer calls.</p>
+          <h3 class="feature-title">24/7 Online Booking</h3>
+          <p class="feature-description">Allow your clients to book appointments anytime, anywhere, even when you're not available to answer calls.</p>
         </div>
+
         <div class="feature-card">
           <div class="feature-icon">📱</div>
-          <h3>Mobile Friendly</h3>
-          <p>Our responsive design ensures a seamless booking experience on any device - mobile, tablet, or desktop.</p>
+          <h3 class="feature-title">Mobile Friendly</h3>
+          <p class="feature-description">Our responsive design ensures a seamless booking experience on any device - mobile, tablet, or desktop.</p>
         </div>
+
         <div class="feature-card">
           <div class="feature-icon">🔔</div>
-          <h3>Automated Reminders</h3>
-          <p>Reduce no-shows with automated SMS and email reminders sent to clients before their appointments.</p>
+          <h3 class="feature-title">Automated Reminders</h3>
+          <p class="feature-description">Reduce no-shows with automated SMS and email reminders sent to clients before their appointments.</p>
         </div>
+
         <div class="feature-card">
           <div class="feature-icon">📊</div>
-          <h3>Insightful Analytics</h3>
-          <p>Track your business performance with detailed reports on bookings, revenue, and client retention.</p>
+          <h3 class="feature-title">Insightful Analytics</h3>
+          <p class="feature-description">Track your business performance with detailed reports on bookings, revenue, and client retention.</p>
         </div>
+
         <div class="feature-card">
           <div class="feature-icon">🔄</div>
-          <h3>Calendar Sync</h3>
-          <p>Seamlessly sync with Google Calendar, Outlook, and other popular calendar apps to avoid double-bookings.</p>
+          <h3 class="feature-title">Calendar Sync</h3>
+          <p class="feature-description">Seamlessly sync with Google Calendar, Outlook, and other popular calendar apps to avoid double-bookings.</p>
         </div>
+
         <div class="feature-card">
           <div class="feature-icon">💳</div>
-          <h3>Online Payments</h3>
-          <p>Accept deposits and payments online through multiple payment gateways to secure bookings.</p>
+          <h3 class="feature-title">Online Payments</h3>
+          <p class="feature-description">Accept deposits and payments online through multiple payment gateways to secure bookings.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- How It Works Section -->
-  <section class="how-it-works" id="how-it-works">
+  <section class="section section-alt" id="how-it-works">
     <div class="container">
-      <div class="section-title">
+      <div class="section-heading">
         <h2>How BookrHub Works</h2>
         <p>Getting started with BookrHub is simple - you'll be up and running in minutes.</p>
       </div>
+
       <div class="steps">
         <div class="step">
           <div class="step-number">1</div>
-          <h3>Create Account</h3>
-          <p>Sign up for BookrHub and set up your business profile with services, staff, and availability.</p>
+          <div class="step-content">
+            <h3 class="step-title">Create Account</h3>
+            <p class="step-description">Sign up for BookrHub and set up your business profile with services, staff, and availability.</p>
+          </div>
         </div>
+
         <div class="step">
           <div class="step-number">2</div>
-          <h3>Customize Booking</h3>
-          <p>Personalize your booking page to match your brand and set your availability preferences.</p>
+          <div class="step-content">
+            <h3 class="step-title">Customize Booking</h3>
+            <p class="step-description">Personalize your booking page to match your brand and set your availability preferences.</p>
+          </div>
         </div>
+
         <div class="step">
           <div class="step-number">3</div>
-          <h3>Share With Clients</h3>
-          <p>Share your unique booking link with clients through your website, social media, or email.</p>
+          <div class="step-content">
+            <h3 class="step-title">Share With Clients</h3>
+            <p class="step-description">Share your unique booking link with clients through your website, social media, or email.</p>
+          </div>
         </div>
+
         <div class="step">
           <div class="step-number">4</div>
-          <h3>Start Accepting Bookings</h3>
-          <p>Clients can now book appointments 24/7, and you'll receive notifications for each new booking.</p>
+          <div class="step-content">
+            <h3 class="step-title">Start Accepting Bookings</h3>
+            <p class="step-description">Clients can now book appointments 24/7, and you'll receive notifications for each new booking.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Pricing Section -->
-  <section class="pricing" id="pricing">
+  <section class="section" id="pricing">
     <div class="container">
-      <div class="section-title">
+      <div class="section-heading">
         <h2>Simple, Transparent Pricing</h2>
         <p>Choose the plan that's right for your business. No hidden fees, no surprises.</p>
       </div>
-      <div class="pricing-options">
-        <div class="pricing-card">
-          <div class="price-tier">Basic</div>
-          <div class="price">$19<span>/month</span></div>
-          <ul class="price-features">
-            <li>Up to 3 staff members</li>
-            <li>100 monthly bookings</li>
+
+      <div class="pricing-plans">
+        <div class="plan-card">
+          <h3 class="plan-name">Solo</h3>
+          <div class="plan-price">Free</div>
+          <ul class="plan-features">
+            <li>Up to 1 staff members</li>
+            <li>150 monthly bookings</li>
             <li>Email reminders</li>
             <li>Calendar integration</li>
             <li>Customer portal</li>
+            <li>Customizable booking page</li>
           </ul>
-          <a href="#" class="cta-button">Choose Basic</a>
+          <a href="#" class="button button-primary w-100">Choose Basic</a>
         </div>
-        <div class="pricing-card popular">
-          <div class="popular-tag">Popular</div>
-          <div class="price-tier">Professional</div>
-          <div class="price">$49<span>/month</span></div>
-          <ul class="price-features">
-            <li>Up to 10 staff members</li>
-            <li>Unlimited bookings</li>
-            <li>SMS & email reminders</li>
+
+        <div class="plan-card popular">
+          <div class="popular-badge">Popular</div>
+          <h3 class="plan-name">Professional</h3>
+          <div class="plan-price">$6.99<span>/month</span></div>
+          <ul class="plan-features">
+            <li>Up to 3 staff members</li>
+            <li>400 monthly bookings</li>
+            <li>Email reminders</li>
             <li>Calendar integration</li>
             <li>Online payments</li>
             <li>Advanced analytics</li>
+            <li>Customizable booking page</li>
+            <li>Customizable landing page</li>
+            <li>Add your own branding</li>
           </ul>
-          <a href="#" class="cta-button">Choose Professional</a>
+          <a href="#" class="button button-primary w-100">Choose Professional</a>
         </div>
-        <div class="pricing-card">
-          <div class="price-tier">Business</div>
-          <div class="price">$99<span>/month</span></div>
-          <ul class="price-features">
-            <li>Unlimited staff members</li>
-            <li>Unlimited bookings</li>
-            <li>SMS & email reminders</li>
+
+        <div class="plan-card">
+          <h3 class="plan-name">Business</h3>
+          <div class="plan-price">$9.99<span>/month</span></div>
+          <ul class="plan-features">
+            <li><span class="business-label">Unlimited</span> staff members</li>
+            <li><span class="business-label">Unlimited</span> bookings</li>
+            <li>Email reminders</li>
             <li>Calendar integration</li>
             <li>Online payments</li>
             <li>Advanced analytics</li>
-            <li>API Access</li>
-            <li>Dedicated support</li>
+            <li>Customizable booking page</li>
+            <li>Customizable landing page</li>
+            <li>Add your own branding</li>
+            <li><span class="business-label">Add your own domain</span></li>
+            <li><span class="business-label">Dedicated support</span></li>
           </ul>
-          <a href="#" class="cta-button">Choose Business</a>
+          <a href="#" class="button button-primary w-100">Choose Business</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials" id="testimonials">
+  <!-- Testimonial Section -->
+  <section class="section section-alt" id="testimonials">
     <div class="container">
-      <div class="section-title">
+      <div class="section-heading">
         <h2>What Our Customers Say</h2>
         <p>Don't just take our word for it. Here's what business owners like you have to say about BookrHub.</p>
       </div>
-      <div class="testimonial-slider">
-        <div class="testimonial">
+
+      <div class="testimonial-container">
+        <div class="testimonial-card">
           <div class="testimonial-content">
             "BookrHub has completely transformed the way we handle appointments. We've reduced no-shows by 60% and our clients love the easy booking experience. I can't imagine running my salon without it now!"
           </div>
           <div class="testimonial-author">
-            <div class="author-image">
+            <div class="author-avatar">
               <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
             </div>
-            <div class="author-name">Sarah Johnson</div>
-            <div class="author-title">Owner, Glow Up Salon</div>
+            <div class="author-info">
+              <h4>Sarah Johnson</h4>
+              <p>Owner, Glow Up Salon</p>
+            </div>
           </div>
         </div>
       </div>
@@ -207,10 +277,15 @@
 
   <!-- CTA Section -->
   <section class="cta-section">
+    <div class="cta-shape cta-shape-1"></div>
+    <div class="cta-shape cta-shape-2"></div>
+
     <div class="container">
-      <h2>Ready to Streamline Your Booking Process?</h2>
-      <p>Join thousands of businesses that trust BookrHub for their appointment scheduling needs. Start your 14-day free trial today, no credit card required.</p>
-      <a href="https://my.bookrhub.com/signup" class="cta-button-gradient" data-text="Get Started For Free">Get Started For Free</a>
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to Streamline Your Booking Process?</h2>
+        <p class="cta-description">Join thousands of businesses that trust BookrHub for their appointment scheduling needs. Start your 14-day free trial today, no credit card required.</p>
+        <a href="https://my.bookrhub.com/signup" class="cta-button">Get Started For Free</a>
+      </div>
     </div>
   </section>
 
@@ -219,43 +294,47 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
-          <div class="footer-logo">Bookr<span>Hub</span></div>
+          <a href="https://bookrhub.com" class="footer-logo">Bookr<span>Hub</span></a>
           <p class="footer-description">The modern solution for appointment scheduling and business management.</p>
           <div class="social-links">
-            <a href="#"><i>F</i></a>
-            <a href="#"><i>T</i></a>
-            <a href="#"><i>I</i></a>
-            <a href="#"><i>L</i></a>
+            <a href="#"><span>F</span></a>
+            <a href="#"><span>T</span></a>
+            <a href="#"><span>I</span></a>
+            <a href="#"><span>L</span></a>
           </div>
         </div>
+
         <div class="footer-column">
-          <h3>Product</h3>
+          <h3 class="footer-heading">Product</h3>
           <ul class="footer-links">
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Integrations</a></li>
-            <li><a href="#">Updates</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
           </ul>
         </div>
+
         <div class="footer-column">
-          <h3>Resources</h3>
+          <h3 class="footer-heading">Resources</h3>
           <ul class="footer-links">
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Guides</a></li>
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">Webinars</a></li>
+            <li><a href="https://bookrhub.com/#blog">Blog</a></li>
+            <li><a href="https://bookrhub.com/#guides">Guides</a></li>
+            <li><a href="https://bookrhub.com/#help">Help Center</a></li>
+            <li><a href="https://bookrhub.com/#webinars">Webinars</a></li>
           </ul>
         </div>
+
         <div class="footer-column">
-          <h3>Company</h3>
+          <h3 class="footer-heading">Company</h3>
           <ul class="footer-links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="https://bookrhub.com/#about">About Us</a></li>
+            <li><a href="https://bookrhub.com/#careers">Careers</a></li>
+            <li><a href="https://bookrhub.com/#contact">Contact Us</a></li>
+            <li><a href="https://bookrhub.com/#privacy">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
+
       <div class="copyright">
         &copy; 2025 BookrHub. All rights reserved.
       </div>
@@ -263,48 +342,229 @@
   </footer>
 
   <script>
-    // Simple mobile menu toggle
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      const mobileMenu = document.querySelector('.mobile-menu-container');
-      mobileMenu.classList.toggle('active');
+    // Initialize GSAP
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-      // Toggle the menu icon
-      if (mobileMenu.classList.contains('active')) {
-        this.textContent = '✕';
-      } else {
-        this.textContent = '☰';
-      }
-    });
+    // Header scroll effect
+    function initHeader() {
+      const header = document.querySelector('header');
 
-    // Close mobile menu when clicking on navigation links
-    document.querySelectorAll('.nav-links a, .mobile-buttons a').forEach(link => {
-      link.addEventListener('click', function() {
-        const mobileMenu = document.querySelector('.mobile-menu-container');
-        if (mobileMenu.classList.contains('active')) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    }
+
+    // Mobile menu toggle
+    function initMobileMenu() {
+      const mobileToggle = document.querySelector('.mobile-toggle');
+      const mobileMenu = document.querySelector('.mobile-menu');
+
+      mobileToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        mobileToggle.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
+      });
+
+      // Close mobile menu when clicking on links
+      const mobileLinks = document.querySelectorAll('.mobile-menu a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
           mobileMenu.classList.remove('active');
-          document.querySelector('.menu-toggle').textContent = '☰';
-        }
+          mobileToggle.textContent = '☰';
+        });
       });
-    });
+    }
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+    // Smooth scrolling for anchor links
+    function initSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
 
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          window.scrollTo({
-            top: target.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
 
-        // Close mobile menu if open
-        if (window.innerWidth <= 768) {
-          document.querySelector('.nav-links').style.display = 'none';
-        }
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            gsap.to(window, {
+              duration: 1,
+              scrollTo: {
+                y: targetElement,
+                offsetY: 80
+              },
+              ease: 'power2.inOut'
+            });
+          }
+        });
       });
+    }
+
+    // Initialize animations with safer approach
+    function initAnimations() {
+      // Simple fade-in animation for sections
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        gsap.fromTo(section,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: section,
+              start: "top 80%",
+              once: true
+            }
+          }
+        );
+      });
+
+      // Section headers
+      const sectionHeadings = document.querySelectorAll('.section-heading');
+      sectionHeadings.forEach(heading => {
+        gsap.fromTo(heading,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: heading,
+              start: "top 80%",
+              once: true
+            }
+          }
+        );
+      });
+
+      // Feature cards with stagger
+      if (document.querySelector('.features-grid')) {
+        gsap.fromTo('.feature-card',
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            stagger: 0.1,
+            scrollTrigger: {
+              trigger: '.features-grid',
+              start: "top 80%",
+              once: true
+            }
+          }
+        );
+      }
+
+      // Steps with stagger
+      if (document.querySelector('.steps')) {
+        gsap.fromTo('.step',
+          { opacity: 0, x: index => index % 2 === 0 ? -30 : 30 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: '.steps',
+              start: "top 80%",
+              once: true
+            }
+          }
+        );
+      }
+
+      // Pricing cards with stagger
+      if (document.querySelector('.pricing-plans')) {
+        gsap.fromTo('.plan-card',
+          { opacity: 0, y: 30, scale: 0.95 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: index => index === 1 ? 1.05 : 1, // Middle card is popular
+            duration: 0.8,
+            stagger: 0.15,
+            scrollTrigger: {
+              trigger: '.pricing-plans',
+              start: "top 80%",
+              once: true
+            }
+          }
+        );
+      }
+
+      // Testimonial fade in
+      if (document.querySelector('.testimonial-card')) {
+        gsap.fromTo('.testimonial-card',
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: '.testimonial-card',
+              start: "top 80%",
+              once: true
+            }
+          }
+        );
+      }
+
+      // CTA section
+      if (document.querySelector('.cta-content')) {
+        gsap.fromTo('.cta-content',
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: '.cta-section',
+              start: "top 80%",
+              once: true
+            }
+          }
+        );
+
+        // Animate CTA shapes
+        gsap.to('.cta-shape-1', {
+          y: -30,
+          x: 20,
+          rotation: '-10deg',
+          duration: 12,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut'
+        });
+
+        gsap.to('.cta-shape-2', {
+          y: 30,
+          x: -20,
+          rotation: '10deg',
+          duration: 15,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut'
+        });
+      }
+
+      // Calendar animation in hero
+      if (document.querySelector('svg')) {
+        gsap.fromTo('svg rect, svg text, svg circle',
+          { opacity: 0 },
+          { opacity: 1, duration: 0.8, stagger: 0.05 }
+        );
+      }
+    }
+
+    // Initialize everything when document is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      initHeader();
+      initMobileMenu();
+      initSmoothScroll();
+      initAnimations();
     });
   </script>
 </body>
