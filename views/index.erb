@@ -375,33 +375,6 @@
     // Initialize GSAP
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-    // Color switcher function - allows switching between blue theme and original purple theme
-    function initColorSwitcher() {
-      // Add a small color switch button in the bottom right
-      const switcher = document.createElement('div');
-      switcher.innerHTML = `
-        <div style="position: fixed; bottom: 20px; right: 20px; z-index: 999; display: flex; flex-direction: column; gap: 10px;">
-          <button id="blueTheme" style="width: 40px; height: 40px; border-radius: 50%; background: #0068ff; border: 3px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); cursor: pointer;" title="Switch to blue theme"></button>
-          <button id="purpleTheme" style="width: 40px; height: 40px; border-radius: 50%; background: #8470ff; border: 3px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); cursor: pointer;" title="Switch to purple theme"></button>
-        </div>
-      `;
-      document.body.appendChild(switcher);
-
-      // Add event listeners
-      document.getElementById('blueTheme').addEventListener('click', () => {
-        document.documentElement.style.setProperty('--clr-primary', '#0068ff');
-        document.documentElement.style.setProperty('--clr-primary-light', '#4d8eff');
-        document.documentElement.style.setProperty('--clr-primary-dark', '#0051c2');
-        document.documentElement.style.setProperty('--gradient-primary', 'linear-gradient(135deg, #0068ff 0%, #4d8eff 100%)');
-      });
-
-      document.getElementById('purpleTheme').addEventListener('click', () => {
-        document.documentElement.style.setProperty('--clr-primary', '#8470ff');
-        document.documentElement.style.setProperty('--clr-primary-light', '#a28dff');
-        document.documentElement.style.setProperty('--clr-primary-dark', '#6551db');
-        document.documentElement.style.setProperty('--gradient-primary', 'linear-gradient(135deg, #8470ff 0%, #a28dff 100%)');
-      });
-    }
 
     // Header scroll effect
     function initHeader() {
@@ -623,7 +596,6 @@
       initMobileMenu();
       initSmoothScroll();
       initAnimations();
-      initColorSwitcher(); // Add the color switcher
     });
   </script>
 </body>
