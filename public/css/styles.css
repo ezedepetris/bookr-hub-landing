@@ -68,6 +68,11 @@ ul {
   list-style: none;
 }
 
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -602,6 +607,11 @@ header.scrolled {
 
 .plan-features li:last-child {
   border-bottom: none;
+}
+
+.business-label {
+  font-weight: 600;
+  color: var(--clr-primary);
 }
 
 /* Testimonial Section */
