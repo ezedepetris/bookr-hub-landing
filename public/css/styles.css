@@ -899,6 +899,13 @@ footer {
     transform: scale(1);
   }
 
+  .line-through {
+    text-decoration: line-through !important;
+    text-decoration-color: rgb(216, 3, 3) !important;
+    text-decoration-style: solid !important;
+    text-decoration-thickness: 1px !important;
+  }
+
   .plan-card.popular:hover {
     transform: translateY(-10px);
   }
