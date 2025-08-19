@@ -772,10 +772,6 @@ footer {
   margin-bottom: 1rem;
 }
 
-.footer-logo span {
-  color: #8470ff;
-}
-
 .footer-description {
   margin-bottom: 1.5rem;
   color: rgba(255, 255, 255, 0.7);
@@ -832,6 +828,12 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.875rem;
+}
+
+.copyright-link {
+  color: var(--clr-primary-light) !important;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 /* Responsive Styles */
