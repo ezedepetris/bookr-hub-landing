@@ -28,8 +28,17 @@ set :public_folder, File.dirname(__FILE__) + '/public'
 
 before do
   unless session[:locale] && session[:currency]
-    ip = request.ip == "127.0.0.1" ? "8.8.8.8" : request.ip # fallback for local dev
+    # ip = request.ip == "127.0.0.1" ? "8.8.8.8" : request.ip # fallback for local dev
+    # require 'net/http'
+    ip = request.env['HTTP_X_FORWARDED_FOR']&.split(',')&.first&.strip ||
+         request.env['HTTP_X_REAL_IP'] ||
+         request.ip
+    ip = "8.8.8.8" if ip == "127.0.0.1" # fallback for local dev
+
+
     location = LocationHelper.get_location_data(ip)
+    puts "IP: #{ip}"
+    puts "Location: #{location}"
 
     country = location["country_code"] || "US"
     session[:locale] = Config.locale_from_country(country)
