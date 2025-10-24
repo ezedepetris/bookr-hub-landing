@@ -4,6 +4,7 @@ require 'json'
 require 'stripe'
 require 'dotenv/load'
 require 'i18n'
+require 'i18n/backend/fallbacks'
 
 # Load custom modules
 require_relative 'lib/config'
@@ -13,40 +14,52 @@ require_relative 'lib/stripe_service'
 
 enable :sessions
 
-
 # Configure Stripe
 Stripe.api_key = ENV['STRIPE_SECRET_KEY']
 
 # Configure i18n
+I18n.enforce_available_locales = false
 I18n.load_path = Dir[File.join(File.dirname(__FILE__), 'locales', '*.yml')]
 I18n.default_locale = :en
-I18n.available_locales = [:en, :'en-US', :'en-GB', :'en-NZ', :'es-AR', :'es']
+
+# Enable fallbacks
+I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
 
 set :public_folder, File.dirname(__FILE__) + '/public'
 
-# No helpers needed - all functionality moved to modules
-
 before do
-  unless session[:locale] && session[:currency]
+  location = { "locale" => "en" }
+
+  unless session[:currency]
     ip = request.env['HTTP_X_FORWARDED_FOR']&.split(',')&.first&.strip ||
          request.env['HTTP_X_REAL_IP'] ||
          request.ip
+
     ip = "8.8.8.8" if ip == "127.0.0.1" # fallback for local dev
 
     location = LocationHelper.get_location_data(ip)
+    session[:currency] = location["currency"] || "USD"
+  end
 
-    country = location["country_code"] || "US"
-    session[:locale] = Config.locale_from_country(country)
-    session[:currency] = Config.currency_from_country(country)
+  sanitized_location_locale = location["languages"].to_s.split(',').first.to_s.strip
+  location_locale = (sanitized_location_locale.length > 0 ? sanitized_location_locale.to_sym : 'en')
+
+  # Check if the generated locale (e.g., :'es-MX') is valid
+  if I18n.available_locales.include?(location_locale)
+    session[:locale] = location_locale
+  else
+    # If the specific locale isn't available, fall back to the base language
+    # For example, if es-MX is invalid, use :es if available, otherwise use default
+    base_locale = location_locale.to_s.split('-').first.to_sym
+    if I18n.available_locales.include?(base_locale)
+      session[:locale] = base_locale
+    else
+      session[:locale] = I18n.default_locale
+    end
   end
 
   # Set i18n locale based on session
-  locale_symbol = session[:locale].to_sym
-  if I18n.available_locales.include?(locale_symbol)
-    I18n.locale = locale_symbol
-  else
-    I18n.locale = :en # fallback to English
-  end
+  I18n.locale = session[:locale]
 end
 
 get '/' do
