@@ -171,13 +171,13 @@
   <section id="examples" class="examples">
     <div class="examples-container">
       <div class="section-header">
-        <h2>Beautiful Booking Pages for Your Business</h2>
-        <p>Professional landing pages that convert visitors into customers</p>
+        <h2><%= I18n.t('business_pages.title') %></h2>
+        <p><%= I18n.t('business_pages.subtitle') %></p>
       </div>
       <div class="example-showcase">
         <div class="example-text">
-          <h3>Customized for Your Brand</h3>
-          <p>Every business gets a professional booking page that matches their brand and style. From barbershops to consultants, we've got you covered.</p>
+          <h3><%= I18n.t('business_pages.customized_brand.title') %></h3>
+          <p><%= I18n.t('business_pages.customized_brand.description') %></p>
           <ul style="list-style: none; padding: 0;">
             <li style="padding: 0.5rem 0; color: #4b5563;">✓ Custom colors and branding</li>
             <li style="padding: 0.5rem 0; color: #4b5563;">✓ Your own domain</li>
@@ -207,13 +207,11 @@
           <div class="plan-price"><%= I18n.t('pricing.free') %></div>
           <p class="plan-period"><%= I18n.t('pricing.for_ever') %></p>
           <ul class="plan-features">
-            <li>Up to 150 bookings/month</li>
-            <li>1 Staff member</li>
-            <li>Email reminders</li>
-            <li>BookrHub subdomain</li>
-            <li>Booking pages</li>
+            <% I18n.t('plan_features.independent').each do |feature| %>
+              <li><%= feature %></li>
+            <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=independent" class="cta-button" style="width: 100%; display: block; text-align: center;">Get Started</a>
+          <a href="https://my.bookrhub.com/signup?plan=independent" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.get_started') %></a>
         </div>
         <div class="pricing-card featured">
           <span class="featured-badge"><%= I18n.t('pricing.most_popular') %></span>
@@ -221,27 +219,22 @@
           <div class="plan-price"><%= @prices['team'][:formatted] %></div>
           <p class="plan-period"><%= I18n.t('pricing.per_month') %></p>
           <ul class="plan-features">
-            <li>Everything in Independent</li>
-            <li>Up to 400 bookings/month</li>
-            <li>Up to 3 staff members</li>
-            <li>Online payments</li>
-            <li>Landing pages</li>
+            <% I18n.t('plan_features.team').each do |feature| %>
+              <li><%= feature %></li>
+            <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=team" class="cta-button" style="width: 100%; display: block; text-align: center;">Get Started</a>
+          <a href="https://my.bookrhub.com/signup?plan=team" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.get_started') %></a>
         </div>
         <div class="pricing-card">
           <div class="plan-name"><%= I18n.t('pricing.business') %></div>
           <div class="plan-price"><%= @prices['business'][:formatted] %></div>
           <p class="plan-period"><%= I18n.t('pricing.per_month') %></p>
           <ul class="plan-features">
-            <li>Everything in Team</li>
-            <li>Unlimited bookings</li>
-            <li>Unlimited staff members</li>
-            <li>Setup your own custom domain</li>
-            <li>Dedicated support</li>
-            <li>One off landing page design</li>
+            <% I18n.t('plan_features.business').each do |feature| %>
+              <li><%= feature %></li>
+            <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=business" class="cta-button" style="width: 100%; display: block; text-align: center;">First month on us</a>
+          <a href="https://my.bookrhub.com/signup?plan=business" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.first_month_on_us') %></a>
         </div>
       </div>
     </div>
@@ -250,10 +243,10 @@
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="cta-content">
-      <h2>Ready to Simplify Your Bookings?</h2>
-      <p>Join thousands of businesses already using BookrHub.</p>
-      <a href="https://my.bookrhub.com/signup" class="btn-primary" style="font-size: 1.25rem; padding: 1.25rem 2.5rem;">Start For Free</a>
-      <p style="margin-top: 1rem; font-size: 0.875rem; color: #9ca3af;">No credit card required • Setup in minutes</p>
+      <h2><%= I18n.t('cta.ready_to_simplify') %></h2>
+      <p><%= I18n.t('cta.join_thousands') %></p>
+      <a href="https://my.bookrhub.com/signup" class="btn-primary" style="font-size: 1.25rem; padding: 1.25rem 2.5rem;"><%= I18n.t('cta.start_for_free') %></a>
+      <p style="margin-top: 1rem; font-size: 0.875rem; color: #9ca3af;"><%= I18n.t('cta.no_credit_card') %></p>
     </div>
   </section>
 
@@ -261,24 +254,24 @@
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3>Product</h3>
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
+        <h3><%= I18n.t('footer.product') %></h3>
+        <a href="#features"><%= I18n.t('navigation.features') %></a>
+        <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
       </div>
       <div class="footer-section">
-        <h3>Company</h3>
-        <a href="#https://bookrhub.com/about">About Us</a>
-        <a href="#https://blog.bookrhub.com">Blog</a>
-        <a href="#https://bookrhub.com/contact">Contact Us</a>
+        <h3><%= I18n.t('footer.company') %></h3>
+        <a href="#https://bookrhub.com/about"><%= I18n.t('footer.about_us') %></a>
+        <a href="#https://blog.bookrhub.com"><%= I18n.t('footer.blog') %></a>
+        <a href="#https://bookrhub.com/contact"><%= I18n.t('footer.contact_us') %></a>
       </div>
       <div class="footer-section">
-        <h3>Support</h3>
-        <a href="#https://support.bookrhub.com">Help Center</a>
+        <h3><%= I18n.t('footer.support') %></h3>
+        <a href="#https://support.bookrhub.com"><%= I18n.t('footer.help_center') %></a>
       </div>
       <div class="footer-section">
-        <h3>Legal</h3>
-        <a href="#https://bookrhub.com/privacy">Privacy Policy</a>
-        <a href="#https://bookrhub.com/terms">Terms of Service</a>
+        <h3><%= I18n.t('footer.legal') %></h3>
+        <a href="#https://bookrhub.com/privacy"><%= I18n.t('footer.privacy_policy') %></a>
+        <a href="#https://bookrhub.com/terms"><%= I18n.t('footer.terms_of_service') %></a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -324,19 +317,19 @@
               <div class="screenshot-placeholder">
                 <img src="/gifs/barber-landing.gif" alt="Landing Page" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <div class="screenshot-text">Landing Page</div>
+              <div class="screenshot-text"><%= I18n.t('customer_experience.landing_page') %></div>
             </div>
             <div class="screenshot-item">
               <div class="screenshot-placeholder">
                 <img src="/gifs/barber-book.gif" alt="Date & Time Selection" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <div class="screenshot-text">Date & Time Selection</div>
+              <div class="screenshot-text"><%= I18n.t('customer_experience.date_time_selection') %></div>
             </div>
             <div class="screenshot-item">
               <div class="screenshot-placeholder">
                 <img src="/gifs/barber-confirmation.gif" alt="Booking Confirmation" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <div class="screenshot-text">Booking Confirmation</div>
+              <div class="screenshot-text"><%= I18n.t('customer_experience.booking_confirmation') %></div>
             </div>
           `;
         } else {

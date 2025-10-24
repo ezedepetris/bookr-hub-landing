@@ -20,7 +20,7 @@ Stripe.api_key = ENV['STRIPE_SECRET_KEY']
 # Configure i18n
 I18n.load_path = Dir[File.join(File.dirname(__FILE__), 'locales', '*.yml')]
 I18n.default_locale = :en
-I18n.available_locales = [:en, :'en-US', :'en-GB', :'en-NZ', :'es-AR']
+I18n.available_locales = [:en, :'en-US', :'en-GB', :'en-NZ', :'es-AR', :'es']
 
 set :public_folder, File.dirname(__FILE__) + '/public'
 

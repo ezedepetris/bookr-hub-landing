@@ -64,5 +64,56 @@ en-GB:
     for_ever: "for ever"
     most_popular: "Most Popular"
 
+  business_pages:
+    title: "Beautiful Booking Pages for Your Business"
+    subtitle: "Professional landing pages that convert visitors into customers"
+    customized_brand:
+      title: "Customized for Your Brand"
+      description: "Every business gets a professional booking page that matches their brand and style. From barbershops to consultants, we've got you covered."
+
+  plan_features:
+    independent:
+      - "Up to 150 bookings/month"
+      - "1 Staff member"
+      - "Email reminders"
+      - "BookrHub subdomain"
+      - "Booking pages"
+    team:
+      - "Everything in Independent"
+      - "Up to 400 bookings/month"
+      - "Up to 3 staff members"
+      - "Online payments"
+      - "Landing pages"
+    business:
+      - "Everything in Team"
+      - "Unlimited bookings"
+      - "Unlimited staff members"
+      - "Setup your own custom domain"
+      - "Dedicated support"
+      - "One off landing page design"
+
+  cta:
+    get_started: "Get Started"
+    start_for_free: "Start For Free"
+    first_month_on_us: "First month on us"
+    no_credit_card: "No credit card required • Setup in minutes"
+    ready_to_simplify: "Ready to Simplify Your Bookings?"
+    join_thousands: "Join thousands of businesses already using BookrHub."
+
   footer:
     powered_by: "Powered by"
+    product: "Product"
+    company: "Company"
+    support: "Support"
+    legal: "Legal"
+    about_us: "About Us"
+    blog: "Blog"
+    contact_us: "Contact Us"
+    help_center: "Help Center"
+    privacy_policy: "Privacy Policy"
+    terms_of_service: "Terms of Service"
+
+  customer_experience:
+    landing_page: "Landing Page"
+    date_time_selection: "Date & Time Selection"
+    booking_confirmation: "Booking Confirmation"
