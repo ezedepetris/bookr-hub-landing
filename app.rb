@@ -34,27 +34,22 @@ helpers do
 end
 
 before do
-  # unless session[:locale] && session[:currency]
+  unless session[:locale] && session[:currency]
     ip = request.ip == "127.0.0.1" ? "8.8.8.8" : request.ip # fallback for local dev
     location = get_location_data(ip)
-    puts "Location: #{location}"
 
     country = location["country_code"] || "US"
     session[:locale] = locale_from_country(country)
     session[:currency] = currency_from_country(country)
-  # end
-  puts "\n\n\n\n"
-  puts "Locale: #{session[:locale]}"
-  puts "Currency: #{session[:currency]}"
-  puts "\n\n\n\n"
+  end
 end
 
 get '/' do
   erb :index
 end
 
-get '/opps' do
-  erb :opps
+get '/oops' do
+  erb :oops
 end
 
 post '/set_locale' do
