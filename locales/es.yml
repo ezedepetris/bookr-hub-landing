@@ -1,0 +1,119 @@
+es:
+  site:
+    title: "BookrHub - Gestión Poderosa de Reservas para tu Negocio"
+    description: "Todo lo que necesitas para gestionar citas, hacer crecer tu negocio y deleitar a tus clientes. Comienza gratis hoy."
+    tagline: "Gestión Simple de Reservas para Empresas Modernas"
+    subtitle: "Todo lo que necesitas para gestionar citas, hacer crecer tu negocio y deleitar a tus clientes."
+
+  navigation:
+    features: "Características"
+    how_it_works: "Cómo Funciona"
+    examples: "Ejemplos"
+    pricing: "Precios"
+    get_started: "Comenzar"
+
+  buttons:
+    start_free_trial: "Comenzar Prueba Gratuita"
+    watch_demo: "Ver Demo"
+
+  features:
+    title: "Todo Lo Que Necesitas"
+    subtitle: "Herramientas poderosas que son simples de usar"
+
+    easy_scheduling:
+      title: "Programación Fácil"
+      description: "Disponibilidad en tiempo real, reservas automatizadas y prevención de conflictos."
+
+    team_management:
+      title: "Gestión de Equipo"
+      description: "Gestiona horarios del personal, rastrea rendimiento, asigna servicios."
+
+    smart_reminders:
+      title: "Recordatorios Inteligentes"
+      description: "Reduce las inasistencias con recordatorios automáticos por email y SMS."
+
+    clear_analytics:
+      title: "Análisis Claros"
+      description: "Rastrea reservas, ingresos y tendencias de clientes de un vistazo."
+
+    mobile_ready:
+      title: "Listo para Móvil"
+      description: "Funciona perfectamente en todos los dispositivos. Reserva en cualquier momento, en cualquier lugar."
+
+    your_brand:
+      title: "Tu Marca"
+      description: "Dominio personalizado y páginas de reserva con tu marca para tu negocio."
+
+  how_it_works:
+    title: "Cómo Funciona BookrHub"
+    subtitle: "Ve la plataforma en acción"
+    admin_dashboard: "Panel de Administración"
+    customer_experience: "Experiencia del Cliente"
+    calendar_management: "Gestión de Calendario"
+    booking_overview: "Resumen de Reservas"
+    company_settings: "Configuración de Empresa"
+
+  pricing:
+    title: "Precios"
+    subtitle: "Elige el plan que sea adecuado para ti"
+    independent: "Independent"
+    team: "Team"
+    business: "Business"
+    free: "Gratis"
+    per_month: "por mes"
+    for_ever: "para siempre"
+    most_popular: "Más Popular"
+
+  business_pages:
+    title: "Hermosas Páginas de Reserva para tu Negocio"
+    subtitle: "Páginas de destino profesionales que convierten visitantes en clientes"
+    customized_brand:
+      title: "Personalizado para tu Marca"
+      description: "Cada negocio obtiene una página de reserva profesional que coincide con su marca y estilo. Desde barberías hasta consultores, te tenemos cubierto."
+
+  plan_features:
+    independent:
+      - "Hasta 150 reservas/mes"
+      - "1 Miembro del personal"
+      - "Recordatorios por email"
+      - "Subdominio BookrHub"
+      - "Páginas de reserva"
+    team:
+      - "Todo en Independent"
+      - "Hasta 400 reservas/mes"
+      - "Hasta 3 miembros del personal"
+      - "Pagos en línea"
+      - "Páginas de destino"
+    business:
+      - "Todo en Team"
+      - "Reservas ilimitadas"
+      - "Miembros del personal ilimitados"
+      - "Configura tu propio dominio personalizado"
+      - "Soporte dedicado"
+      - "Diseño de página de destino único"
+
+  cta:
+    get_started: "Comenzar"
+    start_for_free: "Comenzar Gratis"
+    first_month_on_us: "Primer mes gratis"
+    no_credit_card: "No se requiere tarjeta de crédito • Configuración en minutos"
+    ready_to_simplify: "¿Listo para Simplificar tus Reservas?"
+    join_thousands: "Únete a miles de negocios que ya usan BookrHub."
+
+  footer:
+    powered_by: "Desarrollado por"
+    product: "Producto"
+    company: "Empresa"
+    support: "Soporte"
+    legal: "Legal"
+    about_us: "Acerca de Nosotros"
+    blog: "Blog"
+    contact_us: "Contáctanos"
+    help_center: "Centro de Ayuda"
+    privacy_policy: "Política de Privacidad"
+    terms_of_service: "Términos de Servicio"
+
+  customer_experience:
+    landing_page: "Página de Destino"
+    date_time_selection: "Selección de Fecha y Hora"
+    booking_confirmation: "Confirmación de Reserva"
