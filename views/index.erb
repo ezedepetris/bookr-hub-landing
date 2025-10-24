@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= session[:locale] %>">
 <head>
   <link rel="stylesheet" href="/css/styles.css?v=1.0.0">
   <meta charset="UTF-8">
@@ -26,7 +26,7 @@
 
   <!-- Additional tags -->
   <meta property="og:site_name" content="BookrHub">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:locale" content="<%= session[:locale] %>">
   <meta name="theme-color" content="#2563eb">
 </head>
 <body>
@@ -218,7 +218,7 @@
         <div class="pricing-card featured">
           <span class="featured-badge">Most Popular</span>
           <div class="plan-name">Team</div>
-          <div class="plan-price">$9.99</div>
+          <div class="plan-price"><%= @prices['team'][:formatted] %></div>
           <p class="plan-period">per month</p>
           <ul class="plan-features">
             <li>Everything in Independent</li>
@@ -231,7 +231,7 @@
         </div>
         <div class="pricing-card">
           <div class="plan-name">Business</div>
-          <div class="plan-price">$15.99</div>
+          <div class="plan-price"><%= @prices['business'][:formatted] %></div>
           <p class="plan-period">per month</p>
           <ul class="plan-features">
             <li>Everything in Team</li>
