@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
   <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
-  <title>BookrHub - Powerful Booking Management for Your Business</title>
+  <title><%= I18n.t('site.title') %></title>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bookrhub.com/">
-  <meta property="og:title" content="BookrHub - Powerful Booking Management for Your Business">
-  <meta property="og:description" content="Everything you need to manage appointments, grow your business, and delight customers. Start for free today.">
+  <meta property="og:title" content="<%= I18n.t('site.title') %>">
+  <meta property="og:description" content="<%= I18n.t('site.description') %>">
   <meta property="og:image" content="https://bookrhub.com/images/og-preview.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -20,8 +20,8 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://bookrhub.com/">
-  <meta property="twitter:title" content="BookrHub - Powerful Booking Management for Your Business">
-  <meta property="twitter:description" content="Everything you need to manage appointments, grow your business, and delight customers. Start for free today.">
+  <meta property="twitter:title" content="<%= I18n.t('site.title') %>">
+  <meta property="twitter:description" content="<%= I18n.t('site.description') %>">
   <meta property="twitter:image" content="https://bookrhub.com/images/og-preview.jpg">
 
   <!-- Additional tags -->
@@ -37,11 +37,11 @@
       <img src="/images/isologo.svg" alt="BookrHub Logo" class="isologo-image" width="160">
     </a>
       <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#screenshots">How It Works</a>
-        <a href="#examples">Examples</a>
-        <a href="#pricing">Pricing</a>
-        <a href="https://my.bookrhub.com/signup" class="cta-button">Get Started</a>
+        <a href="#features"><%= I18n.t('navigation.features') %></a>
+        <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
+        <a href="#examples"><%= I18n.t('navigation.examples') %></a>
+        <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
+        <a href="https://my.bookrhub.com/signup" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
       </div>
     </div>
   </nav>
@@ -50,11 +50,11 @@
   <section class="hero">
     <div class="hero-content">
       <div class="hero-text">
-        <h1>Simple Booking Management for Modern Businesses</h1>
-        <p>Everything you need to manage appointments, grow your business, and delight your customers.</p>
+        <h1><%= I18n.t('site.tagline') %></h1>
+        <p><%= I18n.t('site.subtitle') %></p>
         <div class="hero-buttons">
-          <a href="https://my.bookrhub.com/signup" class="btn-primary">Start Free Trial</a>
-          <a href="https://bookrhub.com/gifs/barber-landing.gif" class="btn-secondary">Watch Demo</a>
+          <a href="https://my.bookrhub.com/signup" class="btn-primary"><%= I18n.t('buttons.start_free_trial') %></a>
+          <a href="https://bookrhub.com/gifs/barber-landing.gif" class="btn-secondary"><%= I18n.t('buttons.watch_demo') %></a>
         </div>
       </div>
       <div class="hero-image">
@@ -71,8 +71,8 @@
   <section id="features" class="features">
     <div class="features-container">
       <div class="section-header">
-        <h2>Everything You Need</h2>
-        <p>Powerful tools that are simple to use</p>
+        <h2><%= I18n.t('features.title') %></h2>
+        <p><%= I18n.t('features.subtitle') %></p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
@@ -81,8 +81,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
             </svg>
           </div>
-          <h3>Easy Scheduling</h3>
-          <p>Real-time availability, automated booking, and conflict prevention.</p>
+          <h3><%= I18n.t('features.easy_scheduling.title') %></h3>
+          <p><%= I18n.t('features.easy_scheduling.description') %></p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -90,8 +90,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
             </svg>
           </div>
-          <h3>Team Management</h3>
-          <p>Manage staff schedules, track performance, assign services.</p>
+          <h3><%= I18n.t('features.team_management.title') %></h3>
+          <p><%= I18n.t('features.team_management.description') %></p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -99,8 +99,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
             </svg>
           </div>
-          <h3>Smart Reminders</h3>
-          <p>Reduce no-shows with automatic email and SMS reminders.</p>
+          <h3><%= I18n.t('features.smart_reminders.title') %></h3>
+          <p><%= I18n.t('features.smart_reminders.description') %></p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -108,8 +108,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
             </svg>
           </div>
-          <h3>Clear Analytics</h3>
-          <p>Track bookings, revenue, and customer trends at a glance.</p>
+          <h3><%= I18n.t('features.clear_analytics.title') %></h3>
+          <p><%= I18n.t('features.clear_analytics.description') %></p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -117,8 +117,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
             </svg>
           </div>
-          <h3>Mobile Ready</h3>
-          <p>Works perfectly on all devices. Book anytime, anywhere.</p>
+          <h3><%= I18n.t('features.mobile_ready.title') %></h3>
+          <p><%= I18n.t('features.mobile_ready.description') %></p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -126,8 +126,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
             </svg>
           </div>
-          <h3>Your Brand</h3>
-          <p>Custom domain and branded booking pages for your business.</p>
+          <h3><%= I18n.t('features.your_brand.title') %></h3>
+          <p><%= I18n.t('features.your_brand.description') %></p>
         </div>
       </div>
     </div>
@@ -137,31 +137,31 @@
   <section id="screenshots" class="screenshots">
     <div class="screenshots-container">
       <div class="section-header">
-        <h2>How BookrHub Works</h2>
-        <p>See the platform in action</p>
+        <h2><%= I18n.t('how_it_works.title') %></h2>
+        <p><%= I18n.t('how_it_works.subtitle') %></p>
       </div>
       <div class="screenshot-tabs">
-        <button class="tab-button active">Admin Dashboard</button>
-        <button class="tab-button">Customer Experience</button>
+        <button class="tab-button active"><%= I18n.t('how_it_works.admin_dashboard') %></button>
+        <button class="tab-button"><%= I18n.t('how_it_works.customer_experience') %></button>
       </div>
       <div class="screenshot-grid">
         <div class="screenshot-item">
           <div class="screenshot-placeholder">
             <img src="/gifs/my-calendar.gif" alt="Calendar Management" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
-          <div class="screenshot-text">Calendar Management</div>
+          <div class="screenshot-text"><%= I18n.t('how_it_works.calendar_management') %></div>
         </div>
         <div class="screenshot-item">
           <div class="screenshot-placeholder">
             <img src="/gifs/my-overview.gif" alt="Booking Overview" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
-          <div class="screenshot-text">Booking Overview</div>
+          <div class="screenshot-text"><%= I18n.t('how_it_works.booking_overview') %></div>
         </div>
         <div class="screenshot-item">
           <div class="screenshot-placeholder">
             <img src="/gifs/my-configuration.gif" alt="Service Configuration" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
-          <div class="screenshot-text">Company Settings</div>
+          <div class="screenshot-text"><%= I18n.t('how_it_works.company_settings') %></div>
         </div>
       </div>
     </div>
@@ -198,14 +198,14 @@
   <section id="pricing" class="pricing">
     <div class="pricing-container">
       <div class="section-header">
-        <h2>Simple, Transparent Pricing</h2>
-        <p>Choose the plan that fits your business</p>
+        <h2><%= I18n.t('pricing.title') %></h2>
+        <p><%= I18n.t('pricing.subtitle') %></p>
       </div>
       <div class="pricing-cards">
         <div class="pricing-card">
-          <div class="plan-name">Independent</div>
-          <div class="plan-price">Free</div>
-          <p class="plan-period">for ever</p>
+          <div class="plan-name"><%= I18n.t('pricing.independent') %></div>
+          <div class="plan-price"><%= I18n.t('pricing.free') %></div>
+          <p class="plan-period"><%= I18n.t('pricing.for_ever') %></p>
           <ul class="plan-features">
             <li>Up to 150 bookings/month</li>
             <li>1 Staff member</li>
@@ -216,10 +216,10 @@
           <a href="https://my.bookrhub.com/signup?plan=independent" class="cta-button" style="width: 100%; display: block; text-align: center;">Get Started</a>
         </div>
         <div class="pricing-card featured">
-          <span class="featured-badge">Most Popular</span>
-          <div class="plan-name">Team</div>
+          <span class="featured-badge"><%= I18n.t('pricing.most_popular') %></span>
+          <div class="plan-name"><%= I18n.t('pricing.team') %></div>
           <div class="plan-price"><%= @prices['team'][:formatted] %></div>
-          <p class="plan-period">per month</p>
+          <p class="plan-period"><%= I18n.t('pricing.per_month') %></p>
           <ul class="plan-features">
             <li>Everything in Independent</li>
             <li>Up to 400 bookings/month</li>
@@ -230,9 +230,9 @@
           <a href="https://my.bookrhub.com/signup?plan=team" class="cta-button" style="width: 100%; display: block; text-align: center;">Get Started</a>
         </div>
         <div class="pricing-card">
-          <div class="plan-name">Business</div>
+          <div class="plan-name"><%= I18n.t('pricing.business') %></div>
           <div class="plan-price"><%= @prices['business'][:formatted] %></div>
-          <p class="plan-period">per month</p>
+          <p class="plan-period"><%= I18n.t('pricing.per_month') %></p>
           <ul class="plan-features">
             <li>Everything in Team</li>
             <li>Unlimited bookings</li>
@@ -283,7 +283,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 BookrHub. All rights reserved.</p>
-      <span>Powered by <a href="https://plumdigital.co.nz" target="_blank" class="copyright-link">Plum Digital</a></span>
+      <span><%= I18n.t('footer.powered_by') %> <a href="https://plumdigital.co.nz" target="_blank" class="copyright-link">Plum Digital</a></span>
     </div>
   </footer>
 
@@ -303,19 +303,19 @@
               <div class="screenshot-placeholder">
                 <img src="/gifs/my-calendar.gif" alt="Calendar Management" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <div class="screenshot-text">Calendar Management</div>
+              <div class="screenshot-text"><%= I18n.t('how_it_works.calendar_management') %></div>
             </div>
             <div class="screenshot-item">
               <div class="screenshot-placeholder">
                 <img src="/gifs/my-overview.gif" alt="Booking Overview" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <div class="screenshot-text">Booking Overview</div>
+              <div class="screenshot-text"><%= I18n.t('how_it_works.booking_overview') %></div>
             </div>
             <div class="screenshot-item">
               <div class="screenshot-placeholder">
                 <img src="/gifs/my-configuration.gif" alt="Service Configuration" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <div class="screenshot-text">Company Settings</div>
+              <div class="screenshot-text"><%= I18n.t('how_it_works.company_settings') %></div>
             </div>
           `;
         } else if (tabName === 'Customer Experience') {

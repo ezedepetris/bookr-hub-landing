@@ -1,0 +1,68 @@
+es-AR:
+  site:
+    title: "BookrHub - Gestión Poderosa de Reservas para tu Negocio"
+    description: "Todo lo que necesitas para gestionar citas, hacer crecer tu negocio y deleitar a tus clientes. Comienza gratis hoy."
+    tagline: "Gestión Simple de Reservas para Empresas Modernas"
+    subtitle: "Todo lo que necesitas para gestionar citas, hacer crecer tu negocio y deleitar a tus clientes."
+
+  navigation:
+    features: "Características"
+    how_it_works: "Cómo Funciona"
+    examples: "Ejemplos"
+    pricing: "Precios"
+    get_started: "Comenzar"
+
+  buttons:
+    start_free_trial: "Comenzar Prueba Gratuita"
+    watch_demo: "Ver Demo"
+
+  features:
+    title: "Todo Lo Que Necesitas"
+    subtitle: "Herramientas poderosas que son simples de usar"
+
+    easy_scheduling:
+      title: "Programación Fácil"
+      description: "Disponibilidad en tiempo real, reservas automatizadas y prevención de conflictos."
+
+    team_management:
+      title: "Gestión de Equipo"
+      description: "Gestiona horarios del personal, rastrea rendimiento, asigna servicios."
+
+    smart_reminders:
+      title: "Recordatorios Inteligentes"
+      description: "Reduce las inasistencias con recordatorios automáticos por email y SMS."
+
+    clear_analytics:
+      title: "Análisis Claros"
+      description: "Rastrea reservas, ingresos y tendencias de clientes de un vistazo."
+
+    mobile_ready:
+      title: "Listo para Móvil"
+      description: "Funciona perfectamente en todos los dispositivos. Reserva en cualquier momento, en cualquier lugar."
+
+    your_brand:
+      title: "Tu Marca"
+      description: "Dominio personalizado y páginas de reserva con tu marca para tu negocio."
+
+  how_it_works:
+    title: "Cómo Funciona BookrHub"
+    subtitle: "Ve la plataforma en acción"
+    admin_dashboard: "Panel de Administración"
+    customer_experience: "Experiencia del Cliente"
+    calendar_management: "Gestión de Calendario"
+    booking_overview: "Resumen de Reservas"
+    company_settings: "Configuración de Empresa"
+
+  pricing:
+    title: "Precios"
+    subtitle: "Elige el plan que sea adecuado para ti"
+    independent: "Independiente"
+    team: "Equipo"
+    business: "Empresarial"
+    free: "Gratis"
+    per_month: "por mes"
+    for_ever: "para siempre"
+    most_popular: "Más Popular"
+
+  footer:
+    powered_by: "Desarrollado por"

@@ -3,6 +3,7 @@ require 'net/http'
 require 'json'
 require 'stripe'
 require 'dotenv/load'
+require 'i18n'
 
 # Load custom modules
 require_relative 'lib/config'
@@ -16,6 +17,11 @@ enable :sessions
 # Configure Stripe
 Stripe.api_key = ENV['STRIPE_SECRET_KEY']
 
+# Configure i18n
+I18n.load_path = Dir[File.join(File.dirname(__FILE__), 'locales', '*.yml')]
+I18n.default_locale = :en
+I18n.available_locales = [:en, :'en-US', :'en-GB', :'en-NZ', :'es-AR']
+
 set :public_folder, File.dirname(__FILE__) + '/public'
 
 # No helpers needed - all functionality moved to modules
@@ -28,6 +34,14 @@ before do
     country = location["country_code"] || "US"
     session[:locale] = Config.locale_from_country(country)
     session[:currency] = Config.currency_from_country(country)
+  end
+
+  # Set i18n locale based on session
+  locale_symbol = session[:locale].to_sym
+  if I18n.available_locales.include?(locale_symbol)
+    I18n.locale = locale_symbol
+  else
+    I18n.locale = :en # fallback to English
   end
 end
 
