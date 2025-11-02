@@ -41,7 +41,7 @@
         <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
         <a href="#examples"><%= I18n.t('navigation.examples') %></a>
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
-        <a href="https://my.bookrhub.com/signup" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
+        <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
       </div>
     </div>
   </nav>
@@ -53,7 +53,7 @@
         <h1><%= I18n.t('site.tagline') %></h1>
         <p><%= I18n.t('site.subtitle') %></p>
         <div class="hero-buttons">
-          <a href="https://my.bookrhub.com/signup" class="btn-primary"><%= I18n.t('buttons.start_free_trial') %></a>
+          <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="btn-primary"><%= I18n.t('buttons.start_free_trial') %></a>
           <a href="https://bookrhub.com/gifs/barber-landing.gif" class="btn-secondary"><%= I18n.t('buttons.watch_demo') %></a>
         </div>
       </div>
@@ -211,7 +211,7 @@
               <li><%= feature %></li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=independent" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.get_started') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=independent&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.get_started') %></a>
         </div>
         <div class="pricing-card featured">
           <span class="featured-badge"><%= I18n.t('pricing.most_popular') %></span>
@@ -223,7 +223,7 @@
               <li><%= feature %></li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=team" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.get_started') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.get_started') %></a>
         </div>
         <div class="pricing-card">
           <div class="plan-name"><%= I18n.t('pricing.business') %></div>
@@ -234,7 +234,7 @@
               <li><%= feature %></li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=business" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.first_month_on_us') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=business&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.first_month_on_us') %></a>
         </div>
       </div>
     </div>
@@ -245,7 +245,7 @@
     <div class="cta-content">
       <h2><%= I18n.t('cta.ready_to_simplify') %></h2>
       <p><%= I18n.t('cta.join_thousands') %></p>
-      <a href="https://my.bookrhub.com/signup" class="btn-primary" style="font-size: 1.25rem; padding: 1.25rem 2.5rem;"><%= I18n.t('cta.start_for_free') %></a>
+      <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="btn-primary" style="font-size: 1.25rem; padding: 1.25rem 2.5rem;"><%= I18n.t('cta.start_for_free') %></a>
       <p style="margin-top: 1rem; font-size: 0.875rem; color: #9ca3af;"><%= I18n.t('cta.no_credit_card') %></p>
     </div>
   </section>
