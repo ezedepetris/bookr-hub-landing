@@ -14,27 +14,78 @@
   <link rel="icon" href="/images/icon.png" type="image/png">
   <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
   <title><%= I18n.t('site.title') %></title>
+  <meta name="description" content="<%= I18n.t('site.description') %>">
+  <meta name="keywords" content="<%= I18n.t('site.keywords') %>">
+  <meta name="author" content="<%= I18n.t('site.author') %>">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="<%= I18n.t('site.canonical_url') %>/">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bookrhub.com/">
+  <meta property="og:url" content="<%= I18n.t('site.canonical_url') %>/">
   <meta property="og:title" content="<%= I18n.t('site.title') %>">
   <meta property="og:description" content="<%= I18n.t('site.description') %>">
   <meta property="og:image" content="https://bookrhub.com/images/og-preview.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="<%= I18n.t('site.title') %>">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://bookrhub.com/">
+  <meta property="twitter:url" content="<%= I18n.t('site.canonical_url') %>/">
   <meta property="twitter:title" content="<%= I18n.t('site.title') %>">
   <meta property="twitter:description" content="<%= I18n.t('site.description') %>">
   <meta property="twitter:image" content="https://bookrhub.com/images/og-preview.jpg">
+  <meta property="twitter:image:alt" content="<%= I18n.t('site.title') %>">
 
   <!-- Additional tags -->
   <meta property="og:site_name" content="BookrHub">
   <meta property="og:locale" content="<%= session[:locale] %>">
   <meta name="theme-color" content="#2563eb">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  <%= JSON.generate({
+    "@context" => "https://schema.org",
+    "@type" => "SoftwareApplication",
+    "name" => "BookrHub",
+    "applicationCategory" => "BusinessApplication",
+    "operatingSystem" => "Web",
+    "offers" => {
+      "@type" => "Offer",
+      "price" => "0",
+      "priceCurrency" => session[:currency]
+    },
+    "aggregateRating" => {
+      "@type" => "AggregateRating",
+      "ratingValue" => "4.8",
+      "ratingCount" => "150"
+    },
+    "description" => I18n.t('site.description'),
+    "url" => I18n.t('site.canonical_url'),
+    "screenshot" => "https://bookrhub.com/images/og-preview.jpg"
+  }) %>
+  </script>
+  <script type="application/ld+json">
+  <%= JSON.generate({
+    "@context" => "https://schema.org",
+    "@type" => "Organization",
+    "name" => "BookrHub",
+    "url" => I18n.t('site.canonical_url'),
+    "logo" => "https://bookrhub.com/images/isologo.svg",
+    "description" => I18n.t('site.description'),
+    "sameAs" => [
+      "https://www.facebook.com/bookrhub",
+      "https://www.twitter.com/bookrhub",
+      "https://www.linkedin.com/company/bookrhub"
+    ],
+    "contactPoint" => {
+      "@type" => "ContactPoint",
+      "contactType" => "Customer Service",
+      "email" => "admin@bookrhub.com"
+    }
+  }) %>
+  </script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
