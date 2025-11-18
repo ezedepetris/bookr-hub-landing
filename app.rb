@@ -28,6 +28,24 @@ I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
 set :public_folder, File.dirname(__FILE__) + '/public'
 
 before do
+  # Priority 1: Check URL parameters for locale and currency
+  if params[:locale]
+    locale_param = params[:locale].to_sym
+    if I18n.available_locales.include?(locale_param)
+      session[:locale] = locale_param
+    else
+      # Try base locale if specific locale not available
+      base_locale = locale_param.to_s.split('-').first.to_sym
+      session[:locale] = I18n.available_locales.include?(base_locale) ? base_locale : I18n.default_locale
+    end
+  end
+
+  if params[:currency]
+    session[:currency] = params[:currency].upcase
+  end
+
+  # Priority 2: Use session values if URL params not provided
+  # Priority 3: Fall back to IP detection only if no session values exist
   location = { "locale" => "en" }
 
   unless session[:currency]
@@ -41,20 +59,22 @@ before do
     session[:currency] = location["currency"] || "USD"
   end
 
-  sanitized_location_locale = location["languages"].to_s.split(',').first.to_s.strip
-  location_locale = (sanitized_location_locale.length > 0 ? sanitized_location_locale.to_sym : 'en')
+  unless session[:locale]
+    sanitized_location_locale = location["languages"].to_s.split(',').first.to_s.strip
+    location_locale = (sanitized_location_locale.length > 0 ? sanitized_location_locale.to_sym : 'en')
 
-  # Check if the generated locale (e.g., :'es-MX') is valid
-  if I18n.available_locales.include?(location_locale)
-    session[:locale] = location_locale
-  else
-    # If the specific locale isn't available, fall back to the base language
-    # For example, if es-MX is invalid, use :es if available, otherwise use default
-    base_locale = location_locale.to_s.split('-').first.to_sym
-    if I18n.available_locales.include?(base_locale)
-      session[:locale] = base_locale
+    # Check if the generated locale (e.g., :'es-MX') is valid
+    if I18n.available_locales.include?(location_locale)
+      session[:locale] = location_locale
     else
-      session[:locale] = I18n.default_locale
+      # If the specific locale isn't available, fall back to the base language
+      # For example, if es-MX is invalid, use :es if available, otherwise use default
+      base_locale = location_locale.to_s.split('-').first.to_sym
+      if I18n.available_locales.include?(base_locale)
+        session[:locale] = base_locale
+      else
+        session[:locale] = I18n.default_locale
+      end
     end
   end
 

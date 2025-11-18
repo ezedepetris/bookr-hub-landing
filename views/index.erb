@@ -18,11 +18,15 @@
   <meta name="keywords" content="<%= I18n.t('site.keywords') %>">
   <meta name="author" content="<%= I18n.t('site.author') %>">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link rel="canonical" href="<%= I18n.t('site.canonical_url') %>/">
+  <%
+    base_url = I18n.t('site.canonical_url')
+    canonical_url = "#{base_url}/?locale=#{session[:locale]}&currency=#{session[:currency]}"
+  %>
+  <link rel="canonical" href="<%= canonical_url %>">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="<%= I18n.t('site.canonical_url') %>/">
+  <meta property="og:url" content="<%= canonical_url %>">
   <meta property="og:title" content="<%= I18n.t('site.title') %>">
   <meta property="og:description" content="<%= I18n.t('site.description') %>">
   <meta property="og:image" content="https://bookrhub.com/images/og-preview.jpg">
@@ -32,7 +36,7 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="<%= I18n.t('site.canonical_url') %>/">
+  <meta property="twitter:url" content="<%= canonical_url %>">
   <meta property="twitter:title" content="<%= I18n.t('site.title') %>">
   <meta property="twitter:description" content="<%= I18n.t('site.description') %>">
   <meta property="twitter:image" content="https://bookrhub.com/images/og-preview.jpg">
@@ -62,7 +66,7 @@
       "ratingCount" => "150"
     },
     "description" => I18n.t('site.description'),
-    "url" => I18n.t('site.canonical_url'),
+    "url" => canonical_url,
     "screenshot" => "https://bookrhub.com/images/og-preview.jpg"
   }) %>
   </script>
@@ -71,7 +75,7 @@
     "@context" => "https://schema.org",
     "@type" => "Organization",
     "name" => "BookrHub",
-    "url" => I18n.t('site.canonical_url'),
+    "url" => canonical_url,
     "logo" => "https://bookrhub.com/images/isologo.svg",
     "description" => I18n.t('site.description'),
     "sameAs" => [
