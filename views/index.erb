@@ -20,9 +20,32 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <%
     base_url = I18n.t('site.canonical_url')
-    canonical_url = "#{base_url}/?locale=#{session[:locale]}&currency=#{session[:currency]}"
+    # For SEO: Canonical URL should be locale-specific and stable
+    # Use URL params if present, otherwise use session values
+    canonical_locale = params[:locale] || session[:locale]
+    canonical_currency = params[:currency] || session[:currency]
+
+    # SEO best practice: Canonical should include locale (for multi-language SEO)
+    # Currency is included since it affects pricing content, but locale is primary
+    canonical_url = "#{base_url}/?locale=#{canonical_locale}&currency=#{canonical_currency}"
+
+    # Alternative hreflang tags for better multi-language SEO (optional enhancement)
+    # This helps search engines understand language/region variations
   %>
   <link rel="canonical" href="<%= canonical_url %>">
+
+  <!-- Hreflang tags for multi-language SEO -->
+  <%
+    available_locales = I18n.available_locales
+    locale_currency_map = @locale_currency_map || {}
+    available_locales.each do |locale|
+      locale_str = locale.to_s
+      currency = locale_currency_map[locale_str] || locale_currency_map[locale_str.split('-').first] || 'USD'
+  %>
+  <link rel="alternate" hreflang="<%= locale_str %>" href="<%= base_url %>/?locale=<%= locale_str %>&currency=<%= currency %>">
+  <% end %>
+  <!-- Default/fallback hreflang -->
+  <link rel="alternate" hreflang="x-default" href="<%= base_url %>/?locale=en&currency=USD">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">

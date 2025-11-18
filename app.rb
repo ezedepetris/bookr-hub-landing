@@ -105,6 +105,7 @@ end
 get '/' do
   puts "\n\n\n\n\n\n\n\n\nSession: #{session.inspect}\n\n\n\n\n\n\n\n\n"
   @prices = StripeService.get_stripe_prices(session[:currency])
+  @locale_currency_map = LOCALE_CURRENCY_MAP
   erb :index
 end
 
