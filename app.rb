@@ -67,6 +67,10 @@ get '/' do
   erb :index
 end
 
+get '/privacy' do
+  erb :privacy
+end
+
 get '/oops' do
   erb :oops
 end

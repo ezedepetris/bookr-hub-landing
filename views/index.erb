@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="<%= session[:locale] %>">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5GLSJ749');</script>
+  <!-- End Google Tag Manager -->
   <link rel="stylesheet" href="/css/styles.css?v=1.0.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +37,19 @@
   <meta name="theme-color" content="#2563eb">
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GLSJ749"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L48GXS7KT4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-L48GXS7KT4');
+  </script>
   <!-- Navigation -->
   <nav>
     <div class="nav-container">
@@ -270,16 +290,17 @@
       </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.legal') %></h3>
-        <a href="#https://bookrhub.com/privacy"><%= I18n.t('footer.privacy_policy') %></a>
+        <a href="https://bookrhub.com/privacy"><%= I18n.t('footer.privacy_policy') %></a>
         <a href="#https://bookrhub.com/terms"><%= I18n.t('footer.terms_of_service') %></a>
+        <a href="#" class="termly-display-preferences">Consent Preferences</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 BookrHub. All rights reserved.</p>
+      <p>&copy; <%= Time.now.year %> BookrHub. All rights reserved.</p>
       <span><%= I18n.t('footer.powered_by') %> <a href="https://plumdigital.co.nz" target="_blank" class="copyright-link">Plum Digital</a></span>
     </div>
   </footer>
-
+  <script src="https://app.termly.io/resource-blocker/6a469ab6-c037-4332-9386-5953a0166dc7?autoBlock=on"></script>
   <script>
     // Tab functionality for screenshots
     document.querySelectorAll('.tab-button').forEach(button => {
