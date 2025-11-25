@@ -42,6 +42,9 @@ module StripeService
   end
 
   def self.default_price_for_product(product_id)
+    puts "\n\n\n\n\n"
+    puts "Stripe::Product.retrieve(product_id)"
+    puts "\n\n\n\n\n"
     default_price = Stripe::Product.retrieve(product_id)&.default_price
     Stripe::Price.retrieve(default_price)
   end
