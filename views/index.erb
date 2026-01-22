@@ -8,7 +8,7 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-5GLSJ749');</script>
   <!-- End Google Tag Manager -->
-  <link rel="stylesheet" href="/css/styles.css?v=1.0.0">
+  <link rel="stylesheet" href="/css/styles.css?v=2.0.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
@@ -20,17 +20,9 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <%
     base_url = I18n.t('site.canonical_url')
-    # For SEO: Canonical URL should be locale-specific and stable
-    # Use URL params if present, otherwise use session values
     canonical_locale = params[:locale] || session[:locale]
     canonical_currency = params[:currency] || session[:currency]
-
-    # SEO best practice: Canonical should include locale (for multi-language SEO)
-    # Currency is included since it affects pricing content, but locale is primary
     canonical_url = "#{base_url}/?locale=#{canonical_locale}&currency=#{canonical_currency}"
-
-    # Alternative hreflang tags for better multi-language SEO (optional enhancement)
-    # This helps search engines understand language/region variations
   %>
   <link rel="canonical" href="<%= canonical_url %>">
 
@@ -44,7 +36,6 @@
   %>
   <link rel="alternate" hreflang="<%= locale_str %>" href="<%= base_url %>/?locale=<%= locale_str %>&currency=<%= currency %>">
   <% end %>
-  <!-- Default/fallback hreflang -->
   <link rel="alternate" hreflang="x-default" href="<%= base_url %>/?locale=en&currency=USD">
 
   <!-- Open Graph / Facebook -->
@@ -68,7 +59,7 @@
   <!-- Additional tags -->
   <meta property="og:site_name" content="BookrHub">
   <meta property="og:locale" content="<%= session[:locale] %>">
-  <meta name="theme-color" content="#2563eb">
+  <meta name="theme-color" content="#4f46e5">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -125,22 +116,26 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-L48GXS7KT4');
   </script>
+
   <!-- Navigation -->
   <nav>
     <div class="nav-container">
-    <a href="https://bookrhub.com" class="logo">
-      <img src="/images/isologo.svg" alt="BookrHub Logo" class="isologo-image" width="160">
-    </a>
+      <a href="https://bookrhub.com" class="logo">
+        <img src="/images/isologo.svg" alt="BookrHub" class="isologo-image" width="140">
+      </a>
       <div class="nav-links">
         <a href="#features"><%= I18n.t('navigation.features') %></a>
         <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
-        <a href="#examples"><%= I18n.t('navigation.examples') %></a>
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
         <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
       </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
@@ -148,19 +143,61 @@
   <section class="hero">
     <div class="hero-content">
       <div class="hero-text">
-        <h1><%= I18n.t('site.tagline') %></h1>
+        <div class="social-proof-badge">
+          <div class="proof-avatars">
+            <span>M</span>
+            <span>S</span>
+            <span>A</span>
+            <span>+</span>
+          </div>
+          <span class="proof-text"><strong>2,500+</strong> businesses trust BookrHub</span>
+        </div>
+        <h1>
+          Stop chasing clients.<br>
+          <span class="gradient-text">Start booking them.</span>
+        </h1>
         <p><%= I18n.t('site.subtitle') %></p>
         <div class="hero-buttons">
-          <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="btn-primary"><%= I18n.t('buttons.start_free_trial') %></a>
-          <a href="https://bookrhub.com/gifs/barber-landing.gif" class="btn-secondary"><%= I18n.t('buttons.watch_demo') %></a>
+          <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="btn-primary">
+            <%= I18n.t('buttons.start_free_trial') %>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          </a>
+          <a href="#screenshots" class="btn-secondary">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <%= I18n.t('buttons.watch_demo') %>
+          </a>
+        </div>
+        <div class="trust-badges">
+          <span class="trust-badge">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            No credit card required
+          </span>
+          <span class="trust-badge">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Setup in 5 minutes
+          </span>
         </div>
       </div>
       <div class="hero-image">
         <div class="iphone-mockup">
           <div class="iphone-screen">
-            <img src="/gifs/iphone.gif" alt="Landing Page" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="/gifs/iphone.gif" alt="BookrHub Demo" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos Section -->
+  <section class="logos-section">
+    <div class="logos-container">
+      <p class="logos-label">Trusted by businesses worldwide</p>
+      <div class="logos-grid">
+        <span class="logo-item">Barber Studios</span>
+        <span class="logo-item">Wellness Co.</span>
+        <span class="logo-item">Nail Art Pro</span>
+        <span class="logo-item">Fitness Hub</span>
+        <span class="logo-item">Beauty Lane</span>
       </div>
     </div>
   </section>
@@ -169,20 +206,29 @@
   <section id="features" class="features">
     <div class="features-container">
       <div class="section-header">
+        <span class="section-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          Features
+        </span>
         <h2><%= I18n.t('features.title') %></h2>
         <p><%= I18n.t('features.subtitle') %></p>
       </div>
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
+        <div class="feature-card featured animate-on-scroll">
+          <div class="feature-content">
+            <div class="feature-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3><%= I18n.t('features.easy_scheduling.title') %></h3>
+            <p><%= I18n.t('features.easy_scheduling.description') %></p>
           </div>
-          <h3><%= I18n.t('features.easy_scheduling.title') %></h3>
-          <p><%= I18n.t('features.easy_scheduling.description') %></p>
+          <div class="feature-visual">
+            <img src="/gifs/my-calendar.gif" alt="Calendar Management">
+          </div>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-on-scroll stagger-1">
           <div class="feature-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
@@ -191,7 +237,7 @@
           <h3><%= I18n.t('features.team_management.title') %></h3>
           <p><%= I18n.t('features.team_management.description') %></p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-on-scroll stagger-2">
           <div class="feature-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -200,7 +246,7 @@
           <h3><%= I18n.t('features.smart_reminders.title') %></h3>
           <p><%= I18n.t('features.smart_reminders.description') %></p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-on-scroll stagger-3">
           <div class="feature-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
@@ -209,7 +255,7 @@
           <h3><%= I18n.t('features.clear_analytics.title') %></h3>
           <p><%= I18n.t('features.clear_analytics.description') %></p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-on-scroll stagger-4">
           <div class="feature-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
@@ -218,7 +264,7 @@
           <h3><%= I18n.t('features.mobile_ready.title') %></h3>
           <p><%= I18n.t('features.mobile_ready.description') %></p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-on-scroll stagger-5">
           <div class="feature-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
@@ -235,27 +281,31 @@
   <section id="screenshots" class="screenshots">
     <div class="screenshots-container">
       <div class="section-header">
+        <span class="section-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          How It Works
+        </span>
         <h2><%= I18n.t('how_it_works.title') %></h2>
         <p><%= I18n.t('how_it_works.subtitle') %></p>
       </div>
       <div class="screenshot-tabs">
-        <button class="tab-button active"><%= I18n.t('how_it_works.admin_dashboard') %></button>
-        <button class="tab-button"><%= I18n.t('how_it_works.customer_experience') %></button>
+        <button class="tab-button active" data-tab="admin"><%= I18n.t('how_it_works.admin_dashboard') %></button>
+        <button class="tab-button" data-tab="customer"><%= I18n.t('how_it_works.customer_experience') %></button>
       </div>
-      <div class="screenshot-grid">
-        <div class="screenshot-item">
+      <div class="screenshot-grid" id="screenshot-grid">
+        <div class="screenshot-item animate-on-scroll">
           <div class="screenshot-placeholder">
             <img src="/gifs/my-calendar.gif" alt="Calendar Management" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div class="screenshot-text"><%= I18n.t('how_it_works.calendar_management') %></div>
         </div>
-        <div class="screenshot-item">
+        <div class="screenshot-item animate-on-scroll stagger-1">
           <div class="screenshot-placeholder">
             <img src="/gifs/my-overview.gif" alt="Booking Overview" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div class="screenshot-text"><%= I18n.t('how_it_works.booking_overview') %></div>
         </div>
-        <div class="screenshot-item">
+        <div class="screenshot-item animate-on-scroll stagger-2">
           <div class="screenshot-placeholder">
             <img src="/gifs/my-configuration.gif" alt="Service Configuration" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
@@ -265,10 +315,14 @@
     </div>
   </section>
 
-  <!-- Landing Page Examples -->
+  <!-- Examples Section -->
   <section id="examples" class="examples">
     <div class="examples-container">
       <div class="section-header">
+        <span class="section-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+          Your Brand
+        </span>
         <h2><%= I18n.t('business_pages.title') %></h2>
         <p><%= I18n.t('business_pages.subtitle') %></p>
       </div>
@@ -276,11 +330,23 @@
         <div class="example-text">
           <h3><%= I18n.t('business_pages.customized_brand.title') %></h3>
           <p><%= I18n.t('business_pages.customized_brand.description') %></p>
-          <ul style="list-style: none; padding: 0;">
-            <li style="padding: 0.5rem 0; color: #4b5563;">✓ Custom colors and branding</li>
-            <li style="padding: 0.5rem 0; color: #4b5563;">✓ Your own domain</li>
-            <li style="padding: 0.5rem 0; color: #4b5563;">✓ Mobile optimized</li>
-            <li style="padding: 0.5rem 0; color: #4b5563;">✓ SEO friendly</li>
+          <ul class="example-features">
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Custom colors and branding
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Your own domain
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Mobile optimized
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              SEO friendly
+            </li>
           </ul>
         </div>
         <div class="example-preview">
@@ -292,15 +358,86 @@
     </div>
   </section>
 
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="testimonials-container">
+      <div class="section-header">
+        <span class="section-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+          Testimonials
+        </span>
+        <h2>Loved by businesses everywhere</h2>
+        <p>See what our customers have to say about BookrHub</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card animate-on-scroll">
+          <div class="testimonial-rating">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          </div>
+          <p class="testimonial-text">"BookrHub transformed how we manage appointments. Our no-shows dropped by 60% thanks to the automated reminders. The setup was incredibly easy."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #ec4899, #f97316);">M</div>
+            <div class="author-info">
+              <h4>Maria Garcia</h4>
+              <p>Owner, Beauty Studio</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card animate-on-scroll stagger-1">
+          <div class="testimonial-rating">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          </div>
+          <p class="testimonial-text">"Finally a booking system that doesn't feel like enterprise software. Clean, modern, and my clients love how easy it is to book. Worth every penny."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #06d6a0, #3b82f6);">J</div>
+            <div class="author-info">
+              <h4>James Wilson</h4>
+              <p>Barber Shop Owner</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card animate-on-scroll stagger-2">
+          <div class="testimonial-rating">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          </div>
+          <p class="testimonial-text">"We switched from another platform and haven't looked back. The free tier is genuinely useful, and the paid plans are incredibly affordable for small teams."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">S</div>
+            <div class="author-info">
+              <h4>Sofia Chen</h4>
+              <p>Wellness Consultant</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing Section -->
   <section id="pricing" class="pricing">
     <div class="pricing-container">
       <div class="section-header">
+        <span class="section-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Pricing
+        </span>
         <h2><%= I18n.t('pricing.title') %></h2>
         <p><%= I18n.t('pricing.subtitle') %></p>
       </div>
       <div class="pricing-cards">
-        <div class="pricing-card">
+        <div class="pricing-card animate-on-scroll">
           <div class="plan-name"><%= I18n.t('pricing.independent') %></div>
           <div class="plan-price"><%= I18n.t('pricing.free') %></div>
           <p class="plan-period"><%= I18n.t('pricing.for_ever') %></p>
@@ -309,9 +446,9 @@
               <li><%= feature %></li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=independent&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.get_started') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=independent&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('cta.get_started') %></a>
         </div>
-        <div class="pricing-card featured">
+        <div class="pricing-card featured animate-on-scroll stagger-1">
           <span class="featured-badge"><%= I18n.t('pricing.most_popular') %></span>
           <div class="plan-name"><%= I18n.t('pricing.team') %></div>
           <div class="plan-price"><%= @prices['team'][:formatted] %></div>
@@ -321,9 +458,9 @@
               <li><%= feature %></li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.get_started') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('cta.get_started') %></a>
         </div>
-        <div class="pricing-card">
+        <div class="pricing-card animate-on-scroll stagger-2">
           <div class="plan-name"><%= I18n.t('pricing.business') %></div>
           <div class="plan-price"><%= @prices['business'][:formatted] %></div>
           <p class="plan-period"><%= I18n.t('pricing.per_month') %></p>
@@ -332,7 +469,68 @@
               <li><%= feature %></li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=business&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.first_month_on_us') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=business&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('cta.first_month_on_us') %></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="faq-container">
+      <div class="section-header">
+        <span class="section-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          FAQ
+        </span>
+        <h2>Frequently asked questions</h2>
+        <p>Everything you need to know about BookrHub</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            How does the free plan work?
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Our free Independent plan is completely free forever - no credit card required. You get up to 150 bookings per month, email reminders, and a booking page on our subdomain. It's perfect for solo professionals getting started.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I cancel my subscription anytime?
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! You can cancel your subscription at any time with no questions asked. There are no long-term contracts or cancellation fees. You'll continue to have access until the end of your billing period.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you offer custom solutions for larger teams?
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely! Our Business plan supports unlimited staff members. For enterprises with specific needs, reach out to us at admin@bookrhub.com and we'll create a custom solution for you.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What payment methods do you accept?
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p>We accept all major credit cards (Visa, Mastercard, American Express) through our secure payment processor, Stripe. For annual plans, we also offer bank transfers in select regions.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How long does it take to set up?
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Most businesses are up and running in under 5 minutes! Just create an account, add your services and availability, and share your booking link. It's that simple.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -343,33 +541,57 @@
     <div class="cta-content">
       <h2><%= I18n.t('cta.ready_to_simplify') %></h2>
       <p><%= I18n.t('cta.join_thousands') %></p>
-      <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="btn-primary" style="font-size: 1.25rem; padding: 1.25rem 2.5rem;"><%= I18n.t('cta.start_for_free') %></a>
-      <p style="margin-top: 1rem; font-size: 0.875rem; color: #9ca3af;"><%= I18n.t('cta.no_credit_card') %></p>
+      <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="btn-primary" style="font-size: 1.125rem; padding: 1.125rem 2.5rem;">
+        <%= I18n.t('cta.start_for_free') %>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+      </a>
+      <div class="cta-note">
+        <span>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          No credit card required
+        </span>
+        <span>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          Setup in minutes
+        </span>
+        <span>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          Cancel anytime
+        </span>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="footer-content">
+      <div class="footer-brand">
+        <a href="https://bookrhub.com" class="logo">
+          <img src="/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120">
+        </a>
+        <p>The simplest way to manage bookings and grow your business. Trusted by thousands of professionals worldwide.</p>
+      </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.product') %></h3>
         <a href="#features"><%= I18n.t('navigation.features') %></a>
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
+        <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
       </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.company') %></h3>
-        <a href="#https://bookrhub.com/about"><%= I18n.t('footer.about_us') %></a>
-        <a href="#https://blog.bookrhub.com"><%= I18n.t('footer.blog') %></a>
-        <a href="#https://bookrhub.com/contact"><%= I18n.t('footer.contact_us') %></a>
+        <a href="https://bookrhub.com/about"><%= I18n.t('footer.about_us') %></a>
+        <a href="https://blog.bookrhub.com"><%= I18n.t('footer.blog') %></a>
+        <a href="https://bookrhub.com/contact"><%= I18n.t('footer.contact_us') %></a>
       </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.support') %></h3>
-        <a href="#https://support.bookrhub.com"><%= I18n.t('footer.help_center') %></a>
+        <a href="https://support.bookrhub.com"><%= I18n.t('footer.help_center') %></a>
+        <a href="mailto:admin@bookrhub.com">admin@bookrhub.com</a>
       </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.legal') %></h3>
         <a href="https://bookrhub.com/privacy"><%= I18n.t('footer.privacy_policy') %></a>
-        <a href="#https://bookrhub.com/terms"><%= I18n.t('footer.terms_of_service') %></a>
+        <a href="https://bookrhub.com/terms"><%= I18n.t('footer.terms_of_service') %></a>
         <a href="#" class="termly-display-preferences">Consent Preferences</a>
       </div>
     </div>
@@ -378,70 +600,90 @@
       <span><%= I18n.t('footer.powered_by') %> <a href="https://plumdigital.co.nz" target="_blank" class="copyright-link">Plum Digital</a></span>
     </div>
   </footer>
+
+  <!-- Scripts -->
   <script src="https://app.termly.io/resource-blocker/6a469ab6-c037-4332-9386-5953a0166dc7?autoBlock=on"></script>
   <script>
     // Tab functionality for screenshots
-    document.querySelectorAll('.tab-button').forEach(button => {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const screenshotGrid = document.getElementById('screenshot-grid');
+
+    const adminContent = `
+      <div class="screenshot-item animate-on-scroll visible">
+        <div class="screenshot-placeholder">
+          <img src="/gifs/my-calendar.gif" alt="Calendar Management" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="screenshot-text"><%= I18n.t('how_it_works.calendar_management') %></div>
+      </div>
+      <div class="screenshot-item animate-on-scroll visible stagger-1">
+        <div class="screenshot-placeholder">
+          <img src="/gifs/my-overview.gif" alt="Booking Overview" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="screenshot-text"><%= I18n.t('how_it_works.booking_overview') %></div>
+      </div>
+      <div class="screenshot-item animate-on-scroll visible stagger-2">
+        <div class="screenshot-placeholder">
+          <img src="/gifs/my-configuration.gif" alt="Service Configuration" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="screenshot-text"><%= I18n.t('how_it_works.company_settings') %></div>
+      </div>
+    `;
+
+    const customerContent = `
+      <div class="screenshot-item animate-on-scroll visible">
+        <div class="screenshot-placeholder">
+          <img src="/gifs/barber-landing.gif" alt="Landing Page" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="screenshot-text"><%= I18n.t('customer_experience.landing_page') %></div>
+      </div>
+      <div class="screenshot-item animate-on-scroll visible stagger-1">
+        <div class="screenshot-placeholder">
+          <img src="/gifs/barber-book.gif" alt="Date & Time Selection" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="screenshot-text"><%= I18n.t('customer_experience.date_time_selection') %></div>
+      </div>
+      <div class="screenshot-item animate-on-scroll visible stagger-2">
+        <div class="screenshot-placeholder">
+          <img src="/gifs/barber-confirmation.gif" alt="Booking Confirmation" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="screenshot-text"><%= I18n.t('customer_experience.booking_confirmation') %></div>
+      </div>
+    `;
+
+    tabButtons.forEach(button => {
       button.addEventListener('click', function() {
-        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+        tabButtons.forEach(b => b.classList.remove('active'));
         this.classList.add('active');
 
-        const screenshotGrid = document.querySelector('.screenshot-grid');
-        const tabName = this.textContent;
+        const tab = this.dataset.tab;
+        screenshotGrid.innerHTML = tab === 'admin' ? adminContent : customerContent;
+      });
+    });
 
-        if (tabName === 'Admin Dashboard') {
-          screenshotGrid.innerHTML = `
-            <div class="screenshot-item">
-              <div class="screenshot-placeholder">
-                <img src="/gifs/my-calendar.gif" alt="Calendar Management" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="screenshot-text"><%= I18n.t('how_it_works.calendar_management') %></div>
-            </div>
-            <div class="screenshot-item">
-              <div class="screenshot-placeholder">
-                <img src="/gifs/my-overview.gif" alt="Booking Overview" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="screenshot-text"><%= I18n.t('how_it_works.booking_overview') %></div>
-            </div>
-            <div class="screenshot-item">
-              <div class="screenshot-placeholder">
-                <img src="/gifs/my-configuration.gif" alt="Service Configuration" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="screenshot-text"><%= I18n.t('how_it_works.company_settings') %></div>
-            </div>
-          `;
-        } else if (tabName === 'Customer Experience') {
-          screenshotGrid.innerHTML = `
-            <div class="screenshot-item">
-              <div class="screenshot-placeholder">
-                <img src="/gifs/barber-landing.gif" alt="Landing Page" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="screenshot-text"><%= I18n.t('customer_experience.landing_page') %></div>
-            </div>
-            <div class="screenshot-item">
-              <div class="screenshot-placeholder">
-                <img src="/gifs/barber-book.gif" alt="Date & Time Selection" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="screenshot-text"><%= I18n.t('customer_experience.date_time_selection') %></div>
-            </div>
-            <div class="screenshot-item">
-              <div class="screenshot-placeholder">
-                <img src="/gifs/barber-confirmation.gif" alt="Booking Confirmation" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="screenshot-text"><%= I18n.t('customer_experience.booking_confirmation') %></div>
-            </div>
-          `;
-        } else {
-          screenshotGrid.innerHTML = ``;
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', function() {
+        const item = this.parentElement;
+        const isActive = item.classList.contains('active');
+
+        // Close all items
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          item.classList.add('active');
         }
       });
     });
 
-    // Smooth scroll
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
           target.scrollIntoView({
             behavior: 'smooth',
@@ -450,6 +692,34 @@
         }
       });
     });
+
+    // Scroll animations with Intersection Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Mobile menu toggle
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileToggle && navLinks) {
+      mobileToggle.addEventListener('click', () => {
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+      });
+    }
   </script>
 </body>
 </html>
