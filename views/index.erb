@@ -8,7 +8,7 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-5GLSJ749');</script>
   <!-- End Google Tag Manager -->
-  <link rel="stylesheet" href="/css/styles.css?v=2.0.0">
+  <link rel="stylesheet" href="/css/styles.css?v=2.1.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
@@ -131,13 +131,23 @@
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
         <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
       </div>
-      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-menu-toggle">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-links">
+      <a href="#features"><%= I18n.t('navigation.features') %></a>
+      <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
+      <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
+      <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -712,12 +722,23 @@
     });
 
     // Mobile menu toggle
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-    if (mobileToggle && navLinks) {
+    if (mobileToggle && mobileMenu) {
       mobileToggle.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        mobileToggle.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      // Close mobile menu when clicking a link
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileToggle.classList.remove('active');
+          mobileMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        });
       });
     }
   </script>
