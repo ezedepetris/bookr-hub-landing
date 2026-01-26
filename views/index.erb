@@ -160,11 +160,11 @@
             <span>A</span>
             <span>+</span>
           </div>
-          <span class="proof-text"><strong>2,500+</strong> businesses trust BookrHub</span>
+          <span class="proof-text"><strong>700+</strong> <%= I18n.t('hero.social_proof') %></span>
         </div>
         <h1>
-          Stop chasing clients.<br>
-          <span class="gradient-text">Start booking them.</span>
+          <%= I18n.t('hero.headline_part1') %><br>
+          <span class="gradient-text"><%= I18n.t('hero.headline_part2') %></span>
         </h1>
         <p><%= I18n.t('site.subtitle') %></p>
         <div class="hero-buttons">
@@ -180,11 +180,11 @@
         <div class="trust-badges">
           <span class="trust-badge">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            No credit card required
+            <%= I18n.t('hero.no_credit_card') %>
           </span>
           <span class="trust-badge">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Setup in 5 minutes
+            <%= I18n.t('hero.setup_minutes') %>
           </span>
         </div>
       </div>
@@ -201,7 +201,7 @@
   <!-- Logos Section -->
   <section class="logos-section">
     <div class="logos-container">
-      <p class="logos-label">Trusted by businesses worldwide</p>
+      <p class="logos-label"><%= I18n.t('logos.trusted_by') %></p>
       <div class="logos-grid">
         <span class="logo-item">Barber Studios</span>
         <span class="logo-item">Wellness Co.</span>
@@ -218,7 +218,7 @@
       <div class="section-header">
         <span class="section-label">
           <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-          Features
+          <%= I18n.t('section_labels.features') %>
         </span>
         <h2><%= I18n.t('features.title') %></h2>
         <p><%= I18n.t('features.subtitle') %></p>
@@ -293,7 +293,7 @@
       <div class="section-header">
         <span class="section-label">
           <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-          How It Works
+          <%= I18n.t('section_labels.how_it_works') %>
         </span>
         <h2><%= I18n.t('how_it_works.title') %></h2>
         <p><%= I18n.t('how_it_works.subtitle') %></p>
@@ -331,7 +331,7 @@
       <div class="section-header">
         <span class="section-label">
           <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
-          Your Brand
+          <%= I18n.t('section_labels.your_brand') %>
         </span>
         <h2><%= I18n.t('business_pages.title') %></h2>
         <p><%= I18n.t('business_pages.subtitle') %></p>
@@ -343,19 +343,19 @@
           <ul class="example-features">
             <li>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              Custom colors and branding
+              <%= I18n.t('business_pages.features.custom_colors') %>
             </li>
             <li>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              Your own domain
+              <%= I18n.t('business_pages.features.own_domain') %>
             </li>
             <li>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              Mobile optimized
+              <%= I18n.t('business_pages.features.mobile_optimized') %>
             </li>
             <li>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              SEO friendly
+              <%= I18n.t('business_pages.features.seo_friendly') %>
             </li>
           </ul>
         </div>
@@ -374,10 +374,10 @@
       <div class="section-header">
         <span class="section-label">
           <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-          Testimonials
+          <%= I18n.t('section_labels.testimonials') %>
         </span>
-        <h2>Loved by businesses everywhere</h2>
-        <p>See what our customers have to say about BookrHub</p>
+        <h2><%= I18n.t('testimonials.title') %></h2>
+        <p><%= I18n.t('testimonials.subtitle') %></p>
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card animate-on-scroll">
@@ -388,12 +388,12 @@
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
           </div>
-          <p class="testimonial-text">"BookrHub transformed how we manage appointments. Our no-shows dropped by 60% thanks to the automated reminders. The setup was incredibly easy."</p>
+          <p class="testimonial-text">"<%= I18n.t('testimonials.testimonial1.quote') %>"</p>
           <div class="testimonial-author">
             <div class="author-avatar" style="background: linear-gradient(135deg, #ec4899, #f97316);">M</div>
             <div class="author-info">
-              <h4>Maria Garcia</h4>
-              <p>Owner, Beauty Studio</p>
+              <h4><%= I18n.t('testimonials.testimonial1.name') %></h4>
+              <p><%= I18n.t('testimonials.testimonial1.role') %></p>
             </div>
           </div>
         </div>
@@ -405,12 +405,12 @@
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
           </div>
-          <p class="testimonial-text">"Finally a booking system that doesn't feel like enterprise software. Clean, modern, and my clients love how easy it is to book. Worth every penny."</p>
+          <p class="testimonial-text">"<%= I18n.t('testimonials.testimonial2.quote') %>"</p>
           <div class="testimonial-author">
             <div class="author-avatar" style="background: linear-gradient(135deg, #06d6a0, #3b82f6);">J</div>
             <div class="author-info">
-              <h4>James Wilson</h4>
-              <p>Barber Shop Owner</p>
+              <h4><%= I18n.t('testimonials.testimonial2.name') %></h4>
+              <p><%= I18n.t('testimonials.testimonial2.role') %></p>
             </div>
           </div>
         </div>
@@ -422,12 +422,12 @@
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
           </div>
-          <p class="testimonial-text">"We switched from another platform and haven't looked back. The free tier is genuinely useful, and the paid plans are incredibly affordable for small teams."</p>
+          <p class="testimonial-text">"<%= I18n.t('testimonials.testimonial3.quote') %>"</p>
           <div class="testimonial-author">
             <div class="author-avatar" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">S</div>
             <div class="author-info">
-              <h4>Sofia Chen</h4>
-              <p>Wellness Consultant</p>
+              <h4><%= I18n.t('testimonials.testimonial3.name') %></h4>
+              <p><%= I18n.t('testimonials.testimonial3.role') %></p>
             </div>
           </div>
         </div>
@@ -441,7 +441,7 @@
       <div class="section-header">
         <span class="section-label">
           <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          Pricing
+          <%= I18n.t('section_labels.pricing') %>
         </span>
         <h2><%= I18n.t('pricing.title') %></h2>
         <p><%= I18n.t('pricing.subtitle') %></p>
@@ -491,55 +491,55 @@
       <div class="section-header">
         <span class="section-label">
           <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          FAQ
+          <%= I18n.t('section_labels.faq') %>
         </span>
-        <h2>Frequently asked questions</h2>
-        <p>Everything you need to know about BookrHub</p>
+        <h2><%= I18n.t('faq.title') %></h2>
+        <p><%= I18n.t('faq.subtitle') %></p>
       </div>
       <div class="faq-list">
         <div class="faq-item">
           <button class="faq-question">
-            How does the free plan work?
+            <%= I18n.t('faq.question1') %>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
           </button>
           <div class="faq-answer">
-            <p>Our free Independent plan is completely free forever - no credit card required. You get up to 150 bookings per month, email reminders, and a booking page on our subdomain. It's perfect for solo professionals getting started.</p>
+            <p><%= I18n.t('faq.answer1') %></p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            Can I cancel my subscription anytime?
+            <%= I18n.t('faq.question2') %>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
           </button>
           <div class="faq-answer">
-            <p>Yes! You can cancel your subscription at any time with no questions asked. There are no long-term contracts or cancellation fees. You'll continue to have access until the end of your billing period.</p>
+            <p><%= I18n.t('faq.answer2') %></p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            Do you offer custom solutions for larger teams?
+            <%= I18n.t('faq.question3') %>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
           </button>
           <div class="faq-answer">
-            <p>Absolutely! Our Business plan supports unlimited staff members. For enterprises with specific needs, reach out to us at admin@bookrhub.com and we'll create a custom solution for you.</p>
+            <p><%= I18n.t('faq.answer3') %></p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            What payment methods do you accept?
+            <%= I18n.t('faq.question4') %>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
           </button>
           <div class="faq-answer">
-            <p>We accept all major credit cards (Visa, Mastercard, American Express) through our secure payment processor, Stripe. For annual plans, we also offer bank transfers in select regions.</p>
+            <p><%= I18n.t('faq.answer4') %></p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            How long does it take to set up?
+            <%= I18n.t('faq.question5') %>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
           </button>
           <div class="faq-answer">
-            <p>Most businesses are up and running in under 5 minutes! Just create an account, add your services and availability, and share your booking link. It's that simple.</p>
+            <p><%= I18n.t('faq.answer5') %></p>
           </div>
         </div>
       </div>
@@ -558,15 +558,15 @@
       <div class="cta-note">
         <span>
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-          No credit card required
+          <%= I18n.t('cta.no_credit_card_short') %>
         </span>
         <span>
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-          Setup in minutes
+          <%= I18n.t('cta.setup_in_minutes') %>
         </span>
         <span>
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-          Cancel anytime
+          <%= I18n.t('cta.cancel_anytime') %>
         </span>
       </div>
     </div>
@@ -579,7 +579,7 @@
         <a href="https://bookrhub.com" class="logo">
           <img src="/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120">
         </a>
-        <p>The simplest way to manage bookings and grow your business. Trusted by thousands of professionals worldwide.</p>
+        <p><%= I18n.t('footer.description') %></p>
       </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.product') %></h3>
@@ -602,7 +602,7 @@
         <h3><%= I18n.t('footer.legal') %></h3>
         <a href="https://bookrhub.com/privacy"><%= I18n.t('footer.privacy_policy') %></a>
         <a href="https://bookrhub.com/terms"><%= I18n.t('footer.terms_of_service') %></a>
-        <a href="#" class="termly-display-preferences">Consent Preferences</a>
+        <a href="#" class="termly-display-preferences"><%= I18n.t('footer.consent_preferences') %></a>
       </div>
     </div>
     <div class="footer-bottom">
