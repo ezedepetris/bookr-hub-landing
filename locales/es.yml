@@ -4,6 +4,9 @@ es:
     description: "Todo lo que necesitas para gestionar citas, hacer crecer tu negocio y deleitar a tus clientes. Comienza gratis hoy."
     tagline: "Gestión Simple de Reservas para Empresas Modernas"
     subtitle: "Todo lo que necesitas para gestionar citas, hacer crecer tu negocio y deleitar a tus clientes."
+    keywords: "software de reservas, programación de citas, sistema de reservas en línea, gestión de reservas, reserva de citas, software de programación empresarial, fresha, setmore, turnos, reservas, citas, agendamiento, agenda, calendario, horarios, reservas, citas, agendamiento, agenda, calendario, horarios"
+    author: "BookrHub"
+    canonical_url: "https://bookrhub.com"
 
   navigation:
     features: "Características"
@@ -15,6 +18,24 @@ es:
   buttons:
     start_free_trial: "Comenzar Prueba Gratuita"
     watch_demo: "Ver Demo"
+
+  hero:
+    social_proof: "empresas confían en BookrHub"
+    headline_part1: "Deja de perseguir clientes."
+    headline_part2: "Comienza a reservarlos."
+    no_credit_card: "No se requiere tarjeta de crédito"
+    setup_minutes: "Configuración en 5 minutos"
+
+  logos:
+    trusted_by: "Confiado por empresas en todo el mundo"
+
+  section_labels:
+    features: "Características"
+    how_it_works: "Cómo Funciona"
+    your_brand: "Tu Marca"
+    testimonials: "Testimonios"
+    pricing: "Precios"
+    faq: "Preguntas Frecuentes"
 
   features:
     title: "Todo Lo Que Necesitas"
@@ -53,6 +74,34 @@ es:
     booking_overview: "Resumen de Reservas"
     company_settings: "Configuración de Empresa"
 
+  business_pages:
+    title: "Hermosas Páginas de Reserva para tu Negocio"
+    subtitle: "Páginas de destino profesionales que convierten visitantes en clientes"
+    customized_brand:
+      title: "Personalizado para tu Marca"
+      description: "Cada negocio obtiene una página de reserva profesional que coincide con su marca y estilo. Desde barberías hasta consultores, te tenemos cubierto."
+    features:
+      custom_colors: "Colores y marca personalizados"
+      own_domain: "Tu propio dominio"
+      mobile_optimized: "Optimizado para móvil"
+      seo_friendly: "Amigable para SEO"
+
+  testimonials:
+    title: "Amado por empresas en todas partes"
+    subtitle: "Ve lo que nuestros clientes tienen que decir sobre BookrHub"
+    testimonial1:
+      quote: "BookrHub transformó cómo gestionamos las citas. Nuestras inasistencias se redujeron en un 60% gracias a los recordatorios automatizados. La configuración fue increíblemente fácil."
+      name: "María García"
+      role: "Propietaria, Estudio de Belleza"
+    testimonial2:
+      quote: "Finalmente un sistema de reservas que no se siente como software empresarial. Limpio, moderno, y a mis clientes les encanta lo fácil que es reservar. Vale cada centavo."
+      name: "James Wilson"
+      role: "Propietario de Barbería"
+    testimonial3:
+      quote: "Cambiamos de otra plataforma y no hemos mirado atrás. El nivel gratuito es genuinamente útil, y los planes de pago son increíblemente asequibles para equipos pequeños."
+      name: "Sofia Chen"
+      role: "Consultora de Bienestar"
+
   pricing:
     title: "Precios"
     subtitle: "Elige el plan que sea adecuado para ti"
@@ -63,13 +112,6 @@ es:
     per_month: "por mes"
     for_ever: "para siempre"
     most_popular: "Más Popular"
-
-  business_pages:
-    title: "Hermosas Páginas de Reserva para tu Negocio"
-    subtitle: "Páginas de destino profesionales que convierten visitantes en clientes"
-    customized_brand:
-      title: "Personalizado para tu Marca"
-      description: "Cada negocio obtiene una página de reserva profesional que coincide con su marca y estilo. Desde barberías hasta consultores, te tenemos cubierto."
 
   plan_features:
     independent:
@@ -92,6 +134,20 @@ es:
       - "Soporte dedicado"
       - "Diseño de página de destino único"
 
+  faq:
+    title: "Preguntas frecuentes"
+    subtitle: "Todo lo que necesitas saber sobre BookrHub"
+    question1: "¿Cómo funciona el plan gratuito?"
+    answer1: "Nuestro plan Independent gratuito es completamente gratis para siempre - no se requiere tarjeta de crédito. Obtienes hasta 150 reservas por mes, recordatorios por email, y una página de reserva en nuestro subdominio. Es perfecto para profesionales independientes que están comenzando."
+    question2: "¿Puedo cancelar mi suscripción en cualquier momento?"
+    answer2: "¡Sí! Puedes cancelar tu suscripción en cualquier momento sin preguntas. No hay contratos a largo plazo ni tarifas de cancelación. Continuarás teniendo acceso hasta el final de tu período de facturación."
+    question3: "¿Ofrecen soluciones personalizadas para equipos más grandes?"
+    answer3: "¡Absolutamente! Nuestro plan Business admite miembros del personal ilimitados. Para empresas con necesidades específicas, contáctanos en admin@bookrhub.com y crearemos una solución personalizada para ti."
+    question4: "¿Qué métodos de pago aceptan?"
+    answer4: "Aceptamos todas las tarjetas de crédito principales (Visa, Mastercard, American Express) a través de nuestro procesador de pagos seguro, Stripe. Para planes anuales, también ofrecemos transferencias bancarias en regiones seleccionadas."
+    question5: "¿Cuánto tiempo toma configurarlo?"
+    answer5: "¡La mayoría de los negocios están funcionando en menos de 5 minutos! Solo crea una cuenta, agrega tus servicios y disponibilidad, y comparte tu enlace de reserva. Es así de simple."
+
   cta:
     get_started: "Comenzar"
     start_for_free: "Comenzar Gratis"
@@ -99,6 +155,14 @@ es:
     no_credit_card: "No se requiere tarjeta de crédito • Configuración en minutos"
     ready_to_simplify: "¿Listo para Simplificar tus Reservas?"
     join_thousands: "Únete a miles de negocios que ya usan BookrHub."
+    no_credit_card_short: "No se requiere tarjeta de crédito"
+    setup_in_minutes: "Configuración en minutos"
+    cancel_anytime: "Cancela en cualquier momento"
+
+  customer_experience:
+    landing_page: "Página de Destino"
+    date_time_selection: "Selección de Fecha y Hora"
+    booking_confirmation: "Confirmación de Reserva"
 
   footer:
     powered_by: "Desarrollado por"
@@ -112,8 +176,5 @@ es:
     help_center: "Centro de Ayuda"
     privacy_policy: "Política de Privacidad"
     terms_of_service: "Términos de Servicio"
-
-  customer_experience:
-    landing_page: "Página de Destino"
-    date_time_selection: "Selección de Fecha y Hora"
-    booking_confirmation: "Confirmación de Reserva"
+    description: "La forma más simple de gestionar reservas y hacer crecer tu negocio. Confiado por miles de profesionales en todo el mundo."
+    consent_preferences: "Preferencias de Consentimiento"

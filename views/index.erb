@@ -1,68 +1,213 @@
 <!DOCTYPE html>
 <html lang="<%= session[:locale] %>">
 <head>
-  <link rel="stylesheet" href="/css/styles.css?v=1.0.0">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5GLSJ749');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="/css/styles.css?v=2.1.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
   <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
   <title><%= I18n.t('site.title') %></title>
+  <meta name="description" content="<%= I18n.t('site.description') %>">
+  <meta name="keywords" content="<%= I18n.t('site.keywords') %>">
+  <meta name="author" content="<%= I18n.t('site.author') %>">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <%
+    base_url = I18n.t('site.canonical_url')
+    canonical_locale = params[:locale] || session[:locale]
+    canonical_currency = params[:currency] || session[:currency]
+    canonical_url = "#{base_url}/?locale=#{canonical_locale}&currency=#{canonical_currency}"
+  %>
+  <link rel="canonical" href="<%= canonical_url %>">
+
+  <!-- Hreflang tags for multi-language SEO -->
+  <%
+    available_locales = I18n.available_locales
+    locale_currency_map = @locale_currency_map || {}
+    available_locales.each do |locale|
+      locale_str = locale.to_s
+      currency = locale_currency_map[locale_str] || locale_currency_map[locale_str.split('-').first] || 'USD'
+  %>
+  <link rel="alternate" hreflang="<%= locale_str %>" href="<%= base_url %>/?locale=<%= locale_str %>&currency=<%= currency %>">
+  <% end %>
+  <link rel="alternate" hreflang="x-default" href="<%= base_url %>/?locale=en&currency=USD">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bookrhub.com/">
+  <meta property="og:url" content="<%= canonical_url %>">
   <meta property="og:title" content="<%= I18n.t('site.title') %>">
   <meta property="og:description" content="<%= I18n.t('site.description') %>">
   <meta property="og:image" content="https://bookrhub.com/images/og-preview.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="<%= I18n.t('site.title') %>">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://bookrhub.com/">
+  <meta property="twitter:url" content="<%= canonical_url %>">
   <meta property="twitter:title" content="<%= I18n.t('site.title') %>">
   <meta property="twitter:description" content="<%= I18n.t('site.description') %>">
   <meta property="twitter:image" content="https://bookrhub.com/images/og-preview.jpg">
+  <meta property="twitter:image:alt" content="<%= I18n.t('site.title') %>">
 
   <!-- Additional tags -->
   <meta property="og:site_name" content="BookrHub">
   <meta property="og:locale" content="<%= session[:locale] %>">
-  <meta name="theme-color" content="#2563eb">
+  <meta name="theme-color" content="#4f46e5">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  <%= JSON.generate({
+    "@context" => "https://schema.org",
+    "@type" => "SoftwareApplication",
+    "name" => "BookrHub",
+    "applicationCategory" => "BusinessApplication",
+    "operatingSystem" => "Web",
+    "offers" => {
+      "@type" => "Offer",
+      "price" => "0",
+      "priceCurrency" => session[:currency]
+    },
+    "aggregateRating" => {
+      "@type" => "AggregateRating",
+      "ratingValue" => "4.8",
+      "ratingCount" => "150"
+    },
+    "description" => I18n.t('site.description'),
+    "url" => canonical_url,
+    "screenshot" => "https://bookrhub.com/images/og-preview.jpg"
+  }) %>
+  </script>
+  <script type="application/ld+json">
+  <%= JSON.generate({
+    "@context" => "https://schema.org",
+    "@type" => "Organization",
+    "name" => "BookrHub",
+    "url" => canonical_url,
+    "logo" => "https://bookrhub.com/images/isologo.svg",
+    "description" => I18n.t('site.description'),
+    "sameAs" => [
+      "https://www.facebook.com/bookrhub",
+      "https://www.twitter.com/bookrhub",
+      "https://www.linkedin.com/company/bookrhub"
+    ],
+    "contactPoint" => {
+      "@type" => "ContactPoint",
+      "contactType" => "Customer Service",
+      "email" => "admin@bookrhub.com"
+    }
+  }) %>
+  </script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GLSJ749"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L48GXS7KT4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L48GXS7KT4');
+  </script>
+
   <!-- Navigation -->
   <nav>
     <div class="nav-container">
-    <a href="https://bookrhub.com" class="logo">
-      <img src="/images/isologo.svg" alt="BookrHub Logo" class="isologo-image" width="160">
-    </a>
+      <a href="https://bookrhub.com" class="logo">
+        <img src="/images/isologo.svg" alt="BookrHub" class="isologo-image" width="140">
+      </a>
       <div class="nav-links">
         <a href="#features"><%= I18n.t('navigation.features') %></a>
         <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
-        <a href="#examples"><%= I18n.t('navigation.examples') %></a>
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
         <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
       </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-links">
+      <a href="#features"><%= I18n.t('navigation.features') %></a>
+      <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
+      <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
+      <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <div class="hero-text">
-        <h1><%= I18n.t('site.tagline') %></h1>
+        <div class="social-proof-badge">
+          <div class="proof-avatars">
+            <span>M</span>
+            <span>S</span>
+            <span>A</span>
+            <span>+</span>
+          </div>
+          <span class="proof-text"><strong>700+</strong> <%= I18n.t('hero.social_proof') %></span>
+        </div>
+        <h1>
+          <%= I18n.t('hero.headline_part1') %><br>
+          <span class="gradient-text"><%= I18n.t('hero.headline_part2') %></span>
+        </h1>
         <p><%= I18n.t('site.subtitle') %></p>
         <div class="hero-buttons">
-          <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="btn-primary"><%= I18n.t('buttons.start_free_trial') %></a>
-          <a href="https://bookrhub.com/gifs/barber-landing.gif" class="btn-secondary"><%= I18n.t('buttons.watch_demo') %></a>
+          <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="btn-primary">
+            <%= I18n.t('buttons.start_free_trial') %>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          </a>
+          <a href="#screenshots" class="btn-secondary">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <%= I18n.t('buttons.watch_demo') %>
+          </a>
+        </div>
+        <div class="trust-badges">
+          <span class="trust-badge">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <%= I18n.t('hero.no_credit_card') %>
+          </span>
+          <span class="trust-badge">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <%= I18n.t('hero.setup_minutes') %>
+          </span>
         </div>
       </div>
       <div class="hero-image">
         <div class="iphone-mockup">
           <div class="iphone-screen">
-            <img src="/gifs/iphone.gif" alt="Landing Page" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="/gifs/iphone.gif" alt="BookrHub Demo" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos Section -->
+  <section class="logos-section">
+    <div class="logos-container">
+      <p class="logos-label"><%= I18n.t('logos.trusted_by') %></p>
+      <div class="logos-grid">
+        <span class="logo-item">Barber Studios</span>
+        <span class="logo-item">Wellness Co.</span>
+        <span class="logo-item">Nail Art Pro</span>
+        <span class="logo-item">Fitness Hub</span>
+        <span class="logo-item">Beauty Lane</span>
       </div>
     </div>
   </section>
@@ -71,20 +216,29 @@
   <section id="features" class="features">
     <div class="features-container">
       <div class="section-header">
+        <span class="section-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          <%= I18n.t('section_labels.features') %>
+        </span>
         <h2><%= I18n.t('features.title') %></h2>
         <p><%= I18n.t('features.subtitle') %></p>
       </div>
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
+        <div class="feature-card featured animate-on-scroll">
+          <div class="feature-content">
+            <div class="feature-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3><%= I18n.t('features.easy_scheduling.title') %></h3>
+            <p><%= I18n.t('features.easy_scheduling.description') %></p>
           </div>
-          <h3><%= I18n.t('features.easy_scheduling.title') %></h3>
-          <p><%= I18n.t('features.easy_scheduling.description') %></p>
+          <div class="feature-visual">
+            <img src="/gifs/my-calendar.gif" alt="Calendar Management">
+          </div>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-on-scroll stagger-1">
           <div class="feature-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
@@ -93,7 +247,7 @@
           <h3><%= I18n.t('features.team_management.title') %></h3>
           <p><%= I18n.t('features.team_management.description') %></p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-on-scroll stagger-2">
           <div class="feature-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -102,7 +256,7 @@
           <h3><%= I18n.t('features.smart_reminders.title') %></h3>
           <p><%= I18n.t('features.smart_reminders.description') %></p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-on-scroll stagger-3">
           <div class="feature-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
@@ -111,7 +265,7 @@
           <h3><%= I18n.t('features.clear_analytics.title') %></h3>
           <p><%= I18n.t('features.clear_analytics.description') %></p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-on-scroll stagger-4">
           <div class="feature-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
@@ -120,7 +274,7 @@
           <h3><%= I18n.t('features.mobile_ready.title') %></h3>
           <p><%= I18n.t('features.mobile_ready.description') %></p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-on-scroll stagger-5">
           <div class="feature-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
@@ -137,27 +291,31 @@
   <section id="screenshots" class="screenshots">
     <div class="screenshots-container">
       <div class="section-header">
+        <span class="section-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          <%= I18n.t('section_labels.how_it_works') %>
+        </span>
         <h2><%= I18n.t('how_it_works.title') %></h2>
         <p><%= I18n.t('how_it_works.subtitle') %></p>
       </div>
       <div class="screenshot-tabs">
-        <button class="tab-button active"><%= I18n.t('how_it_works.admin_dashboard') %></button>
-        <button class="tab-button"><%= I18n.t('how_it_works.customer_experience') %></button>
+        <button class="tab-button active" data-tab="admin"><%= I18n.t('how_it_works.admin_dashboard') %></button>
+        <button class="tab-button" data-tab="customer"><%= I18n.t('how_it_works.customer_experience') %></button>
       </div>
-      <div class="screenshot-grid">
-        <div class="screenshot-item">
+      <div class="screenshot-grid" id="screenshot-grid">
+        <div class="screenshot-item animate-on-scroll">
           <div class="screenshot-placeholder">
             <img src="/gifs/my-calendar.gif" alt="Calendar Management" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div class="screenshot-text"><%= I18n.t('how_it_works.calendar_management') %></div>
         </div>
-        <div class="screenshot-item">
+        <div class="screenshot-item animate-on-scroll stagger-1">
           <div class="screenshot-placeholder">
             <img src="/gifs/my-overview.gif" alt="Booking Overview" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div class="screenshot-text"><%= I18n.t('how_it_works.booking_overview') %></div>
         </div>
-        <div class="screenshot-item">
+        <div class="screenshot-item animate-on-scroll stagger-2">
           <div class="screenshot-placeholder">
             <img src="/gifs/my-configuration.gif" alt="Service Configuration" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
@@ -167,10 +325,14 @@
     </div>
   </section>
 
-  <!-- Landing Page Examples -->
+  <!-- Examples Section -->
   <section id="examples" class="examples">
     <div class="examples-container">
       <div class="section-header">
+        <span class="section-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+          <%= I18n.t('section_labels.your_brand') %>
+        </span>
         <h2><%= I18n.t('business_pages.title') %></h2>
         <p><%= I18n.t('business_pages.subtitle') %></p>
       </div>
@@ -178,11 +340,23 @@
         <div class="example-text">
           <h3><%= I18n.t('business_pages.customized_brand.title') %></h3>
           <p><%= I18n.t('business_pages.customized_brand.description') %></p>
-          <ul style="list-style: none; padding: 0;">
-            <li style="padding: 0.5rem 0; color: #4b5563;">✓ Custom colors and branding</li>
-            <li style="padding: 0.5rem 0; color: #4b5563;">✓ Your own domain</li>
-            <li style="padding: 0.5rem 0; color: #4b5563;">✓ Mobile optimized</li>
-            <li style="padding: 0.5rem 0; color: #4b5563;">✓ SEO friendly</li>
+          <ul class="example-features">
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <%= I18n.t('business_pages.features.custom_colors') %>
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <%= I18n.t('business_pages.features.own_domain') %>
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <%= I18n.t('business_pages.features.mobile_optimized') %>
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <%= I18n.t('business_pages.features.seo_friendly') %>
+            </li>
           </ul>
         </div>
         <div class="example-preview">
@@ -194,15 +368,86 @@
     </div>
   </section>
 
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="testimonials-container">
+      <div class="section-header">
+        <span class="section-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+          <%= I18n.t('section_labels.testimonials') %>
+        </span>
+        <h2><%= I18n.t('testimonials.title') %></h2>
+        <p><%= I18n.t('testimonials.subtitle') %></p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card animate-on-scroll">
+          <div class="testimonial-rating">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          </div>
+          <p class="testimonial-text">"<%= I18n.t('testimonials.testimonial1.quote') %>"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #ec4899, #f97316);">M</div>
+            <div class="author-info">
+              <h4><%= I18n.t('testimonials.testimonial1.name') %></h4>
+              <p><%= I18n.t('testimonials.testimonial1.role') %></p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card animate-on-scroll stagger-1">
+          <div class="testimonial-rating">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          </div>
+          <p class="testimonial-text">"<%= I18n.t('testimonials.testimonial2.quote') %>"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #06d6a0, #3b82f6);">J</div>
+            <div class="author-info">
+              <h4><%= I18n.t('testimonials.testimonial2.name') %></h4>
+              <p><%= I18n.t('testimonials.testimonial2.role') %></p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card animate-on-scroll stagger-2">
+          <div class="testimonial-rating">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          </div>
+          <p class="testimonial-text">"<%= I18n.t('testimonials.testimonial3.quote') %>"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">S</div>
+            <div class="author-info">
+              <h4><%= I18n.t('testimonials.testimonial3.name') %></h4>
+              <p><%= I18n.t('testimonials.testimonial3.role') %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing Section -->
   <section id="pricing" class="pricing">
     <div class="pricing-container">
       <div class="section-header">
+        <span class="section-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <%= I18n.t('section_labels.pricing') %>
+        </span>
         <h2><%= I18n.t('pricing.title') %></h2>
         <p><%= I18n.t('pricing.subtitle') %></p>
       </div>
       <div class="pricing-cards">
-        <div class="pricing-card">
+        <div class="pricing-card animate-on-scroll">
           <div class="plan-name"><%= I18n.t('pricing.independent') %></div>
           <div class="plan-price"><%= I18n.t('pricing.free') %></div>
           <p class="plan-period"><%= I18n.t('pricing.for_ever') %></p>
@@ -211,9 +456,9 @@
               <li><%= feature %></li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=independent&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.get_started') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=independent&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('cta.get_started') %></a>
         </div>
-        <div class="pricing-card featured">
+        <div class="pricing-card featured animate-on-scroll stagger-1">
           <span class="featured-badge"><%= I18n.t('pricing.most_popular') %></span>
           <div class="plan-name"><%= I18n.t('pricing.team') %></div>
           <div class="plan-price"><%= @prices['team'][:formatted] %></div>
@@ -223,9 +468,9 @@
               <li><%= feature %></li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.get_started') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('cta.get_started') %></a>
         </div>
-        <div class="pricing-card">
+        <div class="pricing-card animate-on-scroll stagger-2">
           <div class="plan-name"><%= I18n.t('pricing.business') %></div>
           <div class="plan-price"><%= @prices['business'][:formatted] %></div>
           <p class="plan-period"><%= I18n.t('pricing.per_month') %></p>
@@ -234,7 +479,68 @@
               <li><%= feature %></li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=business&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button" style="width: 100%; display: block; text-align: center;"><%= I18n.t('cta.first_month_on_us') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=business&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('cta.first_month_on_us') %></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="faq-container">
+      <div class="section-header">
+        <span class="section-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <%= I18n.t('section_labels.faq') %>
+        </span>
+        <h2><%= I18n.t('faq.title') %></h2>
+        <p><%= I18n.t('faq.subtitle') %></p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <%= I18n.t('faq.question1') %>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p><%= I18n.t('faq.answer1') %></p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <%= I18n.t('faq.question2') %>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p><%= I18n.t('faq.answer2') %></p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <%= I18n.t('faq.question3') %>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p><%= I18n.t('faq.answer3') %></p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <%= I18n.t('faq.question4') %>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p><%= I18n.t('faq.answer4') %></p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <%= I18n.t('faq.question5') %>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p><%= I18n.t('faq.answer5') %></p>
+          </div>
         </div>
       </div>
     </div>
@@ -245,104 +551,149 @@
     <div class="cta-content">
       <h2><%= I18n.t('cta.ready_to_simplify') %></h2>
       <p><%= I18n.t('cta.join_thousands') %></p>
-      <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="btn-primary" style="font-size: 1.25rem; padding: 1.25rem 2.5rem;"><%= I18n.t('cta.start_for_free') %></a>
-      <p style="margin-top: 1rem; font-size: 0.875rem; color: #9ca3af;"><%= I18n.t('cta.no_credit_card') %></p>
+      <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="btn-primary" style="font-size: 1.125rem; padding: 1.125rem 2.5rem;">
+        <%= I18n.t('cta.start_for_free') %>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+      </a>
+      <div class="cta-note">
+        <span>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <%= I18n.t('cta.no_credit_card_short') %>
+        </span>
+        <span>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <%= I18n.t('cta.setup_in_minutes') %>
+        </span>
+        <span>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <%= I18n.t('cta.cancel_anytime') %>
+        </span>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="footer-content">
+      <div class="footer-brand">
+        <a href="https://bookrhub.com" class="logo">
+          <img src="/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120">
+        </a>
+        <p><%= I18n.t('footer.description') %></p>
+      </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.product') %></h3>
         <a href="#features"><%= I18n.t('navigation.features') %></a>
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
+        <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
       </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.company') %></h3>
-        <a href="#https://bookrhub.com/about"><%= I18n.t('footer.about_us') %></a>
-        <a href="#https://blog.bookrhub.com"><%= I18n.t('footer.blog') %></a>
-        <a href="#https://bookrhub.com/contact"><%= I18n.t('footer.contact_us') %></a>
+        <a href="https://bookrhub.com/about"><%= I18n.t('footer.about_us') %></a>
+        <a href="https://blog.bookrhub.com"><%= I18n.t('footer.blog') %></a>
+        <a href="https://bookrhub.com/contact"><%= I18n.t('footer.contact_us') %></a>
       </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.support') %></h3>
-        <a href="#https://support.bookrhub.com"><%= I18n.t('footer.help_center') %></a>
+        <a href="https://support.bookrhub.com"><%= I18n.t('footer.help_center') %></a>
+        <a href="mailto:admin@bookrhub.com">admin@bookrhub.com</a>
       </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.legal') %></h3>
-        <a href="#https://bookrhub.com/privacy"><%= I18n.t('footer.privacy_policy') %></a>
-        <a href="#https://bookrhub.com/terms"><%= I18n.t('footer.terms_of_service') %></a>
+        <a href="https://bookrhub.com/privacy"><%= I18n.t('footer.privacy_policy') %></a>
+        <a href="https://bookrhub.com/terms"><%= I18n.t('footer.terms_of_service') %></a>
+        <a href="#" class="termly-display-preferences"><%= I18n.t('footer.consent_preferences') %></a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 BookrHub. All rights reserved.</p>
+      <p>&copy; <%= Time.now.year %> BookrHub. All rights reserved.</p>
       <span><%= I18n.t('footer.powered_by') %> <a href="https://plumdigital.co.nz" target="_blank" class="copyright-link">Plum Digital</a></span>
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://app.termly.io/resource-blocker/6a469ab6-c037-4332-9386-5953a0166dc7?autoBlock=on"></script>
   <script>
     // Tab functionality for screenshots
-    document.querySelectorAll('.tab-button').forEach(button => {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const screenshotGrid = document.getElementById('screenshot-grid');
+
+    const adminContent = `
+      <div class="screenshot-item animate-on-scroll visible">
+        <div class="screenshot-placeholder">
+          <img src="/gifs/my-calendar.gif" alt="Calendar Management" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="screenshot-text"><%= I18n.t('how_it_works.calendar_management') %></div>
+      </div>
+      <div class="screenshot-item animate-on-scroll visible stagger-1">
+        <div class="screenshot-placeholder">
+          <img src="/gifs/my-overview.gif" alt="Booking Overview" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="screenshot-text"><%= I18n.t('how_it_works.booking_overview') %></div>
+      </div>
+      <div class="screenshot-item animate-on-scroll visible stagger-2">
+        <div class="screenshot-placeholder">
+          <img src="/gifs/my-configuration.gif" alt="Service Configuration" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="screenshot-text"><%= I18n.t('how_it_works.company_settings') %></div>
+      </div>
+    `;
+
+    const customerContent = `
+      <div class="screenshot-item animate-on-scroll visible">
+        <div class="screenshot-placeholder">
+          <img src="/gifs/barber-landing.gif" alt="Landing Page" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="screenshot-text"><%= I18n.t('customer_experience.landing_page') %></div>
+      </div>
+      <div class="screenshot-item animate-on-scroll visible stagger-1">
+        <div class="screenshot-placeholder">
+          <img src="/gifs/barber-book.gif" alt="Date & Time Selection" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="screenshot-text"><%= I18n.t('customer_experience.date_time_selection') %></div>
+      </div>
+      <div class="screenshot-item animate-on-scroll visible stagger-2">
+        <div class="screenshot-placeholder">
+          <img src="/gifs/barber-confirmation.gif" alt="Booking Confirmation" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="screenshot-text"><%= I18n.t('customer_experience.booking_confirmation') %></div>
+      </div>
+    `;
+
+    tabButtons.forEach(button => {
       button.addEventListener('click', function() {
-        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+        tabButtons.forEach(b => b.classList.remove('active'));
         this.classList.add('active');
 
-        const screenshotGrid = document.querySelector('.screenshot-grid');
-        const tabName = this.textContent;
+        const tab = this.dataset.tab;
+        screenshotGrid.innerHTML = tab === 'admin' ? adminContent : customerContent;
+      });
+    });
 
-        if (tabName === 'Admin Dashboard') {
-          screenshotGrid.innerHTML = `
-            <div class="screenshot-item">
-              <div class="screenshot-placeholder">
-                <img src="/gifs/my-calendar.gif" alt="Calendar Management" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="screenshot-text"><%= I18n.t('how_it_works.calendar_management') %></div>
-            </div>
-            <div class="screenshot-item">
-              <div class="screenshot-placeholder">
-                <img src="/gifs/my-overview.gif" alt="Booking Overview" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="screenshot-text"><%= I18n.t('how_it_works.booking_overview') %></div>
-            </div>
-            <div class="screenshot-item">
-              <div class="screenshot-placeholder">
-                <img src="/gifs/my-configuration.gif" alt="Service Configuration" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="screenshot-text"><%= I18n.t('how_it_works.company_settings') %></div>
-            </div>
-          `;
-        } else if (tabName === 'Customer Experience') {
-          screenshotGrid.innerHTML = `
-            <div class="screenshot-item">
-              <div class="screenshot-placeholder">
-                <img src="/gifs/barber-landing.gif" alt="Landing Page" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="screenshot-text"><%= I18n.t('customer_experience.landing_page') %></div>
-            </div>
-            <div class="screenshot-item">
-              <div class="screenshot-placeholder">
-                <img src="/gifs/barber-book.gif" alt="Date & Time Selection" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="screenshot-text"><%= I18n.t('customer_experience.date_time_selection') %></div>
-            </div>
-            <div class="screenshot-item">
-              <div class="screenshot-placeholder">
-                <img src="/gifs/barber-confirmation.gif" alt="Booking Confirmation" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="screenshot-text"><%= I18n.t('customer_experience.booking_confirmation') %></div>
-            </div>
-          `;
-        } else {
-          screenshotGrid.innerHTML = ``;
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', function() {
+        const item = this.parentElement;
+        const isActive = item.classList.contains('active');
+
+        // Close all items
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          item.classList.add('active');
         }
       });
     });
 
-    // Smooth scroll
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
           target.scrollIntoView({
             behavior: 'smooth',
@@ -351,6 +702,45 @@
         }
       });
     });
+
+    // Scroll animations with Intersection Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileToggle && mobileMenu) {
+      mobileToggle.addEventListener('click', () => {
+        mobileToggle.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      // Close mobile menu when clicking a link
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileToggle.classList.remove('active');
+          mobileMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+    }
   </script>
 </body>
 </html>
