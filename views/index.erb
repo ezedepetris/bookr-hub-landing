@@ -8,7 +8,7 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-5GLSJ749');</script>
   <!-- End Google Tag Manager -->
-  <link rel="stylesheet" href="/css/styles.css?v=2.1.0">
+  <link rel="stylesheet" href="/css/styles.css?v=2.3.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
@@ -66,9 +66,11 @@
   <%= JSON.generate({
     "@context" => "https://schema.org",
     "@type" => "SoftwareApplication",
-    "name" => "BookrHub",
+    "name" => "BookrHub - Online Booking System",
+    "alternateName" => ["BookrHub Appointment System", "BookrHub Booking Software", "Fresha alternative", "SetMore alternative", "GetTimely alternative"],
     "applicationCategory" => "BusinessApplication",
     "operatingSystem" => "Web",
+    "applicationSubCategory" => "Booking System",
     "offers" => {
       "@type" => "Offer",
       "price" => "0",
@@ -104,8 +106,30 @@
     }
   }) %>
   </script>
+  <%
+    faq_main_entity = (1..8).map do |i|
+      {
+        "@type" => "Question",
+        "name" => I18n.t("faq.question#{i}"),
+        "acceptedAnswer" => {
+          "@type" => "Answer",
+          "text" => I18n.t("faq.answer#{i}")
+        }
+      }
+    end
+  %>
+  <script type="application/ld+json">
+  <%= JSON.generate({
+    "@context" => "https://schema.org",
+    "@type" => "FAQPage",
+    "mainEntity" => faq_main_entity
+  }) %>
+  </script>
 </head>
 <body>
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GLSJ749"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -119,14 +143,15 @@
     gtag('config', 'G-L48GXS7KT4');
   </script>
 
-  <!-- Navigation -->
-  <nav>
+  <!-- Navigation (gets .nav-scrolled when user scrolls) -->
+  <nav id="main-nav">
     <div class="nav-container">
       <a href="https://bookrhub.com" class="logo">
         <img src="/images/isologo.svg" alt="BookrHub" class="isologo-image" width="140">
       </a>
       <div class="nav-links">
         <a href="#features"><%= I18n.t('navigation.features') %></a>
+        <a href="#why-us"><%= I18n.t('navigation.why_us') %></a>
         <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
         <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
@@ -143,6 +168,7 @@
   <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu-links">
       <a href="#features"><%= I18n.t('navigation.features') %></a>
+      <a href="#why-us"><%= I18n.t('navigation.why_us') %></a>
       <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
       <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
       <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
@@ -162,11 +188,13 @@
           </div>
           <span class="proof-text"><strong>700+</strong> <%= I18n.t('hero.social_proof') %></span>
         </div>
+        <p class="hero-stats"><span><%= I18n.t('hero.stats_free') %></span> · <span><%= I18n.t('hero.stats_setup') %></span> · <span><%= I18n.t('hero.stats_nocode') %></span></p>
         <h1>
           <%= I18n.t('hero.headline_part1') %><br>
-          <span class="gradient-text"><%= I18n.t('hero.headline_part2') %></span>
+          <span class="gradient-text gradient-text-animate"><%= I18n.t('hero.headline_part2') %></span>
         </h1>
-        <p><%= I18n.t('site.subtitle') %></p>
+        <p class="hero-tagline"><%= I18n.t('hero.tagline') %></p>
+        <p class="hero-subtitle"><%= I18n.t('site.hero_subtitle') %></p>
         <div class="hero-buttons">
           <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="btn-primary">
             <%= I18n.t('buttons.start_free_trial') %>
@@ -198,16 +226,67 @@
     </div>
   </section>
 
-  <!-- Logos Section -->
-  <section class="logos-section">
+  <!-- Logos Section - Scrolling marquee -->
+  <section class="logos-section" aria-label="<%= I18n.t('logos.trusted_by') %>">
     <div class="logos-container">
       <p class="logos-label"><%= I18n.t('logos.trusted_by') %></p>
-      <div class="logos-grid">
-        <span class="logo-item">Barber Studios</span>
-        <span class="logo-item">Wellness Co.</span>
-        <span class="logo-item">Nail Art Pro</span>
-        <span class="logo-item">Fitness Hub</span>
-        <span class="logo-item">Beauty Lane</span>
+      <div class="logos-marquee-wrap">
+        <div class="logos-marquee">
+          <span class="logo-item">Barber Studios</span>
+          <span class="logo-item">Wellness Co.</span>
+          <span class="logo-item">Nail Art Pro</span>
+          <span class="logo-item">Fitness Hub</span>
+          <span class="logo-item">Beauty Lane</span>
+          <span class="logo-item">Barber Studios</span>
+          <span class="logo-item">Wellness Co.</span>
+          <span class="logo-item">Nail Art Pro</span>
+          <span class="logo-item">Fitness Hub</span>
+          <span class="logo-item">Beauty Lane</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why BookrHub Section -->
+  <section id="why-us" class="why-us">
+    <div class="why-us-container">
+      <div class="section-header">
+        <span class="section-label">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+          <%= I18n.t('section_labels.why_us') %>
+        </span>
+        <h2><%= I18n.t('why_us.title') %></h2>
+        <p><%= I18n.t('why_us.subtitle') %></p>
+      </div>
+      <div class="why-us-grid">
+        <div class="why-us-card animate-on-scroll">
+          <div class="why-us-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          </div>
+          <h3><%= I18n.t('why_us.card_parity.title') %></h3>
+          <p><%= I18n.t('why_us.card_parity.description') %></p>
+        </div>
+        <div class="why-us-card animate-on-scroll stagger-1">
+          <div class="why-us-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+          </div>
+          <h3><%= I18n.t('why_us.card_landing.title') %></h3>
+          <p><%= I18n.t('why_us.card_landing.description') %></p>
+        </div>
+        <div class="why-us-card animate-on-scroll stagger-2">
+          <div class="why-us-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+          </div>
+          <h3><%= I18n.t('why_us.card_growth.title') %></h3>
+          <p><%= I18n.t('why_us.card_growth.description') %></p>
+        </div>
+        <div class="why-us-card animate-on-scroll stagger-3">
+          <div class="why-us-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+          </div>
+          <h3><%= I18n.t('why_us.card_underdog.title') %></h3>
+          <p><%= I18n.t('why_us.card_underdog.description') %></p>
+        </div>
       </div>
     </div>
   </section>
@@ -542,6 +621,33 @@
             <p><%= I18n.t('faq.answer5') %></p>
           </div>
         </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <%= I18n.t('faq.question6') %>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p><%= I18n.t('faq.answer6') %></p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <%= I18n.t('faq.question7') %>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p><%= I18n.t('faq.answer7') %></p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <%= I18n.t('faq.question8') %>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p><%= I18n.t('faq.answer8') %></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -572,6 +678,19 @@
     </div>
   </section>
 
+  <!-- Floating CTA (visible after scrolling past hero) -->
+  <div class="floating-cta" id="floating-cta" aria-hidden="true">
+    <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="floating-cta-btn">
+      <%= I18n.t('buttons.start_free_trial') %>
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+    </a>
+  </div>
+
+  <!-- Back to top -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+  </button>
+
   <!-- Footer -->
   <footer>
     <div class="footer-content">
@@ -584,6 +703,7 @@
       <div class="footer-section">
         <h3><%= I18n.t('footer.product') %></h3>
         <a href="#features"><%= I18n.t('navigation.features') %></a>
+        <a href="#why-us"><%= I18n.t('navigation.why_us') %></a>
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
         <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
       </div>
@@ -739,6 +859,51 @@
           mobileMenu.classList.remove('active');
           document.body.style.overflow = '';
         });
+      });
+    }
+
+    // Scroll progress bar
+    const scrollProgress = document.getElementById('scroll-progress');
+    function updateScrollProgress() {
+      if (!scrollProgress) return;
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      scrollProgress.style.transform = `scaleX(${height ? winScroll / height : 0})`;
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    updateScrollProgress();
+
+    // Nav: add .nav-scrolled when past hero
+    const mainNav = document.getElementById('main-nav');
+    function updateNavScroll() {
+      if (mainNav) mainNav.classList.toggle('nav-scrolled', window.scrollY > 80);
+    }
+    window.addEventListener('scroll', updateNavScroll, { passive: true });
+    updateNavScroll();
+
+    // Floating CTA: show after scrolling past hero
+    const floatingCta = document.getElementById('floating-cta');
+    function updateFloatingCta() {
+      if (!floatingCta) return;
+      const hero = document.querySelector('.hero');
+      const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400;
+      const show = window.scrollY > heroBottom - 100;
+      floatingCta.classList.toggle('floating-cta-visible', show);
+      floatingCta.setAttribute('aria-hidden', show ? 'false' : 'true');
+    }
+    window.addEventListener('scroll', updateFloatingCta, { passive: true });
+    updateFloatingCta();
+
+    // Back to top
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+      function updateBackToTop() {
+        backToTop.classList.toggle('back-to-top-visible', window.scrollY > 600);
+      }
+      window.addEventListener('scroll', updateBackToTop, { passive: true });
+      updateBackToTop();
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
   </script>

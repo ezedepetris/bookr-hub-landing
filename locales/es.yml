@@ -4,12 +4,14 @@ es:
     description: "Todo lo que necesitas para gestionar citas, hacer crecer tu negocio y deleitar a tus clientes. Comienza gratis hoy."
     tagline: "Gestión Simple de Reservas para Empresas Modernas"
     subtitle: "Todo lo que necesitas para gestionar citas, hacer crecer tu negocio y deleitar a tus clientes."
+    hero_subtitle: "Tu calendario en piloto automático. Disponibilidad en tiempo real, recordatorios inteligentes y una página de reservas con tu marca—en minutos."
     keywords: "software de reservas, programación de citas, sistema de reservas en línea, gestión de reservas, reserva de citas, software de programación empresarial, fresha, setmore, turnos, reservas, citas, agendamiento, agenda, calendario, horarios, reservas, citas, agendamiento, agenda, calendario, horarios"
     author: "BookrHub"
     canonical_url: "https://bookrhub.com"
 
   navigation:
     features: "Características"
+    why_us: "Por Qué Nosotros"
     how_it_works: "Cómo Funciona"
     examples: "Ejemplos"
     pricing: "Precios"
@@ -23,6 +25,10 @@ es:
     social_proof: "empresas confían en BookrHub"
     headline_part1: "Deja de perseguir clientes."
     headline_part2: "Comienza a reservarlos."
+    tagline: "Configura en 5 minutos. Sin código. Sin tarjeta."
+    stats_free: "Gratis para siempre"
+    stats_setup: "Configura en 5 min"
+    stats_nocode: "Sin código"
     no_credit_card: "No se requiere tarjeta de crédito"
     setup_minutes: "Configuración en 5 minutos"
 
@@ -33,6 +39,7 @@ es:
     features: "Características"
     how_it_works: "Cómo Funciona"
     your_brand: "Tu Marca"
+    why_us: "Por Qué BookrHub"
     testimonials: "Testimonios"
     pricing: "Precios"
     faq: "Preguntas Frecuentes"
@@ -65,6 +72,22 @@ es:
       title: "Tu Marca"
       description: "Dominio personalizado y páginas de reserva con tu marca para tu negocio."
 
+  why_us:
+    title: "¿Por qué elegirnos frente al resto?"
+    subtitle: "Somos los nuevos. Este es nuestro primer lanzamiento—y estamos hechos diferente."
+    card_parity:
+      title: "El mismo poder que los grandes"
+      description: "Igualamos lo que Fresha, SetMore y GetTimely ofrecen: reservas en tiempo real, recordatorios, pagos, gestión de equipo. Tienes las funciones que necesitas sin relleno ni precios altos."
+    card_landing:
+      title: "Tu página de reservas es tu web"
+      description: "¿Quién más te da una landing page completa que sirve como tu web? Con BookrHub tu página no es solo un formulario: es una página con tu marca, tus servicios y tu dominio. Un solo enlace para todo."
+    card_growth:
+      title: "Estamos recién arrancando"
+      description: "Esta es nuestra base. Todo lo que sumemos—nuevas funciones, integraciones, herramientas—hace crecer tu plataforma también. No compras un producto cerrado; te subes a una plataforma que va a crecer mucho contigo."
+    card_underdog:
+      title: "Hecho para negocios reales"
+      description: "No somos un gigante. Lo construimos para salones, barberos, consultores y equipos pequeños que quieren algo que funcione y siga mejorando. Tu feedback define lo que construimos después."
+
   how_it_works:
     title: "Cómo Funciona BookrHub"
     subtitle: "Ve la plataforma en acción"
@@ -75,11 +98,11 @@ es:
     company_settings: "Configuración de Empresa"
 
   business_pages:
-    title: "Hermosas Páginas de Reserva para tu Negocio"
-    subtitle: "Páginas de destino profesionales que convierten visitantes en clientes"
+    title: "Una landing que es tu web—no solo un formulario"
+    subtitle: "Tu página de reservas es una landing completa: tu marca, tus servicios, tu enlace. No necesitas web aparte. ¿Quién más hace eso?"
     customized_brand:
-      title: "Personalizado para tu Marca"
-      description: "Cada negocio obtiene una página de reserva profesional que coincide con su marca y estilo. Desde barberías hasta consultores, te tenemos cubierto."
+      title: "Tu página de reservas es tu web"
+      description: "Cada negocio tiene una landing real que funciona como su web: colores, servicios y marca. Un solo enlace para compartir. Desde barberías hasta consultores. Sin necesidad de una web aparte."
     features:
       custom_colors: "Colores y marca personalizados"
       own_domain: "Tu propio dominio"
@@ -147,6 +170,12 @@ es:
     answer4: "Aceptamos todas las tarjetas de crédito principales (Visa, Mastercard, American Express) a través de nuestro procesador de pagos seguro, Stripe. Para planes anuales, también ofrecemos transferencias bancarias en regiones seleccionadas."
     question5: "¿Cuánto tiempo toma configurarlo?"
     answer5: "¡La mayoría de los negocios están funcionando en menos de 5 minutos! Solo crea una cuenta, agrega tus servicios y disponibilidad, y comparte tu enlace de reserva. Es así de simple."
+    question6: "¿Qué es un sistema de reservas y por qué lo necesito?"
+    answer6: "Un sistema de reservas es un software que ayuda a los negocios a gestionar citas, horarios y reservas de clientes en línea. BookrHub es un sistema de reservas completo que automatiza tu agenda, reduce las inasistencias con recordatorios y te ayuda a hacer crecer tu negocio. Nuestro plan gratuito es ideal para empezar sin tarjeta de crédito."
+    question7: "¿Es BookrHub una buena alternativa a Fresha, SetMore o GetTimely?"
+    answer7: "Sí. BookrHub es un sistema de citas y software de reservas sencillo que hace lo que necesitas sin complicaciones. Si buscas una alternativa a Fresha, SetMore o GetTimely con plan gratis, reservas en tiempo real y recordatorios, BookrHub está pensado para equipos pequeños y profesionales independientes. No se requiere tarjeta de crédito para empezar."
+    question8: "¿Obtengo una web o solo un formulario de reservas?"
+    answer8: "Obtienes una landing completa que sirve como tu web. Tu página de BookrHub tiene tu marca, tus servicios, tu disponibilidad—no es solo un formulario. Muchos competidores te dan un formulario para incrustar; nosotros te damos una página lista para compartir que parece tu negocio. En planes de pago puedes usar tu propio dominio. Un solo enlace para todo."
 
   cta:
     get_started: "Comenzar"
