@@ -752,6 +752,93 @@ button:focus-visible,
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
+   Why BookrHub Section
+   ───────────────────────────────────────────────────────────────────────────── */
+.why-us {
+    padding: var(--section-padding) 1.5rem;
+    background: var(--color-bg-warm);
+    position: relative;
+}
+
+.why-us::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-mesh);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.why-us-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.why-us-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    transform-style: preserve-3d;
+}
+
+.why-us-card:hover {
+    border-color: var(--color-border-hover);
+    transform: translateY(-4px) perspective(800px) rotateX(1deg);
+    box-shadow: var(--shadow-lg);
+}
+
+.why-us-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--color-primary-subtle), var(--color-accent-subtle));
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.why-us-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+}
+
+.why-us-card h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.why-us-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+    .why-us-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .why-us-card:hover {
+        transform: translateY(-4px);
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
    Features Section - Bento Grid
    ───────────────────────────────────────────────────────────────────────────── */
 .features {

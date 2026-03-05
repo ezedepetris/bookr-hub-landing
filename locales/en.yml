@@ -1,16 +1,17 @@
 en:
   site:
-    title: "BookrHub - Online Booking System for Your Business | Free Booking Software"
-    description: "The best online booking system for managing appointments, scheduling, and growing your business. Free booking software trusted by 700+ businesses. Start for free today."
+    title: "BookrHub - Free Booking System & Appointment System | Fresha & SetMore Alternative"
+    description: "Free online booking system and appointment system for salons, barbers, and small business. Alternative to Fresha, SetMore, GetTimely. Trusted by 700+ businesses. Start free."
     tagline: "Simple Booking Management for Modern Businesses"
     subtitle: "The complete booking system you need to manage appointments, grow your business, and delight your customers."
     hero_subtitle: "Your calendar on autopilot. Real-time availability, smart reminders, and a booking page that looks like you—in minutes."
-    keywords: "booking software, appointment scheduling, online booking system, booking management, appointment booking, business scheduling software, fresha, setmore, turnos, reservas, citas, agendamiento, agenda, calendario, horarios, reservas, citas, agendamiento, agenda, calendario, horarios"
+    keywords: "booking software, appointment scheduling, online booking system, appointment system, booking system, booking management, appointment booking, business scheduling software, Fresha alternative, SetMore alternative, GetTimely alternative, free booking software, salon booking, barber booking, fresha, setmore, gettimely, turnos, reservas, citas, agendamiento, agenda, calendario, horarios"
     author: "BookrHub"
     canonical_url: "https://bookrhub.com"
 
   navigation:
     features: "Features"
+    why_us: "Why Us"
     how_it_works: "How It Works"
     examples: "Examples"
     pricing: "Pricing"
@@ -38,6 +39,7 @@ en:
     features: "Features"
     how_it_works: "How It Works"
     your_brand: "Your Brand"
+    why_us: "Why BookrHub"
     testimonials: "Testimonials"
     pricing: "Pricing"
     faq: "FAQ"
@@ -70,6 +72,22 @@ en:
       title: "Your Brand"
       description: "Custom domain and branded booking pages for your business."
 
+  why_us:
+    title: "Why choose us over the rest?"
+    subtitle: "We're the underdogs. This is our first launch—and we're built different."
+    card_parity:
+      title: "Same power as the big names"
+      description: "We match what Fresha, SetMore, and GetTimely do: real-time scheduling, reminders, payments, team management. You get the features you need without the bloat or the price tag."
+    card_landing:
+      title: "Your booking page is your website"
+      description: "Who else gives you a full landing page that serves as your website? With BookrHub, your booking page isn't a bare form—it's a branded page with your services, your style, and your domain. One link does it all."
+    card_growth:
+      title: "We're just getting started"
+      description: "This is our base. Everything we ship from here—new features, integrations, tools—grows your platform too. You're not buying a finished product; you're getting on a platform that's going to grow a lot with you."
+    card_underdog:
+      title: "Built for real businesses"
+      description: "We're not a giant. We're building this for salons, barbers, consultants, and small teams who want something that works and keeps getting better. Your feedback shapes what we build next."
+
   how_it_works:
     title: "How Our Booking System Works"
     subtitle: "See the booking system in action"
@@ -80,11 +98,11 @@ en:
     company_settings: "Company Settings"
 
   business_pages:
-    title: "Beautiful Booking Pages for Your Business"
-    subtitle: "Professional landing pages that convert visitors into customers"
+    title: "A landing page that’s your website—not just a form"
+    subtitle: "Your booking page is a full landing page: your brand, your services, your link. No separate website needed. Who else does that?"
     customized_brand:
-      title: "Customized for Your Brand"
-      description: "Every business gets a professional booking page that matches their brand and style. From barbershops to consultants, we've got you covered."
+      title: "Your booking page is your website"
+      description: "Every business gets a real landing page that works as their website—custom colors, services, and branding. One link to share. From barbershops to consultants, we've got you covered. No need for a separate site."
     features:
       custom_colors: "Custom colors and branding"
       own_domain: "Your own domain"
@@ -154,6 +172,10 @@ en:
     answer5: "We accept all major credit cards (Visa, Mastercard, American Express) through our secure payment processor, Stripe. For annual plans, we also offer bank transfers in select regions."
     question6: "How long does it take to set up?"
     answer6: "Most businesses are up and running in under 5 minutes! Just create an account, add your services and availability, and share your booking link. It's that simple."
+    question7: "Is BookrHub a good alternative to Fresha, SetMore, or GetTimely?"
+    answer7: "Yes. BookrHub is a simple appointment system and booking software that does what you need without the complexity. If you're looking for a Fresha alternative, SetMore alternative, or GetTimely alternative with a free plan, real-time scheduling, and reminders, BookrHub is built for small teams and solo pros. No credit card required to start."
+    question8: "Do I get a website or just a booking form?"
+    answer8: "You get a full landing page that serves as your website. Your BookrHub page has your brand, your services, your availability—it's not just a bare booking form. Many competitors give you a form to embed elsewhere; we give you a ready-to-share page that looks like your business. You can use your own domain on paid plans. One link does it all."
 
   cta:
     get_started: "Get Started"
@@ -183,5 +205,5 @@ en:
     help_center: "Help Center"
     privacy_policy: "Privacy Policy"
     terms_of_service: "Terms of Service"
-    description: "The simplest booking system to manage appointments and grow your business. Trusted by thousands of professionals worldwide."
+    description: "Free booking system and appointment system for salons, barbers, and small business. Simple alternative to Fresha, SetMore, and GetTimely. Trusted worldwide."
     consent_preferences: "Consent Preferences"
