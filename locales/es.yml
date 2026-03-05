@@ -4,6 +4,7 @@ es:
     description: "Todo lo que necesitas para gestionar citas, hacer crecer tu negocio y deleitar a tus clientes. Comienza gratis hoy."
     tagline: "Gestión Simple de Reservas para Empresas Modernas"
     subtitle: "Todo lo que necesitas para gestionar citas, hacer crecer tu negocio y deleitar a tus clientes."
+    hero_subtitle: "Tu calendario en piloto automático. Disponibilidad en tiempo real, recordatorios inteligentes y una página de reservas con tu marca—en minutos."
     keywords: "software de reservas, programación de citas, sistema de reservas en línea, gestión de reservas, reserva de citas, software de programación empresarial, fresha, setmore, turnos, reservas, citas, agendamiento, agenda, calendario, horarios, reservas, citas, agendamiento, agenda, calendario, horarios"
     author: "BookrHub"
     canonical_url: "https://bookrhub.com"
@@ -23,6 +24,10 @@ es:
     social_proof: "empresas confían en BookrHub"
     headline_part1: "Deja de perseguir clientes."
     headline_part2: "Comienza a reservarlos."
+    tagline: "Configura en 5 minutos. Sin código. Sin tarjeta."
+    stats_free: "Gratis para siempre"
+    stats_setup: "Configura en 5 min"
+    stats_nocode: "Sin código"
     no_credit_card: "No se requiere tarjeta de crédito"
     setup_minutes: "Configuración en 5 minutos"
 

@@ -1,9 +1,10 @@
 en:
   site:
-    title: "BookrHub - Powerful Booking Management for Your Business"
-    description: "Everything you need to manage appointments, grow your business, and delight customers. Start for free today."
+    title: "BookrHub - Online Booking System for Your Business | Free Booking Software"
+    description: "The best online booking system for managing appointments, scheduling, and growing your business. Free booking software trusted by 700+ businesses. Start for free today."
     tagline: "Simple Booking Management for Modern Businesses"
-    subtitle: "Everything you need to manage appointments, grow your business, and delight your customers."
+    subtitle: "The complete booking system you need to manage appointments, grow your business, and delight your customers."
+    hero_subtitle: "Your calendar on autopilot. Real-time availability, smart reminders, and a booking page that looks like you—in minutes."
     keywords: "booking software, appointment scheduling, online booking system, booking management, appointment booking, business scheduling software, fresha, setmore, turnos, reservas, citas, agendamiento, agenda, calendario, horarios, reservas, citas, agendamiento, agenda, calendario, horarios"
     author: "BookrHub"
     canonical_url: "https://bookrhub.com"
@@ -21,8 +22,12 @@ en:
 
   hero:
     social_proof: "businesses trust BookrHub"
-    headline_part1: "Stop chasing clients."
-    headline_part2: "Start booking them."
+    headline_part1: "Stop chasing. Start"
+    headline_part2: "booking."
+    tagline: "Set up in 5 minutes. No code. No card."
+    stats_free: "Free forever"
+    stats_setup: "5 min setup"
+    stats_nocode: "No code"
     no_credit_card: "No credit card required"
     setup_minutes: "Setup in 5 minutes"
 
@@ -38,8 +43,8 @@ en:
     faq: "FAQ"
 
   features:
-    title: "Everything You Need"
-    subtitle: "Powerful tools that are simple to use"
+    title: "Everything You Need in a Booking System"
+    subtitle: "Powerful booking system tools that are simple to use"
 
     easy_scheduling:
       title: "Easy Scheduling"
@@ -66,8 +71,8 @@ en:
       description: "Custom domain and branded booking pages for your business."
 
   how_it_works:
-    title: "How BookrHub Works"
-    subtitle: "See the platform in action"
+    title: "How Our Booking System Works"
+    subtitle: "See the booking system in action"
     admin_dashboard: "Admin Dashboard"
     customer_experience: "Customer Experience"
     calendar_management: "Calendar Management"
@@ -137,16 +142,18 @@ en:
   faq:
     title: "Frequently asked questions"
     subtitle: "Everything you need to know about BookrHub"
-    question1: "How does the free plan work?"
-    answer1: "Our free Independent plan is completely free forever - no credit card required. You get up to 150 bookings per month, email reminders, and a booking page on our subdomain. It's perfect for solo professionals getting started."
-    question2: "Can I cancel my subscription anytime?"
-    answer2: "Yes! You can cancel your subscription at any time with no questions asked. There are no long-term contracts or cancellation fees. You'll continue to have access until the end of your billing period."
-    question3: "Do you offer custom solutions for larger teams?"
-    answer3: "Absolutely! Our Business plan supports unlimited staff members. For enterprises with specific needs, reach out to us at admin@bookrhub.com and we'll create a custom solution for you."
-    question4: "What payment methods do you accept?"
-    answer4: "We accept all major credit cards (Visa, Mastercard, American Express) through our secure payment processor, Stripe. For annual plans, we also offer bank transfers in select regions."
-    question5: "How long does it take to set up?"
-    answer5: "Most businesses are up and running in under 5 minutes! Just create an account, add your services and availability, and share your booking link. It's that simple."
+    question1: "What is a booking system and why do I need one?"
+    answer1: "A booking system is software that helps businesses manage appointments, schedules, and customer bookings online. BookrHub is a complete booking system that automates your scheduling, reduces no-shows with reminders, and helps you grow your business. Our free plan is perfect for getting started with no credit card required."
+    question2: "How does the free plan work?"
+    answer2: "Our free Independent plan is completely free forever - no credit card required. You get up to 150 bookings per month, email reminders, and a booking page on our subdomain. It's perfect for solo professionals getting started with a booking system."
+    question3: "Can I cancel my subscription anytime?"
+    answer3: "Yes! You can cancel your subscription at any time with no questions asked. There are no long-term contracts or cancellation fees. You'll continue to have access until the end of your billing period."
+    question4: "Do you offer custom solutions for larger teams?"
+    answer4: "Absolutely! Our Business plan supports unlimited staff members. For enterprises with specific needs, reach out to us at admin@bookrhub.com and we'll create a custom solution for you."
+    question5: "What payment methods do you accept?"
+    answer5: "We accept all major credit cards (Visa, Mastercard, American Express) through our secure payment processor, Stripe. For annual plans, we also offer bank transfers in select regions."
+    question6: "How long does it take to set up?"
+    answer6: "Most businesses are up and running in under 5 minutes! Just create an account, add your services and availability, and share your booking link. It's that simple."
 
   cta:
     get_started: "Get Started"
@@ -176,5 +183,5 @@ en:
     help_center: "Help Center"
     privacy_policy: "Privacy Policy"
     terms_of_service: "Terms of Service"
-    description: "The simplest way to manage bookings and grow your business. Trusted by thousands of professionals worldwide."
+    description: "The simplest booking system to manage appointments and grow your business. Trusted by thousands of professionals worldwide."
     consent_preferences: "Consent Preferences"

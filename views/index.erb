@@ -8,7 +8,7 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-5GLSJ749');</script>
   <!-- End Google Tag Manager -->
-  <link rel="stylesheet" href="/css/styles.css?v=2.1.0">
+  <link rel="stylesheet" href="/css/styles.css?v=2.3.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
@@ -66,9 +66,10 @@
   <%= JSON.generate({
     "@context" => "https://schema.org",
     "@type" => "SoftwareApplication",
-    "name" => "BookrHub",
+    "name" => "BookrHub - Online Booking System",
     "applicationCategory" => "BusinessApplication",
     "operatingSystem" => "Web",
+    "applicationSubCategory" => "Booking System",
     "offers" => {
       "@type" => "Offer",
       "price" => "0",
@@ -106,6 +107,9 @@
   </script>
 </head>
 <body>
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GLSJ749"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -119,8 +123,8 @@
     gtag('config', 'G-L48GXS7KT4');
   </script>
 
-  <!-- Navigation -->
-  <nav>
+  <!-- Navigation (gets .nav-scrolled when user scrolls) -->
+  <nav id="main-nav">
     <div class="nav-container">
       <a href="https://bookrhub.com" class="logo">
         <img src="/images/isologo.svg" alt="BookrHub" class="isologo-image" width="140">
@@ -162,11 +166,13 @@
           </div>
           <span class="proof-text"><strong>700+</strong> <%= I18n.t('hero.social_proof') %></span>
         </div>
+        <p class="hero-stats"><span><%= I18n.t('hero.stats_free') %></span> · <span><%= I18n.t('hero.stats_setup') %></span> · <span><%= I18n.t('hero.stats_nocode') %></span></p>
         <h1>
           <%= I18n.t('hero.headline_part1') %><br>
-          <span class="gradient-text"><%= I18n.t('hero.headline_part2') %></span>
+          <span class="gradient-text gradient-text-animate"><%= I18n.t('hero.headline_part2') %></span>
         </h1>
-        <p><%= I18n.t('site.subtitle') %></p>
+        <p class="hero-tagline"><%= I18n.t('hero.tagline') %></p>
+        <p class="hero-subtitle"><%= I18n.t('site.hero_subtitle') %></p>
         <div class="hero-buttons">
           <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="btn-primary">
             <%= I18n.t('buttons.start_free_trial') %>
@@ -198,16 +204,23 @@
     </div>
   </section>
 
-  <!-- Logos Section -->
-  <section class="logos-section">
+  <!-- Logos Section - Scrolling marquee -->
+  <section class="logos-section" aria-label="<%= I18n.t('logos.trusted_by') %>">
     <div class="logos-container">
       <p class="logos-label"><%= I18n.t('logos.trusted_by') %></p>
-      <div class="logos-grid">
-        <span class="logo-item">Barber Studios</span>
-        <span class="logo-item">Wellness Co.</span>
-        <span class="logo-item">Nail Art Pro</span>
-        <span class="logo-item">Fitness Hub</span>
-        <span class="logo-item">Beauty Lane</span>
+      <div class="logos-marquee-wrap">
+        <div class="logos-marquee">
+          <span class="logo-item">Barber Studios</span>
+          <span class="logo-item">Wellness Co.</span>
+          <span class="logo-item">Nail Art Pro</span>
+          <span class="logo-item">Fitness Hub</span>
+          <span class="logo-item">Beauty Lane</span>
+          <span class="logo-item">Barber Studios</span>
+          <span class="logo-item">Wellness Co.</span>
+          <span class="logo-item">Nail Art Pro</span>
+          <span class="logo-item">Fitness Hub</span>
+          <span class="logo-item">Beauty Lane</span>
+        </div>
       </div>
     </div>
   </section>
@@ -542,6 +555,15 @@
             <p><%= I18n.t('faq.answer5') %></p>
           </div>
         </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <%= I18n.t('faq.question6') %>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <p><%= I18n.t('faq.answer6') %></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -571,6 +593,19 @@
       </div>
     </div>
   </section>
+
+  <!-- Floating CTA (visible after scrolling past hero) -->
+  <div class="floating-cta" id="floating-cta" aria-hidden="true">
+    <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="floating-cta-btn">
+      <%= I18n.t('buttons.start_free_trial') %>
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+    </a>
+  </div>
+
+  <!-- Back to top -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+  </button>
 
   <!-- Footer -->
   <footer>
@@ -739,6 +774,51 @@
           mobileMenu.classList.remove('active');
           document.body.style.overflow = '';
         });
+      });
+    }
+
+    // Scroll progress bar
+    const scrollProgress = document.getElementById('scroll-progress');
+    function updateScrollProgress() {
+      if (!scrollProgress) return;
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      scrollProgress.style.transform = `scaleX(${height ? winScroll / height : 0})`;
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    updateScrollProgress();
+
+    // Nav: add .nav-scrolled when past hero
+    const mainNav = document.getElementById('main-nav');
+    function updateNavScroll() {
+      if (mainNav) mainNav.classList.toggle('nav-scrolled', window.scrollY > 80);
+    }
+    window.addEventListener('scroll', updateNavScroll, { passive: true });
+    updateNavScroll();
+
+    // Floating CTA: show after scrolling past hero
+    const floatingCta = document.getElementById('floating-cta');
+    function updateFloatingCta() {
+      if (!floatingCta) return;
+      const hero = document.querySelector('.hero');
+      const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400;
+      const show = window.scrollY > heroBottom - 100;
+      floatingCta.classList.toggle('floating-cta-visible', show);
+      floatingCta.setAttribute('aria-hidden', show ? 'false' : 'true');
+    }
+    window.addEventListener('scroll', updateFloatingCta, { passive: true });
+    updateFloatingCta();
+
+    // Back to top
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+      function updateBackToTop() {
+        backToTop.classList.toggle('back-to-top-visible', window.scrollY > 600);
+      }
+      window.addEventListener('scroll', updateBackToTop, { passive: true });
+      updateBackToTop();
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
   </script>
