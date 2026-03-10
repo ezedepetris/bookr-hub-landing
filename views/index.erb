@@ -10,7 +10,7 @@
   })(window,document,'script','dataLayer','<%= ENV['GOOGLE_TAG_MANAGER_ID'] %>');</script>
   <!-- End Google Tag Manager -->
   <% end %>
-  <link rel="stylesheet" href="/css/styles.css?v=2.4.0">
+  <link rel="stylesheet" href="/css/styles.css?v=2.5.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
@@ -594,13 +594,22 @@
         <span><%= I18n.t('pricing.founders_banner') %></span>
       </div>
 
-      <div class="pricing-billing-toggle" role="group" aria-label="Billing period">
-        <button type="button" class="pricing-toggle-btn active" data-interval="monthly" aria-pressed="true"><%= I18n.t('pricing.billing_monthly') %></button>
-        <button type="button" class="pricing-toggle-btn" data-interval="annual" aria-pressed="false"><%= I18n.t('pricing.billing_annual') %></button>
+      <div class="pricing-toggle-wrap">
+        <div class="pricing-billing-toggle" role="group" aria-label="Billing period">
+          <button type="button" class="pricing-toggle-btn active" data-interval="monthly" aria-pressed="true"><%= I18n.t('pricing.billing_monthly') %></button>
+          <button type="button" class="pricing-toggle-btn" data-interval="annual" aria-pressed="false"><%= I18n.t('pricing.billing_annual') %></button>
+        </div>
+        <div class="pricing-yearly-callout" aria-hidden="true">
+          <svg class="pricing-callout-arrow" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M75 8 Q 55 24, 40 22 Q 20 20, 5 35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" class="arrow-line"/>
+          </svg>
+          <span class="pricing-callout-text"><%= I18n.t('pricing.yearly_savings_callout') %></span>
+        </div>
       </div>
 
       <div class="pricing-cards">
         <div class="pricing-card animate-on-scroll">
+          <span class="plan-badge plan-badge-free"><%= I18n.t('pricing.free_forever') %></span>
           <div class="plan-name"><%= I18n.t('pricing.independent') %></div>
           <div class="plan-price"><%= I18n.t('pricing.free') %></div>
           <p class="plan-period"><%= I18n.t('pricing.for_ever') %></p>
@@ -618,11 +627,9 @@
           <p class="plan-period" data-monthly="<%= I18n.t('pricing.per_month') %>" data-annual="<%= I18n.t('pricing.per_month_billed_annual') %>"><%= I18n.t('pricing.per_month') %></p>
           <ul class="plan-features">
             <% I18n.t('plan_features.team').each do |feature| %>
-              <% is_premium_landing = feature.include?('Premium Landing Page') || feature.include?('landing premium') || feature.include?('Página web landing') %>
-              <li class="<%= 'plan-feature-highlight' if is_premium_landing %>">
-                <% if is_premium_landing %>
-                  <span class="plan-feature-icon" aria-hidden="true">✨</span>
-                <% end %>
+              <% is_highlight = feature.include?('Premium Landing Page') || feature.include?('landing premium') || feature.include?('Página web landing') || feature.include?('no commission') || feature.include?('sin comisión') %>
+              <li class="<%= 'plan-feature-highlight' if is_highlight %>">
+                <% if is_highlight %><span class="plan-feature-icon" aria-hidden="true">✨</span><% end %>
                 <%= feature %>
               </li>
             <% end %>
@@ -635,7 +642,11 @@
           <p class="plan-period" data-monthly="<%= I18n.t('pricing.per_month') %>" data-annual="<%= I18n.t('pricing.per_month_billed_annual') %>"><%= I18n.t('pricing.per_month') %></p>
           <ul class="plan-features">
             <% I18n.t('plan_features.business').each do |feature| %>
-              <li><%= feature %></li>
+              <% is_highlight = feature.include?('SMS reminders') || feature.include?('Recordatorios por SMS') || feature.include?('Custom Domain') || feature.include?('dominio propio') || feature.include?('yourbusiness.com') || feature.include?('tunegocio.com') %>
+              <li class="<%= 'plan-feature-highlight' if is_highlight %>">
+                <% if is_highlight %><span class="plan-feature-icon" aria-hidden="true">✨</span><% end %>
+                <%= feature %>
+              </li>
             <% end %>
           </ul>
           <div class="plan-annual-bonus" id="pricing-business-annual-bonus" hidden>

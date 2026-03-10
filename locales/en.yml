@@ -141,14 +141,16 @@ en:
     team: "Team"
     business: "Business"
     free: "Free"
+    free_forever: "Free forever"
     per_month: "per month"
     for_ever: "for ever"
     most_popular: "Most Popular"
     founders_banner: "Founders Club: Lock in these early-bird rates for life before we add more features!"
     billing_monthly: "Monthly"
-    billing_annual: "Annual"
+    billing_annual: "Yearly"
     per_month_billed_annual: "per month, billed annually"
-    business_annual_bonus: "Done-For-You Setup: We will personally design and build your premium landing page for you."
+    yearly_savings_callout: "Get 2 Months Free!"
+    business_annual_bonus: "Annual Bonus: We will design your landing page for you!"
 
   plan_features:
     independent:

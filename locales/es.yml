@@ -141,6 +141,7 @@ es:
     team: "Team"
     business: "Business"
     free: "Gratis"
+    free_forever: "Gratis para siempre"
     per_month: "por mes"
     for_ever: "para siempre"
     most_popular: "Más Popular"
@@ -148,7 +149,8 @@ es:
     billing_monthly: "Mensual"
     billing_annual: "Anual"
     per_month_billed_annual: "por mes, facturado anualmente"
-    business_annual_bonus: "Configuración hecha por nosotros: Diseñaremos y construiremos tu landing premium personalmente."
+    yearly_savings_callout: "¡2 meses gratis!"
+    business_annual_bonus: "Bono anual: ¡Diseñaremos tu landing por ti!"
 
   plan_features:
     independent:
