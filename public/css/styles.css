@@ -231,6 +231,19 @@ nav.nav-scrolled {
     box-shadow: var(--shadow-primary);
 }
 
+/* Header Get started: white bg + purple border & text on hover */
+.nav-links .cta-button,
+.mobile-menu-links .cta-button {
+    border: 2px solid transparent;
+}
+.nav-links .cta-button:hover,
+.mobile-menu-links .cta-button:hover {
+    background: #fff;
+    color: var(--color-primary) !important;
+    border-color: var(--color-primary);
+    box-shadow: none;
+}
+
 /* Focus visible - accessibility + modern keyboard UX */
 a:focus-visible,
 button:focus-visible,
