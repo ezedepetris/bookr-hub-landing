@@ -1518,10 +1518,10 @@ button:focus-visible,
     flex-direction: column;
     align-items: center;
     position: absolute;
-    left: 90%;
-    margin-top: -0.125rem;
-    transform: translateX(-40%);
-    /* gap: -2rem; */
+    left: 75%;
+    top: -2.5rem;
+    transform: translateX(-50%);
+    gap: 0.125rem;
     pointer-events: none;
 }
 
@@ -1544,9 +1544,11 @@ button:focus-visible,
     white-space: nowrap;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 1024px) {
     .pricing-yearly-callout {
-        top: -2.25rem;
+        top: -2.75rem;
+        left: 90%;
+        transform: translateX(-40%);
     }
     .pricing-callout-arrow {
         width: 56px;
@@ -1554,6 +1556,14 @@ button:focus-visible,
     }
     .pricing-callout-text {
         font-size: 0.9375rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .pricing-yearly-callout {
+        top: -2.5rem;
+        left: 90%;
+        transform: translateX(-40%);
     }
 }
 
