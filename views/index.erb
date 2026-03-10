@@ -596,14 +596,14 @@
 
       <div class="pricing-toggle-wrap">
         <div class="pricing-billing-toggle" role="group" aria-label="Billing period">
-          <button type="button" class="pricing-toggle-btn active" data-interval="monthly" aria-pressed="true"><%= I18n.t('pricing.billing_monthly') %></button>
-          <button type="button" class="pricing-toggle-btn" data-interval="annual" aria-pressed="false"><%= I18n.t('pricing.billing_annual') %></button>
-        </div>
-        <div class="pricing-yearly-callout" aria-hidden="true">
-          <svg class="pricing-callout-arrow" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M75 8 Q 55 24, 40 22 Q 20 20, 5 35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" class="arrow-line"/>
-          </svg>
-          <span class="pricing-callout-text"><%= I18n.t('pricing.yearly_savings_callout') %></span>
+          <div class="pricing-yearly-callout" aria-hidden="true">
+            <span class="pricing-callout-text"><%= I18n.t('pricing.yearly_savings_callout') %></span>
+            <svg class="pricing-callout-arrow" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M75 8 Q 55 24, 40 22 Q 20 20, 5 35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" class="arrow-line"/>
+            </svg>
+          </div>
+          <button type="button" class="pricing-toggle-btn" data-interval="monthly" aria-pressed="false"><%= I18n.t('pricing.billing_monthly') %></button>
+          <button type="button" class="pricing-toggle-btn active" data-interval="annual" aria-pressed="true"><%= I18n.t('pricing.billing_annual') %></button>
         </div>
       </div>
 
@@ -623,8 +623,8 @@
         <div class="pricing-card featured animate-on-scroll stagger-1">
           <span class="featured-badge"><%= I18n.t('pricing.most_popular') %></span>
           <div class="plan-name"><%= I18n.t('pricing.team') %></div>
-          <div class="plan-price pricing-price-toggle" data-monthly="<%= @prices['team'][:monthly][:formatted] %>" data-annual="<%= @prices['team'][:annual_per_month][:formatted] %>"><%= @prices['team'][:monthly][:formatted] %></div>
-          <p class="plan-period" data-monthly="<%= I18n.t('pricing.per_month') %>" data-annual="<%= I18n.t('pricing.per_month_billed_annual') %>"><%= I18n.t('pricing.per_month') %></p>
+          <div class="plan-price pricing-price-toggle" data-monthly="<%= @prices['team'][:monthly][:formatted] %>" data-annual="<%= @prices['team'][:annual_per_month][:formatted] %>"><%= @prices['team'][:annual_per_month][:formatted] %></div>
+          <p class="plan-period" data-monthly="<%= I18n.t('pricing.per_month') %>" data-annual="<%= I18n.t('pricing.per_month_billed_annual') %>"><%= I18n.t('pricing.per_month_billed_annual') %></p>
           <ul class="plan-features">
             <% I18n.t('plan_features.team').each do |feature| %>
               <% is_highlight = feature.include?('Premium Landing Page') || feature.include?('landing premium') || feature.include?('Página web landing') || feature.include?('no commission') || feature.include?('sin comisión') %>
@@ -634,12 +634,12 @@
               </li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button pricing-signup-link" data-signup-base="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('cta.get_started') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>&interval=annual" class="cta-button pricing-signup-link" data-signup-base="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('cta.get_started') %></a>
         </div>
         <div class="pricing-card pricing-card-business animate-on-scroll stagger-2">
           <div class="plan-name"><%= I18n.t('pricing.business') %></div>
-          <div class="plan-price pricing-price-toggle" data-monthly="<%= @prices['business'][:monthly][:formatted] %>" data-annual="<%= @prices['business'][:annual_per_month][:formatted] %>"><%= @prices['business'][:monthly][:formatted] %></div>
-          <p class="plan-period" data-monthly="<%= I18n.t('pricing.per_month') %>" data-annual="<%= I18n.t('pricing.per_month_billed_annual') %>"><%= I18n.t('pricing.per_month') %></p>
+          <div class="plan-price pricing-price-toggle" data-monthly="<%= @prices['business'][:monthly][:formatted] %>" data-annual="<%= @prices['business'][:annual_per_month][:formatted] %>"><%= @prices['business'][:annual_per_month][:formatted] %></div>
+          <p class="plan-period" data-monthly="<%= I18n.t('pricing.per_month') %>" data-annual="<%= I18n.t('pricing.per_month_billed_annual') %>"><%= I18n.t('pricing.per_month_billed_annual') %></p>
           <ul class="plan-features">
             <% I18n.t('plan_features.business').each do |feature| %>
               <% is_highlight = feature.include?('SMS reminders') || feature.include?('Recordatorios por SMS') || feature.include?('Custom Domain') || feature.include?('dominio propio') || feature.include?('yourbusiness.com') || feature.include?('tunegocio.com') %>
@@ -649,11 +649,11 @@
               </li>
             <% end %>
           </ul>
-          <div class="plan-annual-bonus" id="pricing-business-annual-bonus" hidden>
+          <div class="plan-annual-bonus" id="pricing-business-annual-bonus">
             <span class="plan-annual-bonus-icon">✨</span>
             <span><%= I18n.t('pricing.business_annual_bonus') %></span>
           </div>
-          <a href="https://my.bookrhub.com/signup?plan=business&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button pricing-signup-link" data-signup-base="https://my.bookrhub.com/signup?plan=business&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('cta.first_month_on_us') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=business&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>&interval=annual" class="cta-button pricing-signup-link" data-signup-base="https://my.bookrhub.com/signup?plan=business&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('cta.first_month_on_us') %></a>
         </div>
       </div>
     </div>
@@ -866,8 +866,8 @@
       });
     });
 
-    // Set initial state: Monthly selected, bonus hidden
-    setPricingInterval('monthly');
+    // Set initial state: Yearly selected by default
+    setPricingInterval('annual');
 
     // Tab functionality for screenshots
     const tabButtons = document.querySelectorAll('.tab-button');
