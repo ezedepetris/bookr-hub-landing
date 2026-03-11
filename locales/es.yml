@@ -4,7 +4,7 @@ es:
     description: "Todo lo que necesitas para gestionar citas, hacer crecer tu negocio y deleitar a tus clientes. Comienza gratis hoy."
     tagline: "Gestión Simple de Reservas para Empresas Modernas"
     subtitle: "Todo lo que necesitas para gestionar citas, hacer crecer tu negocio y deleitar a tus clientes."
-    hero_subtitle: "Tu calendario en piloto automático. Disponibilidad en tiempo real, recordatorios inteligentes y una página de reservas con tu marca—en minutos."
+    hero_subtitle: "Una landing con tu marca, reservas automáticas y pagos en un solo lugar. Sustituye Wix y Linktree por el precio de un café."
     keywords: "software de reservas, programación de citas, sistema de reservas en línea, gestión de reservas, reserva de citas, software de programación empresarial, fresha, setmore, turnos, reservas, citas, agendamiento, agenda, calendario, horarios, reservas, citas, agendamiento, agenda, calendario, horarios"
     author: "BookrHub"
     canonical_url: "https://bookrhub.com"
@@ -13,6 +13,7 @@ es:
     features: "Características"
     why_us: "Por Qué Nosotros"
     how_it_works: "Cómo Funciona"
+    live_templates: "Plantillas"
     examples: "Ejemplos"
     pricing: "Precios"
     get_started: "Comenzar"
@@ -23,8 +24,7 @@ es:
 
   hero:
     social_proof: "empresas confían en BookrHub"
-    headline_part1: "Deja de perseguir clientes."
-    headline_part2: "Comienza a reservarlos."
+    headline: "El sistema de reservas que incluye una web impresionante."
     tagline: "Configura en 5 minutos. Sin código. Sin tarjeta."
     stats_free: "Gratis para siempre"
     stats_setup: "Configura en 5 min"
@@ -34,6 +34,12 @@ es:
 
   logos:
     trusted_by: "Confiado por empresas en todo el mundo"
+
+  live_templates:
+    title: "Mira cómo podría verse tu negocio."
+    barber_card_title: "Barbería"
+    barber_card_description: "Landing premium con servicios, reservas y tu marca."
+    view_live_demo: "Ver demo en vivo (Barbería)"
 
   section_labels:
     features: "Características"
@@ -58,7 +64,7 @@ es:
 
     smart_reminders:
       title: "Recordatorios Inteligentes"
-      description: "Reduce las inasistencias con recordatorios automáticos por email y SMS."
+      description: "Reduce inasistencias con recordatorios por email (SMS en plan Business)."
 
     clear_analytics:
       title: "Análisis Claros"
@@ -73,8 +79,8 @@ es:
       description: "Dominio personalizado y páginas de reserva con tu marca para tu negocio."
 
   why_us:
-    title: "¿Por qué elegirnos frente al resto?"
-    subtitle: "Somos los nuevos. Este es nuestro primer lanzamiento—y estamos hechos diferente."
+    title: "Hecho para negocios modernos."
+    subtitle: "Estable, con diseño cuidado y todo en uno. Sustituye herramientas de reservas anticuadas y sitios hechos con parches: obtén una web premium con reservas y pagos integrados."
     card_parity:
       title: "El mismo poder que los grandes"
       description: "Igualamos lo que Fresha, SetMore y GetTimely ofrecen: reservas en tiempo real, recordatorios, pagos, gestión de equipo. Tienes las funciones que necesitas sin relleno ni precios altos."
@@ -84,6 +90,9 @@ es:
     card_growth:
       title: "Estamos recién arrancando"
       description: "Esta es nuestra base. Todo lo que sumemos—nuevas funciones, integraciones, herramientas—hace crecer tu plataforma también. No compras un producto cerrado; te subes a una plataforma que va a crecer mucho contigo."
+    card_payments:
+      title: "Cero comisión. Tu método de pago. El dinero va a ti."
+      description: "No cobramos porcentaje ni comisión por tus ventas. Conectas tu propio método de pago—soportamos muchas integraciones. El dinero te llega directamente. Configura la integración que prefieras y quédate con cada euro que ganes."
     card_underdog:
       title: "Hecho para negocios reales"
       description: "No somos un gigante. Lo construimos para salones, barberos, consultores y equipos pequeños que quieren algo que funcione y siga mejorando. Tu feedback define lo que construimos después."
@@ -132,30 +141,37 @@ es:
     team: "Team"
     business: "Business"
     free: "Gratis"
+    free_forever: "Gratis para siempre"
     per_month: "por mes"
     for_ever: "para siempre"
     most_popular: "Más Popular"
+    founders_banner: "Club Fundadores: Fija estos precios de lanzamiento de por vida antes de que añadamos más funciones."
+    billing_monthly: "Mensual"
+    billing_annual: "Anual"
+    per_month_billed_annual: "por mes, facturado anualmente"
+    yearly_savings_callout: "¡2 meses gratis!"
+    business_annual_bonus: "Bono anual: ¡Diseñaremos tu landing por ti!"
 
   plan_features:
     independent:
       - "Hasta 150 reservas/mes"
       - "1 Miembro del personal"
       - "Recordatorios por email"
-      - "Subdominio BookrHub"
-      - "Páginas de reserva"
+      - "Página de reservas estándar (tunombre.bookrhub.com/app/bookings)"
     team:
-      - "Todo en Independent"
       - "Hasta 400 reservas/mes"
       - "Hasta 3 miembros del personal"
-      - "Pagos en línea"
-      - "Páginas de destino"
+      - "Recordatorios por email (sin SMS)"
+      - "Pagos en línea — sin comisión: conecta tu método de pago, el dinero va a ti"
+      - "Página web landing premium (como nuestra plantilla Barbería)"
     business:
-      - "Todo en Team"
       - "Reservas ilimitadas"
-      - "Miembros del personal ilimitados"
-      - "Configura tu propio dominio personalizado"
+      - "Personal ilimitado"
+      - "Recordatorios por SMS"
+      - "Consultas desde tu landing"
+      - "Analíticas"
+      - "Conecta tu dominio propio (tunegocio.com)"
       - "Soporte dedicado"
-      - "Diseño de página de destino único"
 
   faq:
     title: "Preguntas frecuentes"
@@ -166,8 +182,8 @@ es:
     answer2: "¡Sí! Puedes cancelar tu suscripción en cualquier momento sin preguntas. No hay contratos a largo plazo ni tarifas de cancelación. Continuarás teniendo acceso hasta el final de tu período de facturación."
     question3: "¿Ofrecen soluciones personalizadas para equipos más grandes?"
     answer3: "¡Absolutamente! Nuestro plan Business admite miembros del personal ilimitados. Para empresas con necesidades específicas, contáctanos en admin@bookrhub.com y crearemos una solución personalizada para ti."
-    question4: "¿Qué métodos de pago aceptan?"
-    answer4: "Aceptamos todas las tarjetas de crédito principales (Visa, Mastercard, American Express) a través de nuestro procesador de pagos seguro, Stripe. Para planes anuales, también ofrecemos transferencias bancarias en regiones seleccionadas."
+    question4: "¿Cobran comisión o porcentaje de mis ventas?"
+    answer4: "No. No cobramos ninguna comisión ni porcentaje de tus ventas. Conectas tu propio método de pago—soportamos muchas integraciones. El dinero te llega directamente. Configura la que prefieras y quédate con cada euro que ganes."
     question5: "¿Cuánto tiempo toma configurarlo?"
     answer5: "¡La mayoría de los negocios están funcionando en menos de 5 minutos! Solo crea una cuenta, agrega tus servicios y disponibilidad, y comparte tu enlace de reserva. Es así de simple."
     question6: "¿Qué es un sistema de reservas y por qué lo necesito?"

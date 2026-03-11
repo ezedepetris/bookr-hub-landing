@@ -10,7 +10,7 @@
   })(window,document,'script','dataLayer','<%= ENV['GOOGLE_TAG_MANAGER_ID'] %>');</script>
   <!-- End Google Tag Manager -->
   <% end %>
-  <link rel="stylesheet" href="/css/styles.css?v=2.3.0">
+  <link rel="stylesheet" href="/css/styles.css?v=2.5.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
@@ -159,6 +159,7 @@
         <a href="#features"><%= I18n.t('navigation.features') %></a>
         <a href="#why-us"><%= I18n.t('navigation.why_us') %></a>
         <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
+        <a href="#live-templates"><%= I18n.t('navigation.live_templates') %></a>
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
         <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
       </div>
@@ -176,6 +177,7 @@
       <a href="#features"><%= I18n.t('navigation.features') %></a>
       <a href="#why-us"><%= I18n.t('navigation.why_us') %></a>
       <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
+      <a href="#live-templates"><%= I18n.t('navigation.live_templates') %></a>
       <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
       <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
     </div>
@@ -195,10 +197,7 @@
           <span class="proof-text"><strong>700+</strong> <%= I18n.t('hero.social_proof') %></span>
         </div>
         <p class="hero-stats"><span><%= I18n.t('hero.stats_free') %></span> · <span><%= I18n.t('hero.stats_setup') %></span> · <span><%= I18n.t('hero.stats_nocode') %></span></p>
-        <h1>
-          <%= I18n.t('hero.headline_part1') %><br>
-          <span class="gradient-text gradient-text-animate"><%= I18n.t('hero.headline_part2') %></span>
-        </h1>
+        <h1><span class="gradient-text gradient-text-animate"><%= I18n.t('hero.headline') %></span></h1>
         <p class="hero-tagline"><%= I18n.t('hero.tagline') %></p>
         <p class="hero-subtitle"><%= I18n.t('site.hero_subtitle') %></p>
         <div class="hero-buttons">
@@ -223,9 +222,24 @@
         </div>
       </div>
       <div class="hero-image">
-        <div class="iphone-mockup">
-          <div class="iphone-screen">
-            <img src="/gifs/iphone.gif" alt="BookrHub Demo" style="width: 100%; height: 100%; object-fit: cover;">
+        <!-- Phone mockup: visible on small devices -->
+        <div class="hero-phone-mockup">
+          <div class="iphone-mockup">
+            <div class="iphone-screen">
+              <img src="/gifs/iphone.gif" alt="BookrHub Demo" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+        <!-- Browser/website mockup: visible on large screens -->
+        <div class="hero-website-mockup">
+          <div class="browser-chrome">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">barber.bookrhub.com</span>
+          </div>
+          <div class="browser-screen">
+            <img src="/gifs/barber-landing.gif" alt="Premium landing page template — Barbershop" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
         </div>
       </div>
@@ -248,6 +262,49 @@
           <span class="logo-item">Nail Art Pro</span>
           <span class="logo-item">Fitness Hub</span>
           <span class="logo-item">Beauty Lane</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Templates Section -->
+  <section id="live-templates" class="live-templates">
+    <div class="live-templates-container">
+      <div class="section-header">
+        <h2><%= I18n.t('live_templates.title') %></h2>
+      </div>
+      <div class="templates-grid">
+        <div class="template-card template-card-featured animate-on-scroll">
+          <div class="template-card-preview">
+            <img src="/gifs/barber-landing.gif" alt="<%= I18n.t('live_templates.barber_card_title') %> template">
+          </div>
+          <div class="template-card-content">
+            <h3><%= I18n.t('live_templates.barber_card_title') %></h3>
+            <p><%= I18n.t('live_templates.barber_card_description') %></p>
+            <a href="https://barber.bookrhub.com" target="_blank" rel="noopener noreferrer" class="btn-primary template-card-cta">
+              <%= I18n.t('live_templates.view_live_demo') %>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Placeholder cards for future templates (scale to 3-4) -->
+        <div class="template-card template-card-coming animate-on-scroll stagger-1" aria-hidden="true">
+          <div class="template-card-preview template-card-placeholder">
+            <span>Coming soon</span>
+          </div>
+          <div class="template-card-content">
+            <h3>More templates</h3>
+            <p>Wellness, beauty & more.</p>
+          </div>
+        </div>
+        <div class="template-card template-card-coming animate-on-scroll stagger-2" aria-hidden="true">
+          <div class="template-card-preview template-card-placeholder">
+            <span>Coming soon</span>
+          </div>
+          <div class="template-card-content">
+            <h3>More templates</h3>
+            <p>Wellness, beauty & more.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -288,10 +345,10 @@
         </div>
         <div class="why-us-card animate-on-scroll stagger-3">
           <div class="why-us-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
           </div>
-          <h3><%= I18n.t('why_us.card_underdog.title') %></h3>
-          <p><%= I18n.t('why_us.card_underdog.description') %></p>
+          <h3><%= I18n.t('why_us.card_payments.title') %></h3>
+          <p><%= I18n.t('why_us.card_payments.description') %></p>
         </div>
       </div>
     </div>
@@ -531,6 +588,25 @@
         <h2><%= I18n.t('pricing.title') %></h2>
         <p><%= I18n.t('pricing.subtitle') %></p>
       </div>
+
+      <div class="pricing-promo-banner" role="banner">
+        <span class="pricing-promo-icon" aria-hidden="true">🚀</span>
+        <span><%= I18n.t('pricing.founders_banner') %></span>
+      </div>
+
+      <div class="pricing-toggle-wrap">
+        <div class="pricing-billing-toggle" role="group" aria-label="Billing period">
+          <div class="pricing-yearly-callout" aria-hidden="true">
+            <span class="pricing-callout-text"><%= I18n.t('pricing.yearly_savings_callout') %></span>
+            <svg class="pricing-callout-arrow" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M75 8 Q 55 24, 40 22 Q 20 20, 5 35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" class="arrow-line"/>
+            </svg>
+          </div>
+          <button type="button" class="pricing-toggle-btn" data-interval="monthly" aria-pressed="false"><%= I18n.t('pricing.billing_monthly') %></button>
+          <button type="button" class="pricing-toggle-btn active" data-interval="annual" aria-pressed="true"><%= I18n.t('pricing.billing_annual') %></button>
+        </div>
+      </div>
+
       <div class="pricing-cards">
         <div class="pricing-card animate-on-scroll">
           <div class="plan-name"><%= I18n.t('pricing.independent') %></div>
@@ -541,30 +617,42 @@
               <li><%= feature %></li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=independent&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('cta.get_started') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=independent&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button pricing-signup-link" data-signup-base="https://my.bookrhub.com/signup?plan=independent&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('cta.get_started') %></a>
         </div>
         <div class="pricing-card featured animate-on-scroll stagger-1">
           <span class="featured-badge"><%= I18n.t('pricing.most_popular') %></span>
           <div class="plan-name"><%= I18n.t('pricing.team') %></div>
-          <div class="plan-price"><%= @prices['team'][:formatted] %></div>
-          <p class="plan-period"><%= I18n.t('pricing.per_month') %></p>
+          <div class="plan-price pricing-price-toggle" data-monthly="<%= @prices['team'][:monthly][:formatted] %>" data-annual="<%= @prices['team'][:annual_per_month][:formatted] %>"><%= @prices['team'][:annual_per_month][:formatted] %></div>
+          <p class="plan-period" data-monthly="<%= I18n.t('pricing.per_month') %>" data-annual="<%= I18n.t('pricing.per_month_billed_annual') %>"><%= I18n.t('pricing.per_month_billed_annual') %></p>
           <ul class="plan-features">
             <% I18n.t('plan_features.team').each do |feature| %>
-              <li><%= feature %></li>
+              <% is_highlight = feature.include?('Premium Landing Page') || feature.include?('landing premium') || feature.include?('Página web landing') || feature.include?('no commission') || feature.include?('sin comisión') %>
+              <li class="<%= 'plan-feature-highlight' if is_highlight %>">
+                <% if is_highlight %><span class="plan-feature-icon" aria-hidden="true">✨</span><% end %>
+                <%= feature %>
+              </li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('cta.get_started') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>&interval=annual" class="cta-button pricing-signup-link" data-signup-base="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('cta.get_started') %></a>
         </div>
-        <div class="pricing-card animate-on-scroll stagger-2">
+        <div class="pricing-card pricing-card-business animate-on-scroll stagger-2">
           <div class="plan-name"><%= I18n.t('pricing.business') %></div>
-          <div class="plan-price"><%= @prices['business'][:formatted] %></div>
-          <p class="plan-period"><%= I18n.t('pricing.per_month') %></p>
+          <div class="plan-price pricing-price-toggle" data-monthly="<%= @prices['business'][:monthly][:formatted] %>" data-annual="<%= @prices['business'][:annual_per_month][:formatted] %>"><%= @prices['business'][:annual_per_month][:formatted] %></div>
+          <p class="plan-period" data-monthly="<%= I18n.t('pricing.per_month') %>" data-annual="<%= I18n.t('pricing.per_month_billed_annual') %>"><%= I18n.t('pricing.per_month_billed_annual') %></p>
           <ul class="plan-features">
             <% I18n.t('plan_features.business').each do |feature| %>
-              <li><%= feature %></li>
+              <% is_highlight = feature.include?('SMS reminders') || feature.include?('Recordatorios por SMS') || feature.include?('Custom Domain') || feature.include?('dominio propio') || feature.include?('yourbusiness.com') || feature.include?('tunegocio.com') %>
+              <li class="<%= 'plan-feature-highlight' if is_highlight %>">
+                <% if is_highlight %><span class="plan-feature-icon" aria-hidden="true">✨</span><% end %>
+                <%= feature %>
+              </li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=business&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('cta.first_month_on_us') %></a>
+          <div class="plan-annual-bonus" id="pricing-business-annual-bonus">
+            <span class="plan-annual-bonus-icon">✨</span>
+            <span><%= I18n.t('pricing.business_annual_bonus') %></span>
+          </div>
+          <a href="https://my.bookrhub.com/signup?plan=business&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>&interval=annual" class="cta-button pricing-signup-link" data-signup-base="https://my.bookrhub.com/signup?plan=business&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('cta.first_month_on_us') %></a>
         </div>
       </div>
     </div>
@@ -710,6 +798,7 @@
         <h3><%= I18n.t('footer.product') %></h3>
         <a href="#features"><%= I18n.t('navigation.features') %></a>
         <a href="#why-us"><%= I18n.t('navigation.why_us') %></a>
+        <a href="#live-templates"><%= I18n.t('navigation.live_templates') %></a>
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
         <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
       </div>
@@ -740,6 +829,45 @@
   <!-- Scripts -->
   <script src="https://app.termly.io/resource-blocker/6a469ab6-c037-4332-9386-5953a0166dc7?autoBlock=on"></script>
   <script>
+    // Pricing: Monthly vs Annual billing toggle
+    const pricingToggleBtns = document.querySelectorAll('.pricing-toggle-btn');
+    const planPeriods = document.querySelectorAll('.plan-period[data-monthly][data-annual]');
+    const businessAnnualBonus = document.getElementById('pricing-business-annual-bonus');
+
+    function setPricingInterval(interval) {
+      const isAnnual = interval === 'annual';
+      pricingToggleBtns.forEach(btn => {
+        const active = btn.dataset.interval === interval;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      planPeriods.forEach(p => {
+        p.textContent = p.dataset[interval] || p.textContent;
+      });
+      // Show monthly price or annual/12 price
+      document.querySelectorAll('.pricing-price-toggle').forEach(el => {
+        const value = el.getAttribute(isAnnual ? 'data-annual' : 'data-monthly');
+        if (value) el.textContent = value;
+      });
+      if (businessAnnualBonus) {
+        businessAnnualBonus.hidden = !isAnnual;
+      }
+      // Update signup links with current plan + interval so schedule-me receives both
+      document.querySelectorAll('.pricing-signup-link[data-signup-base]').forEach(link => {
+        const base = link.getAttribute('data-signup-base');
+        link.href = base + (isAnnual ? '&interval=annual' : '&interval=month');
+      });
+    }
+
+    pricingToggleBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        setPricingInterval(this.dataset.interval);
+      });
+    });
+
+    // Set initial state: Yearly selected by default
+    setPricingInterval('annual');
+
     // Tab functionality for screenshots
     const tabButtons = document.querySelectorAll('.tab-button');
     const screenshotGrid = document.getElementById('screenshot-grid');
