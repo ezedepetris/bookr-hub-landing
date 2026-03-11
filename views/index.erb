@@ -617,7 +617,7 @@
               <li><%= feature %></li>
             <% end %>
           </ul>
-          <a href="https://my.bookrhub.com/signup?plan=independent&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('cta.get_started') %></a>
+          <a href="https://my.bookrhub.com/signup?plan=independent&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button pricing-signup-link" data-signup-base="https://my.bookrhub.com/signup?plan=independent&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('cta.get_started') %></a>
         </div>
         <div class="pricing-card featured animate-on-scroll stagger-1">
           <span class="featured-badge"><%= I18n.t('pricing.most_popular') %></span>
@@ -852,10 +852,10 @@
       if (businessAnnualBonus) {
         businessAnnualBonus.hidden = !isAnnual;
       }
-      // Update signup links so schedule-me receives interval (for Stripe subscription)
+      // Update signup links with current plan + interval so schedule-me receives both
       document.querySelectorAll('.pricing-signup-link[data-signup-base]').forEach(link => {
         const base = link.getAttribute('data-signup-base');
-        link.href = base + (isAnnual ? '&interval=annual' : '');
+        link.href = base + (isAnnual ? '&interval=annual' : '&interval=month');
       });
     }
 
