@@ -301,10 +301,12 @@ button:focus-visible,
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     z-index: 999;
-    padding: 100px 2rem 2rem;
+    padding: 100px 2rem calc(3rem + env(safe-area-inset-bottom, 0px));
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-base);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .mobile-menu.active {
@@ -316,6 +318,7 @@ button:focus-visible,
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    padding-bottom: 2rem;
 }
 
 .mobile-menu-links a {
@@ -337,9 +340,16 @@ button:focus-visible,
     display: block;
     text-align: center;
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     padding: 1rem;
     font-size: 1.125rem;
     border-bottom: none;
+}
+
+/* Inset box-shadow for hover "border" so it's never clipped on small screens */
+.mobile-menu-links .cta-button:hover {
+    border-color: transparent;
+    box-shadow: inset 0 0 0 2px var(--color-primary);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -1746,7 +1756,7 @@ button:focus-visible,
     border-bottom: none;
 }
 
-.plan-features li::before {
+.plan-features li:not(.plan-feature-highlight)::before {
     content: '';
     width: 18px;
     height: 18px;

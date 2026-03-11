@@ -91,8 +91,8 @@ es:
       title: "Estamos recién arrancando"
       description: "Esta es nuestra base. Todo lo que sumemos—nuevas funciones, integraciones, herramientas—hace crecer tu plataforma también. No compras un producto cerrado; te subes a una plataforma que va a crecer mucho contigo."
     card_payments:
-      title: "Cero comisión. Tu pasarela de pago. El dinero va a ti."
-      description: "No cobramos porcentaje ni comisión por tus ventas. Conectas tu propio método de pago—soportamos muchas pasarelas. El dinero te llega directamente. Configura la integración que prefieras y quédate con cada euro que ganes."
+      title: "Cero comisión. Tu método de pago. El dinero va a ti."
+      description: "No cobramos porcentaje ni comisión por tus ventas. Conectas tu propio método de pago—soportamos muchas integraciones. El dinero te llega directamente. Configura la integración que prefieras y quédate con cada euro que ganes."
     card_underdog:
       title: "Hecho para negocios reales"
       description: "No somos un gigante. Lo construimos para salones, barberos, consultores y equipos pequeños que quieren algo que funcione y siga mejorando. Tu feedback define lo que construimos después."
@@ -162,7 +162,7 @@ es:
       - "Hasta 400 reservas/mes"
       - "Hasta 3 miembros del personal"
       - "Recordatorios por email (sin SMS)"
-      - "Pagos en línea — sin comisión: conecta tu pasarela, el dinero va a ti"
+      - "Pagos en línea — sin comisión: conecta tu método de pago, el dinero va a ti"
       - "Página web landing premium (como nuestra plantilla Barbería)"
     business:
       - "Reservas ilimitadas"
@@ -183,7 +183,7 @@ es:
     question3: "¿Ofrecen soluciones personalizadas para equipos más grandes?"
     answer3: "¡Absolutamente! Nuestro plan Business admite miembros del personal ilimitados. Para empresas con necesidades específicas, contáctanos en admin@bookrhub.com y crearemos una solución personalizada para ti."
     question4: "¿Cobran comisión o porcentaje de mis ventas?"
-    answer4: "No. No cobramos ninguna comisión ni porcentaje de tus ventas. Conectas tu propia pasarela de pago—soportamos muchas integraciones. El dinero te llega directamente. Configura la que prefieras y quédate con cada euro que ganes."
+    answer4: "No. No cobramos ninguna comisión ni porcentaje de tus ventas. Conectas tu propio método de pago—soportamos muchas integraciones. El dinero te llega directamente. Configura la que prefieras y quédate con cada euro que ganes."
     question5: "¿Cuánto tiempo toma configurarlo?"
     answer5: "¡La mayoría de los negocios están funcionando en menos de 5 minutos! Solo crea una cuenta, agrega tus servicios y disponibilidad, y comparte tu enlace de reserva. Es así de simple."
     question6: "¿Qué es un sistema de reservas y por qué lo necesito?"
