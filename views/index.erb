@@ -641,7 +641,7 @@
           <p class="plan-period" data-monthly="<%= I18n.t('pricing.per_month') %>" data-annual="<%= I18n.t('pricing.per_month_billed_annual') %>"><%= I18n.t('pricing.per_month_billed_annual') %></p>
           <ul class="plan-features">
             <% I18n.t('plan_features.business').each do |feature| %>
-              <% is_highlight = feature.include?('SMS reminders') || feature.include?('Recordatorios por SMS') || feature.include?('Custom Domain') || feature.include?('dominio propio') || feature.include?('yourbusiness.com') || feature.include?('tunegocio.com') %>
+              <% is_highlight = feature.include?('Inquiries') || feature.include?('inquiry') || feature.include?('Consultas') || feature.include?('Custom Domain') || feature.include?('dominio propio') || feature.include?('yourbusiness.com') || feature.include?('tunegocio.com') %>
               <li class="<%= 'plan-feature-highlight' if is_highlight %>">
                 <% if is_highlight %><span class="plan-feature-icon" aria-hidden="true">✨</span><% end %>
                 <%= feature %>

@@ -64,7 +64,7 @@ es:
 
     smart_reminders:
       title: "Recordatorios Inteligentes"
-      description: "Reduce inasistencias con recordatorios por email (SMS en plan Business)."
+      description: "Reduce inasistencias con recordatorios por email."
 
     clear_analytics:
       title: "Análisis Claros"
@@ -161,13 +161,12 @@ es:
     team:
       - "Hasta 400 reservas/mes"
       - "Hasta 3 miembros del personal"
-      - "Recordatorios por email (sin SMS)"
+      - "Recordatorios por email"
       - "Pagos en línea — sin comisión: conecta tu método de pago, el dinero va a ti"
       - "Página web landing premium (como nuestra plantilla Barbería)"
     business:
       - "Reservas ilimitadas"
       - "Personal ilimitado"
-      - "Recordatorios por SMS"
       - "Consultas desde tu landing"
       - "Analíticas"
       - "Conecta tu dominio propio (tunegocio.com)"

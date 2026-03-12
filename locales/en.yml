@@ -64,7 +64,7 @@ en:
 
     smart_reminders:
       title: "Smart Reminders"
-      description: "Reduce no-shows with automatic email reminders (SMS on Business plan)."
+      description: "Reduce no-shows with automatic email reminders."
 
     clear_analytics:
       title: "Clear Analytics"
@@ -161,13 +161,12 @@ en:
     team:
       - "Up to 400 bookings/month"
       - "Up to 3 staff members"
-      - "Email reminders (no SMS)"
+      - "Email reminders"
       - "Online payments — no commission: connect your provider, money goes to you"
       - "Premium Landing Page Website (like our Barber template)"
     business:
       - "Unlimited bookings"
       - "Unlimited staff"
-      - "SMS reminders"
       - "Inquiries from your landing page"
       - "Analytics"
       - "Connect your Custom Domain (yourbusiness.com)"

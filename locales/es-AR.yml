@@ -33,7 +33,7 @@ es-AR:
 
     smart_reminders:
       title: "Recordatorios Inteligentes"
-      description: "Reduce las inasistencias con recordatorios automáticos por email y SMS."
+      description: "Reduce las inasistencias con recordatorios automáticos por email."
 
     clear_analytics:
       title: "Análisis Claros"
@@ -91,6 +91,7 @@ es-AR:
       - "Todo en Team"
       - "Reservas ilimitadas"
       - "Miembros del personal ilimitados"
+      - "Consultas desde tu landing"
       - "Configura tu propio dominio personalizado"
       - "Soporte dedicado"
       - "Diseño de página de destino único"
