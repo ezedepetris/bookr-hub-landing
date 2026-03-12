@@ -279,43 +279,32 @@
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
         </button>
         <div class="templates-carousel-inner" id="templates-carousel-track">
-          <div class="template-card template-card-featured">
+          <% %w[barber medical-clinic dental fitness fitness-pro hair-salon high-converting modern-ux nails pet-grooming photography spa-massage].each_with_index do |slug, idx| %>
+          <div class="template-card <%= 'template-card-featured' if idx == 0 %>">
             <div class="template-card-preview">
-              <img src="/gifs/barber-landing.gif" alt="<%= I18n.t('live_templates.barber_card_title') %> template">
+              <img src="/gifs/<%= slug %>-landing.gif" alt="<%= I18n.t("live_templates.templates.#{slug}.title") %> template">
             </div>
             <div class="template-card-content">
-              <h3><%= I18n.t('live_templates.barber_card_title') %></h3>
-              <p><%= I18n.t('live_templates.barber_card_description') %></p>
-              <a href="https://barber.bookrhub.com" target="_blank" rel="noopener noreferrer" class="btn-primary template-card-cta">
+              <h3><%= I18n.t("live_templates.templates.#{slug}.title") %></h3>
+              <p><%= I18n.t("live_templates.templates.#{slug}.description") %></p>
+              <a href="https://demo.bookrhub.com/<%= slug %>" target="_blank" rel="noopener noreferrer" class="btn-primary template-card-cta">
                 <%= I18n.t('live_templates.view_live_demo') %>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
               </a>
             </div>
           </div>
-          <div class="template-card template-card-coming">
-            <div class="template-card-preview template-card-placeholder">
-              <span>Coming soon</span>
-            </div>
-            <div class="template-card-content">
-              <h3>More templates</h3>
-              <p>Wellness, beauty & more.</p>
-            </div>
-          </div>
-          <div class="template-card template-card-coming">
-            <div class="template-card-preview template-card-placeholder">
-              <span>Coming soon</span>
-            </div>
-            <div class="template-card-content">
-              <h3>More templates</h3>
-              <p>Wellness, beauty & more.</p>
-            </div>
-          </div>
-          <div class="template-card template-card-end" aria-hidden="true">
+          <% end %>
+          <div class="template-card template-card-end">
             <div class="template-card-preview template-card-placeholder template-card-end-preview">
-              <span class="template-card-end-text"><%= I18n.t('live_templates.more_coming') %></span>
+              <span class="template-card-end-text"><%= I18n.t('live_templates.find_more_badge') %></span>
             </div>
             <div class="template-card-content template-card-end-content">
-              <p class="template-card-end-label"><%= I18n.t('live_templates.more_coming') %></p>
+              <h3><%= I18n.t('live_templates.find_more_title') %></h3>
+              <p><%= I18n.t('live_templates.find_more_description') %></p>
+              <a href="https://my.bookrhub.com/signup" class="btn-primary template-card-cta">
+                <%= I18n.t('live_templates.find_more_cta') %>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </a>
             </div>
           </div>
         </div>

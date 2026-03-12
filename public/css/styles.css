@@ -980,7 +980,6 @@ button:focus-visible,
 
 .template-card-end {
     border-style: dashed;
-    pointer-events: none;
 }
 
 .template-card-end-preview {
@@ -996,6 +995,14 @@ button:focus-visible,
 
 .template-card-end-content {
     padding: 0.75rem 1rem;
+}
+
+.template-card-end-badge {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
 }
 
 .template-card-end-label {

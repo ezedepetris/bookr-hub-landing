@@ -37,12 +37,50 @@ es:
 
   live_templates:
     title: "Mira cómo podría verse tu negocio."
-    barber_card_title: "Barbería"
-    barber_card_description: "Landing premium con servicios, reservas y tu marca."
-    view_live_demo: "Ver demo en vivo (Barbería)"
+    view_live_demo: "Ver demo en vivo"
     carousel_prev: "Plantillas anteriores"
     carousel_next: "Siguientes plantillas"
-    more_coming: "+ Muchas más en camino"
+    find_more_badge: "+ Más plantillas"
+    find_more_title: "Encuentra más plantillas en BookrHub"
+    find_more_description: "Prueba tu estilo favorito en minutos. Sin código, sin tarjeta."
+    find_more_cta: "Comenzar ahora"
+    templates:
+      barber:
+        title: "Barbería"
+        description: "Landing premium con servicios, reservas y tu marca."
+      medical-clinic:
+        title: "Clínica médica"
+        description: "Landing profesional para clínicas con reservas online."
+      dental:
+        title: "Dental"
+        description: "Landing para consultorios dentales y reservas."
+      fitness:
+        title: "Fitness"
+        description: "Landing de estudio de fitness con reservas."
+      fitness-pro:
+        title: "Fitness Pro"
+        description: "Landing de marca fitness profesional."
+      hair-salon:
+        title: "Peluquería"
+        description: "Landing de salón con servicios y reservas."
+      high-converting:
+        title: "Alta conversión"
+        description: "Plantilla enfocada en conversión."
+      modern-ux:
+        title: "Moderno UX"
+        description: "Landing moderna y limpia para cualquier negocio."
+      nails:
+        title: "Uñas"
+        description: "Landing de salón de uñas con reservas."
+      pet-grooming:
+        title: "Peluquería mascotas"
+        description: "Landing de servicios para mascotas y reservas."
+      photography:
+        title: "Fotografía"
+        description: "Portfolio y reservas para fotógrafos."
+      spa-massage:
+        title: "Spa y masajes"
+        description: "Landing de spa y bienestar con reservas."
 
   section_labels:
     features: "Características"

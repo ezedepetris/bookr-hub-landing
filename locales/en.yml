@@ -37,12 +37,50 @@ en:
 
   live_templates:
     title: "See what your business could look like."
-    barber_card_title: "Barbershop"
-    barber_card_description: "Premium landing page with services, booking, and your brand."
-    view_live_demo: "View Live Barbershop Demo"
+    view_live_demo: "View live demo"
     carousel_prev: "Previous templates"
     carousel_next: "Next templates"
-    more_coming: "+ Many more coming"
+    find_more_badge: "+ More templates"
+    find_more_title: "Find even more templates in BookrHub"
+    find_more_description: "Try your favorite style in minutes. No code, no card required."
+    find_more_cta: "Start now"
+    templates:
+      barber:
+        title: "Barbershop"
+        description: "Premium landing with services, booking & your brand."
+      medical-clinic:
+        title: "Medical Clinic"
+        description: "Professional clinic landing with online booking."
+      dental:
+        title: "Dental"
+        description: "Dental practice landing & scheduling."
+      fitness:
+        title: "Fitness"
+        description: "Fitness studio landing with booking."
+      fitness-pro:
+        title: "Fitness Pro"
+        description: "Pro fitness brand landing & scheduling."
+      hair-salon:
+        title: "Hair Salon"
+        description: "Salon landing with services & booking."
+      high-converting:
+        title: "High Converting"
+        description: "Conversion-focused landing template."
+      modern-ux:
+        title: "Modern UX"
+        description: "Modern, clean landing for any business."
+      nails:
+        title: "Nails"
+        description: "Nail salon landing with booking."
+      pet-grooming:
+        title: "Pet Grooming"
+        description: "Pet services landing & scheduling."
+      photography:
+        title: "Photography"
+        description: "Portfolio & booking for photographers."
+      spa-massage:
+        title: "Spa & Massage"
+        description: "Spa & wellness landing with booking."
 
   section_labels:
     features: "Features"
