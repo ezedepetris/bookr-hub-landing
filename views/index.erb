@@ -10,6 +10,7 @@
   })(window,document,'script','dataLayer','<%= ENV['GOOGLE_TAG_MANAGER_ID'] %>');</script>
   <!-- End Google Tag Manager -->
   <% end %>
+  <script src='https://www.noupe.com/embed/019cdffb374a730e9ac8447d57a7f6ffa0ee.js'></script>
   <link rel="stylesheet" href="/css/styles.css?v=2.5.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -267,45 +268,60 @@
     </div>
   </section>
 
-  <!-- Live Templates Section -->
+  <!-- Live Templates Section (carousel for 3+ templates) -->
   <section id="live-templates" class="live-templates">
     <div class="live-templates-container">
       <div class="section-header">
         <h2><%= I18n.t('live_templates.title') %></h2>
       </div>
-      <div class="templates-grid">
-        <div class="template-card template-card-featured animate-on-scroll">
-          <div class="template-card-preview">
-            <img src="/gifs/barber-landing.gif" alt="<%= I18n.t('live_templates.barber_card_title') %> template">
+      <div class="templates-carousel">
+        <button type="button" class="templates-carousel-btn templates-carousel-prev" aria-label="<%= I18n.t('live_templates.carousel_prev') %>">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <div class="templates-carousel-inner" id="templates-carousel-track">
+          <div class="template-card template-card-featured">
+            <div class="template-card-preview">
+              <img src="/gifs/barber-landing.gif" alt="<%= I18n.t('live_templates.barber_card_title') %> template">
+            </div>
+            <div class="template-card-content">
+              <h3><%= I18n.t('live_templates.barber_card_title') %></h3>
+              <p><%= I18n.t('live_templates.barber_card_description') %></p>
+              <a href="https://barber.bookrhub.com" target="_blank" rel="noopener noreferrer" class="btn-primary template-card-cta">
+                <%= I18n.t('live_templates.view_live_demo') %>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
           </div>
-          <div class="template-card-content">
-            <h3><%= I18n.t('live_templates.barber_card_title') %></h3>
-            <p><%= I18n.t('live_templates.barber_card_description') %></p>
-            <a href="https://barber.bookrhub.com" target="_blank" rel="noopener noreferrer" class="btn-primary template-card-cta">
-              <%= I18n.t('live_templates.view_live_demo') %>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
+          <div class="template-card template-card-coming">
+            <div class="template-card-preview template-card-placeholder">
+              <span>Coming soon</span>
+            </div>
+            <div class="template-card-content">
+              <h3>More templates</h3>
+              <p>Wellness, beauty & more.</p>
+            </div>
+          </div>
+          <div class="template-card template-card-coming">
+            <div class="template-card-preview template-card-placeholder">
+              <span>Coming soon</span>
+            </div>
+            <div class="template-card-content">
+              <h3>More templates</h3>
+              <p>Wellness, beauty & more.</p>
+            </div>
+          </div>
+          <div class="template-card template-card-end" aria-hidden="true">
+            <div class="template-card-preview template-card-placeholder template-card-end-preview">
+              <span class="template-card-end-text"><%= I18n.t('live_templates.more_coming') %></span>
+            </div>
+            <div class="template-card-content template-card-end-content">
+              <p class="template-card-end-label"><%= I18n.t('live_templates.more_coming') %></p>
+            </div>
           </div>
         </div>
-        <!-- Placeholder cards for future templates (scale to 3-4) -->
-        <div class="template-card template-card-coming animate-on-scroll stagger-1" aria-hidden="true">
-          <div class="template-card-preview template-card-placeholder">
-            <span>Coming soon</span>
-          </div>
-          <div class="template-card-content">
-            <h3>More templates</h3>
-            <p>Wellness, beauty & more.</p>
-          </div>
-        </div>
-        <div class="template-card template-card-coming animate-on-scroll stagger-2" aria-hidden="true">
-          <div class="template-card-preview template-card-placeholder">
-            <span>Coming soon</span>
-          </div>
-          <div class="template-card-content">
-            <h3>More templates</h3>
-            <p>Wellness, beauty & more.</p>
-          </div>
-        </div>
+        <button type="button" class="templates-carousel-btn templates-carousel-next" aria-label="<%= I18n.t('live_templates.carousel_next') %>">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -597,7 +613,12 @@
       <div class="pricing-toggle-wrap">
         <div class="pricing-billing-toggle" role="group" aria-label="Billing period">
           <div class="pricing-yearly-callout" aria-hidden="true">
-            <span class="pricing-callout-text"><%= I18n.t('pricing.yearly_savings_callout') %></span>
+            <span class="pricing-callout-badge">
+              <svg class="pricing-callout-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+              </svg>
+              <span class="pricing-callout-text"><%= I18n.t('pricing.yearly_savings_callout') %></span>
+            </span>
             <svg class="pricing-callout-arrow" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M75 8 Q 55 24, 40 22 Q 20 20, 5 35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" class="arrow-line"/>
             </svg>
@@ -939,6 +960,26 @@
         }
       });
     });
+
+    // Templates carousel prev/next
+    const templatesTrack = document.getElementById('templates-carousel-track');
+    const templatesPrev = document.querySelector('.templates-carousel-prev');
+    const templatesNext = document.querySelector('.templates-carousel-next');
+    if (templatesTrack && templatesPrev && templatesNext) {
+      function updateTemplatesCarouselButtons() {
+        const { scrollLeft, scrollWidth, clientWidth } = templatesTrack;
+        templatesPrev.disabled = scrollLeft <= 0;
+        templatesNext.disabled = scrollLeft >= scrollWidth - clientWidth - 2;
+      }
+      templatesPrev.addEventListener('click', function() {
+        templatesTrack.scrollBy({ left: -templatesTrack.clientWidth, behavior: 'smooth' });
+      });
+      templatesNext.addEventListener('click', function() {
+        templatesTrack.scrollBy({ left: templatesTrack.clientWidth, behavior: 'smooth' });
+      });
+      templatesTrack.addEventListener('scroll', updateTemplatesCarouselButtons);
+      updateTemplatesCarouselButtons();
+    }
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

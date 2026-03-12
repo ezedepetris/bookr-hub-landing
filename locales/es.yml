@@ -40,6 +40,9 @@ es:
     barber_card_title: "Barbería"
     barber_card_description: "Landing premium con servicios, reservas y tu marca."
     view_live_demo: "Ver demo en vivo (Barbería)"
+    carousel_prev: "Plantillas anteriores"
+    carousel_next: "Siguientes plantillas"
+    more_coming: "+ Muchas más en camino"
 
   section_labels:
     features: "Características"

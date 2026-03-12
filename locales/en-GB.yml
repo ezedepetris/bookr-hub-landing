@@ -40,6 +40,9 @@ en-GB:
     barber_card_title: "Barbershop"
     barber_card_description: "Premium landing page with services, booking, and your brand."
     view_live_demo: "View Live Barbershop Demo"
+    carousel_prev: "Previous templates"
+    carousel_next: "Next templates"
+    more_coming: "+ Many more coming"
 
   section_labels:
     features: "Features"
