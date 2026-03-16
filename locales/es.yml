@@ -16,6 +16,7 @@ es:
     live_templates: "Plantillas"
     examples: "Ejemplos"
     pricing: "Precios"
+    sign_in: "Iniciar Sesión"
     get_started: "Comenzar"
 
   buttons:

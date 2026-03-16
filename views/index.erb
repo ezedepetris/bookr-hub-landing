@@ -162,6 +162,7 @@
         <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
         <a href="#live-templates"><%= I18n.t('navigation.live_templates') %></a>
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
+        <a href="https://my.bookrhub.com/session/new?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="text-sm font-medium hover:text-primary"><%= I18n.t('navigation.sign_in') %></a>
         <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
       </div>
       <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-menu-toggle">
@@ -180,6 +181,7 @@
       <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
       <a href="#live-templates"><%= I18n.t('navigation.live_templates') %></a>
       <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
+      <a href="https://my.bookrhub.com/session/new?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="text-sm font-medium"><%= I18n.t('navigation.sign_in') %></a>
       <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
     </div>
   </div>
@@ -890,6 +892,8 @@
         <a href="#live-templates"><%= I18n.t('navigation.live_templates') %></a>
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
         <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
+        <a href="https://my.bookrhub.com/session/new"><%= I18n.t('navigation.sign_in') %></a>
+        <a href="https://my.bookrhub.com/signup"><%= I18n.t('navigation.get_started') %></a>
       </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.company') %></h3>
