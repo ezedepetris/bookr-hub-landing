@@ -11,7 +11,7 @@
   <!-- End Google Tag Manager -->
   <% end %>
   <script src='https://www.noupe.com/embed/019cdffb374a730e9ac8447d57a7f6ffa0ee.js'></script>
-  <link rel="stylesheet" href="/css/styles.css?v=2.5.0">
+  <link rel="stylesheet" href="/css/styles.css?v=2.5.1">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
@@ -21,6 +21,92 @@
   <meta name="keywords" content="<%= I18n.t('site.keywords') %>">
   <meta name="author" content="<%= I18n.t('site.author') %>">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  
+  <!-- OpenGraph for social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bookrhub.com">
+  <meta property="og:title" content="<%= I18n.t('site.title') %>">
+  <meta property="og:description" content="<%= I18n.t('site.description') %>">
+  <meta property="og:image" content="https://bookrhub.com/images/og-image.png">
+  
+  <!-- JSON-LD Structured Data for AI & Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BookrHub",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "description": "Free booking software for salons, barbers, spas, and small businesses. Get your own website with online reservations, WhatsApp reminders, and zero commission.",
+    "brand": {
+      "@type": "Brand",
+      "name": "BookrHub"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "150"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "BookrHub",
+      "url": "https://bookrhub.com"
+    },
+    "url": "https://bookrhub.com",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://bookrhub.com"
+    }
+  }
+  </script>
+  
+  <!-- FAQ Schema for rich snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is BookrHub really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! BookrHub has a free forever plan. Paid plans start at $9.95/month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does BookrHub charge commission like Fresha?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No! BookrHub charges 0% commission. Fresha charges up to 20% on new clients."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get my own website with BookrHub?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Every business gets their own professional booking website with your business name."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does BookrHub work in Argentina?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! BookrHub works globally and supports MercadoPago for Argentina."
+        }
+      }
+    ]
+  }
+  </script>
   <%
     base_url = I18n.t('site.canonical_url')
     canonical_locale = params[:locale] || session[:locale]
@@ -28,6 +114,15 @@
     canonical_url = "#{base_url}/?locale=#{canonical_locale}&currency=#{canonical_currency}"
   %>
   <link rel="canonical" href="<%= canonical_url %>">
+  
+  <!-- Hreflang for international SEO -->
+  <link rel="alternate" hreflang="en" href="https://bookrhub.com/?locale=en&currency=USD">
+  <link rel="alternate" hreflang="es" href="https://bookrhub.com/?locale=es&currency=ARS">
+  <link rel="alternate" hreflang="en-US" href="https://bookrhub.com/?locale=en-US&currency=USD">
+  <link rel="alternate" hreflang="en-GB" href="https://bookrhub.com/?locale=en-GB&currency=GBP">
+  <link rel="alternate" hreflang="en-NZ" href="https://bookrhub.com/?locale=en-NZ&currency=NZD">
+  <link rel="alternate" hreflang="es-AR" href="https://bookrhub.com/?locale=es-AR&currency=ARS">
+  <link rel="alternate" hreflang="x-default" href="https://bookrhub.com/">
 
   <!-- Hreflang tags for multi-language SEO -->
   <%
@@ -162,6 +257,7 @@
         <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
         <a href="#live-templates"><%= I18n.t('navigation.live_templates') %></a>
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
+        <a href="https://my.bookrhub.com/session/new?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="text-sm font-medium hover:text-primary"><%= I18n.t('navigation.sign_in') %></a>
         <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
       </div>
       <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-menu-toggle">
@@ -180,6 +276,7 @@
       <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
       <a href="#live-templates"><%= I18n.t('navigation.live_templates') %></a>
       <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
+      <a href="https://my.bookrhub.com/session/new?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="text-sm font-medium"><%= I18n.t('navigation.sign_in') %></a>
       <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
     </div>
   </div>
@@ -198,7 +295,16 @@
           <span class="proof-text"><strong>700+</strong> <%= I18n.t('hero.social_proof') %></span>
         </div>
         <p class="hero-stats"><span><%= I18n.t('hero.stats_free') %></span> · <span><%= I18n.t('hero.stats_setup') %></span> · <span><%= I18n.t('hero.stats_nocode') %></span></p>
-        <h1><span class="gradient-text gradient-text-animate"><%= I18n.t('hero.headline') %></span></h1>
+        <h1><span class="gradient-text gradient-text-animate headline-rotator">
+          <span class="headline-word headline-slide-up"><%= I18n.t('hero.headline_line_1') %></span>
+          <span class="headline-word headline-slide-down"><%= I18n.t('hero.headline_line_2') %></span>
+          <span class="headline-word headline-slide-left"><%= I18n.t('hero.headline_line_3') %></span>
+          <span class="headline-word headline-slide-right"><%= I18n.t('hero.headline_line_4') %></span>
+          <span class="headline-word headline-slide-up"><%= I18n.t('hero.headline_line_5') %></span>
+          <span class="headline-word headline-slide-down"><%= I18n.t('hero.headline_line_6') %></span>
+          <span class="headline-word headline-slide-left"><%= I18n.t('hero.headline_line_7') %></span>
+          <span class="headline-word headline-slide-right"><%= I18n.t('hero.headline_line_8') %></span>
+        </span></h1>
         <p class="hero-tagline"><%= I18n.t('hero.tagline') %></p>
         <p class="hero-subtitle"><%= I18n.t('site.hero_subtitle') %></p>
         <div class="hero-buttons">
@@ -244,6 +350,76 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table Section -->
+  <section class="comparison-section" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 60px 20px;">
+    <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+      <h2 style="color: white; font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;"><%= I18n.t('comparison.title') %></h2>
+      <p style="color: #a0a0a0; margin-bottom: 40px; font-size: 1.1rem;"><%= I18n.t('comparison.subtitle') %></p>
+
+      <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow-x: auto;">
+        <table style="width: 100%; min-width: 700px; border-collapse: collapse;">
+          <thead>
+            <tr style="background: #f8f9fa;">
+              <th style="padding: 20px; text-align: left; font-size: 1.1rem; color: #333; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.features') %></th>
+              <th style="padding: 20px; text-align: center; font-size: 1.1rem; color: #666; background: #fff5f5; border-right: 1px solid #e5e5e5;">Fresha</th>
+              <th style="padding: 20px; text-align: center; font-size: 1.1rem; color: #666; background: #fffaf0; border-right: 1px solid #e5e5e5;">SetMore</th>
+              <th style="padding: 20px; text-align: center; font-size: 1.1rem; color: #666; background: #f0fdf4; border-right: 1px solid #e5e5e5;">Timely</th>
+              <th style="padding: 20px; text-align: center; font-size: 1.2rem; font-weight: 700; color: #4f46e5; background: #f0f0ff;">BookrHub</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-top: 1px solid #eee;">
+              <td style="padding: 16px 20px; color: #333; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.starting_price') %></td>
+              <td style="padding: 16px 20px; text-align: center; color: #666; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.fresha_price') %></td>
+              <td style="padding: 16px 20px; text-align: center; color: #666; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.setmore_price') %></td>
+              <td style="padding: 16px 20px; text-align: center; color: #666; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.timely_price') %></td>
+              <td style="padding: 16px 20px; text-align: center; font-weight: 700; color: #22c55e; background: #f0fdf4;"><strong><%= I18n.t('comparison.free') %></strong> <span style="font-weight: 400; font-size: 0.85em;">(or <%= @prices['team'][:monthly][:formatted] %>/mo)</span></td>
+            </tr>
+            <tr style="background: #fafafa; border-top: 1px solid #eee;">
+              <td style="padding: 16px 20px; color: #333; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.commission') %></td>
+              <td style="padding: 16px 20px; text-align: center; color: #dc2626; font-weight: 600; border-right: 1px solid #e5e5e5;">20%</td>
+              <td style="padding: 16px 20px; text-align: center; color: #666; border-right: 1px solid #e5e5e5;">0%</td>
+              <td style="padding: 16px 20px; text-align: center; color: #666; border-right: 1px solid #e5e5e5;">0%</td>
+              <td style="padding: 16px 20px; text-align: center; font-weight: 700; color: #22c55e; background: #f0fdf4;">0%</td>
+            </tr>
+            <tr style="border-top: 1px solid #eee;">
+              <td style="padding: 16px 20px; color: #333; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.custom_domain') %></td>
+              <td style="padding: 16px 20px; text-align: center; color: #666; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.fresha_domain') %></td>
+              <td style="padding: 16px 20px; text-align: center; color: #dc2626; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.setmore_domain') %></td>
+              <td style="padding: 16px 20px; text-align: center; color: #dc2626; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.timely_domain') %></td>
+              <td style="padding: 16px 20px; text-align: center; font-weight: 700; color: #22c55e; background: #f0fdf4;"><strong><%= I18n.t('comparison.free') %></strong></td>
+            </tr>
+            <tr style="background: #fafafa; border-top: 1px solid #eee;">
+              <td style="padding: 16px 20px; color: #333; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.your_website') %></td>
+              <td style="padding: 16px 20px; text-align: center; color: #dc2626; border-right: 1px solid #e5e5e5;"><span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> <%= I18n.t('comparison.just_form') %></span></td>
+              <td style="padding: 16px 20px; text-align: center; color: #dc2626; border-right: 1px solid #e5e5e5;"><span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> <%= I18n.t('comparison.widget_only') %></span></td>
+              <td style="padding: 16px 20px; text-align: center; color: #dc2626; border-right: 1px solid #e5e5e5;"><span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> <%= I18n.t('comparison.basic') %></span></td>
+              <td style="padding: 16px 20px; text-align: center; font-weight: 700; color: #22c55e; background: #f0fdf4;"><span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle;"><polyline points="20 6 9 17 4 12"></polyline></svg> <%= I18n.t('comparison.full_landing') %></span></td>
+            </tr>
+            <tr style="border-top: 1px solid #eee;">
+              <td style="padding: 16px 20px; color: #333; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.staff') %></td>
+              <td style="padding: 16px 20px; text-align: center; color: #666; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.per_staff') %></td>
+              <td style="padding: 16px 20px; text-align: center; color: #666; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.setmore_staff') %></td>
+              <td style="padding: 16px 20px; text-align: center; color: #666; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.per_staff') %></td>
+              <td style="padding: 16px 20px; text-align: center; font-weight: 700; color: #22c55e; background: #f0fdf4;"><%= I18n.t('comparison.unlimited') %></td>
+            </tr>
+            <tr style="background: #fafafa; border-top: 1px solid #eee;">
+              <td style="padding: 16px 20px; color: #333; border-right: 1px solid #e5e5e5;"><%= I18n.t('comparison.setup') %></td>
+              <td style="padding: 16px 20px; text-align: center; color: #666; border-right: 1px solid #e5e5e5;">30+ min</td>
+              <td style="padding: 16px 20px; text-align: center; color: #666; border-right: 1px solid #e5e5e5;">20+ min</td>
+              <td style="padding: 16px 20px; text-align: center; color: #666; border-right: 1px solid #e5e5e5;">30+ min</td>
+              <td style="padding: 16px 20px; text-align: center; font-weight: 700; color: #22c55e; background: #f0fdf4;"><%= I18n.t('comparison.5_min') %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="color: #22c55e; font-weight: 600; margin-top: 20px; font-size: 1.1rem;">
+        <span style="display: inline-flex; align-items: center; gap: 8px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle;"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg><%= I18n.t('comparison.savings') %></span>
+      </p>
     </div>
   </section>
 
@@ -811,6 +987,8 @@
         <a href="#live-templates"><%= I18n.t('navigation.live_templates') %></a>
         <a href="#pricing"><%= I18n.t('navigation.pricing') %></a>
         <a href="#screenshots"><%= I18n.t('navigation.how_it_works') %></a>
+        <a href="https://my.bookrhub.com/session/new"><%= I18n.t('navigation.sign_in') %></a>
+        <a href="https://my.bookrhub.com/signup"><%= I18n.t('navigation.get_started') %></a>
       </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.company') %></h3>
