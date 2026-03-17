@@ -3,7 +3,6 @@ module SitemapGenerator
     base_url = I18n.t('site.canonical_url', locale: :en)
     today = Date.today.strftime('%Y-%m-%d')
 
-    # Get all available locales
     available_locales = I18n.available_locales
 
     xml = ['<?xml version="1.0" encoding="UTF-8"?>']
@@ -15,13 +14,12 @@ module SitemapGenerator
       locale_str = locale.to_s
       currency = locale_currency_map[locale_str] || locale_currency_map[locale_str.split('-').first] || 'USD'
       url = "#{base_url}/?locale=#{locale_str}&currency=#{currency}"
-      # Escape ampersands for XML
       url_escaped = url.gsub('&', '&amp;')
 
       xml << '  <url>'
       xml << "    <loc>#{url_escaped}</loc>"
       xml << "    <lastmod>#{today}</lastmod>"
-      xml << '    <changefreq>weekly</changefreq>'
+      xml << '    <changefreq>daily</changefreq>'
       xml << '    <priority>1.0</priority>'
 
       # Add alternate language links
@@ -39,17 +37,92 @@ module SitemapGenerator
       xml << '  </url>'
     end
 
-    # Privacy page
-    xml << '  <url>'
-    xml << "    <loc>#{base_url}/privacy</loc>"
-    xml << "    <lastmod>#{today}</lastmod>"
-    xml << '    <changefreq>monthly</changefreq>'
-    xml << '    <priority>0.5</priority>'
-    xml << '  </url>'
+    # Static pages
+    static_pages = [
+      ['/privacy', 'monthly', '0.5'],
+      ['/about', 'monthly', '0.7'],
+      ['/contact', 'monthly', '0.7'],
+      ['/features', 'weekly', '0.8'],
+      ['/pricing', 'weekly', '0.8'],
+      ['/free-booking', 'weekly', '0.8'],
+    ]
+    
+    static_pages.each do |path, freq, prio|
+      xml << '  <url>'
+      xml << "    <loc>#{base_url}#{path}</loc>"
+      xml << "    <lastmod>#{today}</lastmod>"
+      xml << "    <changefreq>#{freq}</changefreq>"
+      xml << "    <priority>#{prio}</priority>"
+      xml << '  </url>'
+    end
+
+    # Spanish SEO pages
+    spanish_pages = [
+      '/turnos',
+      '/reservas-online',
+      '/agendar',
+      '/reserva-de-citas',
+      '/turnos-online',
+      '/alternativa-a-fresha',
+      '/alternativa-a-agendapro'
+    ]
+    
+    spanish_pages.each do |path|
+      xml << '  <url>'
+      xml << "    <loc>#{base_url}#{path}</loc>"
+      xml << "    <lastmod>#{today}</lastmod>"
+      xml << '    <changefreq>weekly</changefreq>'
+      xml << '    <priority>0.8</priority>'
+      xml << '  </url>'
+    end
+
+    # Competitor alternative pages
+    competitors = ['fresha', 'calendly', 'setmore', 'timely', 'kitomba']
+    competitors.each do |comp|
+      xml << '  <url>'
+      xml << "    <loc>#{base_url}/vs-#{comp}</loc>"
+      xml << "    <lastmod>#{today}</lastmod>"
+      xml << '    <changefreq>monthly</changefreq>'
+      xml << '    <priority>0.7</priority>'
+      xml << '  </url>'
+    end
+
+    # Niche pages
+    niches = ['barbers', 'hair-salons', 'nail-salons', 'personal-trainers', 'cleaners', 'massage-spa', 'medical-clinics', 'dentists', 'pet-grooming', 'photographers']
+    niches.each do |niche|
+      xml << '  <url>'
+      xml << "    <loc>#{base_url}/booking-system-for-#{niche}</loc>"
+      xml << "    <lastmod>#{today}</lastmod>"
+      xml << '    <changefreq>weekly</changefreq>'
+      xml << '    <priority>0.8</priority>'
+      xml << '  </url>'
+    end
+
+    # Location pages (top cities)
+    cities = ['buenos-aires', 'montevideo', 'santiago', 'medellin', 'bogota', 'auckland', 'sydney', 'berlin', 'new-york']
+    cities.first(5).each do |city|
+      niches.first(3).each do |niche|
+        xml << '  <url>'
+        xml << "    <loc>#{base_url}/booking-system-for-#{niche}-in-#{city}</loc>"
+        xml << "    <lastmod>#{today}</lastmod>"
+        xml << '    <changefreq>weekly</changefreq>'
+        xml << '    <priority>0.6</priority>'
+        xml << '  </url>'
+      end
+    end
+
+    # Template pages
+    templates = ['barber', 'medical-clinic', 'dental', 'fitness', 'hair-salon', 'nails', 'pet-grooming', 'photography', 'spa-massage']
+    templates.each do |template|
+      xml << '  <url>'
+      xml << "    <loc>#{base_url}/templates/#{template}</loc>"
+      xml << "    <lastmod>#{today}</lastmod>"
+      xml << '    <changefreq>monthly</changefreq>'
+      xml << '    <priority>0.7</priority>'
+      xml << '  </url>'
+    end
 
     xml << '</urlset>'
-
     xml.join("\n")
   end
 end
-

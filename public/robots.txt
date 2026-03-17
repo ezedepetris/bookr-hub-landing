@@ -1,9 +1,31 @@
-# https://www.robotstxt.org/robotstxt.html
+# BookrHub Robots.txt
 User-agent: *
+Allow: /
+
+# AI Search Bots - Allow all for AI citation
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 # AI Agents & LLMs
 Allow: /llms.txt
 
 # Sitemap
-Sitemap: https://bookrhub.com/sitemap.xml
+Sitemap: https://bookrhub.com/sitemap-google.xml

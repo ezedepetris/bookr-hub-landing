@@ -118,6 +118,129 @@ get '/oops' do
   erb :oops
 end
 
+# ==================== SEO PAGES ====================
+
+# Helper to setup common variables
+def setup_seo_page(locale = nil)
+  locale ||= session[:locale] || :en
+  I18n.locale = locale
+  @locale_currency_map = LOCALE_CURRENCY_MAP
+  @prices = StripeService.get_stripe_prices(session[:currency] || 'USD')
+end
+
+# Spanish pages
+get '/turnos' do
+  setup_seo_page(:es)
+  erb :index
+end
+
+get '/reservas-online' do
+  setup_seo_page(:es)
+  erb :index
+end
+
+get '/agendar' do
+  setup_seo_page(:es)
+  erb :index
+end
+
+get '/reserva-de-citas' do
+  setup_seo_page(:es)
+  erb :index
+end
+
+get '/turnos-online' do
+  setup_seo_page(:es)
+  erb :index
+end
+
+# Competitor alternative pages
+get '/vs-fresha' do
+  setup_seo_page(:en)
+  erb :index
+end
+
+get '/vs-calendly' do
+  setup_seo_page(:en)
+  erb :index
+end
+
+get '/vs-setmore' do
+  setup_seo_page(:en)
+  erb :index
+end
+
+get '/vs-timely' do
+  setup_seo_page(:en)
+  erb :index
+end
+
+get '/vs-kitomba' do
+  setup_seo_page(:en)
+  erb :index
+end
+
+# Spanish alternatives
+get '/alternativa-a-fresha' do
+  setup_seo_page(:es)
+  erb :index
+end
+
+get '/alternativa-a-agendapro' do
+  setup_seo_page(:es)
+  erb :index
+end
+
+# Niche pages
+get '/booking-system-for-:niche' do
+  setup_seo_page(:en)
+  erb :index
+end
+
+# Location pages
+get '/booking-system-for-:niche-in-:city' do
+  setup_seo_page(:en)
+  erb :index
+end
+
+# Template pages
+get '/templates/:template' do
+  setup_seo_page(:en)
+  erb :index
+end
+
+# Free booking page
+get '/free-booking' do
+  setup_seo_page(:en)
+  erb :index
+end
+
+# About page
+get '/about' do
+  setup_seo_page
+  erb :index
+end
+
+# Contact page
+get '/contact' do
+  setup_seo_page
+  erb :index
+end
+
+# Features page
+get '/features' do
+  setup_seo_page
+  erb :index
+end
+
+# Pricing page
+get '/pricing' do
+  setup_seo_page
+  erb :index
+end
+
+# ==================== END SEO PAGES ====================
+
 get '/robots.txt' do
   content_type 'text/plain'
   base_url = I18n.t('site.canonical_url', locale: :en)
