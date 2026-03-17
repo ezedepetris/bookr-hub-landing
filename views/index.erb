@@ -21,6 +21,92 @@
   <meta name="keywords" content="<%= I18n.t('site.keywords') %>">
   <meta name="author" content="<%= I18n.t('site.author') %>">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  
+  <!-- OpenGraph for social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bookrhub.com">
+  <meta property="og:title" content="<%= I18n.t('site.title') %>">
+  <meta property="og:description" content="<%= I18n.t('site.description') %>">
+  <meta property="og:image" content="https://bookrhub.com/images/og-image.png">
+  
+  <!-- JSON-LD Structured Data for AI & Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BookrHub",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "description": "Free booking software for salons, barbers, spas, and small businesses. Get your own website with online reservations, WhatsApp reminders, and zero commission.",
+    "brand": {
+      "@type": "Brand",
+      "name": "BookrHub"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "150"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "BookrHub",
+      "url": "https://bookrhub.com"
+    },
+    "url": "https://bookrhub.com",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://bookrhub.com"
+    }
+  }
+  </script>
+  
+  <!-- FAQ Schema for rich snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is BookrHub really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! BookrHub has a free forever plan. Paid plans start at $9.95/month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does BookrHub charge commission like Fresha?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No! BookrHub charges 0% commission. Fresha charges up to 20% on new clients."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get my own website with BookrHub?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Every business gets their own professional booking website with your business name."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does BookrHub work in Argentina?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! BookrHub works globally and supports MercadoPago for Argentina."
+        }
+      }
+    ]
+  }
+  </script>
   <%
     base_url = I18n.t('site.canonical_url')
     canonical_locale = params[:locale] || session[:locale]
@@ -28,6 +114,15 @@
     canonical_url = "#{base_url}/?locale=#{canonical_locale}&currency=#{canonical_currency}"
   %>
   <link rel="canonical" href="<%= canonical_url %>">
+  
+  <!-- Hreflang for international SEO -->
+  <link rel="alternate" hreflang="en" href="https://bookrhub.com/?locale=en&currency=USD">
+  <link rel="alternate" hreflang="es" href="https://bookrhub.com/?locale=es&currency=ARS">
+  <link rel="alternate" hreflang="en-US" href="https://bookrhub.com/?locale=en-US&currency=USD">
+  <link rel="alternate" hreflang="en-GB" href="https://bookrhub.com/?locale=en-GB&currency=GBP">
+  <link rel="alternate" hreflang="en-NZ" href="https://bookrhub.com/?locale=en-NZ&currency=NZD">
+  <link rel="alternate" hreflang="es-AR" href="https://bookrhub.com/?locale=es-AR&currency=ARS">
+  <link rel="alternate" hreflang="x-default" href="https://bookrhub.com/">
 
   <!-- Hreflang tags for multi-language SEO -->
   <%

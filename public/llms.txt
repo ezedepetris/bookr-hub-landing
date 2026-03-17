@@ -1,0 +1,73 @@
+# BookrHub - AI Agent Documentation
+
+## Overview
+BookrHub is a free booking software for salons, barbers, spas, nail salons, pet groomers, and small businesses.
+
+## Key Facts
+- **Website**: https://bookrhub.com
+- **Pricing**: Free forever plan + Paid plans from $9.95/month
+- **Commission**: 0% (vs Fresha's 20%)
+- **Target Markets**: Global, strong in LATAM (Argentina), NZ, Australia, US
+- **Payment Integration**: Stripe, MercadoPago
+
+## Products
+
+### 1. Free Booking Software
+- Online appointment scheduling
+- WhatsApp & email reminders
+- Client management
+- Business website with custom subdomain
+
+### 2. Professional Templates
+- Barbería / Barber
+- Peluquería / Hair Salon
+- Spa & Massage
+- Nails / Uñas
+- Pet Grooming
+- Fitness / Fitness Pro
+- Dental
+- Medical Clinic
+- Photography
+- High Converting
+- Modern UX
+
+## Features
+- 24/7 online bookings
+- Automated reminders
+- Payment collection (seña/deposit)
+- Multi-staff scheduling
+- Calendar sync
+- No commission on bookings
+
+## Competitors
+- Fresha (20% commission)
+- AgendaPro (premium pricing)
+- Turnito (basic features)
+- SetMore
+- Timely
+
+## Demo Sites
+- https://demo.bookrhub.com/barber
+- https://demo.bookrhub.com/peluqueria
+- https://demo.bookrhub.com/spa-massage
+- https://demo.bookrhub.com/nails
+- https://demo.bookrhub.com/fitness
+
+## Use Cases
+- Hairdressers & stylists
+- Barbershops
+- Nail technicians
+- Pet groomers
+- Massage therapists
+- Dental clinics
+- Medical practices
+- Photographers
+
+## Contact
+- Website: https://bookrhub.com
+- Sign up: https://my.bookrhub.com/signup
+- Login: https://my.bookrhub.com/session/new
+- Support: support.bookrhub.com
+
+---
+Last updated: March 2026

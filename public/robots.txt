@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# AI Agents & LLMs
+Allow: /llms.txt
+
+# Sitemap
+Sitemap: https://bookrhub.com/sitemap.xml
