@@ -28,4 +28,4 @@ Allow: /
 Allow: /llms.txt
 
 # Sitemap
-Sitemap: https://bookrhub.com/sitemap-google.xml
+Sitemap: https://bookrhub.com/sitemap.xml
