@@ -103,6 +103,7 @@
     "@type": "Product",
     "name": "BookrHub - Online Booking System",
     "description": "Free booking software for salons, barbers, spas, trainers, and service businesses. Get a professional booking website in minutes.",
+    "image": "https://bookrhub.com/images/og-preview.jpg",
     "brand": {
       "@type": "Brand",
       "name": "BookrHub"
@@ -112,6 +113,7 @@
       "price": "0",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
+      "priceValidUntil": "2027-12-31",
       "minPrice": "0",
       "maxPrice": "29"
     },
@@ -123,47 +125,6 @@
   }
   </script>
   
-  <!-- FAQ Schema for rich snippets -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is BookrHub really free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes! BookrHub has a free forever plan. Paid plans start at $9.95/month."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does BookrHub charge commission like Fresha?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No! BookrHub charges 0% commission. Fresha charges up to 20% on new clients."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I get my own website with BookrHub?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes! Every business gets their own professional booking website with your business name."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does BookrHub work in Argentina?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes! BookrHub works globally and supports MercadoPago for Argentina."
-        }
-      }
-    ]
-  }
-  </script>
   <%
     base_url = I18n.t('site.canonical_url')
     canonical_locale = params[:locale] || session[:locale]
