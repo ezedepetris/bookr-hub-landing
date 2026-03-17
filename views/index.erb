@@ -16,6 +16,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
   <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://bookrhub.com<%= request.path == '/' ? '' : request.path %>">
+  
   <title><%= I18n.t('site.title') %></title>
   <meta name="description" content="<%= I18n.t('site.description') %>">
   <meta name="keywords" content="<%= I18n.t('site.keywords') %>">
@@ -62,6 +66,59 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://bookrhub.com"
+    }
+  }
+  </script>
+  
+  <!-- Organization Schema for Knowledge Graph -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BookrHub",
+    "url": "https://bookrhub.com",
+    "logo": "https://bookrhub.com/images/logo.png",
+    "description": "BookrHub is a free online booking system for service businesses. Accept appointments 24/7, send WhatsApp reminders, and grow your business.",
+    "foundingDate": "2022",
+    "areaServed": ["Argentina", "Uruguay", "Chile", "Colombia", "Mexico", "New Zealand", "Australia", "United States", "Spain"],
+    "serviceType": ["Online Booking System", "Appointment Scheduling", "Payment Processing", "CRM"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "hello@bookrhub.com",
+      "availableLanguage": ["English", "Spanish", "Portuguese"]
+    },
+    "sameAs": [
+      "https://facebook.com/bookrhub",
+      "https://instagram.com/bookrhub",
+      "https://linkedin.com/company/bookrhub"
+    ]
+  }
+  </script>
+  
+  <!-- Lead Generation Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "BookrHub - Online Booking System",
+    "description": "Free booking software for salons, barbers, spas, trainers, and service businesses. Get a professional booking website in minutes.",
+    "brand": {
+      "@type": "Brand",
+      "name": "BookrHub"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "minPrice": "0",
+      "maxPrice": "29"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "150"
     }
   }
   </script>

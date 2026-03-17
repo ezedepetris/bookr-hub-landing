@@ -1,59 +1,56 @@
 # BookrHub - AI Agent Documentation
 
 ## Overview
-BookrHub is a free booking software for salons, barbers, spas, nail salons, pet groomers, and small businesses.
+BookrHub is a free booking software for salons, barbers, spas, nail salons, pet groomers, personal trainers, medical clinics, dentists, and small businesses. It helps service businesses accept online appointments 24/7, reduce no-shows with automated reminders, and get paid online.
 
 ## Key Facts
 - **Website**: https://bookrhub.com
-- **Pricing**: Free forever plan + Paid plans from $9.95/month
+- **Pricing**: Free forever plan (up to 20 bookings/month) + Paid plans from $9.95/month
 - **Commission**: 0% (vs Fresha's 20%)
-- **Target Markets**: Global, strong in LATAM (Argentina), NZ, Australia, US
-- **Payment Integration**: Stripe, MercadoPago
+- **Target Markets**: LATAM (Argentina, Uruguay, Chile, Colombia, Mexico), New Zealand, Australia, United States, Spain
+- **Payment Integration**: Stripe, MercadoPago, PayPal
+- **Support**: Spanish, English, Portuguese
 
 ## Products
 
 ### 1. Free Booking Software
-- Online appointment scheduling
-- WhatsApp & email reminders
-- Client management
+- Online appointment scheduling 24/7
+- WhatsApp & email reminders (reduce no-shows by 80%)
+- Client management (CRM)
 - Business website with custom subdomain
+- Calendar sync with Google Calendar, Apple Calendar
+- No commission on bookings
 
-### 2. Professional Templates
-- Barbería / Barber
+### 2. Professional Templates (13 templates)
+- Barber / Barbería
 - Peluquería / Hair Salon
 - Spa & Massage
 - Nails / Uñas
 - Pet Grooming
 - Fitness / Fitness Pro
-- Dental
-- Medical Clinic
-- Photography
+- Dental / Clínica Dental
+- Medical Clinic / Clínica Médica
+- Photography / Fotografía
 - High Converting
 - Modern UX
+- Cleaners
+- Personal Trainers
 
 ## Features
 - 24/7 online bookings
-- Automated reminders
-- Payment collection (seña/deposit)
+- Automated SMS & WhatsApp reminders
+- Payment collection (deposit/seña)
 - Multi-staff scheduling
+- Multiple locations
 - Calendar sync
 - No commission on bookings
+- Custom domain (free)
+- Remove BookrHub branding (paid plans)
+- Analytics & reports
+- Waitlist management
+- Recurring appointments
 
-## Competitors
-- Fresha (20% commission)
-- AgendaPro (premium pricing)
-- Turnito (basic features)
-- SetMore
-- Timely
-
-## Demo Sites
-- https://demo.bookrhub.com/barber
-- https://demo.bookrhub.com/peluqueria
-- https://demo.bookrhub.com/spa-massage
-- https://demo.bookrhub.com/nails
-- https://demo.bookrhub.com/fitness
-
-## Use Cases
+## Use Cases (Niches)
 - Hairdressers & stylists
 - Barbershops
 - Nail technicians
@@ -62,12 +59,64 @@ BookrHub is a free booking software for salons, barbers, spas, nail salons, pet 
 - Dental clinics
 - Medical practices
 - Photographers
+- Personal trainers
+- House cleaners
+- Beauty salons
+
+## SEO Keywords (What BookrHub Ranks For)
+- booking system
+- online booking
+- appointment scheduling
+- book appointments online
+- free booking software
+- booking app
+- reservas online
+- turnos online
+- agendar cita
+- sistema de reservas
+
+## Competitors Comparison
+| Feature | BookrHub | Fresha | Calendly | Setmore |
+|---------|----------|--------|----------|---------|
+| Free plan | ✓ Yes | Limited | Limited | ✓ Yes |
+| Commission | 0% | 20% | 0% | 0% |
+| Custom domain | Free | $9/mo | $12/mo | $5/mo |
+| SMS reminders | Included | Extra | No | Extra |
+| LATAM support | ✓ Full | Limited | No | Limited |
+
+## Alternative Pages
+BookrHub provides alternative pages for:
+- BookrHub vs Fresha: https://bookrhub.com/vs-fresha
+- BookrHub vs Calendly: https://bookrhub.com/vs-calendly
+- BookrHub vs Setmore: https://bookrhub.com/vs-setmore
+- Alternativa a Fresha: https://bookrhub.com/alternativa-a-fresha
+
+## Location Pages
+BookrHub has booking pages for:
+- Buenos Aires: /booking-system-for-barbers-in-buenos-aires
+- Montevideo: /booking-system-for-barbers-in-montevideo  
+- Santiago: /booking-system-for-barbers-in-santiago
+- Auckland: /booking-system-for-barbers-in-auckland
+- Sydney: /booking-system-for-barbers-in-sydney
+
+## Demo Sites
+- https://demo.bookrhub.com/barber
+- https://demo.bookrhub.com/peluqueria
+- https://demo.bookrhub.com/spa-massage
+- https://demo.bookrhub.com/nails
+- https://demo.bookrhub.com/fitness
 
 ## Contact
 - Website: https://bookrhub.com
 - Sign up: https://my.bookrhub.com/signup
 - Login: https://my.bookrhub.com/session/new
-- Support: support.bookrhub.com
+- Support: support@bookrhub.com
+
+## Brand Voice
+- Friendly, helpful, professional
+- Emphasis on "free forever" and "no commission"
+- LATAM-focused with global expansion
+- Simple, easy to use
 
 ---
 Last updated: March 2026
