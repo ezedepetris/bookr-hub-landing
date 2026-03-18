@@ -20,17 +20,17 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="https://bookrhub.com<%= request.path == '/' ? '' : request.path %>">
   
-  <title><%= I18n.t('site.title') %></title>
-  <meta name="description" content="<%= I18n.t('site.description') %>">
+  <title><%= @page_title || I18n.t('site.title') %></title>
+  <meta name="description" content="<%= @page_description || I18n.t('site.description') %>">
   <meta name="keywords" content="<%= I18n.t('site.keywords') %>">
   <meta name="author" content="<%= I18n.t('site.author') %>">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   
   <!-- OpenGraph for social -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bookrhub.com">
-  <meta property="og:title" content="<%= I18n.t('site.title') %>">
-  <meta property="og:description" content="<%= I18n.t('site.description') %>">
+  <meta property="og:url" content="https://bookrhub.com<%= request.path == '/' ? '' : request.path %>">
+  <meta property="og:title" content="<%= @page_title || I18n.t('site.title') %>">
+  <meta property="og:description" content="<%= @page_description || I18n.t('site.description') %>">
   <meta property="og:image" content="https://bookrhub.com/images/og-image.png">
   
   <!-- JSON-LD Structured Data for AI & Search -->

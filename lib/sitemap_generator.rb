@@ -98,17 +98,64 @@ module SitemapGenerator
       xml << '  </url>'
     end
 
-    # Location pages (top cities)
-    cities = ['buenos-aires', 'montevideo', 'santiago', 'medellin', 'bogota', 'auckland', 'sydney', 'berlin', 'new-york']
-    cities.first(5).each do |city|
-      niches.first(3).each do |niche|
+    # Location pages - Argentina cities
+    argentina_cities = [
+      'buenos-aires', 'la-plata', 'mar-del-plata', 'rosario', 'cordoba',
+      'mendoza', 'san-miguel-de-tucuman', 'salta', 'necochea', 'bahia-blanca',
+      'posadas', 'formosa', 'corrientes', 'entre-rios', 'santa-fe',
+      'jujuy', 'misiones', 'chaco', 'rio-negro', 'neuquen',
+      'san-juan', 'san-luis', 'la-rioja', 'catamarca', 'tierra-del-fuego',
+      'villa-gestell', 'berazategui', 'avellaneda', 'lanus', 'quilmes',
+      'moron', 'tres-de-febrero', 'nuevo-cuyo', 'costa-atlantica', 'tandil',
+      'olivos', 'vicente-lopez', 'san-isidro', 'pilar', 'escobar'
+    ]
+
+    # New Zealand cities
+    nz_cities = [
+      'auckland', 'wellington', 'christchurch', 'queenstown', 'dunedin',
+      'tauranga', 'napier-hastings', 'hamilton', 'new-plymouth', 'invercargill',
+      'rotorua', 'palmerston-north', 'nelson', 'whangarei', 'blenheim',
+      'pukekohe', 'gisborne', 'timaru', 'asher', 'morrinsville',
+      'feilding', 'levin', 'kaiapoi', 'rolleston', 'greymouth'
+    ]
+
+    all_cities = argentina_cities + nz_cities
+
+    # Top niches for location pages
+    top_niches = ['barbers', 'hair-salons', 'nail-salons', 'personal-trainers', 'massage-spa']
+
+    # Argentina cities with top 3 niches
+    argentina_cities.first(25).each do |city|
+      top_niches.first(3).each do |niche|
         xml << '  <url>'
         xml << "    <loc>#{base_url}/booking-system-for-#{niche}-in-#{city}</loc>"
         xml << "    <lastmod>#{today}</lastmod>"
         xml << '    <changefreq>weekly</changefreq>'
-        xml << '    <priority>0.6</priority>'
+        xml << '    <priority>0.7</priority>'
         xml << '  </url>'
       end
+    end
+
+    # NZ cities with top 3 niches
+    nz_cities.each do |city|
+      top_niches.first(3).each do |niche|
+        xml << '  <url>'
+        xml << "    <loc>#{base_url}/booking-system-for-#{niche}-in-#{city}</loc>"
+        xml << "    <lastmod>#{today}</lastmod>"
+        xml << '    <changefreq>weekly</changefreq>'
+        xml << '    <priority>0.7</priority>'
+        xml << '  </url>'
+      end
+    end
+
+    # All Argentina cities (barbers only - for long-tail) - exclude first 25 already covered
+    argentina_cities.drop(25).each do |city|
+      xml << '  <url>'
+      xml << "    <loc>#{base_url}/booking-system-for-barbers-in-#{city}</loc>"
+      xml << "    <lastmod>#{today}</lastmod>"
+      xml << '    <changefreq>weekly</changefreq>'
+      xml << '    <priority>0.6</priority>'
+      xml << '  </url>'
     end
 
     # Template pages

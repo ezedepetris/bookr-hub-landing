@@ -121,11 +121,67 @@ end
 # ==================== SEO PAGES ====================
 
 # Helper to setup common variables
-def setup_seo_page(locale = nil)
+def setup_seo_page(locale = nil, niche: nil, city: nil)
   locale ||= session[:locale] || :en
   I18n.locale = locale
   @locale_currency_map = LOCALE_CURRENCY_MAP
   @prices = StripeService.get_stripe_prices(session[:currency] || 'USD')
+  
+  @niche = niche
+  @city = city
+  
+  if niche || city
+    @page_title = generate_seo_title(niche, city)
+    @page_description = generate_seo_description(niche, city)
+  end
+end
+
+def generate_seo_title(niche, city)
+  niche_names = {
+    'barbers' => 'Barbers',
+    'hair-salons' => 'Hair Salons',
+    'nail-salons' => 'Nail Salons',
+    'personal-trainers' => 'Personal Trainers',
+    'cleaners' => 'Cleaners',
+    'massage-spa' => 'Massage & Spas',
+    'medical-clinics' => 'Medical Clinics',
+    'dentists' => 'Dentists',
+    'pet-grooming' => 'Pet Groomers',
+    'photographers' => 'Photographers'
+  }
+  
+  city_names = {
+    'buenos-aires' => 'Buenos Aires',
+    'la-plata' => 'La Plata',
+    'mar-del-plata' => 'Mar del Plata',
+    'rosario' => 'Rosario',
+    'cordoba' => 'Córdoba',
+    'mendoza' => 'Mendoza',
+    'auckland' => 'Auckland',
+    'wellington' => 'Wellington',
+    'christchurch' => 'Christchurch'
+  }
+  
+  niche_name = niche ? (niche_names[niche] || niche.gsub('-', ' ').titleize) : nil
+  city_name = city ? (city_names[city] || city.gsub('-', ' ').titleize) : nil
+  
+  if niche_name && city_name
+    "Booking System for #{niche_name} in #{city_name} | BookrHub"
+  elsif niche_name
+    "Booking System for #{niche_name} | BookrHub"
+  else
+    nil
+  end
+end
+
+def generate_seo_description(niche, city)
+  if niche && city
+    "Professional booking system for #{niche.gsub('-', ' ')} in #{city.gsub('-', ' ')}. Get a free booking page, automated reminders, and 0% commission. Start free today!"
+  elsif niche
+    "Professional booking system for #{niche.gsub('-', ' ')}. Get a free booking page, automated reminders, and 0% commission. Start free today!"
+  else
+    nil
+  end
 end
 
 # Spanish pages
@@ -193,13 +249,13 @@ end
 
 # Niche pages
 get '/booking-system-for-:niche' do
-  setup_seo_page(:en)
+  setup_seo_page(:en, niche: params[:niche])
   erb :index
 end
 
 # Location pages
 get '/booking-system-for-:niche-in-:city' do
-  setup_seo_page(:en)
+  setup_seo_page(:en, niche: params[:niche], city: params[:city])
   erb :index
 end
 
