@@ -237,6 +237,57 @@ class SEOPageGenerator
     locale_param = (locale == "es") ? "es" : "en"
     signup_url = "https://my.bookrhub.com/signup?locale=#{locale_param}"
     login_url = "https://my.bookrhub.com/session/new?locale=#{locale_param}"
+    base_url = "https://bookrhub.com/?locale=#{locale_param}"
+
+    nav_labels = (locale == "es") ? {
+      features: "Funciones",
+      why_us: "Por Qué Nosotros",
+      how_it_works: "Cómo Funciona",
+      templates: "Plantillas",
+      pricing: "Precios",
+      sign_in: "Iniciar Sesión",
+      get_started: "Empezar Gratis"
+    } : {
+      features: "Features",
+      why_us: "Why Us",
+      how_it_works: "How It Works",
+      templates: "Templates",
+      pricing: "Pricing",
+      sign_in: "Sign In",
+      get_started: "Get Started"
+    }
+
+    footer_labels = (locale == "es") ? {
+      description: "Software de reservas gratis para salones, barberías, spas y negocios pequeños. Obtén tu propia página web con reservas online, recordatorios por WhatsApp, y cero comisión.",
+      product: "Producto",
+      company: "Empresa",
+      support: "Soporte",
+      legal: "Legal",
+      about_us: "Sobre Nosotros",
+      blog: "Blog",
+      contact_us: "Contáctanos",
+      help_center: "Centro de Ayuda",
+      privacy_policy: "Política de Privacidad",
+      terms_of_service: "Términos de Servicio",
+      consent_preferences: "Preferencias de Consentimiento",
+      powered_by: "Desarrollado por",
+      rights_reserved: "Todos los derechos reservados."
+    } : {
+      description: "Free booking software for salons, barbershops, spas, and small businesses. Get your own website with online reservations, WhatsApp reminders, and zero commission.",
+      product: "Product",
+      company: "Company",
+      support: "Support",
+      legal: "Legal",
+      about_us: "About Us",
+      blog: "Blog",
+      contact_us: "Contact Us",
+      help_center: "Help Center",
+      privacy_policy: "Privacy Policy",
+      terms_of_service: "Terms of Service",
+      consent_preferences: "Consent Preferences",
+      powered_by: "Powered by",
+      rights_reserved: "All rights reserved."
+    }
 
     <<~HTML
       <!DOCTYPE html>
@@ -265,18 +316,44 @@ class SEOPageGenerator
         #{schema}
       </head>
       <body>
+        <!-- Scroll progress bar -->
+        <div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
         <!-- Navigation -->
-        <nav class="navbar">
-          <div class="container">
-            <a href="https://bookrhub.com/?locale=#{locale_param}" class="logo">BookrHub</a>
+        <nav id="main-nav">
+          <div class="nav-container">
+            <a href="#{base_url}" class="logo">
+              <img src="https://bookrhub.com/images/isologo.svg" alt="BookrHub" class="isologo-image" width="140">
+            </a>
             <div class="nav-links">
-              <a href="https://bookrhub.com/?locale=#{locale_param}#features">#{(locale == "es") ? "Funciones" : "Features"}</a>
-              <a href="https://bookrhub.com/?locale=#{locale_param}#pricing">#{(locale == "es") ? "Precios" : "Pricing"}</a>
-              <a href="#{login_url}" class="btn btn-secondary">#{(locale == "es") ? "Iniciar Sesión" : "Sign In"}</a>
-              <a href="#{signup_url}" class="btn btn-primary">#{(locale == "es") ? "Comenzar Gratis" : "Get Started Free"}</a>
+              <a href="#{base_url}#features">#{nav_labels[:features]}</a>
+              <a href="#{base_url}#why-us">#{nav_labels[:why_us]}</a>
+              <a href="#{base_url}#screenshots">#{nav_labels[:how_it_works]}</a>
+              <a href="#{base_url}#live-templates">#{nav_labels[:templates]}</a>
+              <a href="#{base_url}#pricing">#{nav_labels[:pricing]}</a>
+              <a href="#{login_url}" class="text-sm font-medium hover:text-primary">#{nav_labels[:sign_in]}</a>
+              <a href="#{signup_url}" class="cta-button">#{nav_labels[:get_started]}</a>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+          <div class="mobile-menu-links">
+            <a href="#{base_url}#features">#{nav_labels[:features]}</a>
+            <a href="#{base_url}#why-us">#{nav_labels[:why_us]}</a>
+            <a href="#{base_url}#screenshots">#{nav_labels[:how_it_works]}</a>
+            <a href="#{base_url}#live-templates">#{nav_labels[:templates]}</a>
+            <a href="#{base_url}#pricing">#{nav_labels[:pricing]}</a>
+            <a href="#{login_url}" class="text-sm font-medium">#{nav_labels[:sign_in]}</a>
+            <a href="#{signup_url}" class="cta-button">#{nav_labels[:get_started]}</a>
+          </div>
+        </div>
 
         <!-- Main Content -->
         <main>
@@ -306,18 +383,61 @@ class SEOPageGenerator
           </section>
         </main>
 
+        <!-- Floating CTA -->
+        <div class="floating-cta" id="floating-cta" aria-hidden="true">
+          <a href="#{signup_url}" class="floating-cta-btn">
+            #{(locale == "es") ? "Empezar Gratis" : "Get Started"}
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          </a>
+        </div>
+
+        <!-- Back to top -->
+        <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        </button>
+
         <!-- Footer -->
         <footer>
-          <div class="container">
-            <div class="footer-links">
-              <a href="https://bookrhub.com/?locale=#{locale_param}#privacy">#{(locale == "es") ? "Privacidad" : "Privacy"}</a>
-              <a href="https://bookrhub.com/?locale=#{locale_param}#terms">#{(locale == "es") ? "Términos" : "Terms"}</a>
-              <a href="https://bookrhub.com/?locale=#{locale_param}#contact">#{(locale == "es") ? "Contacto" : "Contact"}</a>
+          <div class="footer-content">
+            <div class="footer-brand">
+              <a href="#{base_url}" class="logo">
+                <img src="https://bookrhub.com/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120">
+              </a>
+              <p>#{footer_labels[:description]}</p>
             </div>
-            <p>&copy; 2026 BookrHub. #{(locale == "es") ? "Todos los derechos reservados." : "All rights reserved."}</p>
+            <div class="footer-section">
+              <h3>#{footer_labels[:product]}</h3>
+              <a href="#{base_url}#features">#{nav_labels[:features]}</a>
+              <a href="#{base_url}#why-us">#{nav_labels[:why_us]}</a>
+              <a href="#{base_url}#live-templates">#{nav_labels[:templates]}</a>
+              <a href="#{base_url}#pricing">#{nav_labels[:pricing]}</a>
+              <a href="#{base_url}#screenshots">#{nav_labels[:how_it_works]}</a>
+              <a href="#{login_url}">#{nav_labels[:sign_in]}</a>
+              <a href="#{signup_url}">#{nav_labels[:get_started]}</a>
+            </div>
+            <div class="footer-section">
+              <h3>#{footer_labels[:company]}</h3>
+              <a href="https://bookrhub.com/about">#{footer_labels[:about_us]}</a>
+              <a href="https://blog.bookrhub.com">#{footer_labels[:blog]}</a>
+              <a href="https://bookrhub.com/contact">#{footer_labels[:contact_us]}</a>
+            </div>
+            <div class="footer-section">
+              <h3>#{footer_labels[:support]}</h3>
+              <a href="https://support.bookrhub.com">#{footer_labels[:help_center]}</a>
+              <a href="mailto:admin@bookrhub.com">admin@bookrhub.com</a>
+            </div>
+            <div class="footer-section">
+              <h3>#{footer_labels[:legal]}</h3>
+              <a href="https://bookrhub.com/privacy">#{footer_labels[:privacy_policy]}</a>
+              <a href="https://bookrhub.com/terms">#{footer_labels[:terms_of_service]}</a>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 BookrHub. #{footer_labels[:rights_reserved]}</p>
+            <span>#{footer_labels[:powered_by]} <a href="https://plumdigital.co.nz" target="_blank" class="copyright-link">Plum Digital</a></span>
           </div>
         </footer>
-        
+
         <style>
           /* SEO Page Specific Styles */
           .hero-seo {
@@ -340,76 +460,125 @@ class SEOPageGenerator
           }
           .content-section {
             padding: 60px 0;
-            background: #f9fafb;
+            background: white;
           }
           .seo-content {
             max-width: 800px;
             margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
           }
           .seo-content .intro {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #374151;
+            color: #333;
             margin-bottom: 30px;
           }
           .seo-content h2 {
-            font-size: 1.5rem;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: #111827;
+            font-size: 1.75rem;
+            margin: 40px 0 20px;
+            color: #1a1a2e;
           }
           .seo-content p {
             line-height: 1.8;
-            color: #4b5563;
-            margin-bottom: 20px;
+            color: #555;
+            margin-bottom: 15px;
           }
-          .seo-content ul, .seo-content ol {
+          .seo-content .feature-list {
+            list-style: none;
+            padding: 0;
             margin: 20px 0;
-            padding-left: 25px;
           }
-          .seo-content li {
-            line-height: 1.8;
-            color: #4b5563;
-            margin-bottom: 10px;
+          .seo-content .feature-list li {
+            padding: 12px 20px;
+            background: #f8f9fa;
+            margin: 8px 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
           }
-          .feature-list li {
-            list-style: none;
-            padding-left: 0;
-            position: relative;
-          }
-          .feature-list li::before {
-            content: "✓";
-            color: #10b981;
-            font-weight: bold;
-            margin-right: 10px;
-          }
-          .steps-list {
+          .seo-content .steps-list {
             counter-reset: step;
-          }
-          .steps-list li {
             list-style: none;
-            padding-left: 40px;
-            position: relative;
-            counter-increment: step;
+            padding: 0;
+            margin: 20px 0;
           }
-          .steps-list li::before {
+          .seo-content .steps-list li {
+            counter-increment: step;
+            padding: 20px 20px 20px 70px;
+            position: relative;
+            margin: 15px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+          }
+          .seo-content .steps-list li::before {
             content: counter(step);
             position: absolute;
-            left: 0;
-            top: 0;
-            width: 28px;
-            height: 28px;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35px;
+            height: 35px;
             background: #667eea;
             color: white;
             border-radius: 50%;
-            text-align: center;
-            line-height: 28px;
-            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
+          }
+          .cta-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+          }
+          .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+          }
+          .cta-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+          }
+          .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+          }
+          .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+          }
+          .comparison-pros ul, .comparison-cons ul {
+            list-style: none;
+            padding: 0;
+          }
+          .comparison-pros li {
+            padding: 10px;
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            margin: 8px 0;
+          }
+          .comparison-cons li {
+            padding: 10px;
+            background: #fef2f2;
+            border-left: 4px solid #dc2626;
+            margin: 8px 0;
+          }
+          .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+          }
+          .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+          }
+          .comparison-table th {
+            background: #f8f9fa;
           }
           .cta-box {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -420,168 +589,16 @@ class SEOPageGenerator
             margin-top: 40px;
           }
           .cta-box h3 {
-            color: white;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
           }
           .cta-box p {
-            color: rgba(255,255,255,0.9);
             margin-bottom: 20px;
+            opacity: 0.95;
           }
-          .cta-box .btn {
-            background: white;
-            color: #667eea;
-          }
-          .cta-box .btn:hover {
-            background: #f3f4f6;
-          }
-          .cta-section {
-            background: #1f2937;
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-          }
-          .cta-section h2 {
-            color: white;
-            font-size: 2rem;
-            margin-bottom: 15px;
-          }
-          .cta-section p {
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-          }
-          .cta-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-          }
-          .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-          }
-          .btn-primary {
-            background: #667eea;
-            color: white;
-          }
-          .btn-primary:hover {
-            background: #5a67d8;
-            transform: translateY(-2px);
-          }
-          .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-          }
-          .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
-          }
-          .btn-large {
-            padding: 15px 40px;
-            font-size: 1.1rem;
-          }
-          .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 30px 0;
-          }
-          .comparison-pros, .comparison-cons {
-            padding: 20px;
-            border-radius: 8px;
-          }
-          .comparison-pros {
-            background: #ecfdf5;
-          }
-          .comparison-pros li::before {
-            content: "✓";
-            color: #10b981;
-            font-weight: bold;
-            margin-right: 8px;
-          }
-          .comparison-cons {
-            background: #fef2f2;
-          }
-          .comparison-cons li::before {
-            content: "✗";
-            color: #ef4444;
-            font-weight: bold;
-            margin-right: 8px;
-          }
-          .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-          }
-          .comparison-table th, .comparison-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #e5e7eb;
-          }
-          .comparison-table th {
-            background: #f9fafb;
-            font-weight: 600;
-          }
-          .comparison-table td strong {
-            color: #10b981;
-          }
-          footer {
-            background: #111827;
-            color: rgba(255,255,255,0.7);
-            padding: 40px 0;
-            text-align: center;
-          }
-          .footer-links {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            margin-bottom: 20px;
-          }
-          .footer-links a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-          }
-          .footer-links a:hover {
-            color: white;
-          }
-          .navbar {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-          }
-          .navbar .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-          }
-          .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #667eea;
-            text-decoration: none;
-          }
-          .nav-links {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-          }
-          .nav-links a {
-            color: #4b5563;
-            text-decoration: none;
-            font-weight: 500;
-          }
-          .nav-links a:hover {
-            color: #667eea;
+          .article-content h2 {
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
           }
           @media (max-width: 768px) {
             .hero-seo {
@@ -591,7 +608,7 @@ class SEOPageGenerator
               font-size: 1.8rem;
             }
             .seo-content {
-              padding: 25px;
+              padding: 0 15px;
             }
             .comparison-grid {
               grid-template-columns: 1fr;
@@ -601,6 +618,67 @@ class SEOPageGenerator
             }
           }
         </style>
+
+        <script>
+          // Mobile menu toggle
+          const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+          const mobileMenu = document.getElementById('mobile-menu');
+          if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+              mobileMenu.classList.toggle('active');
+            });
+          }
+          
+          // Back to top button
+          const backToTop = document.getElementById('back-to-top');
+          if (backToTop) {
+            window.addEventListener('scroll', () => {
+              if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+              } else {
+                backToTop.classList.remove('visible');
+              }
+            });
+            backToTop.addEventListener('click', () => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+          }
+          
+          // Scroll progress
+          const scrollProgress = document.getElementById('scroll-progress');
+          if (scrollProgress) {
+            window.addEventListener('scroll', () => {
+              const scrollTop = window.scrollY;
+              const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+              const progress = (scrollTop / docHeight) * 100;
+              scrollProgress.style.width = progress + '%';
+            });
+          }
+          
+          // Nav scroll effect
+          const mainNav = document.getElementById('main-nav');
+          if (mainNav) {
+            window.addEventListener('scroll', () => {
+              if (window.scrollY > 50) {
+                mainNav.classList.add('nav-scrolled');
+              } else {
+                mainNav.classList.remove('nav-scrolled');
+              }
+            });
+          }
+          
+          // Floating CTA visibility
+          const floatingCta = document.getElementById('floating-cta');
+          if (floatingCta) {
+            window.addEventListener('scroll', () => {
+              if (window.scrollY > 500) {
+                floatingCta.classList.add('visible');
+              } else {
+                floatingCta.classList.remove('visible');
+              }
+            });
+          }
+        </script>
       </body>
       </html>
     HTML
