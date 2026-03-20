@@ -10,6 +10,10 @@ end
 module SEOTemplates
   # Base HTML template with common elements
   def self.base_html(locale:, title:, description:, h1:, content:, canonical_url:, lang_path:, page_type:, schema: nil)
+    locale_param = (locale == "es") ? "es" : "en"
+    signup_url = "https://my.bookrhub.com/signup?locale=#{locale_param}"
+    login_url = "https://my.bookrhub.com/session/new?locale=#{locale_param}"
+
     <<~HTML
       <!DOCTYPE html>
       <html lang="#{locale}">
@@ -37,12 +41,13 @@ module SEOTemplates
         <!-- Navigation -->
         <nav class="navbar">
           <div class="container">
-            <a href="/" class="logo">BookrHub</a>
+            <a href="https://bookrhub.com/?locale=#{locale_param}" class="logo">BookrHub</a>
             <div class="nav-links">
-              <a href="/features">Features</a>
-              <a href="/pricing">Pricing</a>
-              <a href="#{lang_path}/booking-system-for-barbers">For Business</a>
-              <a href="/signup" class="btn btn-primary">Get Started Free</a>
+              <a href="https://bookrhub.com/?locale=#{locale_param}#features">Features</a>
+              <a href="https://bookrhub.com/?locale=#{locale_param}#pricing">Pricing</a>
+              <a href="https://bookrhub.com/?locale=#{locale_param}#why-us">Why Us</a>
+              <a href="#{login_url}" class="btn btn-secondary">Sign In</a>
+              <a href="#{signup_url}" class="btn btn-primary">Get Started Free</a>
             </div>
           </div>
         </nav>
@@ -52,8 +57,8 @@ module SEOTemplates
           <header class="hero-seo">
             <div class="container">
               <h1>#{h1}</h1>
-              <p class="lead">Simple, free booking software for your business. No commission, no monthly fees.</p>
-              <a href="/signup" class="btn btn-primary btn-large">Create Your Free Page</a>
+              <p class="lead">#{(locale == "es") ? "Software de reservas simple y gratis para tu negocio. Sin comisión, sin mensualidades." : "Simple, free booking software for your business. No commission, no monthly fees."}</p>
+              <a href="#{signup_url}" class="btn btn-primary btn-large">#{(locale == "es") ? "Empezar Gratis" : "Create Your Free Page"}</a>
             </div>
           </header>
 
@@ -66,11 +71,11 @@ module SEOTemplates
           <!-- CTA Section -->
           <section class="cta-section">
             <div class="container">
-              <h2>Ready to Get Started?</h2>
-              <p>Join thousands of businesses using BookrHub for free online booking.</p>
+              <h2>#{(locale == "es") ? "¿Listo para Empezar?" : "Ready to Get Started?"}</h2>
+              <p>#{(locale == "es") ? "Unite a miles de negocios que usan BookrHub para reservas online gratis." : "Join thousands of businesses using BookrHub for free online booking."}</p>
               <div class="cta-buttons">
-                <a href="/signup" class="btn btn-primary btn-large">Create Free Account</a>
-                <a href="#demo" class="btn btn-secondary btn-large">See Demo</a>
+                <a href="#{signup_url}" class="btn btn-primary btn-large">#{(locale == "es") ? "Crear Cuenta Gratis" : "Create Free Account"}</a>
+                <a href="https://bookrhub.com/?locale=#{locale_param}#templates" class="btn btn-secondary btn-large">#{(locale == "es") ? "Ver Plantillas" : "See Demo"}</a>
               </div>
             </div>
           </section>
@@ -80,11 +85,11 @@ module SEOTemplates
         <footer>
           <div class="container">
             <div class="footer-links">
-              <a href="/privacy">Privacy</a>
-              <a href="/terms">Terms</a>
-              <a href="/contact">Contact</a>
+              <a href="https://bookrhub.com/?locale=#{locale_param}#privacy">#{(locale == "es") ? "Privacidad" : "Privacy"}</a>
+              <a href="https://bookrhub.com/?locale=#{locale_param}#terms">#{(locale == "es") ? "Términos" : "Terms"}</a>
+              <a href="https://bookrhub.com/?locale=#{locale_param}#contact">#{(locale == "es") ? "Contacto" : "Contact"}</a>
             </div>
-            <p>&copy; 2026 BookrHub. All rights reserved.</p>
+            <p>&copy; 2026 BookrHub. #{(locale == "es") ? "Todos los derechos reservados." : "All rights reserved."}</p>
           </div>
         </footer>
       </body>
@@ -398,15 +403,18 @@ module SEOTemplates
       </script>
     JSON
 
+    locale_param = (locale == "es") ? "es" : "en"
+    signup_url = "https://my.bookrhub.com/signup?locale=#{locale_param}"
+
     content = <<~HTML
       <div class="seo-content article-content">
         <p class="intro">#{data[:intro]}</p>
         #{sections_html}
         
         <div class="cta-box">
-          <h3>Ready to Get Started?</h3>
-          <p>BookrHub makes it easy to implement everything you've learned. Sign up free and start accepting online bookings today.</p>
-          <a href="/signup" class="btn btn-primary">Create Free Account</a>
+          <h3>#{(locale == "es") ? "¿Listo para Empezar?" : "Ready to Get Started?"}</h3>
+          <p>#{(locale == "es") ? "BookrHub hace fácil implementar todo lo que aprendiste. Registrate gratis y empezá a aceptar reservas online hoy." : "BookrHub makes it easy to implement everything you've learned. Sign up free and start accepting online bookings today."}</p>
+          <a href="#{signup_url}" class="btn btn-primary">#{(locale == "es") ? "Crear Cuenta Gratis" : "Create Free Account"}</a>
         </div>
       </div>
     HTML
@@ -424,6 +432,8 @@ module SEOTemplates
   # Comparison page template
   def self.comparison_page(competitor_key:, competitor_data:, locale:)
     locale_suffix = (locale == "es") ? "es" : ""
+    locale_param = (locale == "es") ? "es" : "en"
+    signup_url = "https://my.bookrhub.com/signup?locale=#{locale_param}"
     canonical = (locale == "es") ? "/#{locale}/vs-#{competitor_key}" : "/vs-#{competitor_key}"
 
     title = (locale == "es") ?
@@ -519,8 +529,8 @@ module SEOTemplates
 
           <div class="cta-box">
             <h3>Probá BookrHub Gratis</h3>
-            <p>Únete a miles de negocios que ya switched a BookrHub. Sin riesgo, sin compromiso.</p>
-            <a href="/signup" class="btn btn-primary">Crear Cuenta Gratis</a>
+            <p>Únete a miles de negocios que ya switchearon a BookrHub. Sin riesgo, sin compromiso.</p>
+            <a href="#{signup_url}" class="btn btn-primary">Crear Cuenta Gratis</a>
           </div>
         </div>
       HTML
@@ -588,7 +598,7 @@ module SEOTemplates
           <div class="cta-box">
             <h3>Try BookrHub Free</h3>
             <p>Join thousands of businesses who've switched to BookrHub. No risk, no commitment.</p>
-            <a href="/signup" class="btn btn-primary">Create Free Account</a>
+            <a href="#{signup_url}" class="btn btn-primary">Create Free Account</a>
           </div>
         </div>
       HTML
@@ -607,6 +617,7 @@ module SEOTemplates
   # General SEO page template (English)
   def self.general_page_en(data)
     canonical = "/#{data[:slug]}"
+    signup_url = "https://my.bookrhub.com/signup?locale=en"
 
     schema = <<~JSON
       <script type="application/ld+json">
@@ -671,7 +682,7 @@ module SEOTemplates
         <div class="cta-box">
           <h3>Ready to Simplify Your Booking?</h3>
           <p>Join thousands of businesses using BookrHub. It's free, it's easy, and it works.</p>
-          <a href="/signup" class="btn btn-primary">Create Free Account</a>
+          <a href="#{signup_url}" class="btn btn-primary">Create Free Account</a>
         </div>
       </div>
     HTML
@@ -689,6 +700,7 @@ module SEOTemplates
   # General SEO page template (Spanish)
   def self.general_page_es(data)
     canonical = "/#{data[:slug]}"
+    signup_url = "https://my.bookrhub.com/signup?locale=es"
 
     schema = <<~JSON
       <script type="application/ld+json">
@@ -753,7 +765,7 @@ module SEOTemplates
         <div class="cta-box">
           <h3>Listo para Simplificar Tus Reservas?</h3>
           <p>Unite a miles de negocios que usan BookrHub. Es gratis, es fácil, y funciona.</p>
-          <a href="/signup" class="btn btn-primary">Crear Cuenta Gratis</a>
+          <a href="#{signup_url}" class="btn btn-primary">Crear Cuenta Gratis</a>
         </div>
       </div>
     HTML

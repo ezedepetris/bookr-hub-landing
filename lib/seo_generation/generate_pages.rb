@@ -234,7 +234,9 @@ class SEOPageGenerator
   end
 
   def build_full_html(locale:, title:, description:, h1:, content:, canonical:, schema:)
-    lang_path = (locale == "es") ? "es" : ""
+    locale_param = (locale == "es") ? "es" : "en"
+    signup_url = "https://my.bookrhub.com/signup?locale=#{locale_param}"
+    login_url = "https://my.bookrhub.com/session/new?locale=#{locale_param}"
 
     <<~HTML
       <!DOCTYPE html>
@@ -266,11 +268,12 @@ class SEOPageGenerator
         <!-- Navigation -->
         <nav class="navbar">
           <div class="container">
-            <a href="https://bookrhub.com#{lang_path}/" class="logo">BookrHub</a>
+            <a href="https://bookrhub.com/?locale=#{locale_param}" class="logo">BookrHub</a>
             <div class="nav-links">
-              <a href="https://bookrhub.com#{lang_path}/features">#{(locale == "es") ? "Funciones" : "Features"}</a>
-              <a href="https://bookrhub.com#{lang_path}/pricing">#{(locale == "es") ? "Precios" : "Pricing"}</a>
-              <a href="https://bookrhub.com#{lang_path}/signup" class="btn btn-primary">#{(locale == "es") ? "Comenzar Gratis" : "Get Started Free"}</a>
+              <a href="https://bookrhub.com/?locale=#{locale_param}#features">#{(locale == "es") ? "Funciones" : "Features"}</a>
+              <a href="https://bookrhub.com/?locale=#{locale_param}#pricing">#{(locale == "es") ? "Precios" : "Pricing"}</a>
+              <a href="#{login_url}" class="btn btn-secondary">#{(locale == "es") ? "Iniciar Sesión" : "Sign In"}</a>
+              <a href="#{signup_url}" class="btn btn-primary">#{(locale == "es") ? "Comenzar Gratis" : "Get Started Free"}</a>
             </div>
           </div>
         </nav>
@@ -281,7 +284,7 @@ class SEOPageGenerator
             <div class="container">
               <h1>#{h1}</h1>
               <p class="lead">#{(locale == "es") ? "Software de reservas simple y gratis para tu negocio. Sin comisión, sin mensualidades." : "Simple, free booking software for your business. No commission, no monthly fees."}</p>
-              <a href="https://bookrhub.com#{lang_path}/signup" class="btn btn-primary btn-large">#{(locale == "es") ? "Crea Tu Página Gratis" : "Create Your Free Page"}</a>
+              <a href="#{signup_url}" class="btn btn-primary btn-large">#{(locale == "es") ? "Crea Tu Página Gratis" : "Create Your Free Page"}</a>
             </div>
           </header>
 
@@ -297,7 +300,7 @@ class SEOPageGenerator
               <h2>#{(locale == "es") ? "¿Listo para Comenzar?" : "Ready to Get Started?"}</h2>
               <p>#{(locale == "es") ? "Unite a miles de negocios que usan BookrHub para reservas online gratis." : "Join thousands of businesses using BookrHub for free online booking."}</p>
               <div class="cta-buttons">
-                <a href="https://bookrhub.com#{lang_path}/signup" class="btn btn-primary btn-large">#{(locale == "es") ? "Crear Cuenta Gratis" : "Create Free Account"}</a>
+                <a href="#{signup_url}" class="btn btn-primary btn-large">#{(locale == "es") ? "Crear Cuenta Gratis" : "Create Free Account"}</a>
               </div>
             </div>
           </section>
@@ -307,9 +310,9 @@ class SEOPageGenerator
         <footer>
           <div class="container">
             <div class="footer-links">
-              <a href="https://bookrhub.com#{lang_path}/privacy">#{(locale == "es") ? "Privacidad" : "Privacy"}</a>
-              <a href="https://bookrhub.com#{lang_path}/terms">#{(locale == "es") ? "Términos" : "Terms"}</a>
-              <a href="https://bookrhub.com#{lang_path}/contact">#{(locale == "es") ? "Contacto" : "Contact"}</a>
+              <a href="https://bookrhub.com/?locale=#{locale_param}#privacy">#{(locale == "es") ? "Privacidad" : "Privacy"}</a>
+              <a href="https://bookrhub.com/?locale=#{locale_param}#terms">#{(locale == "es") ? "Términos" : "Terms"}</a>
+              <a href="https://bookrhub.com/?locale=#{locale_param}#contact">#{(locale == "es") ? "Contacto" : "Contact"}</a>
             </div>
             <p>&copy; 2026 BookrHub. #{(locale == "es") ? "Todos los derechos reservados." : "All rights reserved."}</p>
           </div>
