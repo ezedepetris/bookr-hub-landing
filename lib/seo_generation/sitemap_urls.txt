@@ -53,7 +53,7 @@
 /es/app-salon-de-belleza
 /es/software-gimnasio
 /es/agenda-online-negocio
-/es/reservas-desde-whatsapp
+/es/recordatorios-de-turnos
 /es/automatizar-turnos
 /es/plantilla-reserva-negocios
 /es/guia-reservas-online
@@ -106,7 +106,7 @@
 /es/solucion-para-inasistencias
 /es/crear-pagina-de-reservas-web
 /es/software-para-peluquerias-gratis
-/es/sistema-reservas-whatsapp
+/es/sistema-reservas-email
 /en/use-cases
 /es/casos-de-uso
 /en/booking-system-for-barbers-in-buenos-aires
