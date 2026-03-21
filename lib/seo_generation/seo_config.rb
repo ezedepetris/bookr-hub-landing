@@ -27,7 +27,7 @@ module SEOConfig
       ],
       benefits_en: [
         "clients book their own time slot 24/7",
-        "automatic WhatsApp reminders reduce no-shows",
+        "automatic email reminders reduce no-shows",
         "manage your barbershop from your phone",
         "accept deposits to protect your time"
       ],
@@ -455,7 +455,7 @@ module SEOConfig
     {
       slug: "how-to-reduce-no-shows",
       title: "How to Reduce No-Shows | Appointment Reminder Tips",
-      description: "Discover proven strategies to reduce missed appointments. From automated WhatsApp reminders to deposit collection, learn what works.",
+      description: "Discover proven strategies to reduce missed appointments. From automated email reminders to deposit collection, learn what works.",
       h1: "How to Reduce No-Shows at Your Business",
       intro: "No-shows cost businesses hundreds of dollars every month. A client who doesn't show up means lost time, lost money, and a disrupted schedule. Here's how to fix it.",
       sections: [
@@ -465,7 +465,7 @@ module SEOConfig
         },
         {
           title: "Automated Reminders Work",
-          content: "Sending reminder messages 24 hours and 1 hour before appointments can reduce no-shows by up to 50%. BookrHub sends WhatsApp reminders automatically."
+          content: "Sending reminder messages 24 hours and 1 hour before appointments can reduce no-shows by up to 50%. BookrHub sends email reminders automatically."
         },
         {
           title: "Easy Setup",
@@ -532,7 +532,7 @@ module SEOConfig
         },
         {
           title: "BookrHub Does It Automatically",
-          content: "Set it and forget it. BookrHub sends WhatsApp reminders to all your clients automatically. No manual work required."
+          content: "Set it and forget it. BookrHub sends email reminders to all your clients automatically. No manual work required."
         }
       ]
     },
@@ -637,7 +637,7 @@ module SEOConfig
         },
         {
           title: "Why BookrHub Stands Out",
-          content: "BookrHub is completely free to start, has no commission on bookings, includes WhatsApp reminders, and is designed specifically for service businesses."
+          content: "BookrHub is completely free to start, has no commission on bookings, includes email reminders, and is designed specifically for service businesses."
         }
       ]
     },
@@ -654,7 +654,7 @@ module SEOConfig
         },
         {
           title: "BookrHub's Free Plan",
-          content: "BookrHub's free plan includes unlimited bookings, service management, WhatsApp reminders, and a custom booking page. No credit card required."
+          content: "BookrHub's free plan includes unlimited bookings, service management, email reminders, and a custom booking page. No credit card required."
         },
         {
           title: "Getting Started",
@@ -686,7 +686,7 @@ module SEOConfig
     {
       slug: "fresha-alternative",
       title: "BookrHub vs Fresha | Best Fresha Alternative for Your Business",
-      description: "Tired of Fresha's 5-20% commission? Discover BookrHub as a free alternative with no commission, WhatsApp reminders, and better value.",
+      description: "Tired of Fresha's 5-20% commission? Discover BookrHub as a free alternative with no commission, email reminders, and better value.",
       h1: "BookrHub vs Fresha: Which is Better for Your Business?",
       intro: "Fresha charges businesses up to 20% commission on bookings. If you're looking for a better value alternative, here's how we compare.",
       sections: [
@@ -700,14 +700,14 @@ module SEOConfig
         },
         {
           title: "Feature Comparison",
-          content: "Both platforms offer online booking and scheduling, but BookrHub includes WhatsApp reminders in the free plan. See our full feature comparison."
+          content: "Both platforms offer online booking and scheduling, but BookrHub includes email reminders in the free plan. See our full feature comparison."
         }
       ]
     },
     {
       slug: "calendly-alternative",
       title: "BookrHub vs Calendly | Best Calendly Alternative",
-      description: "Looking for a Calendly alternative? BookrHub is designed for service businesses with client management, payments, and WhatsApp reminders.",
+      description: "Looking for a Calendly alternative? BookrHub is designed for service businesses with client management, payments, and email reminders.",
       h1: "BookrHub vs Calendly: Which Scheduling Tool Wins?",
       intro: "Calendly is popular, but it's designed for professionals, not service businesses. Here's how BookrHub compares for salons, barbers, and trainers.",
       sections: [
@@ -717,7 +717,7 @@ module SEOConfig
         },
         {
           title: "Service Business Features",
-          content: "BookrHub includes client management, service menus, WhatsApp reminders, and payment collection - everything a salon or barbershop needs."
+          content: "BookrHub includes client management, service menus, email reminders, and payment collection - everything a salon or barbershop needs."
         },
         {
           title: "Pricing Comparison",
@@ -755,7 +755,7 @@ module SEOConfig
       sections: [
         {
           title: "What You Get Free",
-          content: "BookrHub's free plan includes unlimited bookings, custom booking page, WhatsApp reminders, and basic scheduling tools."
+          content: "BookrHub's free plan includes unlimited bookings, custom booking page, email reminders, and basic scheduling tools."
         },
         {
           title: "Easy Setup",
@@ -801,7 +801,7 @@ module SEOConfig
         },
         {
           title: "Top Picks",
-          content: "BookrHub stands out for its free pricing, no commission, and WhatsApp reminders. Other popular options include Fresha, Boulevard, and Vagaro."
+          content: "BookrHub stands out for its free pricing, no commission, and email reminders. Other popular options include Fresha, Boulevard, and Vagaro."
         },
         {
           title: "Making Your Decision",
@@ -1492,7 +1492,7 @@ module SEOConfig
       commissions: "No commission",
       free_plan: "Free basic plan",
       strong_points: ["Easy to use", "Calendar integrations"],
-      weak_points: ["Basic features", "Limited customization", "No WhatsApp reminders"]
+      weak_points: ["Basic features", "Limited customization", "No email reminders"]
     },
     "timely" => {
       name: "Timely",
@@ -1557,9 +1557,23 @@ module SEOConfig
   # ============================================
   GENERAL_PAGES_EN = [
     {
+      slug: "free-booking",
+      title: "Free Booking System | No Credit Card Required",
+      description: "Get a free booking system for your salon, barbershop, or spa. No monthly fees, no commission. BookrHub lets clients book appointments online 24/7.",
+      h1: "Free Booking System for Your Business",
+      intro: "Running a service business is busy enough without juggling phone calls and text messages about appointments. A free booking system gives your clients an easy way to schedule while you focus on what you do best."
+    },
+    {
+      slug: "use-cases",
+      title: "Booking System by Industry | Find Your Solution",
+      description: "Browse booking systems for hair salons, barbershops, nail salons, massage spas, personal trainers, cleaners, and more. Find the perfect fit for your business.",
+      h1: "Booking Systems by Industry",
+      intro: "Every service business has unique booking needs. Browse our collection of specialized booking pages to find the perfect solution for your industry."
+    },
+    {
       slug: "why-bookrhub",
       title: "Why BookrHub? | The Best Free Booking System",
-      description: "Discover why thousands of businesses choose BookrHub. Zero commission, no monthly fees, WhatsApp reminders, and designed for service businesses like yours.",
+      description: "Discover why thousands of businesses choose BookrHub. Zero commission, no monthly fees, email reminders, and designed for service businesses like yours.",
       h1: "Why Choose BookrHub for Your Business?",
       intro: "With so many booking systems out there, why do thousands of businesses choose BookrHub? The answer is simple: we put your success first. No hidden fees, no commission on bookings, and features that actually help your business grow."
     },
@@ -1643,6 +1657,20 @@ module SEOConfig
   ].freeze
 
   GENERAL_PAGES_ES = [
+    {
+      slug: "reservas-gratis",
+      title: "Sistema de Turnos Gratis | Sin Tarjeta de Crédito",
+      description: "Conseguí un sistema de turnos gratis para tu salón, barbería o spa. Sin mensualidades, sin comisión. BookrHub permite a tus clientes reservar turnos online 24/7.",
+      h1: "Sistema de Turnos Gratis para Tu Negocio",
+      intro: "Manejar un negocio de servicios es suficientemente ocupado sin estar juggling llamadas telefónicas y mensajes de texto sobre turnos. Un sistema de turnos gratis le da a tus clientes una forma fácil de reservar mientras vos te concentrás en lo que mejor hacés."
+    },
+    {
+      slug: "casos-de-uso",
+      title: "Sistema de Turnos por Industria | Encontrá Tu Solución",
+      description: "Navegá sistemas de turnos para peluquerías, barberías, salones de uñas, spas de masaje, entrenadores personales, servicios de limpieza, y más. Encontrá el indicado para tu negocio.",
+      h1: "Sistemas de Turnos por Industria",
+      intro: "Cada negocio de servicios tiene necesidades únicas de reservas. Navegá nuestra colección de páginas especializadas para encontrar la solución perfecta para tu industria."
+    },
     {
       slug: "por-que-bookrhub",
       title: "Por Qué BookrHub | El Mejor Sistema de Turnos Gratis",

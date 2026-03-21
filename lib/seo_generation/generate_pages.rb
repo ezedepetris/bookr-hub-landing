@@ -34,6 +34,9 @@ class SEOPageGenerator
     puts "\n📄 Generating general SEO pages..."
     generate_general_pages
 
+    puts "\n📄 Generating use-cases hub page..."
+    generate_use_cases_pages
+
     puts "\n📄 Generating city pages..."
     generate_city_pages
 
@@ -162,6 +165,30 @@ class SEOPageGenerator
     end
 
     puts "   ✅ Generated #{SEOConfig::GENERAL_PAGES_EN.count} EN + #{SEOConfig::GENERAL_PAGES_ES.count} ES general pages"
+  end
+
+  def generate_use_cases_pages
+    # English use-cases page
+    page_data_en = SEOTemplates.use_cases_page(locale: "en")
+    output_path_en = "#{BASE_DIR}/en/use-cases.html"
+    generate_html_page(
+      path: output_path_en,
+      locale: "en",
+      **page_data_en
+    )
+    @generated_pages << "/en/use-cases"
+
+    # Spanish use-cases page
+    page_data_es = SEOTemplates.use_cases_page(locale: "es")
+    output_path_es = "#{BASE_DIR}/es/casos-de-uso.html"
+    generate_html_page(
+      path: output_path_es,
+      locale: "es",
+      **page_data_es
+    )
+    @generated_pages << "/es/casos-de-uso"
+
+    puts "   ✅ Generated use-cases pages"
   end
 
   def generate_city_pages
@@ -412,6 +439,7 @@ class SEOPageGenerator
               <a href="#{base_url}#live-templates">#{nav_labels[:templates]}</a>
               <a href="#{base_url}#pricing">#{nav_labels[:pricing]}</a>
               <a href="#{base_url}#screenshots">#{nav_labels[:how_it_works]}</a>
+              <a href="#{(locale == "es") ? base_url + "/casos-de-uso" : base_url + "/use-cases"}">#{(locale == "es") ? "Casos de Uso" : "Use Cases"}</a>
               <a href="#{login_url}">#{nav_labels[:sign_in]}</a>
               <a href="#{signup_url}">#{nav_labels[:get_started]}</a>
             </div>
@@ -599,6 +627,70 @@ class SEOPageGenerator
           .article-content h2 {
             border-bottom: 2px solid #667eea;
             padding-bottom: 10px;
+          }
+          /* Use Cases Page Styles */
+          .use-cases-content h2 {
+            font-size: 1.75rem;
+            margin: 40px 0 20px;
+            color: #1a1a2e;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+          }
+          .use-cases-grid {
+            margin: 20px 0;
+          }
+          .use-cases-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+          }
+          .use-cases-list li {
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+          }
+          .use-cases-list li:hover {
+            background: #667eea;
+            transform: translateY(-2px);
+          }
+          .use-cases-list li a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+          }
+          .use-cases-list li:hover a {
+            color: white;
+          }
+          .use-cases-cities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 20px 0;
+          }
+          .use-cases-country h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+          }
+          .use-cases-country ul {
+            list-style: none;
+            padding: 0;
+          }
+          .use-cases-country li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+          }
+          .use-cases-country li a {
+            color: #4b5563;
+            text-decoration: none;
+            transition: color 0.2s;
+          }
+          .use-cases-country li a:hover {
+            color: #667eea;
           }
           @media (max-width: 768px) {
             .hero-seo {

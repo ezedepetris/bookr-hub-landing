@@ -779,4 +779,118 @@ module SEOTemplates
       schema: schema
     }
   end
+
+  def self.use_cases_page(locale:)
+    locale_param = (locale == "es") ? "es" : "en"
+    signup_url = "https://my.bookrhub.com/signup?locale=#{locale_param}"
+
+    # Build niche links
+    niche_links = SEOConfig::NICHES.map do |key, data|
+      name = (locale == "es") ? data[:name_es] : data[:name_en]
+      url = (locale == "es") ? "/sistema-de-turnos-para-#{key}" : "/booking-system-for-#{key}"
+      "<li><a href=\"https://bookrhub.com#{url}\">#{name}</a></li>"
+    end.join
+
+    # Build country + city links
+    city_links = SEOConfig::CITIES.map do |country_key, country_data|
+      cities_html = country_data[:cities].map do |city|
+        city_name = city[:name]
+        if locale == "es"
+          niche_links_sample = SEOConfig::NICHES.first[1][:name_es]
+          "<li><a href=\"https://bookrhub.com/sistema-de-turnos-para-barbers-en-#{city[:slug]}\">#{city_name}</a></li>"
+        else
+          niche_links_sample = SEOConfig::NICHES.first[1][:name_en]
+          "<li><a href=\"https://bookrhub.com/booking-system-for-barbers-in-#{city[:slug]}\">#{city_name}</a></li>"
+        end
+      end.join
+      "<div class=\"use-cases-country\"><h3>#{country_data[:name]}</h3><ul>#{cities_html}</ul></div>"
+    end.join
+
+    # Build general page links
+    general_pages = if locale == "es"
+      [
+        ["Reservas Gratis", "/reservas-gratis"],
+        ["Por Qué BookrHub", "/por-que-bookrhub"],
+        ["Mejor Sistema de Reservas", "/mejor-sistema-de-reservas"],
+        ["Turnos Online", "/sistema-de-reservas-online-gratis"]
+      ]
+    else
+      [
+        ["Free Booking", "/free-booking"],
+        ["Why BookrHub", "/why-bookrhub"],
+        ["Best Booking System", "/best-booking-system"],
+        ["Online Booking", "/online-booking-system"]
+      ]
+    end
+    general_links = general_pages.map { |name, slug| "<li><a href=\"https://bookrhub.com#{slug}\">#{name}</a></li>" }.join
+
+    # Build comparison links
+    comparison_links = SEOConfig::COMPETITORS.map do |key, data|
+      if locale == "es"
+        "<li><a href=\"https://bookrhub.com/alternativa-a-#{key}\">BookrHub vs #{data[:name]}</a></li>"
+      else
+        "<li><a href=\"https://bookrhub.com/vs-#{key}\">BookrHub vs #{data[:name]}</a></li>"
+      end
+    end.join
+
+    canonical = (locale == "es") ? "/casos-de-uso" : "/use-cases"
+
+    schema = <<~JSON
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "#{(locale == "es") ? "Casos de Uso - BookrHub" : "Use Cases - BookrHub"}",
+        "description": "#{(locale == "es") ? "Encontrá el sistema de turnos perfecto para tu industria" : "Find the perfect booking system for your industry"}"
+      }
+      </script>
+    JSON
+
+    content = <<~HTML
+      <div class="seo-content use-cases-content">
+        <p class="intro">#{(locale == "es") ? "Cada industria tiene necesidades únicas de reservas. Encontrá la solución perfecta para tu tipo de negocio." : "Every industry has unique booking needs. Find the perfect solution for your type of business."}</p>
+
+        <h2>#{(locale == "es") ? "Por Industria" : "By Industry"}</h2>
+        <div class="use-cases-grid">
+          <ul class="use-cases-list">
+            #{niche_links}
+          </ul>
+        </div>
+
+        <h2>#{(locale == "es") ? "Por Ubicación" : "By Location"}</h2>
+        <div class="use-cases-cities">
+          #{city_links}
+        </div>
+
+        <h2>#{(locale == "es") ? "Recursos" : "Resources"}</h2>
+        <div class="use-cases-grid">
+          <ul class="use-cases-list">
+            #{general_links}
+          </ul>
+        </div>
+
+        <h2>#{(locale == "es") ? "Comparativas" : "Comparisons"}</h2>
+        <div class="use-cases-grid">
+          <ul class="use-cases-list">
+            #{comparison_links}
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>#{(locale == "es") ? "¿Listo para Empezar?" : "Ready to Get Started?"}</h3>
+          <p>#{(locale == "es") ? "Unite a miles de negocios que ya usan BookrHub." : "Join thousands of businesses already using BookrHub."}</p>
+          <a href="#{signup_url}" class="btn btn-primary">#{(locale == "es") ? "Crear Cuenta Gratis" : "Create Free Account"}</a>
+        </div>
+      </div>
+    HTML
+
+    {
+      title: (locale == "es") ? "Casos de Uso | BookrHub" : "Use Cases | BookrHub",
+      description: (locale == "es") ? "Encontrá el sistema de turnos perfecto para tu industria y ubicación" : "Find the perfect booking system for your industry and location",
+      canonical: canonical,
+      h1: (locale == "es") ? "Sistemas de Turnos por Industria y Ubicación" : "Booking Systems by Industry and Location",
+      content: content,
+      schema: schema
+    }
+  end
 end
