@@ -27,13 +27,13 @@ module SEOConfig
       ],
       benefits_en: [
         "clients book their own time slot 24/7",
-        "automatic WhatsApp reminders reduce no-shows",
+        "automatic email reminders reduce no-shows",
         "manage your barbershop from your phone",
         "accept deposits to protect your time"
       ],
       benefits_es: [
         "clientes reservan su propio horario 24/7",
-        "recordatorios automáticos por WhatsApp reducen inasistencias",
+        "recordatorios automáticos por email reducen inasistencias",
         "gestiona tu barbería desde tu celular",
         "acepta seña para proteger tu tiempo"
       ]
@@ -455,7 +455,7 @@ module SEOConfig
     {
       slug: "how-to-reduce-no-shows",
       title: "How to Reduce No-Shows | Appointment Reminder Tips",
-      description: "Discover proven strategies to reduce missed appointments. From automated WhatsApp reminders to deposit collection, learn what works.",
+      description: "Discover proven strategies to reduce missed appointments. From automated email reminders to deposit collection, learn what works.",
       h1: "How to Reduce No-Shows at Your Business",
       intro: "No-shows cost businesses hundreds of dollars every month. A client who doesn't show up means lost time, lost money, and a disrupted schedule. Here's how to fix it.",
       sections: [
@@ -465,7 +465,7 @@ module SEOConfig
         },
         {
           title: "Automated Reminders Work",
-          content: "Sending reminder messages 24 hours and 1 hour before appointments can reduce no-shows by up to 50%. BookrHub sends WhatsApp reminders automatically."
+          content: "Sending reminder messages 24 hours and 1 hour before appointments can reduce no-shows by up to 50%. BookrHub sends email reminders automatically."
         },
         {
           title: "Easy Setup",
@@ -518,7 +518,7 @@ module SEOConfig
     {
       slug: "how-to-send-reminders",
       title: "How to Send Appointment Reminders | Automated Reminders Guide",
-      description: "Learn how to set up automatic appointment reminders via WhatsApp and SMS. Reduce no-shows by 50% with minimal effort.",
+      description: "Learn how to set up automatic appointment reminders via email and SMS. Reduce no-shows by 50% with minimal effort.",
       h1: "How to Send Effective Appointment Reminders",
       intro: "Appointment reminders are one of the simplest ways to reduce no-shows, yet many businesses still don't use them. Here's why they work and how to set them up.",
       sections: [
@@ -532,7 +532,7 @@ module SEOConfig
         },
         {
           title: "BookrHub Does It Automatically",
-          content: "Set it and forget it. BookrHub sends WhatsApp reminders to all your clients automatically. No manual work required."
+          content: "Set it and forget it. BookrHub sends email reminders to all your clients automatically. No manual work required."
         }
       ]
     },
@@ -574,7 +574,7 @@ module SEOConfig
         },
         {
           title: "Share Your Page",
-          content: "Once your page is ready, share the link on social media, in your bio, via WhatsApp, or add it to your existing website."
+          content: "Once your page is ready, share the link on social media, in your bio, via email, or add it to your existing website."
         }
       ]
     },
@@ -637,7 +637,7 @@ module SEOConfig
         },
         {
           title: "Why BookrHub Stands Out",
-          content: "BookrHub is completely free to start, has no commission on bookings, includes WhatsApp reminders, and is designed specifically for service businesses."
+          content: "BookrHub is completely free to start, has no commission on bookings, includes email reminders, and is designed specifically for service businesses."
         }
       ]
     },
@@ -654,7 +654,7 @@ module SEOConfig
         },
         {
           title: "BookrHub's Free Plan",
-          content: "BookrHub's free plan includes unlimited bookings, service management, WhatsApp reminders, and a custom booking page. No credit card required."
+          content: "BookrHub's free plan includes unlimited bookings, service management, email reminders, and a custom booking page. No credit card required."
         },
         {
           title: "Getting Started",
@@ -686,7 +686,7 @@ module SEOConfig
     {
       slug: "fresha-alternative",
       title: "BookrHub vs Fresha | Best Fresha Alternative for Your Business",
-      description: "Tired of Fresha's 5-20% commission? Discover BookrHub as a free alternative with no commission, WhatsApp reminders, and better value.",
+      description: "Tired of Fresha's 5-20% commission? Discover BookrHub as a free alternative with no commission, email reminders, and better value.",
       h1: "BookrHub vs Fresha: Which is Better for Your Business?",
       intro: "Fresha charges businesses up to 20% commission on bookings. If you're looking for a better value alternative, here's how we compare.",
       sections: [
@@ -700,14 +700,14 @@ module SEOConfig
         },
         {
           title: "Feature Comparison",
-          content: "Both platforms offer online booking and scheduling, but BookrHub includes WhatsApp reminders in the free plan. See our full feature comparison."
+          content: "Both platforms offer online booking and scheduling, but BookrHub includes email reminders in the free plan. See our full feature comparison."
         }
       ]
     },
     {
       slug: "calendly-alternative",
       title: "BookrHub vs Calendly | Best Calendly Alternative",
-      description: "Looking for a Calendly alternative? BookrHub is designed for service businesses with client management, payments, and WhatsApp reminders.",
+      description: "Looking for a Calendly alternative? BookrHub is designed for service businesses with client management, payments, and email reminders.",
       h1: "BookrHub vs Calendly: Which Scheduling Tool Wins?",
       intro: "Calendly is popular, but it's designed for professionals, not service businesses. Here's how BookrHub compares for salons, barbers, and trainers.",
       sections: [
@@ -717,7 +717,7 @@ module SEOConfig
         },
         {
           title: "Service Business Features",
-          content: "BookrHub includes client management, service menus, WhatsApp reminders, and payment collection - everything a salon or barbershop needs."
+          content: "BookrHub includes client management, service menus, email reminders, and payment collection - everything a salon or barbershop needs."
         },
         {
           title: "Pricing Comparison",
@@ -755,7 +755,7 @@ module SEOConfig
       sections: [
         {
           title: "What You Get Free",
-          content: "BookrHub's free plan includes unlimited bookings, custom booking page, WhatsApp reminders, and basic scheduling tools."
+          content: "BookrHub's free plan includes unlimited bookings, custom booking page, email reminders, and basic scheduling tools."
         },
         {
           title: "Easy Setup",
@@ -801,7 +801,7 @@ module SEOConfig
         },
         {
           title: "Top Picks",
-          content: "BookrHub stands out for its free pricing, no commission, and WhatsApp reminders. Other popular options include Fresha, Boulevard, and Vagaro."
+          content: "BookrHub stands out for its free pricing, no commission, and email reminders. Other popular options include Fresha, Boulevard, and Vagaro."
         },
         {
           title: "Making Your Decision",
@@ -944,7 +944,7 @@ module SEOConfig
       title: "Cómo Aceptar Reservas Online | Sistema de Turnos Gratis",
       description: "Aprende cómo dejar que tus clientes reserven turnos online 24/7. Configuración simple, recordatorios automáticos y sin comisión.",
       h1: "Cómo Aceptar Reservas Online para Tu Negocio",
-      intro: "Gestionar un negocio de servicios significa atender llamadas, mensajes y WhatsApp todo el día solo para coordinar turnos. ¿Y si tus clientes pudieran reservar su propio horario sin tanto ida y vuelta?",
+      intro: "Gestionar un negocio de servicios significa atender llamadas, mensajes y emails todo el día solo para coordinar turnos. ¿Y si tus clientes pudieran reservar su propio horario sin tanto ida y vuelta?",
       sections: [
         {
           title: "Por Qué Importan las Reservas Online",
@@ -963,7 +963,7 @@ module SEOConfig
     {
       slug: "como-reducir-cancelaciones",
       title: "Cómo Reducir Inasistencias | Tips de Recordatorios de Turnos",
-      description: "Descubre estrategias probadas para reducir turnos perdidos. Desde recordatorios automáticos por WhatsApp hasta收取 depósito.",
+      description: "Descubre estrategias probadas para reducir turnos perdidos. Desde recordatorios automáticos por email hasta收取 depósito.",
       h1: "Cómo Reducir las Inasistencias en Tu Negocio",
       intro: "Las inasistencias cuestan a los negocios cientos de dólares cada mes. Un cliente que no se presenta significa tiempo perdido, dinero perdido, y un horario roto.",
       sections: [
@@ -973,7 +973,7 @@ module SEOConfig
         },
         {
           title: "Los Recordatorios Automáticos Funcionan",
-          content: "Enviar recordatorios 24 horas y 1 hora antes de los turnos puede reducir las inasistencias hasta en un 50%. BookrHub envía recordatorios por WhatsApp automáticamente."
+          content: "Enviar recordatorios 24 horas y 1 hora antes de los turnos puede reducir las inasistencias hasta en un 50%. BookrHub envía recordatorios por email automáticamente."
         },
         {
           title: "Configuración Fácil",
@@ -1015,7 +1015,7 @@ module SEOConfig
         },
         {
           title: "El Plan Gratis de BookrHub",
-          content: "El plan gratis de BookrHub incluye reservas ilimitadas, gestión de servicios, recordatorios por WhatsApp, y una página de reservas personalizada."
+          content: "El plan gratis de BookrHub incluye reservas ilimitadas, gestión de servicios, recordatorios por email, y una página de reservas personalizada."
         },
         {
           title: "Empezar Es Fácil",
@@ -1026,7 +1026,7 @@ module SEOConfig
     {
       slug: "alternativa-a-fresha",
       title: "BookrHub vs Fresha | Mejor Alternativa a Fresha",
-      description: "¿Cansado de la comisión del 5-20% de Fresha? Descubre BookrHub como alternativa gratuita sin comisión, con recordatorios por WhatsApp y mejor valor.",
+      description: "¿Cansado de la comisión del 5-20% de Fresha? Descubre BookrHub como alternativa gratuita sin comisión, con recordatorios por email y mejor valor.",
       h1: "BookrHub vs Fresha: ¿Cuál es Mejor para Tu Negocio?",
       intro: "Fresha cobra a los negocios hasta un 20% de comisión por cada reserva. Si buscas mejor valor, así es como comparamos.",
       sections: [
@@ -1040,7 +1040,7 @@ module SEOConfig
         },
         {
           title: "Comparación de Funciones",
-          content: "Ambas plataformas ofrecen reservas online y programación, pero BookrHub incluye recordatorios por WhatsApp en el plan gratis."
+          content: "Ambas plataformas ofrecen reservas online y programación, pero BookrHub incluye recordatorios por email en el plan gratis."
         }
       ]
     },
@@ -1053,7 +1053,7 @@ module SEOConfig
       sections: [
         {
           title: "Qué Obtienes Gratis",
-          content: "El plan gratis de BookrHub incluye reservas ilimitadas, página personalizada, recordatorios por WhatsApp, y herramientas básicas de programación."
+          content: "El plan gratis de BookrHub incluye reservas ilimitadas, página personalizada, recordatorios por email, y herramientas básicas de programación."
         },
         {
           title: "Configuración Fácil",
@@ -1110,7 +1110,7 @@ module SEOConfig
     {
       slug: "recordatorios-de-turnos",
       title: "Cómo Enviar Recordatorios de Turnos | Guía de Automatización",
-      description: "Aprende cómo configurar recordatorios automáticos de turnos por WhatsApp y SMS. Reduce las inasistencias hasta en un 50%.",
+      description: "Aprende cómo configurar recordatorios automáticos de turnos por email y SMS. Reduce las inasistencias hasta en un 50%.",
       h1: "Cómo Enviar Recordatorios de Turnos Efectivos",
       intro: "Los recordatorios de turnos son una de las formas más simples de reducir inasistencias. Aquí te mostramos cómo configurarlos.",
       sections: [
@@ -1124,7 +1124,7 @@ module SEOConfig
         },
         {
           title: "BookrHub Lo Hace Automáticamente",
-          content: "Configúralo y olvídate. BookrHub envía recordatorios por WhatsApp a todos tus clientes automáticamente."
+          content: "Configúralo y olvídate. BookrHub envía recordatorios por email a todos tus clientes automáticamente."
         }
       ]
     },
@@ -1166,7 +1166,7 @@ module SEOConfig
         },
         {
           title: "Comparte Tu Página",
-          content: "Una vez que tu página esté lista, compártela en redes sociales, en tu bio, por WhatsApp, o agrégala a tu sitio web existente."
+          content: "Una vez que tu página esté lista, compártela en redes sociales, en tu bio, por email, o agrégala a tu sitio web existente."
         }
       ]
     },
@@ -1292,28 +1292,28 @@ module SEOConfig
         },
         {
           title: "BookrHub Tiene Todo",
-          content: "Agenda online, reservas desde tu web, recordatorios por WhatsApp, y gestión completa de clientes."
+          content: "Agenda online, reservas desde tu web, recordatorios por email, y gestión completa de clientes."
         }
       ]
     },
     {
-      slug: "reservas-desde-whatsapp",
-      title: "Reservas por WhatsApp para Negocios | Reservas Automáticas",
-      description: "Permite que tus clientes reserven turnos directamente por WhatsApp. Automatiza tu agenda y reduce la carga de mensajes.",
-      h1: "Cómo Aceptar Reservas por WhatsApp para Tu Negocio",
-      intro: "WhatsApp es donde tus clientes están. Por qué no dejar que reserven directamente ahí?",
+      slug: "recordatorios-de-turnos",
+      title: "Recordatorios de Turnos para Negocios | Reduce Inasistencias",
+      description: "Envía recordatorios automáticos de turnos a tus clientes por email. Reduce inasistencias y mejora la gestión de tu agenda.",
+      h1: "Cómo Reducir Inasistencias con Recordatorios de Turnos",
+      intro: "Las inasistencias son uno de los problemas más grandes en negocios de servicios. Un buen sistema de recordatorios puede reducirlas significativamente.",
       sections: [
         {
-          title: "WhatsApp es el Canal",
-          content: "Tus clientes ya usan WhatsApp para todo. Dejá que reserven turnos ahí también, sin necesidad de llamar o escribir emails."
+          title: "Por Qué los Recordatorios Funcionan",
+          content: "La mayoría de las inasistencias ocurren porque los clientes olvidan su turno. Un recordatorio 24hs antes reduce esto drásticamente."
         },
         {
-          title: "BookrHub + WhatsApp",
-          content: "Los clientes reciben tu link de reservas por WhatsApp, reservan, y reciben recordatorios automáticos por el mismo canal."
+          title: "BookrHub Envía Recordatorios Automáticos",
+          content: "Configurá cuándo enviar recordatorios y BookrHub se encarga del resto. Tus clientes reciben un email recordatorio automáticamente."
         },
         {
-          title: "Fácil para Tus Clientes",
-          content: "Simplemente envías el link, ellos eligen su turno, y listo. Confirmación instantánea por WhatsApp."
+          title: "Fácil de Configurar",
+          content: "Simplemente activá los recordatorios en tu configuración, elegí el timing, y listo. Sin trabajo adicional para vos."
         }
       ]
     },
@@ -1456,7 +1456,7 @@ module SEOConfig
         },
         {
           title: "Opciones Principales",
-          content: "BookrHub destaca por su precio gratis, sin comisión, y recordatorios por WhatsApp. Otras opciones incluyen Fresha, Calendly, y Setmore."
+          content: "BookrHub destaca por su precio gratis, sin comisión, y recordatorios por email. Otras opciones incluyen Fresha, Calendly, y Setmore."
         },
         {
           title: "Cómo Decidir",
@@ -1492,7 +1492,7 @@ module SEOConfig
       commissions: "No commission",
       free_plan: "Free basic plan",
       strong_points: ["Easy to use", "Calendar integrations"],
-      weak_points: ["Basic features", "Limited customization", "No WhatsApp reminders"]
+      weak_points: ["Basic features", "Limited customization", "No email reminders"]
     },
     "timely" => {
       name: "Timely",
@@ -1557,9 +1557,23 @@ module SEOConfig
   # ============================================
   GENERAL_PAGES_EN = [
     {
+      slug: "free-booking",
+      title: "Free Booking System | No Credit Card Required",
+      description: "Get a free booking system for your salon, barbershop, or spa. No monthly fees, no commission. BookrHub lets clients book appointments online 24/7.",
+      h1: "Free Booking System for Your Business",
+      intro: "Running a service business is busy enough without juggling phone calls and text messages about appointments. A free booking system gives your clients an easy way to schedule while you focus on what you do best."
+    },
+    {
+      slug: "use-cases",
+      title: "Booking System by Industry | Find Your Solution",
+      description: "Browse booking systems for hair salons, barbershops, nail salons, massage spas, personal trainers, cleaners, and more. Find the perfect fit for your business.",
+      h1: "Booking Systems by Industry",
+      intro: "Every service business has unique booking needs. Browse our collection of specialized booking pages to find the perfect solution for your industry."
+    },
+    {
       slug: "why-bookrhub",
       title: "Why BookrHub? | The Best Free Booking System",
-      description: "Discover why thousands of businesses choose BookrHub. Zero commission, no monthly fees, WhatsApp reminders, and designed for service businesses like yours.",
+      description: "Discover why thousands of businesses choose BookrHub. Zero commission, no monthly fees, email reminders, and designed for service businesses like yours.",
       h1: "Why Choose BookrHub for Your Business?",
       intro: "With so many booking systems out there, why do thousands of businesses choose BookrHub? The answer is simple: we put your success first. No hidden fees, no commission on bookings, and features that actually help your business grow."
     },
@@ -1644,9 +1658,23 @@ module SEOConfig
 
   GENERAL_PAGES_ES = [
     {
+      slug: "reservas-gratis",
+      title: "Sistema de Turnos Gratis | Sin Tarjeta de Crédito",
+      description: "Conseguí un sistema de turnos gratis para tu salón, barbería o spa. Sin mensualidades, sin comisión. BookrHub permite a tus clientes reservar turnos online 24/7.",
+      h1: "Sistema de Turnos Gratis para Tu Negocio",
+      intro: "Manejar un negocio de servicios es suficientemente ocupado sin estar juggling llamadas telefónicas y mensajes de texto sobre turnos. Un sistema de turnos gratis le da a tus clientes una forma fácil de reservar mientras vos te concentrás en lo que mejor hacés."
+    },
+    {
+      slug: "casos-de-uso",
+      title: "Sistema de Turnos por Industria | Encontrá Tu Solución",
+      description: "Navegá sistemas de turnos para peluquerías, barberías, salones de uñas, spas de masaje, entrenadores personales, servicios de limpieza, y más. Encontrá el indicado para tu negocio.",
+      h1: "Sistemas de Turnos por Industria",
+      intro: "Cada negocio de servicios tiene necesidades únicas de reservas. Navegá nuestra colección de páginas especializadas para encontrar la solución perfecta para tu industria."
+    },
+    {
       slug: "por-que-bookrhub",
       title: "Por Qué BookrHub | El Mejor Sistema de Turnos Gratis",
-      description: "Descubre por qué miles de negocios eligen BookrHub. Sin comisión, sin mensualidades, recordatorios por WhatsApp, y diseñado para negocios de servicios como el tuyo.",
+      description: "Descubre por qué miles de negocios eligen BookrHub. Sin comisión, sin mensualidades, recordatorios por email, y diseñado para negocios de servicios como el tuyo.",
       h1: "Por Qué Elegir BookrHub para Tu Negocio",
       intro: "Con tantos sistemas de reservas ahí fuera, ¿por qué miles de negocios eligen BookrHub? La respuesta es simple: priorizamos tu éxito. Sin tarifas ocultas, sin comisión en reservas, y funciones que realmente ayudan a crecer tu negocio."
     },
@@ -1707,11 +1735,11 @@ module SEOConfig
       intro: "Manejar una peluquería significa gestionar múltiples estilistas, turnos largos y clientes exigentes. Tu software de reservas debería hacerlo más fácil, no más difícil."
     },
     {
-      slug: "sistema-reservas-whatsapp",
-      title: "Sistema de Reservas por WhatsApp | Turnos Automatizados",
-      description: "Aceptá reservas directamente por WhatsApp. Clientes reservan desde el chat, recibís confirmaciones automáticas, y reducís no-shows.",
-      h1: "Sistema de Reservas por WhatsApp para Tu Negocio",
-      intro: "WhatsApp es donde tus clientes pasan el tiempo. Por qué no dejar que reserven directamente ahí? Es cómodo para ellos y reduce tu carga de mensajes."
+      slug: "sistema-reservas-email",
+      title: "Sistema de Reservas con Recordatorios por Email | Turnos Automatizados",
+      description: "Aceptá reservas online con recordatorios automáticos por email. Reducí inasistencias y mejorá la gestión de turnos de tu negocio.",
+      h1: "Sistema de Reservas con Recordatorios por Email para Tu Negocio",
+      intro: "Los recordatorios por email son la forma más efectiva de reducir inasistencias. Automatizá los recordatorios y preocupate por atender clientes, no por llenar horarios."
     }
   ].freeze
 end

@@ -163,7 +163,7 @@ get "/es/:page" do
 end
 
 get "/:howto_page" do
-  # English how-to pages
+  # English how-to and general pages
   en_howto_slugs = %w[
     how-to-accept-bookings-online how-to-reduce-no-shows how-to-start-a-barbershop
     how-to-manage-appointments how-to-send-reminders how-to-take-payments
@@ -172,6 +172,9 @@ get "/:howto_page" do
     calendly-alternative appointment-scheduler-free online-booking-system-free
     booking-widget-for-website salon-software-reviews barber-shop-software spa-booking-software
     nailsalon-management fitness-booking-system cleaning-business-software personal-trainer-app
+    free-booking use-cases why-bookrhub booking-software-for-small-business
+    appointment-booking-software salon-booking-software barber-shop-app booking-app-for-business
+    no-shows-solution booking-website-maker free-online-booking-system online-booking-system
   ]
 
   if en_howto_slugs.include?(params[:howto_page])
@@ -254,6 +257,9 @@ get "/como-:howto_page" do
     agenda-online-negocio reservas-desde-whatsapp automatizar-turnos
     plantilla-reserva-negocios guia-reservas-online tips-negocio-belleza
     marketing-salones herramientas-peluqueros comparativa-software-reservas
+    reservas-gratis casos-de-uso por-que-bookrhub mejor-sistema-de-reservas
+    mejor-sistema-de-turnos-gratis software-de-turnos-para-pequenos-negocios
+    software-de-turnos-gratis app-reserva-negocios
   ]
 
   if es_howto_slugs.include?(params[:howto_page])

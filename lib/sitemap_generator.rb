@@ -27,14 +27,9 @@ module SitemapGenerator
       xml << "  </url>"
     end
 
-    # ===== STATIC PAGES =====
+    # ===== STATIC PAGES (features/pricing are sections on landing - not in sitemap) =====
     static_pages = [
-      ["/privacy", "monthly", "0.5"],
-      ["/about", "monthly", "0.7"],
-      ["/contact", "monthly", "0.7"],
-      ["/features", "weekly", "0.8"],
-      ["/pricing", "weekly", "0.8"],
-      ["/free-booking", "weekly", "0.8"]
+      ["/privacy", "monthly", "0.5"]
     ]
 
     static_pages.each do |path, freq, prio|
@@ -121,14 +116,23 @@ module SitemapGenerator
       xml << "  </url>"
     end
 
-    # ===== TEMPLATE DEMO PAGES =====
-    demo_templates = ["barber", "medical-clinic", "dental", "fitness", "hair-salon", "nails", "pet-grooming", "photography", "spa-massage"]
-    demo_templates.each do |template|
+    # ===== GENERAL PAGES (English) =====
+    SEOConfig::GENERAL_PAGES_EN.each do |page_data|
       xml << "  <url>"
-      xml << "    <loc>#{base_url}/templates/#{template}</loc>"
+      xml << "    <loc>#{base_url}/#{page_data[:slug]}</loc>"
       xml << "    <lastmod>#{today}</lastmod>"
-      xml << "    <changefreq>monthly</changefreq>"
-      xml << "    <priority>0.6</priority>"
+      xml << "    <changefreq>weekly</changefreq>"
+      xml << "    <priority>0.8</priority>"
+      xml << "  </url>"
+    end
+
+    # ===== GENERAL PAGES (Spanish) =====
+    SEOConfig::GENERAL_PAGES_ES.each do |page_data|
+      xml << "  <url>"
+      xml << "    <loc>#{base_url}/es/#{page_data[:slug]}</loc>"
+      xml << "    <lastmod>#{today}</lastmod>"
+      xml << "    <changefreq>weekly</changefreq>"
+      xml << "    <priority>0.8</priority>"
       xml << "  </url>"
     end
 

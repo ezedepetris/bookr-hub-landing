@@ -53,7 +53,7 @@
 /es/app-salon-de-belleza
 /es/software-gimnasio
 /es/agenda-online-negocio
-/es/reservas-desde-whatsapp
+/es/recordatorios-de-turnos
 /es/automatizar-turnos
 /es/plantilla-reserva-negocios
 /es/guia-reservas-online
@@ -81,6 +81,8 @@
 /es/vs-acuity
 /en/vs-youcanbook
 /es/vs-youcanbook
+/en/free-booking
+/en/use-cases
 /en/why-bookrhub
 /en/best-booking-system
 /en/best-free-booking-system
@@ -93,6 +95,8 @@
 /en/booking-app-for-business
 /en/no-shows-solution
 /en/booking-website-maker
+/es/reservas-gratis
+/es/casos-de-uso
 /es/por-que-bookrhub
 /es/mejor-sistema-de-reservas
 /es/mejor-sistema-de-turnos-gratis
@@ -102,7 +106,9 @@
 /es/solucion-para-inasistencias
 /es/crear-pagina-de-reservas-web
 /es/software-para-peluquerias-gratis
-/es/sistema-reservas-whatsapp
+/es/sistema-reservas-email
+/en/use-cases
+/es/casos-de-uso
 /en/booking-system-for-barbers-in-buenos-aires
 /es/sistema-de-turnos-para-barbers-en-buenos-aires
 /en/booking-system-for-hair-salons-in-buenos-aires
