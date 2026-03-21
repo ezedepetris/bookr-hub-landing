@@ -329,6 +329,10 @@ class SEOPageGenerator
         <link rel="alternate" hreflang="es" href="https://bookrhub.com#{canonical.sub("/en/", "/es/")}">
         <link rel="alternate" hreflang="x-default" href="https://bookrhub.com#{canonical.sub("/es/", "/en/")}">
         
+        <!-- Favicon -->
+        <link rel="icon" href="/images/icon.png" type="image/png">
+        <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+        
         <!-- Open Graph -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://bookrhub.com#{canonical}">
@@ -338,6 +342,15 @@ class SEOPageGenerator
         
         <!-- Styles -->
         <link rel="stylesheet" href="https://bookrhub.com/css/styles.css?v=2.5.1">
+        
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L48GXS7KT4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-L48GXS7KT4');
+        </script>
         
         <!-- Structured Data -->
         #{schema}
