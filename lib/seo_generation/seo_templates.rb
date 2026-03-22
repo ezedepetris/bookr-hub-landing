@@ -22,14 +22,14 @@ module SEOTemplates
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>#{title}</title>
         <meta name="description" content="#{description}">
-        <link rel="canonical" href="https://bookrhub.com#{canonical_url}">
+        <link rel="canonical" href="https://www.bookrhub.com#{canonical_url}">
         
         <!-- Open Graph -->
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://bookrhub.com#{canonical_url}">
+        <meta property="og:url" content="https://www.bookrhub.com#{canonical_url}">
         <meta property="og:title" content="#{title}">
         <meta property="og:description" content="#{description}">
-        <meta property="og:image" content="https://bookrhub.com/images/og-image.png">
+        <meta property="og:image" content="https://www.bookrhub.com/images/og-image.png">
         
         <!-- Styles -->
         <link rel="stylesheet" href="/css/styles.css?v=2.5.1">
@@ -41,11 +41,11 @@ module SEOTemplates
         <!-- Navigation -->
         <nav class="navbar">
           <div class="container">
-            <a href="https://bookrhub.com/?locale=#{locale_param}" class="logo">BookrHub</a>
+            <a href="https://www.bookrhub.com/?locale=#{locale_param}" class="logo">BookrHub</a>
             <div class="nav-links">
-              <a href="https://bookrhub.com/?locale=#{locale_param}#features">Features</a>
-              <a href="https://bookrhub.com/?locale=#{locale_param}#pricing">Pricing</a>
-              <a href="https://bookrhub.com/?locale=#{locale_param}#why-us">Why Us</a>
+              <a href="https://www.bookrhub.com/?locale=#{locale_param}#features">Features</a>
+              <a href="https://www.bookrhub.com/?locale=#{locale_param}#pricing">Pricing</a>
+              <a href="https://www.bookrhub.com/?locale=#{locale_param}#why-us">Why Us</a>
               <a href="#{login_url}" class="btn btn-secondary">Sign In</a>
               <a href="#{signup_url}" class="btn btn-primary">Get Started Free</a>
             </div>
@@ -75,7 +75,7 @@ module SEOTemplates
               <p>#{(locale == "es") ? "Unite a miles de negocios que usan BookrHub para reservas online gratis." : "Join thousands of businesses using BookrHub for free online booking."}</p>
               <div class="cta-buttons">
                 <a href="#{signup_url}" class="btn btn-primary btn-large">#{(locale == "es") ? "Crear Cuenta Gratis" : "Create Free Account"}</a>
-                <a href="https://bookrhub.com/?locale=#{locale_param}#templates" class="btn btn-secondary btn-large">#{(locale == "es") ? "Ver Plantillas" : "See Demo"}</a>
+                <a href="https://www.bookrhub.com/?locale=#{locale_param}#templates" class="btn btn-secondary btn-large">#{(locale == "es") ? "Ver Plantillas" : "See Demo"}</a>
               </div>
             </div>
           </section>
@@ -85,9 +85,9 @@ module SEOTemplates
         <footer>
           <div class="container">
             <div class="footer-links">
-              <a href="https://bookrhub.com/?locale=#{locale_param}#privacy">#{(locale == "es") ? "Privacidad" : "Privacy"}</a>
-              <a href="https://bookrhub.com/?locale=#{locale_param}#terms">#{(locale == "es") ? "Términos" : "Terms"}</a>
-              <a href="https://bookrhub.com/?locale=#{locale_param}#contact">#{(locale == "es") ? "Contacto" : "Contact"}</a>
+              <a href="https://www.bookrhub.com/?locale=#{locale_param}#privacy">#{(locale == "es") ? "Privacidad" : "Privacy"}</a>
+              <a href="https://www.bookrhub.com/?locale=#{locale_param}#terms">#{(locale == "es") ? "Términos" : "Terms"}</a>
+              <a href="https://www.bookrhub.com/?locale=#{locale_param}#contact">#{(locale == "es") ? "Contacto" : "Contact"}</a>
             </div>
             <p>&copy; 2026 BookrHub. #{(locale == "es") ? "Todos los derechos reservados." : "All rights reserved."}</p>
           </div>
@@ -396,7 +396,7 @@ module SEOTemplates
           "name": "BookrHub",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://bookrhub.com/images/logo.png"
+            "url": "https://www.bookrhub.com/images/logo.png"
           }
         }
       }
@@ -635,7 +635,7 @@ module SEOTemplates
           "name": "BookrHub",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://bookrhub.com/images/logo.png"
+            "url": "https://www.bookrhub.com/images/logo.png"
           }
         }
       }
@@ -718,7 +718,7 @@ module SEOTemplates
           "name": "BookrHub",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://bookrhub.com/images/logo.png"
+            "url": "https://www.bookrhub.com/images/logo.png"
           }
         }
       }
@@ -788,7 +788,7 @@ module SEOTemplates
     niche_links = SEOConfig::NICHES.map do |key, data|
       name = (locale == "es") ? data[:name_es] : data[:name_en]
       url = (locale == "es") ? "/sistema-de-turnos-para-#{key}" : "/booking-system-for-#{key}"
-      "<li><a href=\"https://bookrhub.com#{url}\">#{name}</a></li>"
+      "<li><a href=\"https://www.bookrhub.com#{url}\">#{name}</a></li>"
     end.join
 
     # Build country + city links
@@ -797,10 +797,10 @@ module SEOTemplates
         city_name = city[:name]
         if locale == "es"
           niche_links_sample = SEOConfig::NICHES.first[1][:name_es]
-          "<li><a href=\"https://bookrhub.com/sistema-de-turnos-para-barbers-en-#{city[:slug]}\">#{city_name}</a></li>"
+          "<li><a href=\"https://www.bookrhub.com/sistema-de-turnos-para-barbers-en-#{city[:slug]}\">#{city_name}</a></li>"
         else
           niche_links_sample = SEOConfig::NICHES.first[1][:name_en]
-          "<li><a href=\"https://bookrhub.com/booking-system-for-barbers-in-#{city[:slug]}\">#{city_name}</a></li>"
+          "<li><a href=\"https://www.bookrhub.com/booking-system-for-barbers-in-#{city[:slug]}\">#{city_name}</a></li>"
         end
       end.join
       "<div class=\"use-cases-country\"><h3>#{country_data[:name]}</h3><ul>#{cities_html}</ul></div>"
@@ -822,14 +822,14 @@ module SEOTemplates
         ["Online Booking", "/online-booking-system"]
       ]
     end
-    general_links = general_pages.map { |name, slug| "<li><a href=\"https://bookrhub.com#{slug}\">#{name}</a></li>" }.join
+    general_links = general_pages.map { |name, slug| "<li><a href=\"https://www.bookrhub.com#{slug}\">#{name}</a></li>" }.join
 
     # Build comparison links
     comparison_links = SEOConfig::COMPETITORS.map do |key, data|
       if locale == "es"
-        "<li><a href=\"https://bookrhub.com/alternativa-a-#{key}\">BookrHub vs #{data[:name]}</a></li>"
+        "<li><a href=\"https://www.bookrhub.com/alternativa-a-#{key}\">BookrHub vs #{data[:name]}</a></li>"
       else
-        "<li><a href=\"https://bookrhub.com/vs-#{key}\">BookrHub vs #{data[:name]}</a></li>"
+        "<li><a href=\"https://www.bookrhub.com/vs-#{key}\">BookrHub vs #{data[:name]}</a></li>"
       end
     end.join
 

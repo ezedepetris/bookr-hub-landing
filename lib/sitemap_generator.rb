@@ -126,6 +126,14 @@ module SitemapGenerator
       xml << "  </url>"
     end
 
+    # ===== HUB PAGES (Directory pages for SEO discovery) =====
+    xml << "  <url>"
+    xml << "    <loc>#{base_url}/all-booking-system-solutions</loc>"
+    xml << "    <lastmod>#{today}</lastmod>"
+    xml << "    <changefreq>weekly</changefreq>"
+    xml << "    <priority>0.9</priority>"
+    xml << "  </url>"
+
     # ===== GENERAL PAGES (Spanish) =====
     SEOConfig::GENERAL_PAGES_ES.each do |page_data|
       xml << "  <url>"
@@ -135,6 +143,14 @@ module SitemapGenerator
       xml << "    <priority>0.8</priority>"
       xml << "  </url>"
     end
+
+    # ===== HUB PAGES (Spanish) =====
+    xml << "  <url>"
+    xml << "    <loc>#{base_url}/soluciones-sistema-de-turnos</loc>"
+    xml << "    <lastmod>#{today}</lastmod>"
+    xml << "    <changefreq>weekly</changefreq>"
+    xml << "    <priority>0.9</priority>"
+    xml << "  </url>"
 
     xml << "</urlset>"
     xml.join("\n")

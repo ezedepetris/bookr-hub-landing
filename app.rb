@@ -314,6 +314,11 @@ get "/why-bookrhub" do
   send_file page_path if File.exist?(page_path)
 end
 
+get "/all-booking-system-solutions" do
+  page_path = File.join(settings.public_folder, "seo", "en", "all-booking-system-solutions.html")
+  send_file page_path if File.exist?(page_path)
+end
+
 get "/best-booking-system" do
   page_path = File.join(settings.public_folder, "seo", "en", "best-booking-system.html")
   send_file page_path if File.exist?(page_path)
@@ -372,6 +377,11 @@ end
 # General ES pages
 get "/por-que-bookrhub" do
   page_path = File.join(settings.public_folder, "seo", "es", "por-que-bookrhub.html")
+  send_file page_path if File.exist?(page_path)
+end
+
+get "/soluciones-sistema-de-turnos" do
+  page_path = File.join(settings.public_folder, "seo", "es", "soluciones-sistema-de-turnos.html")
   send_file page_path if File.exist?(page_path)
 end
 

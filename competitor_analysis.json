@@ -1,0 +1,108 @@
+{
+  "competitors": {
+    "fresha": {
+      "domain": "fresha.com",
+      "strengths": [
+        "5+ years old domain with high DA",
+        "1000+ pages indexed",
+        "Marketplace model (high traffic)",
+        "Strong brand search volume",
+        "Active content strategy (blog)",
+        "200+ city/location pages",
+        "Strong social proof (app store reviews)"
+      ],
+      "weaknesses": [
+        "Charges 5-20% commission",
+        "Complex interface",
+        "Limited free plan",
+        "Payment processing issues reported"
+      ],
+      "estimated_traffic": "2M+ monthly"
+    },
+    "setmore": {
+      "domain": "setmore.com",
+      "strengths": [
+        "Established domain (10+ years)",
+        "Simple booking interface",
+        "Calendar integrations",
+        "Mobile app"
+      ],
+      "weaknesses": [
+        "Pricing ($15+/month)",
+        "Limited free features",
+        "Less feature-rich",
+        "Fewer customization options"
+      ],
+      "estimated_traffic": "500K+ monthly"
+    },
+    "calendly": {
+      "domain": "calendly.com",
+      "strengths": [
+        "Massive brand awareness",
+        "Huge content/backlinks",
+        "Enterprise customers",
+        "Calendar-first approach"
+      ],
+      "weaknesses": [
+        "Not designed for service businesses",
+        "No client management",
+        "Meeting-focused, not appointments",
+        "Expensive for teams"
+      ],
+      "estimated_traffic": "5M+ monthly"
+    },
+    "simplybook": {
+      "domain": "simplybook.me",
+      "strengths": [
+        "Good for small businesses",
+        "Website widget option",
+        "Multiple languages"
+      ],
+      "weaknesses": [
+        "Outdated UI",
+        "Limited marketing features",
+        "Smaller team than competitors",
+        "Less known brand"
+      ],
+      "estimated_traffic": "300K+ monthly"
+    }
+  },
+  "your_strengths": [
+    "✅ FREE (no commission)",
+    "✅ Simple, modern interface",
+    "✅ Designed for service businesses",
+    "✅ Growing backlink profile",
+    "✅ City-specific pages created",
+    "✅ Multi-language support (EN/ES)",
+    "✅ Niche-specific content"
+  ],
+  "your_weaknesses": [
+    "❌ New domain (less trust)",
+    "❌ Limited backlinks",
+    "❌ Low brand search volume",
+    "❌ No blog content yet",
+    "❌ Limited backlinks",
+    "❌ No case studies/testimonials"
+  ],
+  "top_actions": [
+    "Submit key pages to Google Search Console",
+    "Get 50+ backlinks from industry directories",
+    "Add testimonials/reviews to pages",
+    "Expand content to 500+ words per page",
+    "Create blog content targeting keywords",
+    "Add city-specific testimonials",
+    "Build partnerships with local business groups",
+    "Get listed on directories",
+    "Create comparison landing pages",
+    "PR outreach for guest posts"
+  ],
+  "target_keywords": [
+    "free booking system",
+    "no commission booking",
+    "free salon booking software",
+    "appointment reminders",
+    "online booking for salons",
+    "booking app for barbers",
+    "appointment scheduler"
+  ]
+}
