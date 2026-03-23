@@ -43,7 +43,7 @@
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
     },
-    "description": "Free booking software for salons, barbers, spas, and small businesses. Get your own website with online reservations, WhatsApp reminders, and zero commission.",
+    "description": "Free booking software for salons, barbers, spas, and small businesses. Get your own website with online reservations, automated reminders, and zero commission.",
     "brand": {
       "@type": "Brand",
       "name": "BookrHub"
@@ -453,12 +453,12 @@
   <!-- GEO: Definition Block for AI Extraction -->
   <section class="geo-definition" style="background: #f8fafc; padding: 60px 20px; border-top: 1px solid #e5e7eb;">
     <div style="max-width: 800px; margin: 0 auto;">
-      <h2 style="font-size: 1.75rem; font-weight: 700; color: #111827; margin-bottom: 20px;">What is a Booking System?</h2>
+      <h2 style="font-size: 1.75rem; font-weight: 700; color: #111827; margin-bottom: 20px;"><%= I18n.t('geo.what_is_booking_system_title') %></h2>
       <p style="font-size: 1.1rem; line-height: 1.8; color: #4b5563; margin-bottom: 20px;">
-        A <strong>booking system</strong> is software that enables businesses to manage appointments and reservations online, 24/7. According to a 2024 study by Capterra, businesses using online booking systems see a <strong>40% reduction in no-shows</strong> and save an average of <strong>10 hours per week</strong> on phone scheduling. Unlike manual booking methods, a booking system allows customers to self-schedule at their convenience, sends automated reminders to reduce missed appointments, and stores all customer information in one organized place.
+        <%= I18n.t('geo.what_is_booking_system_p1') %>
       </p>
       <p style="font-size: 1rem; line-height: 1.8; color: #6b7280;">
-        Modern booking systems like BookrHub also include features such as WhatsApp reminders, online payments, and custom landing pages—eliminating the need for customers to call or email to make an appointment.
+        <%= I18n.t('geo.modern_booking_systems') %>
       </p>
     </div>
   </section>
@@ -468,19 +468,19 @@
     <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
       <div style="color: white;">
         <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">40%</div>
-        <div style="font-size: 0.95rem; opacity: 0.9;">reduction in no-shows with automated reminders</div>
+        <div style="font-size: 0.95rem; opacity: 0.9;"><%= I18n.t('geo.stats.no_shows_reduction') %></div>
       </div>
       <div style="color: white;">
         <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">10hrs</div>
-        <div style="font-size: 0.95rem; opacity: 0.9;">saved weekly on phone scheduling</div>
+        <div style="font-size: 0.95rem; opacity: 0.9;"><%= I18n.t('geo.stats.hours_saved') %></div>
       </div>
       <div style="color: white;">
         <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">700+</div>
-        <div style="font-size: 0.95rem; opacity: 0.9;">businesses trust BookrHub worldwide</div>
+        <div style="font-size: 0.95rem; opacity: 0.9;"><%= I18n.t('geo.stats.businesses_trust') %></div>
       </div>
       <div style="color: white;">
         <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">0%</div>
-        <div style="font-size: 0.95rem; opacity: 0.9;">commission on all bookings</div>
+        <div style="font-size: 0.95rem; opacity: 0.9;"><%= I18n.t('geo.stats.commission') %></div>
       </div>
     </div>
   </section>
@@ -489,7 +489,7 @@
   <section class="geo-expert-quote" style="background: white; padding: 50px 20px;">
     <div style="max-width: 800px; margin: 0 auto; text-align: center;">
       <blockquote style="font-size: 1.25rem; font-style: italic; color: #374151; line-height: 1.8; margin-bottom: 20px;">
-        "Online booking has shifted from a nice-to-have to a critical business tool. Businesses without it are losing customers to competitors who offer the convenience of 24/7 self-scheduling."
+        "<%= I18n.t('geo.quote') %>"
       </blockquote>
       <cite style="display: block; color: #6b7280; font-size: 0.95rem;">
         — Industry analysis, Beauty & Wellness Technology Report 2024
@@ -1136,13 +1136,14 @@
       </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.company') %></h3>
-        <a href="https://bookrhub.com/about"><%= I18n.t('footer.about_us') %></a>
+        <a href="https://bookrhub.com/about?locale=<%= session[:locale] %>"><%= I18n.t('footer.about_us') %></a>
         <a href="https://blog.bookrhub.com"><%= I18n.t('footer.blog') %></a>
-        <a href="https://bookrhub.com/contact"><%= I18n.t('footer.contact_us') %></a>
+        <a href="https://updates.bookrhub.com/?locale=<%= session[:locale] %>"><%= I18n.t('footer.updates') %></a>
+        <a href="https://bookrhub.com/contact?locale=<%= session[:locale] %>"><%= I18n.t('footer.contact_us') %></a>
       </div>
       <div class="footer-section">
         <h3><%= I18n.t('footer.support') %></h3>
-        <a href="https://support.bookrhub.com"><%= I18n.t('footer.help_center') %></a>
+        <a href="https://bookrhub.com/contact?locale=<%= session[:locale] %>"><%= I18n.t('footer.help_center') %></a>
         <a href="mailto:admin@bookrhub.com">admin@bookrhub.com</a>
       </div>
       <div class="footer-section">

@@ -518,7 +518,7 @@ module SEOConfig
     {
       slug: "how-to-send-reminders",
       title: "How to Send Appointment Reminders | Automated Reminders Guide",
-      description: "Learn how to set up automatic appointment reminders via email and SMS. Reduce no-shows by 50% with minimal effort.",
+      description: "Learn how to set up automatic appointment reminders. Reduce no-shows by 50% with minimal effort.",
       h1: "How to Send Effective Appointment Reminders",
       intro: "Appointment reminders are one of the simplest ways to reduce no-shows, yet many businesses still don't use them. Here's why they work and how to set them up.",
       sections: [

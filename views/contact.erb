@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="<%= session[:locale] %>">
+<head>
+  <% if ENV['GOOGLE_TAG_MANAGER_ID'].to_s.strip != '' %>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','<%= ENV['GOOGLE_TAG_MANAGER_ID'] %>');</script>
+  <!-- End Google Tag Manager -->
+  <% end %>
+  <link rel="stylesheet" href="/css/styles.css?v=2.5.1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/images/icon.png" type="image/png">
+  <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+  <title><%= I18n.t('contact.page_title') %> | BookrHub</title>
+  <meta name="description" content="<%= I18n.t('contact.meta_description') %>">
+  <meta name="robots" content="index, follow">
+  
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bookrhub.com/contact">
+  <meta property="og:title" content="<%= I18n.t('contact.page_title') %>">
+  <meta property="og:description" content="<%= I18n.t('contact.meta_description') %>">
+  <meta property="og:image" content="https://bookrhub.com/images/og-image.png">
+  
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "<%= I18n.t('contact.page_title') %>",
+    "description": "<%= I18n.t('contact.meta_description') %>",
+    "url": "https://bookrhub.com/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "BookrHub",
+      "url": "https://bookrhub.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-000-000-0000",
+        "contactType": "customer service",
+        "email": "admin@bookrhub.com"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <% if ENV['GOOGLE_TAG_MANAGER_ID'].to_s.strip != '' %>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<%= ENV['GOOGLE_TAG_MANAGER_ID'] %>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <% end %>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="https://bookrhub.com/?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="logo">
+        <img src="/images/isologo.svg" alt="BookrHub Logo" class="isologo-image" width="160">
+      </a>
+      <div class="nav-links">
+        <a href="https://bookrhub.com/#features?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('navigation.features') %></a>
+        <a href="https://bookrhub.com/#pricing?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('navigation.pricing') %></a>
+        <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-header">
+        <h1><%= I18n.t('contact.title') %></h1>
+        <p><%= I18n.t('contact.subtitle') %></p>
+      </div>
+      
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <form 
+            action="https://formspree.io/f/<%= ENV['FORMSPREE_CONTACT_ID'] || 'your-formspree-id' %>" 
+            method="POST" 
+            class="contact-form"
+          >
+            <input type="hidden" name="_subject" value="<%= I18n.t('contact.email_subject') %>">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            
+            <div class="form-group">
+              <label for="name"><%= I18n.t('contact.form.name') %></label>
+              <input type="text" id="name" name="name" required placeholder="<%= I18n.t('contact.form.name_placeholder') %>">
+            </div>
+            
+            <div class="form-group">
+              <label for="email"><%= I18n.t('contact.form.email') %></label>
+              <input type="email" id="email" name="email" required placeholder="<%= I18n.t('contact.form.email_placeholder') %>">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject"><%= I18n.t('contact.form.subject') %></label>
+              <select id="subject" name="topic" required>
+                <option value=""><%= I18n.t('contact.form.subject_placeholder') %></option>
+                <option value="Sales & Pricing"><%= I18n.t('contact.form.subject_sales') %></option>
+                <option value="Technical Support"><%= I18n.t('contact.form.subject_support') %></option>
+                <option value="Partnerships"><%= I18n.t('contact.form.subject_partnership') %></option>
+                <option value="Other"><%= I18n.t('contact.form.subject_other') %></option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message"><%= I18n.t('contact.form.message') %></label>
+              <textarea id="message" name="message" rows="5" required placeholder="<%= I18n.t('contact.form.message_placeholder') %>"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-button"><%= I18n.t('contact.form.submit') %></button>
+          </form>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="info-card">
+            <h3><%= I18n.t('contact.info.email_title') %></h3>
+            <p><a href="mailto:admin@bookrhub.com">admin@bookrhub.com</a></p>
+          </div>
+          
+          <div class="info-card">
+            <h3><%= I18n.t('contact.info.hours_title') %></h3>
+            <p><%= I18n.t('contact.info.hours') %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="https://bookrhub.com/?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="logo">
+          <img src="/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120">
+        </a>
+        <p><%= I18n.t('footer.description') %></p>
+      </div>
+      <div class="footer-section">
+        <h3><%= I18n.t('footer.product') %></h3>
+        <a href="https://bookrhub.com/#features?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('navigation.features') %></a>
+        <a href="https://bookrhub.com/#pricing?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('navigation.pricing') %></a>
+        <a href="https://my.bookrhub.com/session/new"><%= I18n.t('navigation.sign_in') %></a>
+        <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('navigation.get_started') %></a>
+      </div>
+      <div class="footer-section">
+        <h3><%= I18n.t('footer.company') %></h3>
+        <a href="https://bookrhub.com/about?locale=<%= session[:locale] %>"><%= I18n.t('footer.about_us') %></a>
+        <a href="https://updates.bookrhub.com/?locale=<%= session[:locale] %>"><%= I18n.t('footer.updates') %></a>
+        <a href="https://bookrhub.com/contact?locale=<%= session[:locale] %>"><%= I18n.t('footer.contact_us') %></a>
+      </div>
+      <div class="footer-section">
+        <h3><%= I18n.t('footer.support') %></h3>
+        <a href="https://support.bookrhub.com"><%= I18n.t('footer.help_center') %></a>
+        <a href="mailto:admin@bookrhub.com">admin@bookrhub.com</a>
+      </div>
+      <div class="footer-section">
+        <h3><%= I18n.t('footer.legal') %></h3>
+        <a href="https://bookrhub.com/privacy?locale=<%= session[:locale] %>"><%= I18n.t('footer.privacy_policy') %></a>
+        <a href="https://bookrhub.com/terms?locale=<%= session[:locale] %>"><%= I18n.t('footer.terms_of_service') %></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <%= Time.now.year %> BookrHub. All rights reserved.</p>
+      <span><%= I18n.t('footer.powered_by') %> <a href="https://plumdigital.co.nz" target="_blank" class="copyright-link">Plum Digital</a></span>
+    </div>
+  </footer>
+
+  <style>
+    .contact-section {
+      padding: 80px 20px;
+      background: var(--color-bg-warm);
+      min-height: 60vh;
+    }
+    .contact-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .contact-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .contact-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 16px;
+    }
+    .contact-header p {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 40px;
+    }
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .contact-form-wrapper {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+    .submit-button {
+      width: 100%;
+      padding: 14px 24px;
+      background: var(--color-primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .submit-button:hover {
+      background: var(--color-primary-dark);
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .info-card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .info-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+    .info-card p {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .info-card a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    .info-card a:hover {
+      text-decoration: underline;
+    }
+    .help-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: 600;
+    }
+  </style>
+</body>
+</html>

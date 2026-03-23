@@ -28,6 +28,7 @@ I18n.default_locale = :en
 I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
 
 set :public_folder, File.dirname(__FILE__) + "/public"
+set :layout, false
 
 # Locale to Currency mapping
 LOCALE_CURRENCY_MAP = {
@@ -447,11 +448,11 @@ end
 
 # 404 redirect handlers for common missing URLs
 get "/about" do
-  redirect "https://www.bookrhub.com/", 301
+  erb :about
 end
 
 get "/contact" do
-  redirect "https://www.bookrhub.com/", 301
+  erb :contact
 end
 
 get "/use-cases" do

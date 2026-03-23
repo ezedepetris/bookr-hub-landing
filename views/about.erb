@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="<%= session[:locale] %>">
+<head>
+  <% if ENV['GOOGLE_TAG_MANAGER_ID'].to_s.strip != '' %>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','<%= ENV['GOOGLE_TAG_MANAGER_ID'] %>');</script>
+  <!-- End Google Tag Manager -->
+  <% end %>
+  <link rel="stylesheet" href="/css/styles.css?v=2.5.1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/images/icon.png" type="image/png">
+  <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+  <title><%= I18n.t('about.page_title') %> | BookrHub</title>
+  <meta name="description" content="<%= I18n.t('about.meta_description') %>">
+  <meta name="robots" content="index, follow">
+  
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bookrhub.com/about">
+  <meta property="og:title" content="<%= I18n.t('about.page_title') %>">
+  <meta property="og:description" content="<%= I18n.t('about.meta_description') %>">
+  <meta property="og:image" content="https://bookrhub.com/images/og-image.png">
+  
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "<%= I18n.t('about.page_title') %>",
+    "description": "<%= I18n.t('about.meta_description') %>",
+    "url": "https://bookrhub.com/about",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "BookrHub",
+      "url": "https://bookrhub.com",
+      "description": "<%= I18n.t('about.org_description') %>"
+    }
+  }
+  </script>
+</head>
+<body>
+  <% if ENV['GOOGLE_TAG_MANAGER_ID'].to_s.strip != '' %>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<%= ENV['GOOGLE_TAG_MANAGER_ID'] %>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <% end %>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="https://bookrhub.com/?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="logo">
+        <img src="/images/isologo.svg" alt="BookrHub Logo" class="isologo-image" width="160">
+      </a>
+      <div class="nav-links">
+        <a href="https://bookrhub.com/#features?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('navigation.features') %></a>
+        <a href="https://bookrhub.com/#pricing?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('navigation.pricing') %></a>
+        <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="cta-button"><%= I18n.t('navigation.get_started') %></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="about-hero" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); padding: 80px 20px; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h1 style="font-size: 3rem; font-weight: 800; color: white; margin-bottom: 20px;"><%= I18n.t('about.hero_title') %></h1>
+      <p style="font-size: 1.25rem; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;"><%= I18n.t('about.hero_subtitle') %></p>
+    </div>
+  </section>
+
+  <!-- What is a Booking System -->
+  <section style="background: #f8fafc; padding: 60px 20px; border-top: 1px solid #e5e7eb;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2 style="font-size: 1.75rem; font-weight: 700; color: #111827; margin-bottom: 20px;"><%= I18n.t('geo.what_is_booking_system_title') %></h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: #4b5563; margin-bottom: 20px;">
+        <%= I18n.t('geo.what_is_booking_system_p1') %>
+      </p>
+      <p style="font-size: 1rem; line-height: 1.8; color: #6b7280;">
+        <%= I18n.t('geo.modern_booking_systems') %>
+      </p>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section style="background: #4f46e5; padding: 40px 20px;">
+    <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
+      <div style="color: white;">
+        <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">40%</div>
+        <div style="font-size: 0.95rem; opacity: 0.9;"><%= I18n.t('geo.stats.no_shows_reduction') %></div>
+      </div>
+      <div style="color: white;">
+        <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">10hrs</div>
+        <div style="font-size: 0.95rem; opacity: 0.9;"><%= I18n.t('geo.stats.hours_saved') %></div>
+      </div>
+      <div style="color: white;">
+        <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">700+</div>
+        <div style="font-size: 0.95rem; opacity: 0.9;"><%= I18n.t('geo.stats.businesses_trust') %></div>
+      </div>
+      <div style="color: white;">
+        <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">0%</div>
+        <div style="font-size: 0.95rem; opacity: 0.9;"><%= I18n.t('geo.stats.commission') %></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section style="background: white; padding: 50px 20px;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <blockquote style="font-size: 1.25rem; font-style: italic; color: #374151; line-height: 1.8; margin-bottom: 20px;">
+        "<%= I18n.t('geo.quote') %>"
+      </blockquote>
+      <cite style="display: block; color: #6b7280; font-size: 0.95rem;">
+        — Industry analysis, Beauty & Wellness Technology Report 2024
+      </cite>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section style="background: #f8fafc; padding: 60px 20px;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2 style="font-size: 2rem; font-weight: 700; color: #111827; margin-bottom: 30px; text-align: center;"><%= I18n.t('about.mission_title') %></h2>
+      <div style="display: grid; gap: 30px;">
+        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+          <h3 style="font-size: 1.25rem; font-weight: 600; color: #4f46e5; margin-bottom: 12px;"><%= I18n.t('about.mission_1_title') %></h3>
+          <p style="color: #4b5563; line-height: 1.6;"><%= I18n.t('about.mission_1_text') %></p>
+        </div>
+        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+          <h3 style="font-size: 1.25rem; font-weight: 600; color: #4f46e5; margin-bottom: 12px;"><%= I18n.t('about.mission_2_title') %></h3>
+          <p style="color: #4b5563; line-height: 1.6;"><%= I18n.t('about.mission_2_text') %></p>
+        </div>
+        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+          <h3 style="font-size: 1.25rem; font-weight: 600; color: #4f46e5; margin-bottom: 12px;"><%= I18n.t('about.mission_3_title') %></h3>
+          <p style="color: #4b5563; line-height: 1.6;"><%= I18n.t('about.mission_3_text') %></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 60px 20px; text-align: center;">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <h2 style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 16px;"><%= I18n.t('about.cta_title') %></h2>
+      <p style="color: #a0a0a0; margin-bottom: 30px; font-size: 1.1rem;"><%= I18n.t('about.cta_subtitle') %></p>
+      <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" style="display: inline-block; background: #4f46e5; color: white; padding: 14px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: background 0.2s;"><%= I18n.t('navigation.get_started') %></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="https://bookrhub.com/?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="logo">
+          <img src="/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120">
+        </a>
+        <p><%= I18n.t('footer.description') %></p>
+      </div>
+      <div class="footer-section">
+        <h3><%= I18n.t('footer.product') %></h3>
+        <a href="https://bookrhub.com/#features?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('navigation.features') %></a>
+        <a href="https://bookrhub.com/#pricing?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('navigation.pricing') %></a>
+        <a href="https://my.bookrhub.com/session/new"><%= I18n.t('navigation.sign_in') %></a>
+        <a href="https://my.bookrhub.com/signup?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('navigation.get_started') %></a>
+      </div>
+      <div class="footer-section">
+        <h3><%= I18n.t('footer.company') %></h3>
+        <a href="https://bookrhub.com/about?locale=<%= session[:locale] %>"><%= I18n.t('footer.about_us') %></a>
+        <a href="https://updates.bookrhub.com/?locale=<%= session[:locale] %>"><%= I18n.t('footer.updates') %></a>
+        <a href="https://bookrhub.com/contact?locale=<%= session[:locale] %>"><%= I18n.t('footer.contact_us') %></a>
+      </div>
+      <div class="footer-section">
+        <h3><%= I18n.t('footer.support') %></h3>
+        <a href="https://bookrhub.com/contact?locale=<%= session[:locale] %>"><%= I18n.t('footer.help_center') %></a>
+        <a href="mailto:admin@bookrhub.com">admin@bookrhub.com</a>
+      </div>
+      <div class="footer-section">
+        <h3><%= I18n.t('footer.legal') %></h3>
+        <a href="https://bookrhub.com/privacy?locale=<%= session[:locale] %>"><%= I18n.t('footer.privacy_policy') %></a>
+        <a href="https://bookrhub.com/terms?locale=<%= session[:locale] %>"><%= I18n.t('footer.terms_of_service') %></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <%= Time.now.year %> BookrHub. All rights reserved.</p>
+      <span><%= I18n.t('footer.powered_by') %> <a href="https://plumdigital.co.nz" target="_blank" class="copyright-link">Plum Digital</a></span>
+    </div>
+  </footer>
+</body>
+</html>
