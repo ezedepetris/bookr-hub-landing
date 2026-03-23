@@ -44,7 +44,7 @@ module SitemapGenerator
     # ===== NICHE PAGES (English) =====
     SEOConfig::NICHES.each do |niche_key, niche_data|
       xml << "  <url>"
-      xml << "    <loc>#{base_url}/booking-system-for-#{niche_key}</loc>"
+      xml << "    <loc>#{base_url}/en/booking-system-for-#{niche_key}</loc>"
       xml << "    <lastmod>#{today}</lastmod>"
       xml << "    <changefreq>weekly</changefreq>"
       xml << "    <priority>0.8</priority>"
@@ -54,7 +54,7 @@ module SitemapGenerator
     # ===== NICHE PAGES (Spanish) =====
     SEOConfig::NICHES.each do |niche_key, niche_data|
       xml << "  <url>"
-      xml << "    <loc>#{base_url}/sistema-de-turnos-para-#{niche_key}</loc>"
+      xml << "    <loc>#{base_url}/es/sistema-de-turnos-para-#{niche_key}</loc>"
       xml << "    <lastmod>#{today}</lastmod>"
       xml << "    <changefreq>weekly</changefreq>"
       xml << "    <priority>0.8</priority>"
@@ -68,7 +68,7 @@ module SitemapGenerator
           if country_key == "argentina" || country_key == "chile" || country_key == "uruguay"
             # Spanish pages for LATAM
             xml << "  <url>"
-            xml << "    <loc>#{base_url}/sistema-de-turnos-para-#{niche_key}-en-#{city[:slug]}</loc>"
+            xml << "    <loc>#{base_url}/es/sistema-de-turnos-para-#{niche_key}-en-#{city[:slug]}</loc>"
             xml << "    <lastmod>#{today}</lastmod>"
             xml << "    <changefreq>weekly</changefreq>"
             xml << "    <priority>0.7</priority>"
@@ -76,7 +76,7 @@ module SitemapGenerator
           else
             # English pages for ANZ
             xml << "  <url>"
-            xml << "    <loc>#{base_url}/booking-system-for-#{niche_key}-in-#{city[:slug]}</loc>"
+            xml << "    <loc>#{base_url}/en/booking-system-for-#{niche_key}-in-#{city[:slug]}</loc>"
             xml << "    <lastmod>#{today}</lastmod>"
             xml << "    <changefreq>weekly</changefreq>"
             xml << "    <priority>0.7</priority>"
@@ -99,7 +99,7 @@ module SitemapGenerator
     # ===== HOW-TO PAGES (Spanish) =====
     SEOConfig::HOW_TO_ES.each do |page_data|
       xml << "  <url>"
-      xml << "    <loc>#{base_url}/#{page_data[:slug]}</loc>"
+      xml << "    <loc>#{base_url}/es/#{page_data[:slug]}</loc>"
       xml << "    <lastmod>#{today}</lastmod>"
       xml << "    <changefreq>monthly</changefreq>"
       xml << "    <priority>0.7</priority>"
@@ -126,6 +126,14 @@ module SitemapGenerator
       xml << "  </url>"
     end
 
+    # ===== HUB PAGES (Directory pages for SEO discovery) =====
+    xml << "  <url>"
+    xml << "    <loc>#{base_url}/all-booking-system-solutions</loc>"
+    xml << "    <lastmod>#{today}</lastmod>"
+    xml << "    <changefreq>weekly</changefreq>"
+    xml << "    <priority>0.9</priority>"
+    xml << "  </url>"
+
     # ===== GENERAL PAGES (Spanish) =====
     SEOConfig::GENERAL_PAGES_ES.each do |page_data|
       xml << "  <url>"
@@ -135,6 +143,14 @@ module SitemapGenerator
       xml << "    <priority>0.8</priority>"
       xml << "  </url>"
     end
+
+    # ===== HUB PAGES (Spanish) =====
+    xml << "  <url>"
+    xml << "    <loc>#{base_url}/soluciones-sistema-de-turnos</loc>"
+    xml << "    <lastmod>#{today}</lastmod>"
+    xml << "    <changefreq>weekly</changefreq>"
+    xml << "    <priority>0.9</priority>"
+    xml << "  </url>"
 
     xml << "</urlset>"
     xml.join("\n")

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookrHub Argentina - Sistema de Turnos Gratis para Tu Negocio</title>
+  <meta name="description" content="El mejor sistema de turnos para barberías, salones y negocios en Argentina. Reserva online 24/7, recordatorios por email, 0% comisión. Más de 700 negocios confían en BookrHub.">
+  <link rel="canonical" href="https://www.bookrhub.com/es/argentina">
+  <link rel="alternate" hreflang="es-AR" href="https://www.bookrhub.com/es/argentina">
+  <link rel="alternate" hreflang="es" href="https://www.bookrhub.com/?locale=es&currency=ARS">
+  <link rel="alternate" hreflang="en" href="https://www.bookrhub.com/">
+  <link rel="alternate" hreflang="x-default" href="https://www.bookrhub.com/">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/images/icon.png" type="image/png">
+  <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.bookrhub.com/es/argentina">
+  <meta property="og:title" content="BookrHub Argentina - Sistema de Turnos Gratis para Tu Negocio">
+  <meta property="og:description" content="El mejor sistema de turnos para barberías, salones y negocios en Argentina. Reserva online 24/7, 0% comisión.">
+  <meta property="og:image" content="https://www.bookrhub.com/images/og-image.png">
+  <meta property="og:locale" content="es_AR">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://www.bookrhub.com/css/styles.css?v=2.5.1">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BookrHub Argentina",
+    "alternateName": ["Sistema de turnos BookrHub", "BookrHub para Argentina", "Reservas online Argentina"],
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Booking System",
+    "operatingSystem": "Web, iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "ARS",
+      "availability": "https://schema.org/InStock"
+    },
+    "description": "Sistema de turnos y reservas online para barberías, salones de belleza, spas y negocios en Argentina. 0% comisión.",
+    "url": "https://www.bookrhub.com/es/argentina"
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿BookrHub funciona en Argentina?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, BookrHub está disponible para negocios en toda Argentina. Acepta reservas de clientes en Buenos Aires, Córdoba, Rosario, Mendoza y cualquier ciudad argentina."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo cobrar en pesos argentinos (ARS)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BookrHub muestra precios en la moneda que elijas. Para cobros en Argentina, puedes usar link de pago, Mercado Pago u otros métodos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta BookrHub para barberías argentinas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BookrHub tiene un plan GRATIS con 0% de comisión. Los planes pagos comienzan desde precios accesibles mensuales con funciones adicionales."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿BookrHub tiene recordatorios por email?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, BookrHub envía recordatorios automáticos por email antes de cada turno, reduciendo las inasistencias hasta en un 40%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿BookrHub es mejor que Fresha para Argentina?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BookrHub no cobra comisión sobre las reservas, mientras que Fresha cobra hasta 20% en clientes nuevos. Mantén el 100% de tus ganancias con BookrHub."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .hero-argentina {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .hero-argentina h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero-argentina .lead {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .stats-bar {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #667eea;
+    }
+    .stat-label {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .content-section {
+      padding: 80px 20px;
+      background: white;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .feature-card {
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .feature-card h3 {
+      color: #1a1a2e;
+      margin-bottom: 15px;
+      font-size: 1.25rem;
+    }
+    .feature-card p {
+      color: #555;
+      line-height: 1.6;
+    }
+    .cta-section {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .cta-section p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 35px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+    .cities-section {
+      padding: 60px 20px;
+      background: #f8f9fa;
+    }
+    .cities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .city-link {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      color: #333;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .city-link:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+    }
+    .faq-section {
+      padding: 60px 20px;
+      background: white;
+    }
+    .faq-container {
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+    .faq-item {
+      background: #f8f9fa;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+    .faq-answer {
+      padding: 0 20px 20px;
+      line-height: 1.7;
+      color: #555;
+    }
+    .nav-links {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <nav id="main-nav">
+    <div class="nav-container">
+      <a href="https://www.bookrhub.com/?locale=es-AR" class="logo">
+        <img src="https://www.bookrhub.com/images/isologo.svg" alt="BookrHub" width="140">
+      </a>
+      <div class="nav-links">
+        <a href="https://www.bookrhub.com/?locale=es-AR#features">Características</a>
+        <a href="https://www.bookrhub.com/?locale=es-AR#pricing">Precios</a>
+        <a href="https://my.bookrhub.com/session/new?locale=es-AR" class="text-sm font-medium">Iniciar Sesión</a>
+        <a href="https://my.bookrhub.com/signup?locale=es-AR" class="cta-button">Comenzar Gratis</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-argentina">
+    <div class="container">
+      <h1>Sistema de Turnos para Argentina</h1>
+      <p class="lead">La mejor plataforma de reservas online para barberías, salones de belleza y negocios argentinos. Sin comisión, con recordatorios por email y configuración en 5 minutos.</p>
+      <a href="https://my.bookrhub.com/signup?locale=es-AR" class="btn btn-primary">Crear Mi Página Gratis</a>
+      
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-number">700+</div>
+          <div class="stat-label">Negocios en Argentina</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">0%</div>
+          <div class="stat-label">Comisión</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">40%</div>
+          <div class="stat-label">Menos inasistencias</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="content-section">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2rem; margin-bottom: 20px;">¿Por qué BookrHub es perfecto para Argentina?</h2>
+      <p style="text-align: center; font-size: 1.1rem; color: #555; max-width: 700px; margin: 0 auto 40px; line-height: 1.8;">
+        BookrHub está diseñado para ayudar a barberías, salones y negocios de belleza en toda Argentina a gestionar sus turnos de manera eficiente, reducir inasistencias y crecer sin pagar comisiones.
+      </p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Sin Comisión</h3>
+          <p>A diferencia de Fresha que cobra hasta 20% en clientes nuevos, con BookrHub mantienes el 100% de tus ganancias.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Recordatorios por Email</h3>
+          <p>Reduce las inasistencias hasta en un 40% con recordatorios automáticos que enviamos a tus clientes.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Página Personalizada</h3>
+          <p>Crea tu página de reservas con tu marca, colores y servicios. Comparte el link en Instagram, WhatsApp o tu sitio web.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Configuración en 5 Minutos</h3>
+          <p>No necesitas conocimientos técnicos. Regístrate, configura tus servicios y comienza a recibir reservas.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Compatible con Todo Dispositivo</h3>
+          <p>Gestiona tus turnos desde tu computadora, tablet o celular. Funciona en cualquier lugar.</p>
+        </div>
+        <div class="feature-card">
+          <h3>12+ Plantillas Profesionales</h3>
+          <p>Elige entre diseños para barbería, salón de belleza, spa, uñas, fitness y más.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cities-section">
+    <div class="container" style="text-align: center;">
+      <h2 style="font-size: 1.75rem; margin-bottom: 10px;">BookrHub en Toda Argentina</h2>
+      <p style="color: #555; margin-bottom: 20px;">Páginas de reservas optimizadas para ciudades argentinas</p>
+      
+      <div class="cities-grid">
+        <a href="https://www.bookrhub.com/es/booking-system-for-barbers-in-buenos-aires" class="city-link">Buenos Aires</a>
+        <a href="https://www.bookrhub.com/es/booking-system-for-barbers-in-cordoba" class="city-link">Córdoba</a>
+        <a href="https://www.bookrhub.com/es/booking-system-for-barbers-in-rosario" class="city-link">Rosario</a>
+        <a href="https://www.bookrhub.com/es/booking-system-for-barbers-in-mendoza" class="city-link">Mendoza</a>
+        <a href="https://www.bookrhub.com/es/booking-system-for-barbers-in-la-plata" class="city-link">La Plata</a>
+        <a href="https://www.bookrhub.com/es/booking-system-for-barbers-in-tucuman" class="city-link">Tucumán</a>
+        <a href="https://www.bookrhub.com/es/booking-system-for-barbers-in-salta" class="city-link">Salta</a>
+        <a href="https://www.bookrhub.com/es/booking-system-for-barbers-in-santa-fe" class="city-link">Santa Fe</a>
+        <a href="https://www.bookrhub.com/es/booking-system-for-barbers-in-mar-del-plata" class="city-link">Mar del Plata</a>
+        <a href="https://www.bookrhub.com/es/booking-system-for-barbers-in-quilmes" class="city-link">Quilmes</a>
+        <a href="https://www.bookrhub.com/es/booking-system-for-barbers-in-san-miguel" class="city-link">San Miguel</a>
+        <a href="https://www.bookrhub.com/es/booking-system-for-barbers-in-avellaneda" class="city-link">Avellaneda</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2rem;">Preguntas Frecuentes</h2>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">¿BookrHub funciona en Argentina?<span>+</span></div>
+          <div class="faq-answer">Sí, BookrHub está disponible para negocios en toda Argentina. Acepta reservas de clientes en Buenos Aires, Córdoba, Rosario, Mendoza y cualquier ciudad argentina.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">¿Puedo cobrar en pesos argentinos (ARS)?<span>+</span></div>
+          <div class="faq-answer">BookrHub muestra precios en la moneda que elijas. Para cobros en Argentina, puedes usar link de pago, Mercado Pago u otros métodos.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">¿Cuánto cuesta BookrHub para barberías argentinas?<span>+</span></div>
+          <div class="faq-answer">BookrHub tiene un plan GRATIS con 0% de comisión. Los planes pagos comienzan desde precios accesibles mensuales con funciones adicionales.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">¿BookrHub tiene recordatorios por email?<span>+</span></div>
+          <div class="faq-answer">Sí, BookrHub envía recordatorios automáticos por email antes de cada turno, reduciendo las inasistencias hasta en un 40%.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">¿BookrHub es mejor que Fresha para Argentina?<span>+</span></div>
+          <div class="faq-answer">BookrHub no cobra comisión sobre las reservas, mientras que Fresha cobra hasta 20% en clientes nuevos. Mantén el 100% de tus ganancias con BookrHub.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Listo para Comenzar?</h2>
+      <p>Únete a más de 700 negocios en Argentina que ya usan BookrHub</p>
+      <a href="https://my.bookrhub.com/signup?locale=es-AR" class="btn btn-primary">Crear Mi Página Gratis</a>
+    </div>
+  </section>
+
+  <footer>
+    <div style="background: #1a1a2e; color: white; padding: 40px 20px; text-align: center;">
+      <p>&copy; 2026 BookrHub | Last updated: March 2026</p>
+      <p style="opacity: 0.7; margin-top: 10px;">Plataforma de reservas online para barberías, salones y negocios</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        item.hasAttribute('open') ? item.removeAttribute('open') : item.setAttribute('open', '');
+      });
+    });
+  </script>
+</body>
+</html>

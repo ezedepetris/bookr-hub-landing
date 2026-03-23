@@ -22,14 +22,14 @@ module SEOTemplates
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>#{title}</title>
         <meta name="description" content="#{description}">
-        <link rel="canonical" href="https://bookrhub.com#{canonical_url}">
+        <link rel="canonical" href="https://www.bookrhub.com#{canonical_url}">
         
         <!-- Open Graph -->
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://bookrhub.com#{canonical_url}">
+        <meta property="og:url" content="https://www.bookrhub.com#{canonical_url}">
         <meta property="og:title" content="#{title}">
         <meta property="og:description" content="#{description}">
-        <meta property="og:image" content="https://bookrhub.com/images/og-image.png">
+        <meta property="og:image" content="https://www.bookrhub.com/images/og-image.png">
         
         <!-- Styles -->
         <link rel="stylesheet" href="/css/styles.css?v=2.5.1">
@@ -41,11 +41,11 @@ module SEOTemplates
         <!-- Navigation -->
         <nav class="navbar">
           <div class="container">
-            <a href="https://bookrhub.com/?locale=#{locale_param}" class="logo">BookrHub</a>
+            <a href="https://www.bookrhub.com/?locale=#{locale_param}" class="logo">BookrHub</a>
             <div class="nav-links">
-              <a href="https://bookrhub.com/?locale=#{locale_param}#features">Features</a>
-              <a href="https://bookrhub.com/?locale=#{locale_param}#pricing">Pricing</a>
-              <a href="https://bookrhub.com/?locale=#{locale_param}#why-us">Why Us</a>
+              <a href="https://www.bookrhub.com/?locale=#{locale_param}#features">Features</a>
+              <a href="https://www.bookrhub.com/?locale=#{locale_param}#pricing">Pricing</a>
+              <a href="https://www.bookrhub.com/?locale=#{locale_param}#why-us">Why Us</a>
               <a href="#{login_url}" class="btn btn-secondary">Sign In</a>
               <a href="#{signup_url}" class="btn btn-primary">Get Started Free</a>
             </div>
@@ -75,7 +75,7 @@ module SEOTemplates
               <p>#{(locale == "es") ? "Unite a miles de negocios que usan BookrHub para reservas online gratis." : "Join thousands of businesses using BookrHub for free online booking."}</p>
               <div class="cta-buttons">
                 <a href="#{signup_url}" class="btn btn-primary btn-large">#{(locale == "es") ? "Crear Cuenta Gratis" : "Create Free Account"}</a>
-                <a href="https://bookrhub.com/?locale=#{locale_param}#templates" class="btn btn-secondary btn-large">#{(locale == "es") ? "Ver Plantillas" : "See Demo"}</a>
+                <a href="https://www.bookrhub.com/?locale=#{locale_param}#templates" class="btn btn-secondary btn-large">#{(locale == "es") ? "Ver Plantillas" : "See Demo"}</a>
               </div>
             </div>
           </section>
@@ -85,11 +85,12 @@ module SEOTemplates
         <footer>
           <div class="container">
             <div class="footer-links">
-              <a href="https://bookrhub.com/?locale=#{locale_param}#privacy">#{(locale == "es") ? "Privacidad" : "Privacy"}</a>
-              <a href="https://bookrhub.com/?locale=#{locale_param}#terms">#{(locale == "es") ? "Términos" : "Terms"}</a>
-              <a href="https://bookrhub.com/?locale=#{locale_param}#contact">#{(locale == "es") ? "Contacto" : "Contact"}</a>
+              <a href="https://www.bookrhub.com/?locale=#{locale_param}#privacy">#{(locale == "es") ? "Privacidad" : "Privacy"}</a>
+              <a href="https://www.bookrhub.com/?locale=#{locale_param}#terms">#{(locale == "es") ? "Términos" : "Terms"}</a>
+              <a href="https://www.bookrhub.com/?locale=#{locale_param}#contact">#{(locale == "es") ? "Contacto" : "Contact"}</a>
             </div>
             <p>&copy; 2026 BookrHub. #{(locale == "es") ? "Todos los derechos reservados." : "All rights reserved."}</p>
+            <p class="last-updated" style="font-size: 0.8rem; opacity: 0.7; margin-top: 8px;">Last updated: March 2026</p>
           </div>
         </footer>
       </body>
@@ -107,6 +108,54 @@ module SEOTemplates
     title = "Booking System for #{niche_data[:name_en]} | Free Online Appointments"
     description = "The best free booking system for #{niche_data[:name_en].downcase}. Let clients book online 24/7, reduce no-shows with WhatsApp reminders, and grow your business. No commission."
 
+    faq_schema = <<~JSON
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is BookrHub really free for #{niche_data[:name_en].downcase}?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! BookrHub offers a free forever plan perfect for #{niche_data[:name_en].downcase}. You get unlimited appointments, online booking page, and automated reminders at no cost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does BookrHub help reduce no-shows?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BookrHub automatically sends WhatsApp and email reminders to clients before their appointments. Studies show this reduces no-shows by 40% on average."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can clients book #{niche_data[:name_en].downcase} appointments outside business hours?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! BookrHub allows clients to book 24/7. They can see your availability and book time slots anytime, even when you're closed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does BookrHub charge commission on bookings?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. BookrHub charges 0% commission on all bookings. Unlike competitors like Fresha (20% commission), you keep 100% of what you earn."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to set up?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most #{niche_data[:name_en].downcase} owners are up and running in under 5 minutes. Just sign up, add your services, and share your booking link."
+            }
+          }
+        ]
+      }
+    JSON
+
     schema = <<~JSON
       <script type="application/ld+json">
       {
@@ -122,6 +171,9 @@ module SEOTemplates
         }
       }
       </script>
+      <script type="application/ld+json">
+      #{faq_schema}
+      </script>
     JSON
 
     content = <<~HTML
@@ -129,7 +181,7 @@ module SEOTemplates
         <p class="intro">Running a #{niche_data[:singular_en]} is busy work. Between managing clients, delivering great service, and running the business, the last thing you need is chaos around scheduling. BookrHub gives your clients an easy way to book appointments online while you stay focused on what you do best.</p>
 
         <h2>Why #{niche_data[:name_en]} Need Online Booking</h2>
-        <p>Modern customers expect convenience. They want to book #{niche_data[:name_en].downcase} services at any time, not just when you're available to answer the phone. Online booking meets them where they are.</p>
+        <p>Modern customers expect convenience. They want to book #{niche_data[:name_en].downcase} services at any time, not just when you're available to answer the phone. Online booking meets them where they are. Businesses using online booking systems see a <strong>40% reduction in no-shows</strong> and save an average of <strong>10 hours per week</strong> on phone scheduling.</p>
         <ul class="feature-list">
           #{pain_points_list}
         </ul>
@@ -154,6 +206,24 @@ module SEOTemplates
           <li><strong>Set your availability</strong> - Define when you're open for appointments</li>
           <li><strong>Share your booking link</strong> - Add it to your social media, website, or WhatsApp</li>
         </ol>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-block">
+          <h3>Is BookrHub really free for #{niche_data[:name_en].downcase}?</h3>
+          <p>Yes! BookrHub offers a free forever plan perfect for #{niche_data[:name_en].downcase}. You get unlimited appointments, online booking page, and automated reminders at no cost.</p>
+
+          <h3>How does BookrHub help reduce no-shows?</h3>
+          <p>BookrHub automatically sends WhatsApp and email reminders to clients before their appointments. Studies show this reduces no-shows by 40% on average.</p>
+
+          <h3>Can clients book #{niche_data[:name_en].downcase} appointments outside business hours?</h3>
+          <p>Yes! BookrHub allows clients to book 24/7. They can see your availability and book time slots anytime, even when you're closed.</p>
+
+          <h3>Does BookrHub charge commission on bookings?</h3>
+          <p>No. BookrHub charges 0% commission on all bookings. Unlike competitors like Fresha (20% commission), you keep 100% of what you earn.</p>
+
+          <h3>How long does it take to set up?</h3>
+          <p>Most #{niche_data[:name_en].downcase} owners are up and running in under 5 minutes. Just sign up, add your services, and share your booking link.</p>
+        </div>
       </div>
     HTML
 
@@ -177,6 +247,54 @@ module SEOTemplates
     title = "Sistema de Turnos para #{niche_data[:name_es]} | Reservas Online Gratis"
     description = "El mejor sistema de turnos gratis para #{niche_data[:name_es].downcase}. Deja que tus clientes reserven online 24/7, reduce inasistencias con recordatorios por WhatsApp, y hace crecer tu negocio. Sin comisión."
 
+    faq_schema = <<~JSON
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿BookrHub es realmente gratis para #{niche_data[:name_es].downcase}?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "¡Sí! BookrHub ofrece un plan gratis para siempre, perfecto para #{niche_data[:name_es].downcase}. Obtenés turnos ilimitados, página de reservas online, y recordatorios automáticos sin costo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo ayuda BookrHub a reducir las inasistencias?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BookrHub envía automáticamente recordatorios por WhatsApp y email antes de los turnos. Estudios muestran que esto reduce las inasistencias en un 40% en promedio."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Pueden los clientes reservar turnos de #{niche_data[:name_es].downcase} fuera del horario comercial?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "¡Sí! BookrHub permite a los clientes reservar 24/7. Pueden ver tu disponibilidad y reservar horarios en cualquier momento, incluso cuando estás cerrado."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿BookrHub cobra comisión en las reservas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. BookrHub cobra 0% de comisión en todas las reservas. A diferencia de competidores como Fresha (20% de comisión), vos te quedás con el 100% de lo que ganás."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto tiempo lleva configurarlo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La mayoría de los dueños de #{niche_data[:name_es].downcase} están listos en menos de 5 minutos. Solo registrate, agregá tus servicios, y compartí tu link de reservas."
+            }
+          }
+        ]
+      }
+    JSON
+
     schema = <<~JSON
       <script type="application/ld+json">
       {
@@ -192,6 +310,9 @@ module SEOTemplates
         }
       }
       </script>
+      <script type="application/ld+json">
+      #{faq_schema}
+      </script>
     JSON
 
     content = <<~HTML
@@ -199,7 +320,7 @@ module SEOTemplates
         <p class="intro">Gestionar un #{niche_data[:singular_es]} es un trabajo ocupado. Entre atender clientes, dar buen servicio, y correr el negocio, lo último que necesitas es caos con la agenda. BookrHub les da a tus clientes una forma fácil de reservar turnos online mientras vos te concentrás en lo que mejor hacés.</p>
 
         <h2>Por Qué las #{niche_data[:name_es]} Necesitan Reservas Online</h2>
-        <p>Los clientes modernos esperan comodidad. Quieren reservar servicios de #{niche_data[:name_es].downcase} a cualquier hora, no solo cuando estás disponible para atender el teléfono. Las reservas online los encuentran donde están.</p>
+        <p>Los clientes modernos esperan comodidad. Quieren reservar servicios de #{niche_data[:name_es].downcase} a cualquier hora, no solo cuando estás disponible para atender el teléfono. Las reservas online los encuentran donde están. Los negocios que usan sistemas de reservas online ven una <strong>reducción del 40% en inasistencias</strong> y ahorran un promedio de <strong>10 horas semanales</strong> en llamadas de agenda.</p>
         <ul class="feature-list">
           #{pain_points_list}
         </ul>
@@ -224,6 +345,24 @@ module SEOTemplates
           <li><strong>Definí tu disponibilidad</strong> - Establecé cuándo estás abierto para turnos</li>
           <li><strong>Compartí tu link de reservas</strong> - Agregalo a tus redes, página web, o WhatsApp</li>
         </ol>
+
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-block">
+          <h3>¿BookrHub es realmente gratis para #{niche_data[:name_es].downcase}?</h3>
+          <p>¡Sí! BookrHub ofrece un plan gratis para siempre, perfecto para #{niche_data[:name_en].downcase}. Obtenés turnos ilimitados, página de reservas online, y recordatorios automáticos sin costo.</p>
+
+          <h3>¿Cómo ayuda BookrHub a reducir las inasistencias?</h3>
+          <p>BookrHub envía automáticamente recordatorios por WhatsApp y email antes de los turnos. Estudios muestran que esto reduce las inasistencias en un 40% en promedio.</p>
+
+          <h3>¿Pueden los clientes reservar turnos de #{niche_data[:name_es].downcase} fuera del horario comercial?</h3>
+          <p>¡Sí! BookrHub permite a los clientes reservar 24/7. Pueden ver tu disponibilidad y reservar horarios en cualquier momento, incluso cuando estás cerrado.</p>
+
+          <h3>¿BookrHub cobra comisión en las reservas?</h3>
+          <p>No. BookrHub cobra 0% de comisión en todas las reservas. A diferencia de competidores como Fresha (20% de comisión), vos te quedás con el 100% de lo que ganás.</p>
+
+          <h3>¿Cuánto tiempo lleva configurarlo?</h3>
+          <p>La mayoría de los dueños de #{niche_data[:name_es].downcase} están listos en menos de 5 minutos. Solo registrate, agregá tus servicios, y compartí tu link de reservas.</p>
+        </div>
       </div>
     HTML
 
@@ -245,6 +384,46 @@ module SEOTemplates
     title = "Booking System for #{niche_data[:name_en]} in #{city_data[:name]} | Free Online Appointments"
     description = "Looking for a booking system for #{niche_data[:name_en].downcase} in #{city_data[:name]}? Let clients book online 24/7, reduce no-shows with WhatsApp reminders. Free to start."
 
+    faq_schema = <<~JSON
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is BookrHub free for #{niche_data[:name_en].downcase} in #{city_data[:name]}?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! BookrHub offers a free forever plan. Get unlimited appointments, online booking, and automated reminders at no cost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does BookrHub reduce no-shows for #{city_data[:name]} businesses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BookrHub sends automatic WhatsApp and email reminders before appointments. Businesses see a 40% reduction in no-shows."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can clients in #{city_data[:name]} book outside business hours?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Clients can book 24/7, even when you're closed. They'll see your available slots and book instantly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does BookrHub charge commission?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No commission. Unlike Fresha (20%), you keep 100% of every booking."
+            }
+          }
+        ]
+      }
+    JSON
+
     schema = <<~JSON
       <script type="application/ld+json">
       {
@@ -259,6 +438,9 @@ module SEOTemplates
         }
       }
       </script>
+      <script type="application/ld+json">
+      #{faq_schema}
+      </script>
     JSON
 
     content = <<~HTML
@@ -266,7 +448,7 @@ module SEOTemplates
         <p class="intro">If you run a #{niche_data[:singular_en]} in #{city_data[:name]}, you know how challenging it can be to manage appointments. Between phone calls, walk-ins, and messages, staying organized is tough. BookrHub makes it easy for your clients in #{city_data[:name]} to book online while you focus on running your business.</p>
 
         <h2>Why #{niche_data[:name_en]} in #{city_data[:name]} Need Online Booking</h2>
-        <p>Clients in #{city_data[:name]} expect convenience. They want to book #{niche_data[:name_en].downcase} services when it suits them, not just during your business hours. Online booking gives them 24/7 access to your schedule.</p>
+        <p>Clients in #{city_data[:name]} expect convenience. They want to book #{niche_data[:name_en].downcase} services when it suits them, not just during your business hours. Online booking gives them 24/7 access to your schedule. Businesses using online booking see a <strong>40% reduction in no-shows</strong> and save <strong>10+ hours per week</strong> on phone calls.</p>
         <ul class="feature-list">
           <li>Clients in #{city_data[:name]} book at their convenience, day or night</li>
           <li>Automatic WhatsApp reminders reduce missed appointments</li>
@@ -288,6 +470,21 @@ module SEOTemplates
           <li><strong>Set your #{city_data[:name]} availability</strong> - Define when you're open</li>
           <li><strong>Share your booking link</strong> - With clients in #{city_data[:name]}</li>
         </ol>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-block">
+          <h3>Is BookrHub free for #{niche_data[:name_en].downcase} in #{city_data[:name]}?</h3>
+          <p>Yes! BookrHub offers a free forever plan. Get unlimited appointments, online booking, and automated reminders at no cost.</p>
+
+          <h3>How does BookrHub reduce no-shows for #{city_data[:name]} businesses?</h3>
+          <p>BookrHub sends automatic WhatsApp and email reminders before appointments. Businesses see a 40% reduction in no-shows.</p>
+
+          <h3>Can clients in #{city_data[:name]} book outside business hours?</h3>
+          <p>Yes! Clients can book 24/7, even when you're closed. They'll see your available slots and book instantly.</p>
+
+          <h3>Does BookrHub charge commission?</h3>
+          <p>No commission. Unlike Fresha (20%), you keep 100% of every booking.</p>
+        </div>
 
         <p>Start accepting online bookings for your #{niche_data[:name_en].downcase} in #{city_data[:name]} today. It's free to get started with no commission on bookings.</p>
       </div>
@@ -311,6 +508,54 @@ module SEOTemplates
     title = "Sistema de Turnos para #{niche_data[:name_es]} en #{city_data[:name]} | Reservas Online Gratis"
     description = "¿Buscás un sistema de turnos para #{niche_data[:name_es].downcase} en #{city_data[:name]}? Deja que tus clientes reserven online 24/7, reduce inasistencias con recordatorios por WhatsApp. Gratis para empezar."
 
+    faq_schema = <<~JSON
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿BookrHub es gratis para #{niche_data[:name_es].downcase} en #{city_data[:name]}?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "¡Sí! BookrHub ofrece un plan gratis para siempre. Obtené turnos ilimitados, reservas online, y recordatorios automáticos sin costo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo ayuda BookrHub a reducir inasistencias en #{city_data[:name]}?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BookrHub envía recordatorios automáticos por WhatsApp y email antes de los turnos. Los negocios ven una reducción del 40% en inasistencias."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Pueden los clientes en #{city_data[:name]} reservar fuera del horario comercial?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "¡Sí! Los clientes pueden reservar 24/7, incluso cuando estás cerrado. Verán tus horarios disponibles y reservarán al instante."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿BookrHub acepta Mercado Pago?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "¡Sí! BookrHub se integra con Mercado Pago para que puedas cobrar seña o el total de tus turnos directamente. Aceptamos tarjetas, Mercado Pago, y efectivo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿BookrHub cobra comisión?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sin comisión. A diferencia de Fresha (20%), vos te quedás con el 100% de cada reserva."
+            }
+          }
+        ]
+      }
+    JSON
+
     schema = <<~JSON
       <script type="application/ld+json">
       {
@@ -322,8 +567,13 @@ module SEOTemplates
           "name": "#{city_data[:name]}",
           "addressRegion": "#{city_data[:region]}",
           "addressCountry": "#{country_data[:code]}"
-        }
+        },
+        "paymentAccepted": "Cash, Credit Card, Debit Card, Mercado Pago",
+        "priceRange": "$-$$"
       }
+      </script>
+      <script type="application/ld+json">
+      #{faq_schema}
       </script>
     JSON
 
@@ -338,6 +588,7 @@ module SEOTemplates
           <li>Recordatorios automáticos por WhatsApp reducen inasistencias</li>
           <li>Gestioná la agenda de tu #{niche_data[:name_es].downcase} desde cualquier lugar</li>
           <li>Aceptá reservas incluso cuando estás ocupado o cerrado</li>
+          <li>Integración con Mercado Pago para cobrar seña o pagos completos</li>
         </ul>
 
         <h2>Perfecto para #{niche_data[:name_es]} de #{city_data[:name]}</h2>
@@ -354,6 +605,24 @@ module SEOTemplates
           <li><strong>Definí tu disponibilidad en #{city_data[:name]}</strong> - Establecé cuándo estás abierto</li>
           <li><strong>Compartí tu link de reservas</strong> - Con clientes en #{city_data[:name]}</li>
         </ol>
+
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-block">
+          <h3>¿BookrHub es gratis para #{niche_data[:name_es].downcase} en #{city_data[:name]}?</h3>
+          <p>¡Sí! BookrHub ofrece un plan gratis para siempre. Obtené turnos ilimitados, reservas online, y recordatorios automáticos sin costo.</p>
+
+          <h3>¿Cómo ayuda BookrHub a reducir inasistencias en #{city_data[:name]}?</h3>
+          <p>BookrHub envía recordatorios automáticos por WhatsApp y email antes de los turnos. Los negocios ven una reducción del 40% en inasistencias.</p>
+
+          <h3>¿Pueden los clientes en #{city_data[:name]} reservar fuera del horario comercial?</h3>
+          <p>¡Sí! Los clientes pueden reservar 24/7, incluso cuando estás cerrado. Verán tus horarios disponibles y reservarán al instante.</p>
+
+          <h3>¿BookrHub acepta Mercado Pago?</h3>
+          <p>¡Sí! BookrHub se integra con Mercado Pago para que puedas cobrar seña o el total de tus turnos directamente. Aceptamos tarjetas, Mercado Pago, y efectivo.</p>
+
+          <h3>¿BookrHub cobra comisión?</h3>
+          <p>Sin comisión. A diferencia de Fresha (20%), vos te quedás con el 100% de cada reserva.</p>
+        </div>
 
         <p>Empezá a aceptar reservas online para tu #{niche_data[:name_es].downcase} en #{city_data[:name]} hoy. Es gratis para empezar sin comisión en reservas.</p>
       </div>
@@ -396,7 +665,7 @@ module SEOTemplates
           "name": "BookrHub",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://bookrhub.com/images/logo.png"
+            "url": "https://www.bookrhub.com/images/logo.png"
           }
         }
       }
@@ -635,7 +904,7 @@ module SEOTemplates
           "name": "BookrHub",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://bookrhub.com/images/logo.png"
+            "url": "https://www.bookrhub.com/images/logo.png"
           }
         }
       }
@@ -718,7 +987,7 @@ module SEOTemplates
           "name": "BookrHub",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://bookrhub.com/images/logo.png"
+            "url": "https://www.bookrhub.com/images/logo.png"
           }
         }
       }
@@ -788,7 +1057,7 @@ module SEOTemplates
     niche_links = SEOConfig::NICHES.map do |key, data|
       name = (locale == "es") ? data[:name_es] : data[:name_en]
       url = (locale == "es") ? "/sistema-de-turnos-para-#{key}" : "/booking-system-for-#{key}"
-      "<li><a href=\"https://bookrhub.com#{url}\">#{name}</a></li>"
+      "<li><a href=\"https://www.bookrhub.com#{url}\">#{name}</a></li>"
     end.join
 
     # Build country + city links
@@ -797,10 +1066,10 @@ module SEOTemplates
         city_name = city[:name]
         if locale == "es"
           niche_links_sample = SEOConfig::NICHES.first[1][:name_es]
-          "<li><a href=\"https://bookrhub.com/sistema-de-turnos-para-barbers-en-#{city[:slug]}\">#{city_name}</a></li>"
+          "<li><a href=\"https://www.bookrhub.com/sistema-de-turnos-para-barbers-en-#{city[:slug]}\">#{city_name}</a></li>"
         else
           niche_links_sample = SEOConfig::NICHES.first[1][:name_en]
-          "<li><a href=\"https://bookrhub.com/booking-system-for-barbers-in-#{city[:slug]}\">#{city_name}</a></li>"
+          "<li><a href=\"https://www.bookrhub.com/booking-system-for-barbers-in-#{city[:slug]}\">#{city_name}</a></li>"
         end
       end.join
       "<div class=\"use-cases-country\"><h3>#{country_data[:name]}</h3><ul>#{cities_html}</ul></div>"
@@ -822,14 +1091,14 @@ module SEOTemplates
         ["Online Booking", "/online-booking-system"]
       ]
     end
-    general_links = general_pages.map { |name, slug| "<li><a href=\"https://bookrhub.com#{slug}\">#{name}</a></li>" }.join
+    general_links = general_pages.map { |name, slug| "<li><a href=\"https://www.bookrhub.com#{slug}\">#{name}</a></li>" }.join
 
     # Build comparison links
     comparison_links = SEOConfig::COMPETITORS.map do |key, data|
       if locale == "es"
-        "<li><a href=\"https://bookrhub.com/alternativa-a-#{key}\">BookrHub vs #{data[:name]}</a></li>"
+        "<li><a href=\"https://www.bookrhub.com/alternativa-a-#{key}\">BookrHub vs #{data[:name]}</a></li>"
       else
-        "<li><a href=\"https://bookrhub.com/vs-#{key}\">BookrHub vs #{data[:name]}</a></li>"
+        "<li><a href=\"https://www.bookrhub.com/vs-#{key}\">BookrHub vs #{data[:name]}</a></li>"
       end
     end.join
 

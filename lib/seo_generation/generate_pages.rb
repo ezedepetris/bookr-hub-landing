@@ -264,7 +264,7 @@ class SEOPageGenerator
     locale_param = (locale == "es") ? "es" : "en"
     signup_url = "https://my.bookrhub.com/signup?locale=#{locale_param}"
     login_url = "https://my.bookrhub.com/session/new?locale=#{locale_param}"
-    base_url = "https://bookrhub.com/?locale=#{locale_param}"
+    base_url = "https://www.bookrhub.com/?locale=#{locale_param}"
 
     nav_labels = (locale == "es") ? {
       features: "Funciones",
@@ -324,10 +324,10 @@ class SEOPageGenerator
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>#{title}</title>
         <meta name="description" content="#{description}">
-        <link rel="canonical" href="https://bookrhub.com#{canonical}">
-        <link rel="alternate" hreflang="en" href="https://bookrhub.com#{canonical.sub("/es/", "/en/")}">
-        <link rel="alternate" hreflang="es" href="https://bookrhub.com#{canonical.sub("/en/", "/es/")}">
-        <link rel="alternate" hreflang="x-default" href="https://bookrhub.com#{canonical.sub("/es/", "/en/")}">
+        <link rel="canonical" href="https://www.bookrhub.com#{canonical}">
+        <link rel="alternate" hreflang="en" href="https://www.bookrhub.com#{canonical.sub("/es/", "/en/")}">
+        <link rel="alternate" hreflang="es" href="https://www.bookrhub.com#{canonical.sub("/en/", "/es/")}">
+        <link rel="alternate" hreflang="x-default" href="https://www.bookrhub.com#{canonical.sub("/es/", "/en/")}">
         
         <!-- Favicon -->
         <link rel="icon" href="/images/icon.png" type="image/png">
@@ -335,13 +335,13 @@ class SEOPageGenerator
         
         <!-- Open Graph -->
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://bookrhub.com#{canonical}">
+        <meta property="og:url" content="https://www.bookrhub.com#{canonical}">
         <meta property="og:title" content="#{title}">
         <meta property="og:description" content="#{description}">
-        <meta property="og:image" content="https://bookrhub.com/images/og-image.png">
+        <meta property="og:image" content="https://www.bookrhub.com/images/og-image.png">
         
         <!-- Styles -->
-        <link rel="stylesheet" href="https://bookrhub.com/css/styles.css?v=2.5.1">
+        <link rel="stylesheet" href="https://www.bookrhub.com/css/styles.css?v=2.5.1">
         
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-L48GXS7KT4"></script>
@@ -363,7 +363,7 @@ class SEOPageGenerator
         <nav id="main-nav">
           <div class="nav-container">
             <a href="#{base_url}" class="logo">
-              <img src="https://bookrhub.com/images/isologo.svg" alt="BookrHub" class="isologo-image" width="140">
+              <img src="https://www.bookrhub.com/images/isologo.svg" alt="BookrHub" class="isologo-image" width="140">
             </a>
             <div class="nav-links">
               <a href="#{base_url}#features">#{nav_labels[:features]}</a>
@@ -441,7 +441,7 @@ class SEOPageGenerator
           <div class="footer-content">
             <div class="footer-brand">
               <a href="#{base_url}" class="logo">
-                <img src="https://bookrhub.com/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120">
+                <img src="https://www.bookrhub.com/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120">
               </a>
               <p>#{footer_labels[:description]}</p>
             </div>
@@ -452,15 +452,15 @@ class SEOPageGenerator
               <a href="#{base_url}#live-templates">#{nav_labels[:templates]}</a>
               <a href="#{base_url}#pricing">#{nav_labels[:pricing]}</a>
               <a href="#{base_url}#screenshots">#{nav_labels[:how_it_works]}</a>
-              <a href="#{(locale == "es") ? base_url + "/casos-de-uso" : base_url + "/use-cases"}">#{(locale == "es") ? "Casos de Uso" : "Use Cases"}</a>
+              <a href="#{(locale == "es") ? "https://www.bookrhub.com/casos-de-uso" : "https://www.bookrhub.com/use-cases"}">#{(locale == "es") ? "Casos de Uso" : "Use Cases"}</a>
               <a href="#{login_url}">#{nav_labels[:sign_in]}</a>
               <a href="#{signup_url}">#{nav_labels[:get_started]}</a>
             </div>
             <div class="footer-section">
               <h3>#{footer_labels[:company]}</h3>
-              <a href="https://bookrhub.com/about">#{footer_labels[:about_us]}</a>
+              <a href="https://www.bookrhub.com/about">#{footer_labels[:about_us]}</a>
               <a href="https://blog.bookrhub.com">#{footer_labels[:blog]}</a>
-              <a href="https://bookrhub.com/contact">#{footer_labels[:contact_us]}</a>
+              <a href="https://www.bookrhub.com/contact">#{footer_labels[:contact_us]}</a>
             </div>
             <div class="footer-section">
               <h3>#{footer_labels[:support]}</h3>
@@ -469,8 +469,8 @@ class SEOPageGenerator
             </div>
             <div class="footer-section">
               <h3>#{footer_labels[:legal]}</h3>
-              <a href="https://bookrhub.com/privacy">#{footer_labels[:privacy_policy]}</a>
-              <a href="https://bookrhub.com/terms">#{footer_labels[:terms_of_service]}</a>
+              <a href="https://www.bookrhub.com/privacy">#{footer_labels[:privacy_policy]}</a>
+              <a href="https://www.bookrhub.com/terms">#{footer_labels[:terms_of_service]}</a>
             </div>
           </div>
           <div class="footer-bottom">

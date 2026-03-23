@@ -1,9 +1,52 @@
+# BookrHub robots.txt
 # https://www.robotstxt.org/robotstxt.html
+
+# Default: Allow all crawlers
 User-agent: *
 Allow: /
 
-# AI Agents & LLMs
+# AI Agents & LLM Crawlers (Generative Engine Optimization)
+# Allow all major AI search platforms to crawl for citation purposes
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: diffbot
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+# Block common scrapers (optional but recommended)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Special files for AI agents
 Allow: /llms.txt
 
 # Sitemap
 Sitemap: https://bookrhub.com/sitemap.xml
+Sitemap: https://bookrhub.com/sitemap.xml?type=seo

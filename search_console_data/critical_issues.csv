@@ -1,0 +1,9 @@
+Motivo,Fuente,Validación,Páginas
+Página con redirección,Sitio web,Error,42
+Página alternativa con etiqueta canónica adecuada,Sitio web,Error,12
+Rastreada: actualmente sin indexar,Sistemas de Google,Error,57
+No se ha encontrado (404),Sitio web,No iniciada,16
+Duplicada: el usuario no ha indicado ninguna versión canónica,Sitio web,No iniciada,16
+Error de redirección,Sitio web,No iniciada,10
+Error de servidor (5xx),Sitio web,No iniciada,2
+Descubierta: actualmente sin indexar,Sistemas de Google,Iniciada,1170

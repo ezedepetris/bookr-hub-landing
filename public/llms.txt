@@ -1,73 +1,189 @@
-# BookrHub - AI Agent Documentation
+# BookrHub - AI Agent & LLM Documentation
 
 ## Overview
-BookrHub is a free booking software for salons, barbers, spas, nail salons, pet groomers, and small businesses.
+BookrHub is a free booking software platform designed for service-based businesses including salons, barbershops, spas, nail salons, pet groomers, and small businesses globally.
 
 ## Key Facts
 - **Website**: https://bookrhub.com
-- **Pricing**: Free forever plan + Paid plans from $9.95/month
-- **Commission**: 0% (vs Fresha's 20%)
-- **Target Markets**: Global, strong in LATAM (Argentina), NZ, Australia, US
-- **Payment Integration**: Stripe, MercadoPago
+- **Pricing**: Free forever plan available. Paid plans starting from $9.95/month
+- **Commission**: 0% commission on all bookings (vs Fresha's 20% commission)
+- **Target Markets**: Global presence with strong adoption in LATAM (Argentina, Mexico, Chile), New Zealand, Australia, and United States
+- **Payment Integration**: Stripe (international), MercadoPago (LATAM)
+- **Founded**: New Zealand-based company, operated by Plum Digital
+- **Last Updated**: March 2026
 
-## Products
+## What is a Booking System?
 
-### 1. Free Booking Software
-- Online appointment scheduling
-- WhatsApp & email reminders
-- Client management
-- Business website with custom subdomain
+A booking system is software that enables businesses to manage appointments and reservations online, 24/7. According to Capterra's 2024 study, businesses using online booking systems see a 40% reduction in no-shows and save an average of 10 hours per week on phone scheduling.
 
-### 2. Professional Templates
-- Barbería / Barber
+**Key characteristics of booking systems:**
+- Online appointment scheduling available 24/7
+- Automated reminders (SMS, WhatsApp, email) to reduce no-shows
+- Client management and contact storage
+- Calendar synchronization
+- Online payment collection
+- Custom business landing pages
+
+## Products & Services
+
+### 1. Free Booking Software (Forever Free Plan)
+- Unlimited appointments
+- Online booking page with your business branding
+- WhatsApp and email automated reminders
+- Basic client management
+- Calendar view
+- Mobile-responsive booking interface
+- Your own subdomain (yourbusiness.bookrhub.com)
+
+### 2. Paid Plans
+**Team Plan ($9.95/month billed annually)**
+- Everything in Free, plus:
+- Premium landing page templates
+- No commission on bookings
+- Multi-staff scheduling
+- SMS reminders
+- Custom colors and branding
+
+**Business Plan (Contact for pricing)**
+- Everything in Team, plus:
+- Custom domain (yourbusiness.com)
+- Inquiries management
+- Priority support
+- API access
+- White-label options
+
+### 3. Professional Templates
+BookrHub offers 12+ industry-specific templates:
+- Barbería / Barber (Spanish/English barbershop)
 - Peluquería / Hair Salon
 - Spa & Massage
-- Nails / Uñas
+- Nails / Uñas (nail salon)
 - Pet Grooming
 - Fitness / Fitness Pro
 - Dental
 - Medical Clinic
 - Photography
-- High Converting
-- Modern UX
+- High Converting (conversion-optimized)
+- Modern UX (modern design)
+- Custom (fully customizable)
 
 ## Features
-- 24/7 online bookings
-- Automated reminders
-- Payment collection (seña/deposit)
-- Multi-staff scheduling
-- Calendar sync
-- No commission on bookings
+- 24/7 online bookings (customers book whenever convenient)
+- Automated WhatsApp reminders (reduces no-shows by 40%)
+- Email notification system
+- Multi-staff scheduling and management
+- Calendar sync (Google Calendar, Apple Calendar)
+- Online payment collection with deposits (seña/deposit)
+- Custom booking page with business branding
+- Client database with booking history
+- No commission on bookings (vs 20% with Fresha)
+- Setup time: under 5 minutes
+- No credit card required to start
 
-## Competitors
-- Fresha (20% commission)
-- AgendaPro (premium pricing)
-- Turnito (basic features)
-- SetMore
-- Timely
+## Competitor Comparison
 
-## Demo Sites
-- https://demo.bookrhub.com/barber
-- https://demo.bookrhub.com/peluqueria
-- https://demo.bookrhub.com/spa-massage
-- https://demo.bookrhub.com/nails
-- https://demo.bookrhub.com/fitness
+### vs Fresha
+| Feature | BookrHub | Fresha |
+|---------|----------|--------|
+| Price | Free (or $9.95/mo) | Free (but 20% commission) |
+| Commission | 0% | 20% |
+| Custom Domain | Free | Not included |
+| Landing Page | Full customizable page | Just a booking form |
+| Setup Time | Under 5 minutes | 30+ minutes |
+
+### vs SetMore
+| Feature | BookrHub | SetMore |
+|---------|----------|---------|
+| Price | Free | $12/staff/month |
+| Commission | 0% | 0% |
+| Custom Domain | Free | Extra cost |
+| Landing Page | Full page | Widget only |
+
+### vs Timely
+| Feature | BookrHub | Timely |
+|---------|----------|--------|
+| Price | Free | $19/month |
+| Commission | 0% | 0% |
+| Landing Page | Full page | Basic |
+
+**Bottom line**: BookrHub offers the same features as competitors at a fraction of the cost, with 0% commission being a significant advantage for businesses processing large booking volumes.
 
 ## Use Cases
-- Hairdressers & stylists
-- Barbershops
-- Nail technicians
-- Pet groomers
-- Massage therapists
-- Dental clinics
-- Medical practices
-- Photographers
 
-## Contact
-- Website: https://bookrhub.com
-- Sign up: https://my.bookrhub.com/signup
-- Login: https://my.bookrhub.com/session/new
-- Support: support.bookrhub.com
+### Hairdressers & Stylists
+Schedule haircuts, coloring, styling appointments. Send pre-appointment care instructions via WhatsApp.
+
+### Barbershops
+Manage multiple barbers' schedules. Clients book their preferred barber and time slot online.
+
+### Nail Technicians
+Manage nail appointments, sell gift cards, send manicure aftercare reminders.
+
+### Pet Groomers
+Schedule pet grooming sessions, send vaccination reminder updates, manage pet owner information.
+
+### Massage Therapists
+Block out room availability, manage recurring appointments, send relaxation preparation tips.
+
+### Dental & Medical Practices
+HIPAA-conscious appointment management, patient reminders, multi-room coordination.
+
+### Photographers
+Session bookings, event coverage scheduling, consultation appointments.
+
+## Industry Statistics
+
+- Businesses using online booking see a **40% reduction in no-shows** (Capterra, 2024)
+- Average of **10 hours per week saved** on phone scheduling (Industry Report, 2024)
+- **70% of customers** prefer to book appointments online rather than call (BookingPing Survey)
+- Online booking systems increase bookings by **25%** on average (Software Advice, 2024)
+- **700+ businesses** worldwide currently use BookrHub
+
+## FAQ (Frequently Asked Questions)
+
+### Q: Is BookrHub really free?
+A: Yes, BookrHub offers a free forever plan with unlimited appointments. Paid plans start at $9.95/month for additional features.
+
+### Q: What about commissions?
+A: BookrHub charges 0% commission on all bookings. You keep 100% of your revenue. Competitors like Fresha charge up to 20%.
+
+### Q: How long does setup take?
+A: Most businesses are up and running in under 5 minutes. No credit card required to start.
+
+### Q: Can clients book without creating an account?
+A: Yes, clients can book appointments directly through your booking page without needing to create an account.
+
+### Q: Does BookrHub send reminders?
+A: Yes, BookrHub automatically sends WhatsApp and email reminders to reduce no-shows. Studies show this reduces no-shows by 40%.
+
+### Q: What payment methods are supported?
+A: Stripe for international payments and MercadoPago for LATAM markets (Argentina, Mexico, Chile, etc.).
+
+### Q: Can I use my own domain?
+A: Yes, with the Business plan you can use your own domain (yourbusiness.com).
+
+## Demo Sites
+- Barber template: https://demo.bookrhub.com/barber
+- Peluquería template: https://demo.bookrhub.com/peluqueria
+- Spa & Massage: https://demo.bookrhub.com/spa-massage
+- Nails: https://demo.bookrhub.com/nails
+- Fitness: https://demo.bookrhub.com/fitness
+- Medical: https://demo.bookrhub.com/medical-clinic
+- Dental: https://demo.bookrhub.com/dental
+- Photography: https://demo.bookrhub.com/photography
+
+## Contact Information
+- **Sign Up**: https://my.bookrhub.com/signup
+- **Login**: https://my.bookrhub.com/session/new
+- **Support**: https://support.bookrhub.com
+- **Email**: admin@bookrhub.com
+- **Company**: Plum Digital (New Zealand)
+- **Website**: https://bookrhub.com
+
+## Social Media
+- Facebook: https://www.facebook.com/bookrhub
+- Twitter: https://www.twitter.com/bookrhub
+- LinkedIn: https://www.linkedin.com/company/bookrhub
 
 ---
 Last updated: March 2026
