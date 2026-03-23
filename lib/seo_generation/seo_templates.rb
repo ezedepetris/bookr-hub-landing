@@ -106,7 +106,7 @@ module SEOTemplates
 
     canonical = "/#{locale}/booking-system-for-#{niche_key}"
     title = "Booking System for #{niche_data[:name_en]} | Free Online Appointments"
-    description = "The best free booking system for #{niche_data[:name_en].downcase}. Let clients book online 24/7, reduce no-shows with WhatsApp reminders, and grow your business. No commission."
+    description = "The best free booking system for #{niche_data[:name_en].downcase}. Let clients book online 24/7, reduce no-shows with reminders, and grow your business. No commission."
 
     faq_schema = <<~JSON
       {
@@ -125,7 +125,7 @@ module SEOTemplates
             "name": "How does BookrHub help reduce no-shows?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "BookrHub automatically sends WhatsApp and email reminders to clients before their appointments. Studies show this reduces no-shows by 40% on average."
+              "text": "BookrHub automatically sends reminders to clients before their appointments. Studies show this reduces no-shows by 40% on average."
             }
           },
           {
@@ -213,7 +213,7 @@ module SEOTemplates
           <p>Yes! BookrHub offers a free forever plan perfect for #{niche_data[:name_en].downcase}. You get unlimited appointments, online booking page, and automated reminders at no cost.</p>
 
           <h3>How does BookrHub help reduce no-shows?</h3>
-          <p>BookrHub automatically sends WhatsApp and email reminders to clients before their appointments. Studies show this reduces no-shows by 40% on average.</p>
+          <p>BookrHub automatically sends reminders to clients before their appointments. Studies show this reduces no-shows by 40% on average.</p>
 
           <h3>Can clients book #{niche_data[:name_en].downcase} appointments outside business hours?</h3>
           <p>Yes! BookrHub allows clients to book 24/7. They can see your availability and book time slots anytime, even when you're closed.</p>
@@ -382,7 +382,7 @@ module SEOTemplates
 
     canonical = "/#{locale}/booking-system-for-#{niche_key}-in-#{city_data[:slug]}"
     title = "Booking System for #{niche_data[:name_en]} in #{city_data[:name]} | Free Online Appointments"
-    description = "Looking for a booking system for #{niche_data[:name_en].downcase} in #{city_data[:name]}? Let clients book online 24/7, reduce no-shows with WhatsApp reminders. Free to start."
+    description = "Looking for a booking system for #{niche_data[:name_en].downcase} in #{city_data[:name]}? Let clients book online 24/7, reduce no-shows with reminders. Free to start."
 
     faq_schema = <<~JSON
       {
@@ -401,7 +401,7 @@ module SEOTemplates
             "name": "How does BookrHub reduce no-shows for #{city_data[:name]} businesses?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "BookrHub sends automatic WhatsApp and email reminders before appointments. Businesses see a 40% reduction in no-shows."
+              "text": "BookrHub sends automatic reminders before appointments. Businesses see a 40% reduction in no-shows."
             }
           },
           {
@@ -451,7 +451,7 @@ module SEOTemplates
         <p>Clients in #{city_data[:name]} expect convenience. They want to book #{niche_data[:name_en].downcase} services when it suits them, not just during your business hours. Online booking gives them 24/7 access to your schedule. Businesses using online booking see a <strong>40% reduction in no-shows</strong> and save <strong>10+ hours per week</strong> on phone calls.</p>
         <ul class="feature-list">
           <li>Clients in #{city_data[:name]} book at their convenience, day or night</li>
-          <li>Automatic WhatsApp reminders reduce missed appointments</li>
+          <li>Automatic reminders reduce missed appointments</li>
           <li>Manage your #{niche_data[:name_en].downcase} schedule from anywhere</li>
           <li>Accept bookings even when you're busy or closed</li>
         </ul>
@@ -477,7 +477,7 @@ module SEOTemplates
           <p>Yes! BookrHub offers a free forever plan. Get unlimited appointments, online booking, and automated reminders at no cost.</p>
 
           <h3>How does BookrHub reduce no-shows for #{city_data[:name]} businesses?</h3>
-          <p>BookrHub sends automatic WhatsApp and email reminders before appointments. Businesses see a 40% reduction in no-shows.</p>
+          <p>BookrHub sends automatic reminders before appointments. Businesses see a 40% reduction in no-shows.</p>
 
           <h3>Can clients in #{city_data[:name]} book outside business hours?</h3>
           <p>Yes! Clients can book 24/7, even when you're closed. They'll see your available slots and book instantly.</p>
@@ -840,7 +840,7 @@ module SEOTemplates
               <td>#{competitor_data[:free_plan]}</td>
             </tr>
             <tr>
-              <td>WhatsApp reminders</td>
+              <td>Reminders</td>
               <td><strong>Included free</strong></td>
               <td>Varies</td>
             </tr>
@@ -860,7 +860,7 @@ module SEOTemplates
           <ul class="feature-list">
             <li><strong>No commission:</strong> #{competitor_data[:name]} charges #{competitor_data[:commissions].downcase}. BookrHub is completely free.</li>
             <li><strong>No monthly fees:</strong> Start free and stay free. No hidden costs.</li>
-            <li><strong>WhatsApp reminders:</strong> Included automatically in the free plan.</li>
+            <li><strong>Reminders:</strong> Included automatically in the free plan.</li>
             <li><strong>Built for service businesses:</strong> BookrHub is designed specifically for appointment-based service businesses like yours.</li>
           </ul>
 
@@ -920,7 +920,7 @@ module SEOTemplates
         <ul class="feature-list">
           <li><strong>Zero Commission:</strong> Keep 100% of what you earn. Unlike competitors who charge 5-20% per booking.</li>
           <li><strong>No Monthly Fees:</strong> Start free and stay free. No hidden costs or surprise charges.</li>
-          <li><strong>WhatsApp Reminders:</strong> Automatic reminders reduce no-shows by up to 50%.</li>
+          <li><strong>Reminders:</strong> Automatic reminders reduce no-shows by up to 50%.</li>
           <li><strong>24/7 Online Booking:</strong> Clients book whenever it's convenient for them.</li>
           <li><strong>Mobile-Friendly:</strong> Manage everything from your phone or computer.</li>
         </ul>

@@ -300,7 +300,7 @@ class SEOPageGenerator
       powered_by: "Desarrollado por",
       rights_reserved: "Todos los derechos reservados."
     } : {
-      description: "Free booking software for salons, barbershops, spas, and small businesses. Get your own website with online reservations, WhatsApp reminders, and zero commission.",
+      description: "Free booking software for salons, barbershops, spas, and small businesses. Get your own website with online reservations, reminders, and zero commission.",
       product: "Product",
       company: "Company",
       support: "Support",
