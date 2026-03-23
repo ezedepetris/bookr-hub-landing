@@ -40,6 +40,11 @@ LOCALE_CURRENCY_MAP = {
 }.freeze
 
 before do
+  # Force HTTPS and canonical www domain
+  if request.env["HTTP_X_FORWARDED_PROTO"] == "http" || request.host.match(/^bookrhub\.com$/)
+    redirect "https://www.bookrhub.com#{request.path}#{request.query_string.empty? ? "" : "?" + request.query_string}", 301
+  end
+
   # Priority 1: Check URL parameters for locale and currency
   if params[:locale]
     locale_param = params[:locale].to_sym
@@ -428,4 +433,48 @@ end
 get "/sistema-reservas-whatsapp" do
   page_path = File.join(settings.public_folder, "seo", "es", "sistema-reservas-whatsapp.html")
   send_file page_path if File.exist?(page_path)
+end
+
+get "/es/argentina" do
+  page_path = File.join(settings.public_folder, "seo", "es", "argentina.html")
+  send_file page_path if File.exist?(page_path)
+end
+
+get "/nz" do
+  page_path = File.join(settings.public_folder, "seo", "en", "nz.html")
+  send_file page_path if File.exist?(page_path)
+end
+
+# 404 redirect handlers for common missing URLs
+get "/about" do
+  redirect "https://www.bookrhub.com/", 301
+end
+
+get "/contact" do
+  redirect "https://www.bookrhub.com/", 301
+end
+
+get "/use-cases" do
+  redirect "https://www.bookrhub.com/", 301
+end
+
+get "/pricing" do
+  redirect "https://www.bookrhub.com/#pricing", 301
+end
+
+get "/features" do
+  redirect "https://www.bookrhub.com/#features", 301
+end
+
+get "/blog" do
+  redirect "https://www.bookrhub.com/", 301
+end
+
+get "/terms" do
+  redirect "https://www.bookrhub.com/privacy", 301
+end
+
+not_found do
+  status 404
+  erb :oops
 end

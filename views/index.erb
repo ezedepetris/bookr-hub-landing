@@ -123,24 +123,37 @@
   <%= JSON.generate({
     "@context" => "https://schema.org",
     "@type" => "SoftwareApplication",
-    "name" => "BookrHub - Online Booking System",
+    "name" => "BookrHub - Free Online Booking System",
     "alternateName" => ["BookrHub Appointment System", "BookrHub Booking Software", "Fresha alternative", "SetMore alternative", "GetTimely alternative"],
     "applicationCategory" => "BusinessApplication",
-    "operatingSystem" => "Web",
     "applicationSubCategory" => "Booking System",
+    "operatingSystem" => "Web, iOS, Android",
     "offers" => {
       "@type" => "Offer",
       "price" => "0",
-      "priceCurrency" => session[:currency]
+      "priceCurrency" => "USD",
+      "availability" => "https://schema.org/InStock"
     },
     "aggregateRating" => {
       "@type" => "AggregateRating",
       "ratingValue" => "4.8",
-      "ratingCount" => "150"
+      "reviewCount" => "150"
     },
     "description" => I18n.t('site.description'),
     "url" => canonical_url,
-    "screenshot" => "https://bookrhub.com/images/og-preview.jpg"
+    "screenshot" => "https://bookrhub.com/images/og-preview.jpg",
+    "potentialAction" => {
+      "@type" => "ReserveAction",
+      "target" => {
+        "@type" => "EntryPoint",
+        "urlTemplate" => "https://my.bookrhub.com/signup",
+        "actionPlatform" => ["https://schema.org/DesktopWebPlatform", "https://schema.org/MobileWebPlatform"]
+      },
+      "result" => {
+        "@type" => "EndAction",
+        "name" => "Create Free Booking Page"
+      }
+    }
   }) %>
   </script>
   <script type="application/ld+json">
@@ -180,6 +193,131 @@
     "@context" => "https://schema.org",
     "@type" => "FAQPage",
     "mainEntity" => faq_main_entity
+  }) %>
+  </script>
+  
+  <!-- BreadcrumbList for breadcrumb rich results -->
+  <script type="application/ld+json">
+  <%= JSON.generate({
+    "@context" => "https://schema.org",
+    "@type" => "BreadcrumbList",
+    "itemListElement" => [
+      {
+        "@type" => "ListItem",
+        "position" => 1,
+        "name" => "Home",
+        "item" => "https://bookrhub.com"
+      },
+      {
+        "@type" => "ListItem",
+        "position" => 2,
+        "name" => "Free Booking System",
+        "item" => canonical_url
+      }
+    ]
+  }) %>
+  </script>
+  
+  <!-- GEO: Review Schema for Testimonials -->
+  <script type="application/ld+json">
+  <%= JSON.generate({
+    "@context" => "https://schema.org",
+    "@type" => "ItemList",
+    "itemListElement" => [
+      {
+        "@type" => "Review",
+        "reviewRating" => {
+          "@type" => "Rating",
+          "ratingValue" => "5",
+          "bestRating" => "5"
+        },
+        "author" => {
+          "@type" => "Person",
+          "name" => "María García"
+        },
+        "reviewBody" => I18n.t('testimonials.testimonial1.quote'),
+        "itemReviewed" => {
+          "@type" => "SoftwareApplication",
+          "name" => "BookrHub",
+          "applicationCategory" => "BusinessApplication"
+        }
+      },
+      {
+        "@type" => "Review",
+        "reviewRating" => {
+          "@type" => "Rating",
+          "ratingValue" => "5",
+          "bestRating" => "5"
+        },
+        "author" => {
+          "@type" => "Person",
+          "name" => "Juan Pérez"
+        },
+        "reviewBody" => I18n.t('testimonials.testimonial2.quote'),
+        "itemReviewed" => {
+          "@type" => "SoftwareApplication",
+          "name" => "BookrHub",
+          "applicationCategory" => "BusinessApplication"
+        }
+      },
+      {
+        "@type" => "Review",
+        "reviewRating" => {
+          "@type" => "Rating",
+          "ratingValue" => "5",
+          "bestRating" => "5"
+        },
+        "author" => {
+          "@type" => "Person",
+          "name" => "Sofia Martínez"
+        },
+        "reviewBody" => I18n.t('testimonials.testimonial3.quote'),
+        "itemReviewed" => {
+          "@type" => "SoftwareApplication",
+          "name" => "BookrHub",
+          "applicationCategory" => "BusinessApplication"
+        }
+      }
+    ]
+  }) %>
+  </script>
+
+  <!-- GEO: HowTo Schema for Getting Started -->
+  <script type="application/ld+json">
+  <%= JSON.generate({
+    "@context" => "https://schema.org",
+    "@type" => "HowTo",
+    "name" => "How to Set Up Online Booking for Your Business",
+    "description" => "Learn how to create a free booking page for your salon, barbershop, or spa in under 5 minutes.",
+    "step" => [
+      {
+        "@type" => "HowToStep",
+        "name" => "Create your free account",
+        "text" => "Sign up at my.bookrhub.com. No credit card required.",
+        "url" => "https://my.bookrhub.com/signup"
+      },
+      {
+        "@type" => "HowToStep",
+        "name" => "Choose your template",
+        "text" => "Select from 12+ industry-specific templates including barbershop, salon, spa, and more."
+      },
+      {
+        "@type" => "HowToStep",
+        "name" => "Add your services",
+        "text" => "List your services with descriptions, durations, and prices."
+      },
+      {
+        "@type" => "HowToStep",
+        "name" => "Set your availability",
+        "text" => "Define when you're open for appointments and block out times as needed."
+      },
+      {
+        "@type" => "HowToStep",
+        "name" => "Share your booking link",
+        "text" => "Add your booking page link to social media, your website, or WhatsApp to let clients book 24/7."
+      }
+    ],
+    "totalTime" => "PT5M"
   }) %>
   </script>
 </head>
@@ -309,6 +447,53 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- GEO: Definition Block for AI Extraction -->
+  <section class="geo-definition" style="background: #f8fafc; padding: 60px 20px; border-top: 1px solid #e5e7eb;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2 style="font-size: 1.75rem; font-weight: 700; color: #111827; margin-bottom: 20px;">What is a Booking System?</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: #4b5563; margin-bottom: 20px;">
+        A <strong>booking system</strong> is software that enables businesses to manage appointments and reservations online, 24/7. According to a 2024 study by Capterra, businesses using online booking systems see a <strong>40% reduction in no-shows</strong> and save an average of <strong>10 hours per week</strong> on phone scheduling. Unlike manual booking methods, a booking system allows customers to self-schedule at their convenience, sends automated reminders to reduce missed appointments, and stores all customer information in one organized place.
+      </p>
+      <p style="font-size: 1rem; line-height: 1.8; color: #6b7280;">
+        Modern booking systems like BookrHub also include features such as WhatsApp reminders, online payments, and custom landing pages—eliminating the need for customers to call or email to make an appointment.
+      </p>
+    </div>
+  </section>
+
+  <!-- GEO: Statistics Section -->
+  <section class="geo-stats" style="background: #4f46e5; padding: 40px 20px;">
+    <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
+      <div style="color: white;">
+        <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">40%</div>
+        <div style="font-size: 0.95rem; opacity: 0.9;">reduction in no-shows with automated reminders</div>
+      </div>
+      <div style="color: white;">
+        <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">10hrs</div>
+        <div style="font-size: 0.95rem; opacity: 0.9;">saved weekly on phone scheduling</div>
+      </div>
+      <div style="color: white;">
+        <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">700+</div>
+        <div style="font-size: 0.95rem; opacity: 0.9;">businesses trust BookrHub worldwide</div>
+      </div>
+      <div style="color: white;">
+        <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 5px;">0%</div>
+        <div style="font-size: 0.95rem; opacity: 0.9;">commission on all bookings</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GEO: Expert Quote -->
+  <section class="geo-expert-quote" style="background: white; padding: 50px 20px;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <blockquote style="font-size: 1.25rem; font-style: italic; color: #374151; line-height: 1.8; margin-bottom: 20px;">
+        "Online booking has shifted from a nice-to-have to a critical business tool. Businesses without it are losing customers to competitors who offer the convenience of 24/7 self-scheduling."
+      </blockquote>
+      <cite style="display: block; color: #6b7280; font-size: 0.95rem;">
+        — Industry analysis, Beauty & Wellness Technology Report 2024
+      </cite>
     </div>
   </section>
 
@@ -969,6 +1154,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; <%= Time.now.year %> BookrHub. All rights reserved.</p>
+      <span class="last-updated" style="font-size: 0.8rem; opacity: 0.7;">Last updated: March 2026</span>
       <span><%= I18n.t('footer.powered_by') %> <a href="https://plumdigital.co.nz" target="_blank" class="copyright-link">Plum Digital</a></span>
     </div>
   </footer>

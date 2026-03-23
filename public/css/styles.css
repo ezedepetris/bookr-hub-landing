@@ -2508,3 +2508,34 @@ footer {
     white-space: nowrap;
     border: 0;
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   FAQ Block (for SEO content pages)
+   ───────────────────────────────────────────────────────────────────────────── */
+.faq-block {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 2px solid #e5e7eb;
+}
+
+.faq-block h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111827;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.faq-block h3:first-child {
+    margin-top: 0;
+}
+
+.faq-block p {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.faq-block strong {
+    color: #111827;
+}
