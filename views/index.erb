@@ -21,14 +21,14 @@
   <meta name="keywords" content="<%= I18n.t('site.keywords') %>">
   <meta name="author" content="<%= I18n.t('site.author') %>">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  
+
   <!-- OpenGraph for social -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bookrhub.com">
   <meta property="og:title" content="<%= I18n.t('site.title') %>">
   <meta property="og:description" content="<%= I18n.t('site.description') %>">
   <meta property="og:image" content="https://bookrhub.com/images/og-image.png">
-  
+
   <!-- JSON-LD Structured Data for AI & Search -->
   <script type="application/ld+json">
   {
@@ -65,7 +65,7 @@
     }
   }
   </script>
-  
+
   <%
     base_url = I18n.t('site.canonical_url')
     canonical_locale = params[:locale] || session[:locale]
@@ -73,7 +73,7 @@
     canonical_url = "#{base_url}/?locale=#{canonical_locale}&currency=#{canonical_currency}"
   %>
   <link rel="canonical" href="<%= canonical_url %>">
-  
+
   <!-- Hreflang for international SEO -->
   <link rel="alternate" hreflang="en" href="https://bookrhub.com/?locale=en&currency=USD">
   <link rel="alternate" hreflang="es" href="https://bookrhub.com/?locale=es&currency=ARS">
@@ -195,7 +195,7 @@
     "mainEntity" => faq_main_entity
   }) %>
   </script>
-  
+
   <!-- BreadcrumbList for breadcrumb rich results -->
   <script type="application/ld+json">
   <%= JSON.generate({
@@ -217,7 +217,7 @@
     ]
   }) %>
   </script>
-  
+
   <!-- GEO: Review Schema for Testimonials -->
   <script type="application/ld+json">
   <%= JSON.generate({
@@ -937,7 +937,7 @@
         </div>
       </div>
 
-      <div class="pricing-cards">
+      <div class="pricing-cards pricing-cards-center">
         <div class="pricing-card animate-on-scroll">
           <div class="plan-name"><%= I18n.t('pricing.independent') %></div>
           <div class="plan-price"><%= I18n.t('pricing.free') %></div>
@@ -951,27 +951,12 @@
         </div>
         <div class="pricing-card featured animate-on-scroll stagger-1">
           <span class="featured-badge"><%= I18n.t('pricing.most_popular') %></span>
-          <div class="plan-name"><%= I18n.t('pricing.team') %></div>
-          <div class="plan-price pricing-price-toggle" data-monthly="<%= @prices['team'][:monthly][:formatted] %>" data-annual="<%= @prices['team'][:annual_per_month][:formatted] %>"><%= @prices['team'][:annual_per_month][:formatted] %></div>
-          <p class="plan-period" data-monthly="<%= I18n.t('pricing.per_month') %>" data-annual="<%= I18n.t('pricing.per_month_billed_annual') %>"><%= I18n.t('pricing.per_month_billed_annual') %></p>
-          <ul class="plan-features">
-            <% I18n.t('plan_features.team').each do |feature| %>
-              <% is_highlight = feature.include?('Premium Landing Page') || feature.include?('landing premium') || feature.include?('Página web landing') || feature.include?('no commission') || feature.include?('sin comisión') %>
-              <li class="<%= 'plan-feature-highlight' if is_highlight %>">
-                <% if is_highlight %><span class="plan-feature-icon" aria-hidden="true">✨</span><% end %>
-                <%= feature %>
-              </li>
-            <% end %>
-          </ul>
-          <a href="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>&interval=annual" class="cta-button pricing-signup-link" data-signup-base="https://my.bookrhub.com/signup?plan=team&locale=<%= session[:locale] %>&currency=<%= session[:currency] %>"><%= I18n.t('cta.get_started') %></a>
-        </div>
-        <div class="pricing-card pricing-card-business animate-on-scroll stagger-2">
           <div class="plan-name"><%= I18n.t('pricing.business') %></div>
           <div class="plan-price pricing-price-toggle" data-monthly="<%= @prices['business'][:monthly][:formatted] %>" data-annual="<%= @prices['business'][:annual_per_month][:formatted] %>"><%= @prices['business'][:annual_per_month][:formatted] %></div>
           <p class="plan-period" data-monthly="<%= I18n.t('pricing.per_month') %>" data-annual="<%= I18n.t('pricing.per_month_billed_annual') %>"><%= I18n.t('pricing.per_month_billed_annual') %></p>
           <ul class="plan-features">
             <% I18n.t('plan_features.business').each do |feature| %>
-              <% is_highlight = feature.include?('Inquiries') || feature.include?('inquiry') || feature.include?('Consultas') || feature.include?('Custom Domain') || feature.include?('dominio propio') || feature.include?('yourbusiness.com') || feature.include?('tunegocio.com') %>
+              <% is_highlight = feature.include?('Premium Landing Page') || feature.include?('landing premium') || feature.include?('Página web landing') || feature.include?('no commission') || feature.include?('sin comisión') || feature.include?('Online payments') || feature.include?('Custom Domain') || feature.include?('dominio propio') || feature.include?('yourbusiness.com') || feature.include?('tunegocio.com') %>
               <li class="<%= 'plan-feature-highlight' if is_highlight %>">
                 <% if is_highlight %><span class="plan-feature-icon" aria-hidden="true">✨</span><% end %>
                 <%= feature %>
@@ -1156,7 +1141,7 @@
     <div class="footer-bottom">
       <p>&copy; <%= Time.now.year %> BookrHub. All rights reserved.</p>
       <span class="last-updated" style="font-size: 0.8rem; opacity: 0.7;">Last updated: March 2026</span>
-      <span><%= I18n.t('footer.powered_by') %> <a href="https://plumdigital.co.nz" target="_blank" class="copyright-link">Plum Digital</a></span>
+      <span><%= I18n.t('footer.powered_by') %> <a href="https://www.bookrhub.com" target="_blank" class="copyright-link">BookrHub</a></span>
     </div>
   </footer>
 

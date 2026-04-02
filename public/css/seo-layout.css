@@ -1,0 +1,282 @@
+/* SEO Layout & Page Styles */
+
+/* ==================== HERO SECTION ==================== */
+.hero-seo {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 180px 20px 80px !important;
+  text-align: center;
+}
+.hero-seo h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-seo .lead {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+/* ==================== CONTENT SECTION ==================== */
+.content-section {
+  padding: 60px 0;
+  background: white;
+}
+.seo-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.seo-content .intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 30px;
+}
+.seo-content h2 {
+  font-size: 1.75rem;
+  margin: 40px 0 20px;
+  color: #1a1a2e;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+.seo-content p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 15px;
+}
+.seo-content .feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+.seo-content .feature-list li {
+  padding: 12px 20px;
+  background: #f8f9fa;
+  margin: 8px 0;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+.seo-content .steps-list {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+.seo-content .steps-list li {
+  counter-increment: step;
+  padding: 20px 20px 20px 70px;
+  position: relative;
+  margin: 15px 0;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+.seo-content .steps-list li::before {
+  content: counter(step);
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* ==================== COMPARISON TABLES ==================== */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 30px 0;
+}
+.comparison-pros ul, .comparison-cons ul {
+  list-style: none;
+  padding: 0;
+}
+.comparison-pros li {
+  padding: 10px;
+  background: #f0fdf4;
+  border-left: 4px solid #22c55e;
+  margin: 8px 0;
+}
+.comparison-cons li {
+  padding: 10px;
+  background: #fef2f2;
+  border-left: 4px solid #dc2626;
+  margin: 8px 0;
+}
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+}
+.comparison-table th, .comparison-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+.comparison-table th {
+  background: #f8f9fa;
+}
+.cta-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 40px;
+}
+.cta-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.cta-box p {
+  margin-bottom: 20px;
+  opacity: 0.95;
+  color: white;
+
+}
+
+/* ==================== USE CASES PAGES ==================== */
+.article-content h2 {
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+.use-cases-content h2 {
+  font-size: 1.75rem;
+  margin: 40px 0 20px;
+  color: #1a1a2e;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+.use-cases-grid {
+  margin: 20px 0;
+}
+.use-cases-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+.use-cases-list li {
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.use-cases-list li:hover {
+  background: #667eea;
+  transform: translateY(-2px);
+}
+.use-cases-list li a {
+  display: block;
+  padding: 15px 20px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+.use-cases-list li:hover a {
+  color: white;
+}
+.use-cases-cities {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 20px 0;
+}
+.use-cases-country h3 {
+  color: #667eea;
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+}
+.use-cases-country ul {
+  list-style: none;
+  padding: 0;
+}
+.use-cases-country li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+.use-cases-country li a {
+  color: #4b5563;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.use-cases-country li a:hover {
+  color: #667eea;
+}
+
+/* ==================== FAQ SECTION ==================== */
+.faq-section {
+  background: #f8f9fa;
+  padding: 60px 0;
+}
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #1a1a2e;
+}
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.faq-question {
+  padding: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #1a1a2e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-question::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: #667eea;
+  transition: transform 0.3s;
+}
+.faq-item[open] .faq-question::after {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  padding: 0 20px 20px;
+  color: #555;
+  line-height: 1.7;
+  display: block !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .hero-seo {
+    padding: 150px 20px 50px !important;
+  }
+  .hero-seo h1 {
+    font-size: 1.8rem;
+  }
+  .seo-content {
+    padding: 0 15px;
+  }
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-links {
+    display: none;
+  }
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="<%= @locale %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= @title || 'BookrHub - Free Online Booking Software' %></title>
+  <meta name="description" content="<%= @description || 'Free booking software for salons, barbershops, spas, and small businesses.' %>">
+  <link rel="canonical" href="<%= @canonical_url || 'https://www.bookrhub.com' %>">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/images/icon.png" type="image/png">
+  <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= @canonical_url || 'https://www.bookrhub.com' %>">
+  <meta property="og:title" content="<%= @title || 'BookrHub' %>">
+  <meta property="og:description" content="<%= @description || 'Free booking software' %>">
+  <meta property="og:image" content="https://www.bookrhub.com/images/og-image.png">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://www.bookrhub.com/css/styles.css?v=2.5.1">
+  <link rel="stylesheet" href="http://localhost:4567/css/seo-layout.css">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L48GXS7KT4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L48GXS7KT4');
+  </script>
+</head>
+<body>
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <div class="nav-container">
+      <a href="https://www.bookrhub.com/?locale=<%= @locale %>" class="logo">
+        <img src="https://www.bookrhub.com/images/isologo.svg" alt="BookrHub" class="isologo-image" width="140">
+      </a>
+      <div class="nav-links">
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#features">Features</a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#why-us">Why Us</a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#screenshots">How It Works</a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#live-templates">Templates</a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#pricing">Pricing</a>
+        <a href="https://my.bookrhub.com/session/new?locale=<%= @locale %>" class="text-sm font-medium hover:text-primary">Sign In</a>
+        <a href="https://my.bookrhub.com/signup?locale=<%= @locale %>" class="cta-button">Get Started</a>
+      </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-links">
+      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#features">Features</a>
+      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#why-us">Why Us</a>
+      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#screenshots">How It Works</a>
+      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#live-templates">Templates</a>
+      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#pricing">Pricing</a>
+      <a href="https://my.bookrhub.com/session/new?locale=<%= @locale %>" class="text-sm font-medium">Sign In</a>
+      <a href="https://my.bookrhub.com/signup?locale=<%= @locale %>" class="cta-button">Get Started</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <%= @content %>
+  </main>
+
+  <!-- Floating CTA -->
+  <div class="floating-cta" id="floating-cta" aria-hidden="true">
+    <a href="https://my.bookrhub.com/signup?locale=<%= @locale %>" class="floating-cta-btn">
+      Get Started
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+    </a>
+  </div>
+
+  <!-- Back to top -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+  </button>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>" class="logo">
+          <img src="https://www.bookrhub.com/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120">
+        </a>
+        <p>Free booking software for salons, barbershops, spas, and small businesses. Get your own website with online reservations, email reminders, and zero commission.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Product</h3>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#features">Features</a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#why-us">Why Us</a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#live-templates">Templates</a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#pricing">Pricing</a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#screenshots">How It Works</a>
+        <a href="https://www.bookrhub.com/use-cases">Use Cases</a>
+        <a href="https://my.bookrhub.com/session/new?locale=<%= @locale %>">Sign In</a>
+        <a href="https://my.bookrhub.com/signup?locale=<%= @locale %>">Get Started</a>
+      </div>
+      <div class="footer-section">
+        <h3>Company</h3>
+        <a href="https://www.bookrhub.com/about">About Us</a>
+        <a href="https://blog.bookrhub.com">Blog</a>
+        <a href="https://www.bookrhub.com/contact">Contact Us</a>
+      </div>
+      <div class="footer-section">
+        <h3>Support</h3>
+        <a href="https://support.bookrhub.com">Help Center</a>
+        <a href="mailto:admin@bookrhub.com">admin@bookrhub.com</a>
+      </div>
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <a href="https://www.bookrhub.com/privacy">Privacy Policy</a>
+        <a href="https://www.bookrhub.com/terms">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BookrHub | Last updated: March 2026. All rights reserved.</p>
+      <span>Powered by <a href="https://www.bookrhub.com" target="_blank" class="copyright-link">BookrHub</a></span>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+      });
+    }
+    
+    // Back to top button
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+    
+    // Scroll progress
+    const scrollProgress = document.getElementById('scroll-progress');
+    if (scrollProgress) {
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        scrollProgress.style.width = progress + '%';
+      });
+    }
+    
+    // Nav scroll effect
+    const mainNav = document.getElementById('main-nav');
+    if (mainNav) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          mainNav.classList.add('nav-scrolled');
+        } else {
+          mainNav.classList.remove('nav-scrolled');
+        }
+      });
+    }
+    
+    // Floating CTA visibility
+    const floatingCta = document.getElementById('floating-cta');
+    if (floatingCta) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+          floatingCta.classList.add('visible');
+        } else {
+          floatingCta.classList.remove('visible');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
