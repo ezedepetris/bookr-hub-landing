@@ -23,17 +23,17 @@ module SEOTemplates
         <title>#{title}</title>
         <meta name="description" content="#{description}">
         <link rel="canonical" href="https://www.bookrhub.com#{canonical_url}">
-        
+
         <!-- Open Graph -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://www.bookrhub.com#{canonical_url}">
         <meta property="og:title" content="#{title}">
         <meta property="og:description" content="#{description}">
         <meta property="og:image" content="https://www.bookrhub.com/images/og-image.png">
-        
+
         <!-- Styles -->
         <link rel="stylesheet" href="/css/styles.css?v=2.5.1">
-        
+
         <!-- Structured Data -->
         #{schema || ""}
       </head>
@@ -679,7 +679,7 @@ module SEOTemplates
       <div class="seo-content article-content">
         <p class="intro">#{data[:intro]}</p>
         #{sections_html}
-        
+
         <div class="cta-box">
           <h3>#{(locale == "es") ? "¿Listo para Empezar?" : "Ready to Get Started?"}</h3>
           <p>#{(locale == "es") ? "BookrHub hace fácil implementar todo lo que aprendiste. Registrate gratis y empezá a aceptar reservas online hoy." : "BookrHub makes it easy to implement everything you've learned. Sign up free and start accepting online bookings today."}</p>
