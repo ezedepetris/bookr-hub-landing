@@ -141,7 +141,7 @@
 .cta-box p {
   margin-bottom: 20px;
   opacity: 0.95;
-  color: white;
+  color: white !important;
 
 }
 
@@ -279,4 +279,260 @@
   .nav-links {
     display: none;
   }
+}
+
+/* ==================== LINKABLE ASSET ARTICLE STYLES ==================== */
+.seo-article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  padding-top: 100px !important;
+}
+
+.seo-article .intro {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.seo-article h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #1a1a2e;
+}
+
+.seo-article h2 {
+  font-size: 1.8rem;
+  margin: 2.5rem 0 1rem;
+  color: #1a1a2e;
+}
+
+.seo-article h3 {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.seo-article p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.seo-article ul, .seo-article ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.seo-article li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+/* Key Takeaways Box */
+.seo-article .key-takeaways {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.seo-article .key-takeaways h3 {
+  margin-top: 0;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.seo-article .key-takeaways ul {
+  padding-left: 1.5rem;
+}
+
+.seo-article .key-takeaways li {
+  margin-bottom: 0.5rem;
+}
+
+.seo-article .key-takeaways strong {
+  color: #e94560;
+}
+
+/* Table of Contents */
+.seo-article .toc {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.seo-article .toc h3 {
+  margin-top: 0;
+}
+
+.seo-article .toc ul {
+  padding-left: 1.5rem;
+}
+
+.seo-article .toc li {
+  margin-bottom: 0.25rem;
+}
+
+.seo-article .toc a {
+  color: #e94560;
+  text-decoration: none;
+}
+
+/* Stat Callout Boxes */
+.seo-article .stat-callout {
+  background: #fff5f5;
+  border-left: 4px solid #e94560;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.seo-article .stat-callout.blue {
+  background: #f0f7ff;
+  border-left-color: #0066cc;
+}
+
+.seo-article .stat-callout.green {
+  background: #f0fff5;
+  border-left-color: #00aa55;
+}
+
+.seo-article .stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e94560;
+  display: block;
+  line-height: 1;
+}
+
+.seo-article .stat-callout.blue .stat-number {
+  color: #0066cc;
+}
+
+.seo-article .stat-callout.green .stat-number {
+  color: #00aa55;
+}
+
+.seo-article .stat-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.seo-article .stat-source {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Data Tables */
+.seo-article .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.seo-article .data-table th,
+.seo-article .data-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.seo-article .data-table th {
+  background: #1a1a2e;
+  color: white;
+  font-weight: 600;
+}
+
+.seo-article .data-table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.seo-article .data-table .source {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.seo-article .comparison-table th {
+  background: #f8f9fa;
+  color: #333;
+  border-bottom: 2px solid #1a1a2e;
+}
+
+.seo-article .comparison-table .check {
+  color: #00aa55;
+}
+
+.seo-article .comparison-table .cross {
+  color: #e94560;
+}
+
+/* FAQ Section */
+.seo-article .faq-section {
+  background: #f8f9fa;
+  padding: 60px 0;
+  margin-top: 3rem;
+}
+
+.seo-article .faq-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.seo-article .faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.seo-article .faq-item {
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 0;
+}
+
+.seo-article .faq-question {
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.seo-article .faq-answer {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* References Section */
+.seo-article .references {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.seo-article .references h3 {
+  margin-top: 0;
+}
+
+.seo-article .references ul {
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.seo-article .references li {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.seo-article .references a {
+  color: #e94560;
 }
