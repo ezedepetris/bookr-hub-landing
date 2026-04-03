@@ -6,22 +6,22 @@
   <title><%= @title || 'BookrHub - Free Online Booking Software' %></title>
   <meta name="description" content="<%= @description || 'Free booking software for salons, barbershops, spas, and small businesses.' %>">
   <link rel="canonical" href="<%= @canonical_url || 'https://www.bookrhub.com' %>">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="/images/icon.png" type="image/png">
   <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
-  
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="<%= @canonical_url || 'https://www.bookrhub.com' %>">
   <meta property="og:title" content="<%= @title || 'BookrHub' %>">
   <meta property="og:description" content="<%= @description || 'Free booking software' %>">
   <meta property="og:image" content="https://www.bookrhub.com/images/og-image.png">
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="https://www.bookrhub.com/css/styles.css?v=2.5.1">
   <link rel="stylesheet" href="http://localhost:4567/css/seo-layout.css">
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L48GXS7KT4"></script>
   <script>
@@ -128,7 +128,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 BookrHub | Last updated: March 2026. All rights reserved.</p>
-      <span>Powered by <a href="https://www.bookrhub.com" target="_blank" class="copyright-link">BookrHub</a></span>
+      <span style="display: flex; align-items: center; gap: 6px;">Powered by <a href="https://www.bookrhub.com" target="_blank" class="copyright-link" style="display: flex; align-items: center; gap: 6px;">BookrHub <img src="https://www.bookrhub.com/images/icon.svg" alt="BookrHub" style="height: 20px;"></a></span>
     </div>
   </footer>
 
@@ -141,7 +141,7 @@
         mobileMenu.classList.toggle('active');
       });
     }
-    
+
     // Back to top button
     const backToTop = document.getElementById('back-to-top');
     if (backToTop) {
@@ -156,7 +156,7 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
-    
+
     // Scroll progress
     const scrollProgress = document.getElementById('scroll-progress');
     if (scrollProgress) {
@@ -167,7 +167,7 @@
         scrollProgress.style.width = progress + '%';
       });
     }
-    
+
     // Nav scroll effect
     const mainNav = document.getElementById('main-nav');
     if (mainNav) {
@@ -179,7 +179,7 @@
         }
       });
     }
-    
+
     // Floating CTA visibility
     const floatingCta = document.getElementById('floating-cta');
     if (floatingCta) {
