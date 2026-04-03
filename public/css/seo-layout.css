@@ -501,12 +501,28 @@
 }
 
 .seo-article .faq-question {
+  padding: 20px;
+  cursor: pointer;
   font-weight: 600;
   color: #1a1a2e;
-  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seo-article .faq-question::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: #667eea;
+  transition: transform 0.3s;
+}
+
+.seo-article details[open] .faq-question::after {
+  transform: rotate(45deg);
 }
 
 .seo-article .faq-answer {
+  padding: 0 20px 20px;
   color: #666;
   line-height: 1.7;
 }
