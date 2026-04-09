@@ -678,6 +678,104 @@ get '/es/sistema-de-reservas-para-spas-en-argentina' do
   end
 end
 
+# Chile pages (Spanish)
+get '/es/sistema-de-reservas-en-chile' do
+  session[:locale] = :es
+  page_path = File.join(settings.public_folder, 'seo', 'es', 'sistema-de-reservas-en-chile.html')
+  if File.exist?(page_path)
+    @content = File.read(page_path)
+    @locale = :es
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/es/sistema-de-reservas-para-barberias-en-chile' do
+  session[:locale] = :es
+  page_path = File.join(settings.public_folder, 'seo', 'es', 'sistema-de-reservas-para-barberias-en-chile.html')
+  if File.exist?(page_path)
+    @content = File.read(page_path)
+    @locale = :es
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/es/sistema-de-reservas-para-salones-en-chile' do
+  session[:locale] = :es
+  page_path = File.join(settings.public_folder, 'seo', 'es', 'sistema-de-reservas-para-salones-en-chile.html')
+  if File.exist?(page_path)
+    @content = File.read(page_path)
+    @locale = :es
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/es/sistema-de-reservas-para-spas-en-chile' do
+  session[:locale] = :es
+  page_path = File.join(settings.public_folder, 'seo', 'es', 'sistema-de-reservas-para-spas-en-chile.html')
+  if File.exist?(page_path)
+    @content = File.read(page_path)
+    @locale = :es
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+# New Zealand pages (English)
+get '/en/booking-system-in-new-zealand' do
+  session[:locale] = :en
+  page_path = File.join(settings.public_folder, 'seo', 'en', 'booking-system-in-new-zealand.html')
+  if File.exist?(page_path)
+    @content = File.read(page_path)
+    @locale = :en
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/en/barbershop-booking-system-new-zealand' do
+  session[:locale] = :en
+  page_path = File.join(settings.public_folder, 'seo', 'en', 'barbershop-booking-system-new-zealand.html')
+  if File.exist?(page_path)
+    @content = File.read(page_path)
+    @locale = :en
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/en/beauty-salon-booking-system-new-zealand' do
+  session[:locale] = :en
+  page_path = File.join(settings.public_folder, 'seo', 'en', 'beauty-salon-booking-system-new-zealand.html')
+  if File.exist?(page_path)
+    @content = File.read(page_path)
+    @locale = :en
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/en/spa-booking-system-new-zealand' do
+  session[:locale] = :en
+  page_path = File.join(settings.public_folder, 'seo', 'en', 'spa-booking-system-new-zealand.html')
+  if File.exist?(page_path)
+    @content = File.read(page_path)
+    @locale = :en
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
 get '/nz' do
   page_path = File.join(settings.public_folder, 'seo', 'en', 'nz.html')
   if File.exist?(page_path)
