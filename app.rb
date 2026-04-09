@@ -175,6 +175,7 @@ end
 get '/es/:page' do
   page_path = File.join(settings.public_folder, 'seo', 'es', "#{params[:page]}.html")
   if File.exist?(page_path)
+    session[:locale] = :es
     @content = File.read(page_path)
     @locale = :es
     erb :seo_wrapper
@@ -262,6 +263,7 @@ get '/sistema-de-turnos-para-:niche' do
   ]
 
   if niche_slugs.include?(params[:niche])
+    session[:locale] = :es
     page_path = File.join(settings.public_folder, 'seo', 'es', "sistema-de-turnos-para-#{params[:niche]}.html")
     if File.exist?(page_path)
       @content = File.read(page_path)
@@ -292,6 +294,7 @@ get '/como-:howto_page' do
   ]
 
   if es_howto_slugs.include?(params[:howto_page])
+    session[:locale] = :es
     page_path = File.join(settings.public_folder, 'seo', 'es', "como-#{params[:howto_page]}.html")
     if File.exist?(page_path)
       @content = File.read(page_path)
@@ -309,6 +312,7 @@ get '/alternativa-a-:competitor' do
   # Spanish alternative pages (alternativa-a- prefix)
   competitors = %w[fresha agendapro calendly setmore]
   if competitors.include?(params[:competitor])
+    session[:locale] = :es
     page_path = File.join(settings.public_folder, 'seo', 'es', "alternativa-a-#{params[:competitor]}.html")
     if File.exist?(page_path)
       @content = File.read(page_path)
@@ -336,6 +340,7 @@ get '/booking-system-for-:niche-in-:city' do
 end
 
 get '/sistema-de-turnos-para-:niche-en-:city' do
+  session[:locale] = :es
   page_path = File.join(settings.public_folder, 'seo', 'es',
                         "sistema-de-turnos-para-#{params[:niche]}-en-#{params[:city]}.html")
   if File.exist?(page_path)
@@ -493,6 +498,7 @@ end
 
 # General ES pages
 get '/por-que-bookrhub' do
+  session[:locale] = :es
   page_path = File.join(settings.public_folder, 'seo', 'es', 'por-que-bookrhub.html')
   if File.exist?(page_path)
     @content = File.read(page_path)
@@ -504,6 +510,7 @@ get '/por-que-bookrhub' do
 end
 
 get '/soluciones-sistema-de-turnos' do
+  session[:locale] = :es
   page_path = File.join(settings.public_folder, 'seo', 'es', 'soluciones-sistema-de-turnos.html')
   if File.exist?(page_path)
     @content = File.read(page_path)
@@ -515,6 +522,7 @@ get '/soluciones-sistema-de-turnos' do
 end
 
 get '/mejor-sistema-de-reservas' do
+  session[:locale] = :es
   page_path = File.join(settings.public_folder, 'seo', 'es', 'mejor-sistema-de-reservas.html')
   if File.exist?(page_path)
     @content = File.read(page_path)
@@ -526,6 +534,7 @@ get '/mejor-sistema-de-reservas' do
 end
 
 get '/mejor-sistema-de-turnos-gratis' do
+  session[:locale] = :es
   page_path = File.join(settings.public_folder, 'seo', 'es', 'mejor-sistema-de-turnos-gratis.html')
   if File.exist?(page_path)
     @content = File.read(page_path)
@@ -537,6 +546,7 @@ get '/mejor-sistema-de-turnos-gratis' do
 end
 
 get '/sistema-de-reservas-online-gratis' do
+  session[:locale] = :es
   page_path = File.join(settings.public_folder, 'seo', 'es', 'sistema-de-reservas-online-gratis.html')
   if File.exist?(page_path)
     @content = File.read(page_path)
@@ -548,6 +558,7 @@ get '/sistema-de-reservas-online-gratis' do
 end
 
 get '/software-de-turnos-para-pequenos-negocios' do
+  session[:locale] = :es
   page_path = File.join(settings.public_folder, 'seo', 'es', 'software-de-turnos-para-pequenos-negocios.html')
   if File.exist?(page_path)
     @content = File.read(page_path)
@@ -559,6 +570,7 @@ get '/software-de-turnos-para-pequenos-negocios' do
 end
 
 get '/app-para-barberia' do
+  session[:locale] = :es
   page_path = File.join(settings.public_folder, 'seo', 'es', 'app-para-barberia.html')
   if File.exist?(page_path)
     @content = File.read(page_path)
@@ -570,6 +582,7 @@ get '/app-para-barberia' do
 end
 
 get '/solucion-para-inasistencias' do
+  session[:locale] = :es
   page_path = File.join(settings.public_folder, 'seo', 'es', 'solucion-para-inasistencias.html')
   if File.exist?(page_path)
     @content = File.read(page_path)
@@ -581,6 +594,7 @@ get '/solucion-para-inasistencias' do
 end
 
 get '/crear-pagina-de-reservas-web' do
+  session[:locale] = :es
   page_path = File.join(settings.public_folder, 'seo', 'es', 'crear-pagina-de-reservas-web.html')
   if File.exist?(page_path)
     @content = File.read(page_path)
@@ -592,6 +606,7 @@ get '/crear-pagina-de-reservas-web' do
 end
 
 get '/software-para-peluquerias-gratis' do
+  session[:locale] = :es
   page_path = File.join(settings.public_folder, 'seo', 'es', 'software-para-peluquerias-gratis.html')
   if File.exist?(page_path)
     @content = File.read(page_path)
@@ -603,6 +618,7 @@ get '/software-para-peluquerias-gratis' do
 end
 
 get '/sistema-reservas-whatsapp' do
+  session[:locale] = :es
   page_path = File.join(settings.public_folder, 'seo', 'es', 'sistema-reservas-whatsapp.html')
   if File.exist?(page_path)
     @content = File.read(page_path)
@@ -614,7 +630,45 @@ get '/sistema-reservas-whatsapp' do
 end
 
 get '/es/argentina' do
+  session[:locale] = :es
   page_path = File.join(settings.public_folder, 'seo', 'es', 'argentina.html')
+  if File.exist?(page_path)
+    @content = File.read(page_path)
+    @locale = :es
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/es/sistema-de-reservas-para-barberia-en-argentina' do
+  session[:locale] = :es
+  page_path = File.join(settings.public_folder, 'seo', 'es', 'sistema-de-reservas-para-barberia-en-argentina.html')
+  if File.exist?(page_path)
+    @content = File.read(page_path)
+    @locale = :es
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/es/sistema-de-reservas-para-salon-de-belleza-en-argentina' do
+  session[:locale] = :es
+  page_path = File.join(settings.public_folder, 'seo', 'es',
+                        'sistema-de-reservas-para-salon-de-belleza-en-argentina.html')
+  if File.exist?(page_path)
+    @content = File.read(page_path)
+    @locale = :es
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/es/sistema-de-reservas-para-spas-en-argentina' do
+  session[:locale] = :es
+  page_path = File.join(settings.public_folder, 'seo', 'es', 'sistema-de-reservas-para-spas-en-argentina.html')
   if File.exist?(page_path)
     @content = File.read(page_path)
     @locale = :es

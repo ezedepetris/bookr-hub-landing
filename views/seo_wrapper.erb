@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="<%= @locale %>">
+<html lang="<%= @locale.to_s.gsub('_', '-') %>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= @title || 'BookrHub - Free Online Booking Software' %></title>
-  <meta name="description" content="<%= @description || 'Free booking software for salons, barbershops, spas, and small businesses.' %>">
+  <title><%= @title || I18n.t('site.title', locale: @locale) %></title>
+  <meta name="description" content="<%= @description || I18n.t('site.description', locale: @locale) %>">
   <link rel="canonical" href="<%= @canonical_url || 'https://www.bookrhub.com' %>">
 
   <!-- Favicon -->
@@ -14,9 +14,10 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="<%= @canonical_url || 'https://www.bookrhub.com' %>">
-  <meta property="og:title" content="<%= @title || 'BookrHub' %>">
-  <meta property="og:description" content="<%= @description || 'Free booking software' %>">
+  <meta property="og:title" content="<%= @title || I18n.t('site.title', locale: @locale) %>">
+  <meta property="og:description" content="<%= @description || I18n.t('site.description', locale: @locale) %>">
   <meta property="og:image" content="https://www.bookrhub.com/images/og-image.png">
+  <meta property="og:locale" content="<%= @locale.to_s.gsub('_', '-') %>">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/styles.css?v=2.5.1">
@@ -42,13 +43,13 @@
         <img src="https://www.bookrhub.com/images/isologo.svg" alt="BookrHub" class="isologo-image" width="140">
       </a>
       <div class="nav-links">
-        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#features">Features</a>
-        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#why-us">Why Us</a>
-        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#screenshots">How It Works</a>
-        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#live-templates">Templates</a>
-        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#pricing">Pricing</a>
-        <a href="https://my.bookrhub.com/session/new?locale=<%= @locale %>" class="text-sm font-medium hover:text-primary">Sign In</a>
-        <a href="https://my.bookrhub.com/signup?locale=<%= @locale %>" class="cta-button">Get Started</a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#features"><%= I18n.t('navigation.features', locale: @locale) %></a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#why-us"><%= I18n.t('navigation.why_us', locale: @locale) %></a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#screenshots"><%= I18n.t('navigation.how_it_works', locale: @locale) %></a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#live-templates"><%= I18n.t('navigation.live_templates', locale: @locale) %></a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#pricing"><%= I18n.t('navigation.pricing', locale: @locale) %></a>
+        <a href="https://my.bookrhub.com/session/new?locale=<%= @locale %>" class="text-sm font-medium hover:text-primary"><%= I18n.t('navigation.sign_in', locale: @locale) %></a>
+        <a href="https://my.bookrhub.com/signup?locale=<%= @locale %>" class="cta-button"><%= I18n.t('navigation.get_started', locale: @locale) %></a>
       </div>
       <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-menu-toggle">
         <span></span>
@@ -61,13 +62,13 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu-links">
-      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#features">Features</a>
-      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#why-us">Why Us</a>
-      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#screenshots">How It Works</a>
-      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#live-templates">Templates</a>
-      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#pricing">Pricing</a>
-      <a href="https://my.bookrhub.com/session/new?locale=<%= @locale %>" class="text-sm font-medium">Sign In</a>
-      <a href="https://my.bookrhub.com/signup?locale=<%= @locale %>" class="cta-button">Get Started</a>
+      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#features"><%= I18n.t('navigation.features', locale: @locale) %></a>
+      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#why-us"><%= I18n.t('navigation.why_us', locale: @locale) %></a>
+      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#screenshots"><%= I18n.t('navigation.how_it_works', locale: @locale) %></a>
+      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#live-templates"><%= I18n.t('navigation.live_templates', locale: @locale) %></a>
+      <a href="https://www.bookrhub.com/?locale=<%= @locale %>#pricing"><%= I18n.t('navigation.pricing', locale: @locale) %></a>
+      <a href="https://my.bookrhub.com/session/new?locale=<%= @locale %>" class="text-sm font-medium"><%= I18n.t('navigation.sign_in', locale: @locale) %></a>
+      <a href="https://my.bookrhub.com/signup?locale=<%= @locale %>" class="cta-button"><%= I18n.t('navigation.get_started', locale: @locale) %></a>
     </div>
   </div>
 
@@ -79,7 +80,7 @@
   <!-- Floating CTA -->
   <div class="floating-cta" id="floating-cta" aria-hidden="true">
     <a href="https://my.bookrhub.com/signup?locale=<%= @locale %>" class="floating-cta-btn">
-      Get Started
+      <%= I18n.t('navigation.get_started', locale: @locale) %>
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
     </a>
   </div>
@@ -96,39 +97,37 @@
         <a href="https://www.bookrhub.com/?locale=<%= @locale %>" class="logo">
           <img src="https://www.bookrhub.com/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120">
         </a>
-        <p>Free booking software for salons, barbershops, spas, and small businesses. Get your own website with online reservations, email reminders, and zero commission.</p>
+        <p><%= I18n.t('footer.description', locale: @locale) %></p>
       </div>
       <div class="footer-section">
-        <h3>Product</h3>
-        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#features">Features</a>
-        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#why-us">Why Us</a>
-        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#live-templates">Templates</a>
-        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#pricing">Pricing</a>
-        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#screenshots">How It Works</a>
-        <a href="https://www.bookrhub.com/use-cases">Use Cases</a>
-        <a href="https://my.bookrhub.com/session/new?locale=<%= @locale %>">Sign In</a>
-        <a href="https://my.bookrhub.com/signup?locale=<%= @locale %>">Get Started</a>
+        <h3><%= I18n.t('footer.product', locale: @locale) %></h3>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#features"><%= I18n.t('navigation.features', locale: @locale) %></a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#why-us"><%= I18n.t('navigation.why_us', locale: @locale) %></a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#live-templates"><%= I18n.t('navigation.live_templates', locale: @locale) %></a>
+        <a href="https://www.bookrhub.com/?locale=<%= @locale %>#pricing"><%= I18n.t('navigation.pricing', locale: @locale) %></a>
+        <a href="https://my.bookrhub.com/session/new?locale=<%= @locale %>"><%= I18n.t('navigation.sign_in', locale: @locale) %></a>
+        <a href="https://my.bookrhub.com/signup?locale=<%= @locale %>"><%= I18n.t('navigation.get_started', locale: @locale) %></a>
       </div>
       <div class="footer-section">
-        <h3>Company</h3>
-        <a href="https://www.bookrhub.com/about">About Us</a>
-        <a href="https://blog.bookrhub.com">Blog</a>
-        <a href="https://www.bookrhub.com/contact">Contact Us</a>
+        <h3><%= I18n.t('footer.company', locale: @locale) %></h3>
+        <a href="https://www.bookrhub.com/about"><%= I18n.t('footer.about_us', locale: @locale) %></a>
+        <a href="https://blog.bookrhub.com"><%= I18n.t('footer.blog', locale: @locale) %></a>
+        <a href="https://www.bookrhub.com/contact"><%= I18n.t('footer.contact_us', locale: @locale) %></a>
       </div>
       <div class="footer-section">
-        <h3>Support</h3>
-        <a href="https://support.bookrhub.com">Help Center</a>
+        <h3><%= I18n.t('footer.support', locale: @locale) %></h3>
+        <a href="https://support.bookrhub.com"><%= I18n.t('footer.help_center', locale: @locale) %></a>
         <a href="mailto:admin@bookrhub.com">admin@bookrhub.com</a>
       </div>
       <div class="footer-section">
-        <h3>Legal</h3>
-        <a href="https://www.bookrhub.com/privacy">Privacy Policy</a>
-        <a href="https://www.bookrhub.com/terms">Terms of Service</a>
+        <h3><%= I18n.t('footer.legal', locale: @locale) %></h3>
+        <a href="https://www.bookrhub.com/privacy"><%= I18n.t('footer.privacy_policy', locale: @locale) %></a>
+        <a href="https://www.bookrhub.com/terms"><%= I18n.t('footer.terms_of_service', locale: @locale) %></a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 BookrHub | Last updated: March 2026. All rights reserved.</p>
-      <span style="display: flex; align-items: center; gap: 6px;">Powered by <a href="https://www.bookrhub.com" target="_blank" class="copyright-link" style="display: flex; align-items: center; gap: 6px;">BookrHub <img src="https://www.bookrhub.com/images/icon.svg" alt="BookrHub" style="height: 20px;"></a></span>
+      <p>&copy; 2026 BookrHub | <%= I18n.t('footer.all_rights', locale: @locale) || 'All rights reserved.' %></p>
+      <span style="display: flex; align-items: center; gap: 6px;"><%= I18n.t('footer.powered_by', locale: @locale) %> <a href="https://www.bookrhub.com" target="_blank" class="copyright-link" style="display: flex; align-items: center; gap: 6px;">BookrHub <img src="https://www.bookrhub.com/images/icon.svg" alt="BookrHub" style="height: 20px;"></a></span>
     </div>
   </footer>
 
