@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salon Profit Margin Calculator | Calculate Your Salon Profitability | BookrHub</title>
+  <meta name="description" content="Calculate your salon profit margin in seconds. See your true profitability including overhead, staffing costs, and more.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="BookrHub">
+  <meta name="publish-date" content="2026-01-01">
+  
+  <link rel="canonical" href="https://www.bookrhub.com/salon-profit-calculator">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Salon Profit Margin Calculator">
+  <meta property="og:description" content="Calculate your salon profit margin. See where your money goes and how to improve profitability.">
+  
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/seo-layout.css">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <style>
+    .calculator-container {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .calculator-title {
+      font-size: 2rem;
+      color: #1a1a2e;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+    .input-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .input-note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.25rem;
+    }
+    .calculate-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .calculate-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+    }
+    .results-section {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 2px solid #e5e7eb;
+      display: none;
+    }
+    .results-section.active {
+      display: block;
+    }
+    .result-metric {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .result-metric:last-child {
+      border-bottom: none;
+    }
+    .result-label {
+      color: #666;
+    }
+    .result-value {
+      font-weight: 600;
+    }
+    .result-value.negative {
+      color: #dc2626;
+    }
+    .result-value.positive {
+      color: #059669;
+    }
+    .summary-box {
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border: 2px solid #6ee7b7;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    .summary-box h3 {
+      margin: 0 0 0.5rem;
+      color: #065f46;
+    }
+    .summary-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #059669;
+    }
+    .breakdown-chart {
+      margin-top: 1.5rem;
+    }
+    .bar-container {
+      margin-bottom: 0.75rem;
+    }
+    .bar-label {
+      font-size: 0.85rem;
+      margin-bottom: 0.25rem;
+    }
+    .bar-track {
+      height: 24px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+    .bar-fill.revenue { background: #059669; }
+    .bar-fill.rent { background: #6366f1; }
+    .bar-fill.staff { background: #f59e0b; }
+    .bar-fill.products { background: #ec4899; }
+    .bar-fill.other { background: #8b5cf6; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="seo-article">
+      <h1>Salon Profit Margin Calculator</h1>
+      
+      <p class="intro">Most salon owners don't know their true profit margin. Enter your numbers below to see exactly how profitable your salon is, where your money goes, and how you compare to industry benchmarks.</p>
+
+      <div class="calculator-container">
+        <h2 class="calculator-title">Calculate Your Salon Profitability</h2>
+
+        <div class="input-group">
+          <label for="monthlyRevenue">Monthly Revenue ($)</label>
+          <input type="number" id="monthlyRevenue" value="15000" min="0">
+          <p class="input-note">Total revenue from services and products last month</p>
+        </div>
+
+        <div class="input-group">
+          <label for="rent">Monthly Rent ($)</label>
+          <input type="number" id="rent" value="2500" min="0">
+          <p class="input-note">Total rent including outgoings</p>
+        </div>
+
+        <div class="input-group">
+          <label for="staffCosts">Monthly Staff Costs ($)</label>
+          <input type="number" id="staffCosts" value="5000" min="0">
+          <p class="input-note">Wages, superannuation, and payroll tax</p>
+        </div>
+
+        <div class="input-group">
+          <label for="products">Product & Supply Costs ($)</label>
+          <input type="number" id="products" value="1200" min="0">
+          <p class="input-note">Shampoo, colour, chemicals, disposables</p>
+        </div>
+
+        <div class="input-group">
+          <label for="utilities">Utilities ($)</label>
+          <input type="number" id="utilities" value="600" min="0">
+          <p class="input-note">Electricity, water, internet, phone</p>
+        </div>
+
+        <div class="input-group">
+          <label for="marketing">Marketing ($)</label>
+          <input type="number" id="marketing" value="300" min="0">
+          <p class="input-note">Advertising, social media, promotions</p>
+        </div>
+
+        <div class="input-group">
+          <label for="insurance">Insurance ($)</label>
+          <input type="number" id="insurance" value="200" min="0">
+          <p class="input-note">Public liability, property, etc.</p>
+        </div>
+
+        <div class="input-group">
+          <label for="otherCosts">Other Costs ($)</label>
+          <input type="number" id="otherCosts" value="400" min="0">
+          <p class="input-note">Software subscriptions, accounting, licensing</p>
+        </div>
+
+        <button class="calculate-btn" onclick="calculateProfit()">Calculate My Profit</button>
+
+        <div class="results-section" id="results">
+          <div class="summary-box">
+            <h3>Your Monthly Profit</h3>
+            <div class="summary-value" id="profitAmount">$0</div>
+            <p id="profitMargin">0% profit margin</p>
+          </div>
+
+          <h3 style="margin-top: 2rem;">Cost Breakdown</h3>
+          <div class="breakdown-chart" id="breakdownChart"></div>
+
+          <h3 style="margin-top: 2rem;">Detailed Results</h3>
+          <div class="result-metric">
+            <span class="result-label">Monthly Revenue</span>
+            <span class="result-value" id="resultRevenue">$0</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Total Costs</span>
+            <span class="result-value" id="resultCosts">$0</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Net Profit</span>
+            <span class="result-value" id="resultProfit">$0</span>
+          </div>
+
+          <div class="result-metric">
+            <span class="result-label">Rent</span>
+            <span class="result-value" id="resultRent">0%</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Staff</span>
+            <span class="result-value" id="resultStaff">0%</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Products</span>
+            <span class="result-value" id="resultProducts">0%</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Other</span>
+            <span class="result-value" id="resultOther">0%</span>
+          </div>
+
+          <div class="cta-box" style="margin-top: 2rem; text-align: center;">
+            <h3>Want to Increase Your Profit?</h3>
+            <p>BookrHub helps reduce no-shows, streamline bookings, and save time. Start free today.</p>
+            <a href="https://my.bookrhub.com/signup" class="cta-button">Try BookrHub Free</a>
+          </div>
+        </div>
+      </div>
+
+      <h2>Understanding Salon Profit Margins</h2>
+      <p>Profit margins in the salon industry vary widely based on business model, location, and services offered.</p>
+
+      <h3>Industry Benchmarks</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Industry Standard</th>
+            <th>Healthy Range</th>
+            <th>Warning Sign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gross Profit Margin</td>
+            <td>60-70%</td>
+            <td>55-75%</td>
+            <td>Below 50%</td>
+          </tr>
+          <tr>
+            <td>Net Profit Margin</td>
+            <td>8-15%</td>
+            <td>5-20%</td>
+            <td>Below 5%</td>
+          </tr>
+          <tr>
+            <td>Rent % of Revenue</td>
+            <td>10-15%</td>
+            <td>8-18%</td>
+            <td>Above 20%</td>
+          </tr>
+          <tr>
+            <td>Staff % of Revenue</td>
+            <td>35-45%</td>
+            <td>30-50%</td>
+            <td>Above 50%</td>
+          </tr>
+          <tr>
+            <td>Product % of Revenue</td>
+            <td>8-12%</td>
+            <td>5-15%</td>
+            <td>Above 15%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>How to Improve Your Profit Margin</h3>
+      <ul>
+        <li><strong>Reduce no-shows:</strong> Every no-show is lost revenue. Deposits can reduce no-shows by 60-80%.</li>
+        <li><strong>Increase average ticket:</strong> Upsell products, offer premium services</li>
+        <li><strong>Optimize staff utilization:</strong> Better scheduling = more productive hours</li>
+        <li><strong>Review product costs:</strong> Negotiate with suppliers, reduce waste</li>
+        <li><strong>Reduce appointment gaps:</strong> Tighter scheduling means more daily clients</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary class="faq-question">What is a good profit margin for a salon?</summary>
+        <div class="faq-answer">A healthy net profit margin for a salon is typically 8-15% of revenue. Top-performing salons can achieve 15-20% or higher through efficient operations, strong client retention, and premium positioning. Salons struggling with high rent, overstaffing, or low utilization may see margins below 5%.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What percentage should rent be for a salon?</summary>
+        <div class="faq-answer">Rent should ideally be 10-15% of your monthly revenue. If rent exceeds 20% of revenue, your location may be unsustainable. This is why location choice is critical—premium locations often have premium rents that can squeeze profit margins.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How much should staffing cost as a percentage of salon revenue?</summary>
+        <div class="faq-answer">Staff costs (wages, superannuation, payroll tax) should be 35-45% of revenue for a sustainable salon. Commission structures typically run 40-60% of service revenue to the stylist, plus employer on-costs. If staff costs exceed 50% of revenue, you may need to review pricing or efficiency.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How can I reduce no-shows to improve profitability?</summary>
+        <div class="faq-answer">The most effective way is implementing a deposit system. When customers pay a deposit at booking, they're 60-80% less likely to no-show. Automated reminders 24 hours and 2 hours before appointments provide an additional 20-30% reduction. Booking software like BookrHub makes this easy to implement.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What other costs should salon owners track?</summary>
+        <div class="faq-answer">Beyond the obvious costs, don't forget: software subscriptions, credit card processing fees (2-3%), marketing, accounting/bookkeeping, licensing and permits, repairs and maintenance, uniforms, music licensing, and continuing education for staff. These "hidden" costs can add 5-10% to your overhead.</div>
+      </details>
+
+      <div class="cta-box">
+        <h3>Ready to Improve Your Bottom Line?</h3>
+        <p>BookrHub helps you reduce no-shows, fill appointment gaps, and save time on admin. Start your free trial.</p>
+        <a href="https://my.bookrhub.com/signup" class="cta-button">Start Free Trial</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function calculateProfit() {
+      const revenue = parseFloat(document.getElementById('monthlyRevenue').value) || 0;
+      const rent = parseFloat(document.getElementById('rent').value) || 0;
+      const staff = parseFloat(document.getElementById('staffCosts').value) || 0;
+      const products = parseFloat(document.getElementById('products').value) || 0;
+      const utilities = parseFloat(document.getElementById('utilities').value) || 0;
+      const marketing = parseFloat(document.getElementById('marketing').value) || 0;
+      const insurance = parseFloat(document.getElementById('insurance').value) || 0;
+      const other = parseFloat(document.getElementById('otherCosts').value) || 0;
+
+      const totalCosts = rent + staff + products + utilities + marketing + insurance + other;
+      const profit = revenue - totalCosts;
+      const margin = revenue > 0 ? (profit / revenue) * 100 : 0;
+
+      document.getElementById('profitAmount').textContent = '$' + profit.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
+      document.getElementById('profitMargin').textContent = margin.toFixed(1) + '% profit margin';
+
+      document.getElementById('resultRevenue').textContent = '$' + revenue.toLocaleString();
+      document.getElementById('resultCosts').textContent = '$' + totalCosts.toLocaleString();
+      
+      const profitEl = document.getElementById('resultProfit');
+      profitEl.textContent = '$' + profit.toLocaleString();
+      profitEl.className = 'result-value ' + (profit >= 0 ? 'positive' : 'negative');
+
+      const rentPct = revenue > 0 ? (rent / revenue) * 100 : 0;
+      const staffPct = revenue > 0 ? (staff / revenue) * 100 : 0;
+      const prodPct = revenue > 0 ? (products / revenue) * 100 : 0;
+      const otherPct = revenue > 0 ? ((utilities + marketing + insurance + other) / revenue) * 100 : 0;
+
+      document.getElementById('resultRent').textContent = rentPct.toFixed(1) + '%';
+      document.getElementById('resultStaff').textContent = staffPct.toFixed(1) + '%';
+      document.getElementById('resultProducts').textContent = prodPct.toFixed(1) + '%';
+      document.getElementById('resultOther').textContent = otherPct.toFixed(1) + '%';
+
+      const breakdown = document.getElementById('breakdownChart');
+      const maxPct = Math.max(rentPct, staffPct, prodPct, otherPct, 1);
+      
+      breakdown.innerHTML = `
+        <div class="bar-container">
+          <div class="bar-label">Revenue: $${revenue.toLocaleString()} (100%)</div>
+          <div class="bar-track"><div class="bar-fill revenue" style="width: 100%"></div></div>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label">Staff Costs: ${staffPct.toFixed(1)}%</div>
+          <div class="bar-track"><div class="bar-fill staff" style="width: ${(staffPct / maxPct) * 100}%"></div></div>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label">Rent: ${rentPct.toFixed(1)}%</div>
+          <div class="bar-track"><div class="bar-fill rent" style="width: ${(rentPct / maxPct) * 100}%"></div></div>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label">Products: ${prodPct.toFixed(1)}%</div>
+          <div class="bar-track"><div class="bar-fill products" style="width: ${(prodPct / maxPct) * 100}%"></div></div>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label">Other Costs: ${otherPct.toFixed(1)}%</div>
+          <div class="bar-track"><div class="bar-fill other" style="width: ${(otherPct / maxPct) * 100}%"></div></div>
+        </div>
+      `;
+
+      document.getElementById('results').classList.add('active');
+    }
+
+    calculateProfit();
+  </script>
+</body>
+</html>
