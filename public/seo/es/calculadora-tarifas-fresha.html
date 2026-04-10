@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Tarifas de Fresha | Ve Cuánto Te Cuesta Fresha | BookrHub</title>
+  <meta name="description" content="Calcula exactamente cuánto cobra Fresha por reserva. Ve tus costos anuales y compara con el modelo de 0% comisión de BookrHub.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="BookrHub">
+  <meta name="publish-date" content="2026-01-01">
+  
+  <link rel="canonical" href="https://www.bookrhub.com/es/calculadora-tarifas-fresha">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculadora de Tarifas de Fresha - Ve Tus Costos Reales">
+  <meta property="og:description" content="Calcula exactamente cuánto te cobra Fresha por reserva. Los resultados podrían sorprenderte.">
+  <meta property="og:locale" content="es_ES">
+  
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/seo-layout.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/calculator.css">
+
+  <style>
+    .calculator-container {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .calculator-title {
+      font-size: 2rem;
+      color: #1a1a2e;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .calculator-subtitle {
+      color: #666;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+    .input-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    .input-group input, .input-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+    .input-group input:focus, .input-group select:focus {
+      outline: none;
+      border-color: #4f46e5;
+    }
+    .input-note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.25rem;
+    }
+    .calculate-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .calculate-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+    }
+    .results-section {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 2px solid #e5e7eb;
+      display: none;
+    }
+    .results-section.active {
+      display: block;
+    }
+    .result-card {
+      background: linear-gradient(135deg, #fef2f2, #fee2e2);
+      border: 2px solid #fca5a5;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .result-card.highlight {
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border-color: #6ee7b7;
+    }
+    .result-label {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 0.25rem;
+    }
+    .result-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+    .result-value.savings {
+      color: #059669;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .comparison-table th {
+      background: #f9fafb;
+      font-weight: 600;
+    }
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+      font-weight: 700;
+      background: #f0fdf4;
+    }
+    .disclaimer {
+      font-size: 0.8rem;
+      color: #888;
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="seo-article">
+      <h1>Calculadora de Tarifas de Fresha: Ve Tus Costos Reales</h1>
+      
+      <p class="intro">Fresha se promociona como "gratis para empezar", pero su comisión del 5-8% por reserva puede costarte miles al año. Usa esta calculadora para ver exactamente cuánto te cobra Fresha y cuánto podrías ahorrar con el modelo de 0% comisión de BookrHub.</p>
+
+      <div class="calculator-container">
+        <h2 class="calculator-title">Calcula Tus Costos en Fresha</h2>
+        <p class="calculator-subtitle">Ingresa tus datos de reservas mensuales para ver tus costos reales</p>
+
+        <div class="input-group">
+          <label for="monthlyBookings">Reservas Mensuales</label>
+          <input type="number" id="monthlyBookings" value="100" min="1" placeholder="ej., 100">
+          <p class="input-note">Número total de citas por mes</p>
+        </div>
+
+        <div class="input-group">
+          <label for="avgServicePrice">Precio Promedio del Servicio ($)</label>
+          <input type="number" id="avgServicePrice" value="60" min="1" placeholder="ej., 60">
+          <p class="input-note">Precio promedio por cita (pesos, dólares, etc.)</p>
+        </div>
+
+        <div class="input-group">
+          <label for="freshaFee">Tasa de Comisión de Fresha</label>
+          <select id="freshaFee">
+            <option value="5">5% (Tasa anunciada por Fresha)</option>
+            <option value="6">6% (Estimación ligeramente mayor)</option>
+            <option value="7">7% (Tasa efectiva común)</option>
+            <option value="8">8% (Con tarifas adicionales)</option>
+          </select>
+          <p class="input-note">Fresha cobra 5-8% por reserva dependiendo de tu plan</p>
+        </div>
+
+        <button class="calculate-btn" onclick="calculateCosts()">Calcular Mis Costos</button>
+
+        <div class="results-section" id="results">
+          <div class="result-card">
+            <div class="result-label">Ingresos Anuales por Reservas</div>
+            <div class="result-value" id="annualRevenue">$0</div>
+          </div>
+
+          <div class="result-card">
+            <div class="result-label">Comisión Anual a Fresha</div>
+            <div class="result-value" id="freshaCost">$0</div>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Pagado a Fresha cada año</p>
+          </div>
+
+          <div class="result-card highlight">
+            <div class="result-label">Ahorro Anual con BookrHub</div>
+            <div class="result-value result-value.savings" id="savings">$0</div>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">0% comisión = Guarda todo</p>
+          </div>
+
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Año</th>
+                <th>Fresha (5%+ comisión)</th>
+                <th>BookrHub (0% comisión)</th>
+                <th>Tus Ahorros</th>
+              </tr>
+            </thead>
+            <tbody id="yearlyComparison">
+            </tbody>
+          </table>
+
+          <div class="cta-box" style="margin-top: 2rem; text-align: center;">
+            <h3>Empieza a Ahorrar Hoy</h3>
+            <p>Únete a miles de negocios que han cambiado a BookrHub. Mismas características, cero comisión.</p>
+            <a href="https://my.bookrhub.com/signup" class="cta-button">Prueba BookrHub Gratis</a>
+          </div>
+        </div>
+
+        <p class="disclaimer">Calculadora basada en tasas de comisión típicas de Fresha. Las tarifas reales pueden variar. BookrHub cobra una suscripción mensual fija con 0% de comisión. <a href="https://www.bookrhub.com/es/precio">Ver precios</a>.</p>
+      </div>
+
+      <h2>Por Qué el Claim de "Gratis" de Fresha Es Engañoso</h2>
+      <p>Fresha se comercializa como "la plataforma de reservas #1 gratis para belleza y bienestar." Pero esto es lo que no te dicen:</p>
+
+      <ul>
+        <li><strong>Comisión del 5-8% por reserva</strong> — Esto suma miles al año para salones ocupados</li>
+        <li><strong>Tarifas de procesamiento de pago</strong> — 2-3% adicional encima de la comisión</li>
+        <li><strong>Características premium requieren planes pagados</strong> — Muchas funciones están bloqueadas en niveles superiores</li>
+        <li><strong>Sin propiedad de datos de clientes</strong> — Tus relaciones con clientes están en la plataforma de Fresha</li>
+      </ul>
+
+      <h2>Ejemplos Reales de Negocios Como el Tuyo</h2>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Tipo de Negocio</th>
+            <th>Reservas Mensuales</th>
+            <th>Servicio Promedio</th>
+            <th>Costo Fresha/Año</th>
+            <th>Costo BookrHub/Año</th>
+            <th>Ahorro Anual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Barbería Pequeña</td>
+            <td>150</td>
+            <td>$40</td>
+            <td>$3,600</td>
+            <td>$720</td>
+            <td>$2,880</td>
+          </tr>
+          <tr>
+            <td>Salón de Belleza</td>
+            <td>250</td>
+            <td>$80</td>
+            <td>$12,000</td>
+            <td>$1,440</td>
+            <td>$10,560</td>
+          </tr>
+          <tr>
+            <td>Salón de Estética</td>
+            <td>200</td>
+            <td>$100</td>
+            <td>$12,000</td>
+            <td>$1,440</td>
+            <td>$10,560</td>
+          </tr>
+          <tr>
+            <td>Spa</td>
+            <td>100</td>
+            <td>$150</td>
+            <td>$9,000</td>
+            <td>$1,440</td>
+            <td>$7,560</td>
+          </tr>
+          <tr>
+            <td>Salón Premium</td>
+            <td>300</td>
+            <td>$200</td>
+            <td>$36,000</td>
+            <td>$1,440</td>
+            <td>$34,560</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><em>Costos de BookrHub basados en plan Pro. Los ahorros reales dependen de tu selección de plan.</em></p>
+
+      <h2>Preguntas Frecuentes</h2>
+
+      <details class="faq-item">
+        <summary class="faq-question">¿BookrHub realmente cobra 0% de comisión?</summary>
+        <div class="faq-answer">Sí. BookrHub cobra una suscripción mensual fija sin absolutamente ninguna comisión en reservas. Ya sea que tomes 10 citas o 1000 en un mes, pagas el mismo precio. Tus ingresos son tuyos para conservar.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">¿Cuál es el truco de la plataforma "gratis" de Fresha?</summary>
+        <div class="faq-answer">El truco es su modelo de comisión. Aunque la plataforma en sí es gratis para unirse, Fresha toma 5-8% de cada reserva que procesas a través de ellos. Para un salón que hace $10,000/mes en reservas, eso es $600-$800 por mes, o $7,200-$9,600 por año que van a Fresha.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">¿Hay otras tarifas con Fresha?</summary>
+        <div class="faq-answer">Sí. Además de su comisión por reservas, Fresha también cobra tarifas de procesamiento de pago (típicamente 2-3% adicional) para transacciones con tarjeta de crédito. Estas tarifas pueden llevar el costo total al 7-11% de tus ingresos por reservas. BookrHub incluye procesamiento de pago en muchos planes con tarifas muy bajas.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">¿Puedo cambiar de Fresha a BookrHub fácilmente?</summary>
+        <div class="faq-answer">Sí. BookrHub proporciona soporte de migración para ayudarte a mover tus servicios, personal y datos de clientes desde Fresha. La mayoría de los negocios están completamente configurados en pocas horas. También ofrecemos una prueba gratuita para que puedas probar todo antes de comprometerte.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">¿BookrHub tiene las mismas características que Fresha?</summary>
+        <div class="faq-answer">BookrHub ofrece todas las características que esperarías: reservas online, gestión de calendario, programación de personal, recordatorios automatizados, depósitos y pagos, gestión de clientes, y más. Muchos negocios encuentran la interfaz de BookrHub más intuitiva y el soporte al cliente más receptivo.</div>
+      </details>
+
+      <div class="cta-box">
+        <h3>Ve Cuánto Puedes Ahorrar</h3>
+        <p>Usa la calculadora de arriba para calcular tus ahorros exactos, o comienza una prueba gratuita hoy.</p>
+        <a href="https://my.bookrhub.com/signup" class="cta-button">Comenzar Prueba Gratuita</a>
+        <p style="font-size: 0.9rem; margin-top: 1rem;">Sin tarjeta de crédito requerida · 0% comisión garantizado</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function calculateCosts() {
+      const bookings = parseInt(document.getElementById('monthlyBookings').value) || 0;
+      const avgPrice = parseFloat(document.getElementById('avgServicePrice').value) || 0;
+      const freshaRate = parseFloat(document.getElementById('freshaFee').value) / 100;
+
+      const monthlyRevenue = bookings * avgPrice;
+      const annualRevenue = monthlyRevenue * 12;
+      const monthlyFresha = monthlyRevenue * freshaRate;
+      const annualFresha = monthlyFresha * 12;
+
+      document.getElementById('annualRevenue').textContent = '$' + annualRevenue.toLocaleString();
+      document.getElementById('freshaCost').textContent = '$' + annualFresha.toLocaleString();
+      document.getElementById('savings').textContent = '$' + annualFresha.toLocaleString();
+
+      const yearlyComparison = document.getElementById('yearlyComparison');
+      yearlyComparison.innerHTML = '';
+      
+      for (let year = 1; year <= 5; year++) {
+        const freshaTotal = annualFresha * year;
+        const bookrhubCost = 1440 * year;
+        const savings = freshaTotal - bookrhubCost;
+        
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>Año ${year}</td>
+          <td>$${freshaTotal.toLocaleString()}</td>
+          <td>$${bookrhubCost.toLocaleString()}</td>
+          <td style="color: #059669;">$${savings.toLocaleString()}</td>
+        `;
+        yearlyComparison.appendChild(row);
+      }
+
+      document.getElementById('results').classList.add('active');
+    }
+  </script>
+</body>
+</html>

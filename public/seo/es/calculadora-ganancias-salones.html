@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Ganancias de Salones | Calcula tu Rentabilidad | BookrHub</title>
+  <meta name="description" content="Calcula tu margen de ganancia de salón en segundos. Ve tu verdadera rentabilidad incluyendo gastos generales, costos de personal y más.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="BookrHub">
+  <meta name="publish-date" content="2026-01-01">
+  
+  <link rel="canonical" href="https://www.bookrhub.com/es/calculadora-ganancias-salones">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculadora de Ganancias de Salones">
+  <meta property="og:description" content="Calcula tu margen de ganancia de salón. Ve a dónde va tu dinero y cómo mejorar la rentabilidad.">
+  <meta property="og:locale" content="es_ES">
+  
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/seo-layout.css">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <style>
+    .calculator-container {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .calculator-title {
+      font-size: 2rem;
+      color: #1a1a2e;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+    .input-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .input-note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.25rem;
+    }
+    .calculate-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .calculate-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+    }
+    .results-section {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 2px solid #e5e7eb;
+      display: none;
+    }
+    .results-section.active {
+      display: block;
+    }
+    .result-metric {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .result-metric:last-child {
+      border-bottom: none;
+    }
+    .result-label {
+      color: #666;
+    }
+    .result-value {
+      font-weight: 600;
+    }
+    .result-value.negative {
+      color: #dc2626;
+    }
+    .result-value.positive {
+      color: #059669;
+    }
+    .summary-box {
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border: 2px solid #6ee7b7;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    .summary-box h3 {
+      margin: 0 0 0.5rem;
+      color: #065f46;
+    }
+    .summary-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #059669;
+    }
+    .breakdown-chart {
+      margin-top: 1.5rem;
+    }
+    .bar-container {
+      margin-bottom: 0.75rem;
+    }
+    .bar-label {
+      font-size: 0.85rem;
+      margin-bottom: 0.25rem;
+    }
+    .bar-track {
+      height: 24px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+    .bar-fill.revenue { background: #059669; }
+    .bar-fill.rent { background: #6366f1; }
+    .bar-fill.staff { background: #f59e0b; }
+    .bar-fill.products { background: #ec4899; }
+    .bar-fill.other { background: #8b5cf6; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="seo-article">
+      <h1>Calculadora de Ganancias de Salones</h1>
+      
+      <p class="intro">La mayoría de los propietarios de salones no conocen su verdadero margen de ganancia. Ingresa tus números a continuación para ver exactamente qué tan rentable es tu salón, a dónde va tu dinero y cómo te comparas con los estándares de la industria.</p>
+
+      <div class="calculator-container">
+        <h2 class="calculator-title">Calcula tu Rentabilidad</h2>
+
+        <div class="input-group">
+          <label for="monthlyRevenue">Ingresos Mensuales ($)</label>
+          <input type="number" id="monthlyRevenue" value="15000" min="0">
+          <p class="input-note">Ingresos totales de servicios y productos el mes pasado</p>
+        </div>
+
+        <div class="input-group">
+          <label for="rent">Renta Mensual ($)</label>
+          <input type="number" id="rent" value="2500" min="0">
+          <p class="input-note">Renta total incluyendo gastos</p>
+        </div>
+
+        <div class="input-group">
+          <label for="staffCosts">Costos de Personal Mensuales ($)</label>
+          <input type="number" id="staffCosts" value="5000" min="0">
+          <p class="input-note">Sueldos, IMSS, INFONAVIT</p>
+        </div>
+
+        <div class="input-group">
+          <label for="products">Costos de Productos y Suministros ($)</label>
+          <input type="number" id="products" value="1200" min="0">
+          <p class="input-note">Shampoo, tinte, químicos, desechables</p>
+        </div>
+
+        <div class="input-group">
+          <label for="utilities">Servicios ($)</label>
+          <input type="number" id="utilities" value="600" min="0">
+          <p class="input-note">Electricidad, agua, internet, teléfono</p>
+        </div>
+
+        <div class="input-group">
+          <label for="marketing">Marketing ($)</label>
+          <input type="number" id="marketing" value="300" min="0">
+          <p class="input-note">Publicidad, redes sociales, promociones</p>
+        </div>
+
+        <div class="input-group">
+          <label for="insurance">Seguros ($)</label>
+          <input type="number" id="insurance" value="200" min="0">
+          <p class="input-note">Responsabilidad civil, local, etc.</p>
+        </div>
+
+        <div class="input-group">
+          <label for="otherCosts">Otros Costos ($)</label>
+          <input type="number" id="otherCosts" value="400" min="0">
+          <p class="input-note">Software, contabilidad, licencias</p>
+        </div>
+
+        <button class="calculate-btn" onclick="calculateProfit()">Calcular mi Ganancia</button>
+
+        <div class="results-section" id="results">
+          <div class="summary-box">
+            <h3>Tu Ganancia Mensual</h3>
+            <div class="summary-value" id="profitAmount">$0</div>
+            <p id="profitMargin">0% margen de ganancia</p>
+          </div>
+
+          <h3 style="margin-top: 2rem;">Desglose de Costos</h3>
+          <div class="breakdown-chart" id="breakdownChart"></div>
+
+          <h3 style="margin-top: 2rem;">Resultados Detallados</h3>
+          <div class="result-metric">
+            <span class="result-label">Ingresos Mensuales</span>
+            <span class="result-value" id="resultRevenue">$0</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Costos Totales</span>
+            <span class="result-value" id="resultCosts">$0</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Ganancia Neta</span>
+            <span class="result-value" id="resultProfit">$0</span>
+          </div>
+
+          <div class="result-metric">
+            <span class="result-label">Renta</span>
+            <span class="result-value" id="resultRent">0%</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Personal</span>
+            <span class="result-value" id="resultStaff">0%</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Productos</span>
+            <span class="result-value" id="resultProducts">0%</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Otros</span>
+            <span class="result-value" id="resultOther">0%</span>
+          </div>
+
+          <div class="cta-box" style="margin-top: 2rem; text-align: center;">
+            <h3>¿Quieres Aumentar tus Ganancias?</h3>
+            <p>BookrHub ayuda a reducir inasistencias, optimizar reservas y ahorrar tiempo. Comienza gratis hoy.</p>
+            <a href="https://my.bookrhub.com/signup" class="cta-button">Prueba BookrHub Gratis</a>
+          </div>
+        </div>
+      </div>
+
+      <h2>Entendiendo los Márgenes de Ganancia en Salones</h2>
+      <p>Los márgenes de ganancia en la industria de salones varían ampliamente basándose en el modelo de negocio, ubicación y servicios ofrecidos.</p>
+
+      <h3>Benchmarks de la Industria</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Métrica</th>
+            <th>Estándar de la Industria</th>
+            <th>Rango Saludable</th>
+            <th>Señal de Alerta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Margen de Ganancia Bruta</td>
+            <td>60-70%</td>
+            <td>55-75%</td>
+            <td>Por debajo de 50%</td>
+          </tr>
+          <tr>
+            <td>Margen de Ganancia Neta</td>
+            <td>8-15%</td>
+            <td>5-20%</td>
+            <td>Por debajo de 5%</td>
+          </tr>
+          <tr>
+            <td>Renta % de Ingresos</td>
+            <td>10-15%</td>
+            <td>8-18%</td>
+            <td>Por encima de 20%</td>
+          </tr>
+          <tr>
+            <td>Personal % de Ingresos</td>
+            <td>35-45%</td>
+            <td>30-50%</td>
+            <td>Por encima de 50%</td>
+          </tr>
+          <tr>
+            <td>Productos % de Ingresos</td>
+            <td>8-12%</td>
+            <td>5-15%</td>
+            <td>Por encima de 15%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Cómo Mejorar tu Margen de Ganancia</h3>
+      <ul>
+        <li><strong>Reduce inasistencias:</strong> Cada inasistencia es ingresos perdidos. Los depósitos pueden reducir las inasistencias en 60-80%.</li>
+        <li><strong>Aumenta el ticket promedio:</strong> Vende productos adicionales, ofrece servicios premium</li>
+        <li><strong>Optimiza la utilización del personal:</strong> Mejor programación = más horas productivas</li>
+        <li><strong>Revisa costos de productos:</strong> Negocia con proveedores, reduce desperdicio</li>
+        <li><strong>Reduce huecos entre citas:</strong> Programación más ajustada significa más clientes diarios</li>
+      </ul>
+
+      <h2>Preguntas Frecuentes</h2>
+
+      <details class="faq-item">
+        <summary class="faq-question">¿Cuál es un buen margen de ganancia para un salón?</summary>
+        <div class="faq-answer">Un margen de ganancia neta saludable para un salón es típicamente del 8-15% de los ingresos. Los salones de mejor desempeño pueden lograr 15-20% o más a través de operaciones eficientes, fuerte retención de clientes y posicionamiento premium. Los salones que luchan con renta alta, sobrecontratación o baja utilización pueden ver márgenes por debajo del 5%.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">¿Qué porcentaje debería ser la renta para un salón?</summary>
+        <div class="faq-answer">La renta debería idealmente ser el 10-15% de tus ingresos mensuales. Si la renta excede el 20% de los ingresos, tu ubicación puede ser insostenible. Por eso la elección de ubicación es crítica—las ubicaciones premium a menudo tienen rentas premium que pueden apretar los márgenes de ganancia.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">¿Cuánto deberían costar los gastos de personal como porcentaje de los ingresos del salón?</summary>
+        <div class="faq-answer">Los costos de personal (sueldos, IMSS, INFONAVIT) deberían ser el 35-45% de los ingresos para un salón sostenible. Las estructuras de comisión típicamente corren 40-60% del ingreso por servicios al estilista, más las cargas del empleador. Si los costos de personal exceden el 50% de los ingresos, quizás necesites revisar precios o eficiencia.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">¿Cómo puedo reducir inasistencias para mejorar la rentabilidad?</summary>
+        <div class="faq-answer">La forma más efectiva es implementar un sistema de depósitos. Cuando los clientes pagan un depósito al reservar, tienen 60-80% menos probabilidades de no presentarse. Los recordatorios automatizados 24 horas y 2 horas antes de las citas proporcionan una reducción adicional del 20-30%. El software de reservas como BookrHub hace esto fácil de implementar.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">¿Qué otros costos deberían rastrear los propietarios de salones?</summary>
+        <div class="faq-answer">Más allá de los costos obvios, no olvides: suscripciones de software, comisiones de tarjetas de crédito (2-3%), marketing, contabilidad, licencias y permisos, reparaciones y mantenimiento, uniformes, licencias de música y educación continua para el personal. Estos costos "ocultos" pueden agregar 5-10% a tus gastos generales.</div>
+      </details>
+
+      <div class="cta-box">
+        <h3>¿Listo para Mejorar tu Resultado Final?</h3>
+        <p>BookrHub te ayuda a reducir inasistencias, llenar huecos de citas y ahorrar tiempo en admin. Comienza tu prueba gratuita.</p>
+        <a href="https://my.bookrhub.com/signup" class="cta-button">Comenzar Prueba Gratuita</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function calculateProfit() {
+      const revenue = parseFloat(document.getElementById('monthlyRevenue').value) || 0;
+      const rent = parseFloat(document.getElementById('rent').value) || 0;
+      const staff = parseFloat(document.getElementById('staffCosts').value) || 0;
+      const products = parseFloat(document.getElementById('products').value) || 0;
+      const utilities = parseFloat(document.getElementById('utilities').value) || 0;
+      const marketing = parseFloat(document.getElementById('marketing').value) || 0;
+      const insurance = parseFloat(document.getElementById('insurance').value) || 0;
+      const other = parseFloat(document.getElementById('otherCosts').value) || 0;
+
+      const totalCosts = rent + staff + products + utilities + marketing + insurance + other;
+      const profit = revenue - totalCosts;
+      const margin = revenue > 0 ? (profit / revenue) * 100 : 0;
+
+      document.getElementById('profitAmount').textContent = '$' + profit.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
+      document.getElementById('profitMargin').textContent = margin.toFixed(1) + '% margen de ganancia';
+
+      document.getElementById('resultRevenue').textContent = '$' + revenue.toLocaleString();
+      document.getElementById('resultCosts').textContent = '$' + totalCosts.toLocaleString();
+      
+      const profitEl = document.getElementById('resultProfit');
+      profitEl.textContent = '$' + profit.toLocaleString();
+      profitEl.className = 'result-value ' + (profit >= 0 ? 'positive' : 'negative');
+
+      const rentPct = revenue > 0 ? (rent / revenue) * 100 : 0;
+      const staffPct = revenue > 0 ? (staff / revenue) * 100 : 0;
+      const prodPct = revenue > 0 ? (products / revenue) * 100 : 0;
+      const otherPct = revenue > 0 ? ((utilities + marketing + insurance + other) / revenue) * 100 : 0;
+
+      document.getElementById('resultRent').textContent = rentPct.toFixed(1) + '%';
+      document.getElementById('resultStaff').textContent = staffPct.toFixed(1) + '%';
+      document.getElementById('resultProducts').textContent = prodPct.toFixed(1) + '%';
+      document.getElementById('resultOther').textContent = otherPct.toFixed(1) + '%';
+
+      const breakdown = document.getElementById('breakdownChart');
+      const maxPct = Math.max(rentPct, staffPct, prodPct, otherPct, 1);
+      
+      breakdown.innerHTML = `
+        <div class="bar-container">
+          <div class="bar-label">Ingresos: $${revenue.toLocaleString()} (100%)</div>
+          <div class="bar-track"><div class="bar-fill revenue" style="width: 100%"></div></div>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label">Costos de Personal: ${staffPct.toFixed(1)}%</div>
+          <div class="bar-track"><div class="bar-fill staff" style="width: ${(staffPct / maxPct) * 100}%"></div></div>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label">Renta: ${rentPct.toFixed(1)}%</div>
+          <div class="bar-track"><div class="bar-fill rent" style="width: ${(rentPct / maxPct) * 100}%"></div></div>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label">Productos: ${prodPct.toFixed(1)}%</div>
+          <div class="bar-track"><div class="bar-fill products" style="width: ${(prodPct / maxPct) * 100}%"></div></div>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label">Otros Costos: ${otherPct.toFixed(1)}%</div>
+          <div class="bar-track"><div class="bar-fill other" style="width: ${(otherPct / maxPct) * 100}%"></div></div>
+        </div>
+      `;
+
+      document.getElementById('results').classList.add('active');
+    }
+
+    calculateProfit();
+  </script>
+</body>
+</html>
