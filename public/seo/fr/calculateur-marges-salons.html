@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculateur de Marge Bénéficiaire pour Salons | Calculez Votre Rentabilité | BookrHub France</title>
+  <meta name="description" content="Calculez votre marge bénéficiaire en quelques secondes. Voyez votre vraie rentabilité incluant les frais généraux, les coûts de personnel et plus encore.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="BookrHub">
+  <meta name="publish-date" content="2026-01-01">
+  <meta name="geo.region" content="FR">
+  <meta name="geo.placename" content="France">
+  
+  <link rel="canonical" href="https://www.bookrhub.com/fr/calculateur-marges-salons">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculateur de Marge Bénéficiaire pour Salons">
+  <meta property="og:description" content="Calculez votre marge bénéficiaire. Voyez où va votre argent et comment améliorer votre rentabilité.">
+  <meta property="og:locale" content="fr_FR">
+  
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/seo-layout.css">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <style>
+    .calculator-container {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .calculator-title {
+      font-size: 2rem;
+      color: #1a1a2e;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+    .input-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .input-note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.25rem;
+    }
+    .calculate-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .calculate-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+    }
+    .results-section {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 2px solid #e5e7eb;
+      display: none;
+    }
+    .results-section.active {
+      display: block;
+    }
+    .result-metric {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .result-metric:last-child {
+      border-bottom: none;
+    }
+    .result-label {
+      color: #666;
+    }
+    .result-value {
+      font-weight: 600;
+    }
+    .result-value.negative {
+      color: #dc2626;
+    }
+    .result-value.positive {
+      color: #059669;
+    }
+    .summary-box {
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border: 2px solid #6ee7b7;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    .summary-box h3 {
+      margin: 0 0 0.5rem;
+      color: #065f46;
+    }
+    .summary-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #059669;
+    }
+    .breakdown-chart {
+      margin-top: 1.5rem;
+    }
+    .bar-container {
+      margin-bottom: 0.75rem;
+    }
+    .bar-label {
+      font-size: 0.85rem;
+      margin-bottom: 0.25rem;
+    }
+    .bar-track {
+      height: 24px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+    .bar-fill.revenue { background: #059669; }
+    .bar-fill.rent { background: #6366f1; }
+    .bar-fill.staff { background: #f59e0b; }
+    .bar-fill.products { background: #ec4899; }
+    .bar-fill.other { background: #8b5cf6; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="seo-article">
+      <h1>Calculateur de Marge Bénéficiaire pour Salons</h1>
+      
+      <p class="intro">La plupart des propriétaires de salons ne connaissent pas leur vraie marge bénéficiaire. Entrez vos chiffres ci-dessous pour voir exactement à quel point votre salon est rentable, où va votre argent et comment vous vous comparez aux normes du secteur.</p>
+
+      <div class="calculator-container">
+        <h2 class="calculator-title">Calculez Votre Rentabilité</h2>
+
+        <div class="input-group">
+          <label for="monthlyRevenue">Chiffre d'Affaires Mensuel (€)</label>
+          <input type="number" id="monthlyRevenue" value="10000" min="0">
+          <p class="input-note">Revenus totaux des services et produits le mois dernier</p>
+        </div>
+
+        <div class="input-group">
+          <label for="rent">Loyer Mensuel (€)</label>
+          <input type="number" id="rent" value="1800" min="0">
+          <p class="input-note">Total du loyer charges comprises</p>
+        </div>
+
+        <div class="input-group">
+          <label for="staffCosts">Coûts de Personnel Mensuels (€)</label>
+          <input type="number" id="staffCosts" value="3500" min="0">
+          <p class="input-note">Salaires, charges sociales, et taxes</p>
+        </div>
+
+        <div class="input-group">
+          <label for="products">Coûts Produits et Fournitures (€)</label>
+          <input type="number" id="products" value="800" min="0">
+          <p class="input-note">Shampoing, coloration, chimiques, consommables</p>
+        </div>
+
+        <div class="input-group">
+          <label for="utilities">Charges (€)</label>
+          <input type="number" id="utilities" value="400" min="0">
+          <p class="input-note">Électricité, eau, internet, téléphone</p>
+        </div>
+
+        <div class="input-group">
+          <label for="marketing">Marketing (€)</label>
+          <input type="number" id="marketing" value="200" min="0">
+          <p class="input-note">Publicité, réseaux sociaux, promotions</p>
+        </div>
+
+        <div class="input-group">
+          <label for="insurance">Assurance (€)</label>
+          <input type="number" id="insurance" value="150" min="0">
+          <p class="input-note">Responsabilité civile, locaux, etc.</p>
+        </div>
+
+        <div class="input-group">
+          <label for="otherCosts">Autres Coûts (€)</label>
+          <input type="number" id="otherCosts" value="300" min="0">
+          <p class="input-note">Logiciels, comptabilité, licences</p>
+        </div>
+
+        <button class="calculate-btn" onclick="calculateProfit()">Calculer Mon Bénéfice</button>
+
+        <div class="results-section" id="results">
+          <div class="summary-box">
+            <h3>Votre Bénéfice Mensuel</h3>
+            <div class="summary-value" id="profitAmount">0 €</div>
+            <p id="profitMargin">0% de marge bénéficiaire</p>
+          </div>
+
+          <h3 style="margin-top: 2rem;">Répartition des Coûts</h3>
+          <div class="breakdown-chart" id="breakdownChart"></div>
+
+          <h3 style="margin-top: 2rem;">Résultats Détaillés</h3>
+          <div class="result-metric">
+            <span class="result-label">Chiffre d'Affaires Mensuel</span>
+            <span class="result-value" id="resultRevenue">0 €</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Coûts Totaux</span>
+            <span class="result-value" id="resultCosts">0 €</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Bénéfice Net</span>
+            <span class="result-value" id="resultProfit">0 €</span>
+          </div>
+
+          <div class="result-metric">
+            <span class="result-label">Loyer</span>
+            <span class="result-value" id="resultRent">0%</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Personnel</span>
+            <span class="result-value" id="resultStaff">0%</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Produits</span>
+            <span class="result-value" id="resultProducts">0%</span>
+          </div>
+          <div class="result-metric">
+            <span class="result-label">Autres</span>
+            <span class="result-value" id="resultOther">0%</span>
+          </div>
+
+          <div class="cta-box" style="margin-top: 2rem; text-align: center;">
+            <h3>Vous Voulez Augmenter Votre Bénéfice ?</h3>
+            <p>BookrHub aide à réduire les absences, optimiser les réservations et gagner du temps. Commencez gratuitement.</p>
+            <a href="https://my.bookrhub.com/signup" class="cta-button">Essai Gratuit BookrHub</a>
+          </div>
+        </div>
+      </div>
+
+      <h2>Comprendre les Marges Bénéficiaires dans la Branche</h2>
+      <p>Les marges bénéficiaires dans l'industrie de la beauté varient considérablement selon le modèle économique, l'emplacement et les services proposés.</p>
+
+      <h3>Références du Secteur</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Indicateur</th>
+            <th>Standard du Secteur</th>
+            <th>Fourchette Saine</th>
+            <th>Signal d'Alerte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Marge Brute</td>
+            <td>60-70%</td>
+            <td>55-75%</td>
+            <td>En dessous de 50%</td>
+          </tr>
+          <tr>
+            <td>Marge Nette</td>
+            <td>8-15%</td>
+            <td>5-20%</td>
+            <td>En dessous de 5%</td>
+          </tr>
+          <tr>
+            <td>Loyer % du CA</td>
+            <td>10-15%</td>
+            <td>8-18%</td>
+            <td>Au-dessus de 20%</td>
+          </tr>
+          <tr>
+            <td>Personnel % du CA</td>
+            <td>35-45%</td>
+            <td>30-50%</td>
+            <td>Au-dessus de 50%</td>
+          </tr>
+          <tr>
+            <td>Produits % du CA</td>
+            <td>8-12%</td>
+            <td>5-15%</td>
+            <td>Au-dessus de 15%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Comment Améliorer Votre Marge Bénéficiaire</h3>
+      <ul>
+        <li><strong>Réduire les absences :</strong> Chaque absence est une perte de revenus. Les acomptes peuvent réduire les absences de 60-80%.</li>
+        <li><strong>Augmenter le panier moyen :</strong> Vendre des produits, proposer des services premium</li>
+        <li><strong>Optimiser l'utilisation du personnel :</strong> Une meilleure planification = des heures plus productives</li>
+        <li><strong>Revoir les coûts produits :</strong> Négocier avec les fournisseurs, réduire le gaspillage</li>
+        <li><strong>Réduire les créneaux vides :</strong> Une planification plus serrée signifie plus de clients par jour</li>
+      </ul>
+
+      <h2>Questions Fréquentes</h2>
+
+      <details class="faq-item">
+        <summary class="faq-question">Qu'est-ce qu'une bonne marge bénéficiaire pour un salon ?</summary>
+        <div class="faq-answer">Une marge nette saine pour un salon se situe généralement entre 8 et 15% du chiffre d'affaires. Les salons les plus performants peuvent atteindre 15-20% ou plus grâce à des opérations efficaces, une forte fidélisation client et un positionnement premium. Les salons aux prises avec des loyers élevés, un sureffectif ou une faible utilisation peuvent voir leurs marges tomber en dessous de 5%.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Quel pourcentage devrait représenter le loyer pour un salon ?</summary>
+        <div class="faq-answer">Le loyer devrait idéalement représenter 10-15% de votre chiffre d'affaires mensuel. Si le loyer dépasse 20% des revenus, votre emplacement peut être non durable. C'est pourquoi le choix de l'emplacement est crucial — les emplacements premium ont souvent des loyers premium qui peuvent comprimer les marges bénéficiaires.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Combien devraient coûter les charges de personnel en pourcentage des revenus du salon ?</summary>
+        <div class="faq-answer">Les coûts de personnel (salaires, charges sociales, taxes) devraient représenter 35-45% des revenus pour un salon durable. Les structures de commission tournent généralement autour de 40-60% des revenus de services vers le/la coiffeur(se), plus les charges patronales. Si les coûts de personnel dépassent 50% des revenus, vous devrez peut-être repenser vos tarifs ou votre efficacité.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Comment réduire les absences pour améliorer la rentabilité ?</summary>
+        <div class="faq-answer">La méthode la plus efficace est de mettre en place un système d'acompte. Quand les clients paient un acompte à la réservation, ils ont 60-80% moins de chances de ne pas se présenter. Les rappels automatisés 24 heures et 2 heures avant le rendez-vous offrent une réduction supplémentaire de 20-30%. Le logiciel de réservation comme BookrHub facilite la mise en place de ces systèmes.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Quels autres coûts les propriétaires de salons doivent-ils suivre ?</summary>
+        <div class="faq-answer">Au-delà des coûts évidents, n'oubliez pas : les abonnements logiciels, les frais de traitement des paiements par carte (1,4-2% avec Stripe), le marketing, la comptabilité, les licences et permis, les réparations et l'entretien, les uniformes, les licences musicales et la formation continue du personnel. Ces coûts "cachés" peuvent ajouter 5-10% à vos frais généraux.</div>
+      </details>
+
+      <div class="cta-box">
+        <h3>Prêt à Améliorer Votre Résultat ?</h3>
+        <p>BookrHub vous aide à réduire les absences, combler les créneaux vides et gagner du temps sur l'administration. Commencez votre essai gratuit.</p>
+        <a href="https://my.bookrhub.com/signup" class="cta-button">Essai Gratuit</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function calculateProfit() {
+      const revenue = parseFloat(document.getElementById('monthlyRevenue').value) || 0;
+      const rent = parseFloat(document.getElementById('rent').value) || 0;
+      const staff = parseFloat(document.getElementById('staffCosts').value) || 0;
+      const products = parseFloat(document.getElementById('products').value) || 0;
+      const utilities = parseFloat(document.getElementById('utilities').value) || 0;
+      const marketing = parseFloat(document.getElementById('marketing').value) || 0;
+      const insurance = parseFloat(document.getElementById('insurance').value) || 0;
+      const other = parseFloat(document.getElementById('otherCosts').value) || 0;
+
+      const totalCosts = rent + staff + products + utilities + marketing + insurance + other;
+      const profit = revenue - totalCosts;
+      const margin = revenue > 0 ? (profit / revenue) * 100 : 0;
+
+      document.getElementById('profitAmount').textContent = profit.toLocaleString('fr-FR', {minimumFractionDigits: 0, maximumFractionDigits: 0}) + ' €';
+      document.getElementById('profitMargin').textContent = margin.toFixed(1) + '% de marge bénéficiaire';
+
+      document.getElementById('resultRevenue').textContent = revenue.toLocaleString('fr-FR') + ' €';
+      document.getElementById('resultCosts').textContent = totalCosts.toLocaleString('fr-FR') + ' €';
+      
+      const profitEl = document.getElementById('resultProfit');
+      profitEl.textContent = profit.toLocaleString('fr-FR') + ' €';
+      profitEl.className = 'result-value ' + (profit >= 0 ? 'positive' : 'negative');
+
+      const rentPct = revenue > 0 ? (rent / revenue) * 100 : 0;
+      const staffPct = revenue > 0 ? (staff / revenue) * 100 : 0;
+      const prodPct = revenue > 0 ? (products / revenue) * 100 : 0;
+      const otherPct = revenue > 0 ? ((utilities + marketing + insurance + other) / revenue) * 100 : 0;
+
+      document.getElementById('resultRent').textContent = rentPct.toFixed(1) + '%';
+      document.getElementById('resultStaff').textContent = staffPct.toFixed(1) + '%';
+      document.getElementById('resultProducts').textContent = prodPct.toFixed(1) + '%';
+      document.getElementById('resultOther').textContent = otherPct.toFixed(1) + '%';
+
+      const breakdown = document.getElementById('breakdownChart');
+      const maxPct = Math.max(rentPct, staffPct, prodPct, otherPct, 1);
+      
+      breakdown.innerHTML = `
+        <div class="bar-container">
+          <div class="bar-label">Chiffre d'affaires : ${revenue.toLocaleString('fr-FR')} € (100%)</div>
+          <div class="bar-track"><div class="bar-fill revenue" style="width: 100%"></div></div>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label">Coûts Personnel : ${staffPct.toFixed(1)}%</div>
+          <div class="bar-track"><div class="bar-fill staff" style="width: ${(staffPct / maxPct) * 100}%"></div></div>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label">Loyer : ${rentPct.toFixed(1)}%</div>
+          <div class="bar-track"><div class="bar-fill rent" style="width: ${(rentPct / maxPct) * 100}%"></div></div>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label">Produits : ${prodPct.toFixed(1)}%</div>
+          <div class="bar-track"><div class="bar-fill products" style="width: ${(prodPct / maxPct) * 100}%"></div></div>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label">Autres Coûts : ${otherPct.toFixed(1)}%</div>
+          <div class="bar-track"><div class="bar-fill other" style="width: ${(otherPct / maxPct) * 100}%"></div></div>
+        </div>
+      `;
+
+      document.getElementById('results').classList.add('active');
+    }
+
+    calculateProfit();
+  </script>
+</body>
+</html>

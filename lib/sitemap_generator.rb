@@ -27,6 +27,14 @@ module SitemapGenerator
       xml << '  </url>'
     end
 
+    # French home page
+    xml << '  <url>'
+    xml << "    <loc>#{base_url}/fr/</loc>"
+    xml << "    <lastmod>#{today}</lastmod>"
+    xml << '    <changefreq>weekly</changefreq>'
+    xml << '    <priority>0.9</priority>'
+    xml << '  </url>'
+
     # ===== STATIC PAGES (features/pricing are sections on landing - not in sitemap) =====
     static_pages = [
       ['/privacy', 'monthly', '0.5']
@@ -182,6 +190,30 @@ module SitemapGenerator
         xml << '    <priority>0.7</priority>'
         xml << '  </url>'
       end
+    end
+
+    # French articles
+    fr_seo_dir = File.join(seo_dir, 'fr')
+    if Dir.exist?(fr_seo_dir)
+      Dir.glob(File.join(fr_seo_dir, '*.html')).each do |file|
+        basename = File.basename(file, '.html')
+        # Skip index.html as it's the directory root
+        next if basename == 'index'
+
+        xml << '  <url>'
+        xml << "    <loc>#{base_url}/fr/#{basename}</loc>"
+        xml << "    <lastmod>#{today}</lastmod>"
+        xml << '    <changefreq>monthly</changefreq>'
+        xml << '    <priority>0.7</priority>'
+        xml << '  </url>'
+      end
+      # Add index page with higher priority
+      xml << '  <url>'
+      xml << "    <loc>#{base_url}/fr/</loc>"
+      xml << "    <lastmod>#{today}</lastmod>"
+      xml << '    <changefreq>weekly</changefreq>'
+      xml << '    <priority>0.9</priority>'
+      xml << '  </url>'
     end
 
     xml << '</urlset>'

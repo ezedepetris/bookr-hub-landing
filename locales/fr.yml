@@ -1,0 +1,320 @@
+fr:
+  site:
+    title: "BookrHub - Système de Réservation Gratuit | 0% Commission"
+    description: "Système de réservation gratuit pour barbiers, salons et entreprises. Sans commission, rappels automatiques, page personnalisée. Plus de 700 entreprises nous font confiance."
+    tagline: "Gestion Simple des Réservations pour Entreprises Modernes"
+    subtitle: "Tout ce dont vous avez besoin pour gérer les rendez-vous, développer votre entreprise et satisfaire vos clients."
+    hero_subtitle: "Une landing page à votre image, des réservations automatiques et des paiements en un seul endroit."
+    keywords: "logiciel de réservation, prise de rendez-vous, système de réservation en ligne, gestion des réservations, reservation de rendez-vous"
+    author: "BookrHub"
+    canonical_url: "https://www.bookrhub.com"
+
+  navigation:
+    features: "Caractéristiques"
+    why_us: "Pourquoi Nous"
+    how_it_works: "Comment Ça Marche"
+    live_templates: "Modèles"
+    examples: "Exemples"
+    pricing: "Tarifs"
+    sign_in: "Connexion"
+    get_started: "Commencer"
+
+  buttons:
+    start_free_trial: "Essai Gratuit"
+    watch_demo: "Voir la Démo"
+
+  hero:
+    social_proof: "entreprises nous font confiance"
+    headline_line_1: "Arrêtez de Payer 20% à Fresha"
+    headline_line_2: "Votre Site + Réservation"
+    headline_line_3: "Gardez 100% de Votre Argent"
+    tagline: "Réservations simples. 100% de votre argent."
+    stats_free: "Sans commission"
+    stats_setup: "Config en 5 min"
+    stats_nocode: "Domaine gratuit"
+    no_credit_card: "Sans carte bancaire"
+    setup_minutes: "Config en 5 minutes"
+
+  comparison:
+    title: "Pourquoi les Entreprises Intelligentes Changent"
+    subtitle: "Vérifiez combien vous pourriez économiser chaque mois vs Fresha, SetMore et Timely"
+    features: "Caractéristiques"
+    starting_price: "Prix de Départ"
+    free: "GRATUIT"
+    commission: "Commission Clients Nouveaux"
+    custom_domain: "Domaine Personnalisé"
+    your_website: "Votre Propre Site Web"
+    just_form: "Juste un formulaire"
+    basic: "Basique"
+    full_landing: "Landing page complète"
+    staff: "No. de Personnel"
+    per_staff: "Par personnel"
+    unlimited: "Illimité"
+    setup: "Temps de Configuration"
+    5_min: "5 minutes"
+    savings: "Économie moyenne : 150-400€/mois pour un salon occupé"
+    stats_free: "Sans commission"
+    stats_setup: "Config en 5 min"
+    stats_nocode: "Domaine propre gratuit"
+    no_credit_card: "Pas de carte de crédit requise"
+    setup_minutes: "Configuration en 5 minutes"
+
+  logos:
+    trusted_by: "La confiance d'entreprises du monde entier"
+
+  live_templates:
+    title: "Voyez comment votre entreprise pourrait paraître."
+    view_live_demo: "Voir la démo en direct"
+    carousel_prev: "Modèles précédents"
+    carousel_next: "Modèles suivants"
+    find_more_badge: "+ Plus de modèles"
+    find_more_title: "Trouvez plus de modèles sur BookrHub"
+    find_more_description: "Essayez votre style préféré en quelques minutes. Sans code, sans carte."
+    find_more_cta: "Commencer maintenant"
+    templates:
+      barber:
+        title: "Barberie"
+        description: "Landing premium avec services, réservations et votre marque."
+      medical-clinic:
+        title: "Clinique médicale"
+        description: "Landing professionnelle pour cliniques avec réservations en ligne."
+      dental:
+        title: "Dentaire"
+        description: "Landing pour cabinets dentaires et réservations."
+      fitness:
+        title: "Fitness"
+        description: "Landing de salle de fitness avec réservations."
+      hair-salon:
+        title: "Salon de Coiffure"
+        description: "Landing de salon avec services et réservations."
+      spa-massage:
+        title: "Spa et Massages"
+        description: "Landing de spa et bien-être avec réservations."
+
+  section_labels:
+    features: "Caractéristiques"
+    how_it_works: "Comment Ça Marche"
+    your_brand: "Votre Marque"
+    why_us: "Pourquoi BookrHub"
+    testimonials: "Témoignages"
+    pricing: "Tarifs"
+    faq: "Questions Fréquentes"
+
+  features:
+    title: "Tout Ce Dont Vous Avez Besoin"
+    subtitle: "Des outils puissants qui sont simples à utiliser"
+    easy_scheduling:
+      title: "Planification Facile"
+      description: "Disponibilité en temps réel, réservations automatisées et prévention des conflits."
+    team_management:
+      title: "Gestion d'Équipe"
+      description: "Gérez les horaires du personnel, suivez les performances, attribuez les services."
+    smart_reminders:
+      title: "Rappels Intelligents"
+      description: "Réduisez les absences avec des rappels par email."
+    clear_analytics:
+      title: "Analyses Claires"
+      description: "Suivez les réservations, revenus et tendances clients en un coup d'œil."
+    mobile_ready:
+      title: "Prêt pour Mobile"
+      description: "Fonctionne parfaitement sur tous les appareils. Réservez à tout moment, n'importe où."
+    your_brand:
+      title: "Votre Marque"
+      description: "Domaine personnalisé et pages de réservation avec votre marque pour votre entreprise."
+
+  why_us:
+    title: "Conçu pour les entreprises modernes."
+    subtitle: "Stable, bien conçu et tout-en-un. Remplacez les outils de réservation obsolètes et les sites faits de rustines : obtenez une web premium avec réservations et paiements intégrés."
+    card_parity:
+      title: "La même puissance que les grands"
+      description: "Nous égalisons ce que Fresha, SetMore et GetTimely offrent : réservations en temps réel, rappels, paiements, gestion d'équipe. Vous avez les fonctions dont vous avez besoin sans remplissage ni prix élevés."
+    card_landing:
+      title: "Votre page de réservation est votre site web"
+      description: "Qui d'autre vous donne une landing page complète qui sert de site web ? Avec BookrHub votre page n'est pas juste un formulaire : c'est une page avec votre marque, vos services et votre domaine. Un seul lien pour tout."
+    card_growth:
+      title: "Nous venons juste de commencer"
+      description: "C'est notre base. Tout ce que nous ajoutons—nouvelles fonctions, intégrations, outils—fait aussi grandir votre plateforme. Vous n'achetez pas un produit fermé ; vous montez sur une plateforme qui va beaucoup grandir avec vous."
+    card_payments:
+      title: "Zéro commission. Votre méthode de paiement. L'argent va à vous."
+      description: "Nous ne prenons pas de pourcentage ni de commission sur vos ventes. Vous connectez votre propre méthode de paiement—nous supportons plusieurs intégrations. L'argent vous arrive directement. Configurez celle que vous préférez et gardez chaque euro que vous gagnez."
+    card_underdog:
+      title: "Fait pour les vraies entreprises"
+      description: "Nous ne sommes pas un géant. Nous l'avons construit pour les salons, barbiers, consultants et petites équipes qui veulent quelque chose qui fonctionne et continue de s'améliorer. Vos commentaires définissent ce que nous construisons ensuite."
+
+  how_it_works:
+    title: "Comment Fonctionne BookrHub"
+    subtitle: "Voyez la plateforme en action"
+    admin_dashboard: "Tableau de Bord Admin"
+    customer_experience: "Expérience Client"
+    calendar_management: "Gestion du Calendrier"
+    booking_overview: "Aperçu des Réservations"
+    company_settings: "Paramètres de l'Entreprise"
+
+  business_pages:
+    title: "Une landing qui est votre site web—pas juste un formulaire"
+    subtitle: "Votre page de réservation est une landing complète : votre marque, vos services, votre lien. Pas besoin de site séparé. Qui d'autre fait ça ?"
+    customized_brand:
+      title: "Votre page de réservation est votre site web"
+      description: "Chaque entreprise a une landing réelle qui sert de site web : couleurs, services et marque. Un seul lien à partager. Des barberies aux consultants. Pas besoin de site séparé."
+    features:
+      custom_colors: "Couleurs et marque personnalisées"
+      own_domain: "Votre propre domaine"
+      mobile_optimized: "Optimisé pour mobile"
+      seo_friendly: "Ami du SEO"
+
+  testimonials:
+    title: "Apprécié par des entreprises partout"
+    subtitle: "Voyez ce que nos clients disent de BookrHub"
+    testimonial1:
+      quote: "BookrHub a transformé notre gestion des rendez-vous. Nos absences ont diminué de 60% grâce aux rappels automatisés. La configuration était incroyablement facile."
+      name: "Marie Dubois"
+      role: "Propriétaire, Studio de Beauté"
+    testimonial2:
+      quote: "Enfin un système de réservation qui ne ressemble pas à un logiciel d'entreprise. Propre, moderne, et mes clients adorent à quel point il est facile de réserver. Ça vaut chaque centime."
+      name: "Jean Martin"
+      role: "Propriétaire de Barberie"
+    testimonial3:
+      quote: "Nous avons changé d'altra plateforme et nous n'avons pas regardé en arrière. Le niveau gratuit est vraiment utile, et les plans payants sont incroyablement abordables pour les petites équipes."
+      name: "Sophie Laurent"
+      role: "Consultante Bien-être"
+
+  pricing:
+    title: "Tarifs"
+    subtitle: "Choisissez le plan qui vous convient"
+    independent: "Indépendant"
+    business: "Business"
+    free: "Gratuit"
+    free_forever: "Gratuit pour toujours"
+    per_month: "par mois"
+    for_ever: "pour toujours"
+    most_popular: "Le Plus Populaire"
+    founders_banner: "Club Fondateurs : Ces prix de lancement sont fixés à vie avant que nous ajoutions plus de fonctions."
+    billing_monthly: "Mensuel"
+    billing_annual: "Annuel"
+    per_month_billed_annual: "par mois, facturé annuellement"
+    yearly_savings_callout: "2 mois gratuits !"
+    business_annual_bonus: "Bonus annuel : Nous concevrons votre landing pour vous !"
+
+  plan_features:
+    independent:
+      - "Jusqu'à 150 réservations/mois"
+      - "1 Membre du personnel"
+      - "Rappels par email"
+      - "Page de réservation standard (votrenom.bookrhub.com/app/bookings)"
+    business:
+      - "Réservations illimitées"
+      - "Personnel illimité"
+      - "Requêtes depuis votre landing"
+      - "Paiements en ligne — sans commission : connectez votre méthode de paiement, l'argent va à vous"
+      - "Page web landing premium (comme notre modèle Barberie)"
+      - "Analytiques"
+      - "Connectez votre propre domaine (votreentreprise.com)"
+      - "Support dédié"
+
+  faq:
+    title: "Questions fréquentes"
+    subtitle: "Tout ce que vous devez savoir sur BookrHub"
+    question1: "Comment fonctionne le plan gratuit ?"
+    answer1: "Notre plan Indépendant gratuit est complètement gratuit pour toujours - aucune carte de crédit requise. Vous obtenez jusqu'à 150 réservations par mois, des rappels par email, et une page de réservation sur notre sous-domaine. C'est parfait pour les professionnels indépendants qui commencent."
+    question2: "Puis-je annuler mon abonnement à tout moment ?"
+    answer2: "Oui ! Vous pouvez annuler votre abonnement à tout moment sans questions. Pas de contrats à long terme ni de frais d'annulation. Vous continuerez à avoir accès jusqu'à la fin de votre période de facturation."
+    question3: "Offrez-vous des solutions personnalisées pour les grandes équipes ?"
+    answer3: "Absolument ! Notre plan Business prend en charge un nombre illimité de membres du personnel. Pour les entreprises avec des besoins spécifiques, contactez-nous à admin@bookrhub.com et nous créerons une solution personnalisée pour vous."
+    question4: "Percevez-vous une commission ou un pourcentage sur mes ventes ?"
+    answer4: "Non. Nous ne percevons aucune commission ni pourcentage sur vos ventes. Vous connectez votre propre méthode de paiement—nous prenons en charge plusieurs intégrations. L'argent vous arrive directement. Configurez celle que vous préférez et gardez chaque euro que vous gagnez."
+    question5: "Combien de temps faut-il pour le configurer ?"
+    answer5: "La plupart des entreprises sont opérationnelles en moins de 5 minutes ! Créez simplement un compte, ajoutez vos services et disponibilités, et partagez votre lien de réservation. C'est aussi simple que ça."
+    question6: "Qu'est-ce qu'un système de réservation et pourquoi en ai-je besoin ?"
+    answer6: "Un système de réservation est un logiciel qui aide les entreprises à gérer les rendez-vous, les horaires et les réservations de clients en ligne. BookrHub est un système de réservation complet qui automatise votre agenda, réduit les absences avec des rappels et vous aide à développer votre entreprise. Notre plan gratuit est idéal pour commencer sans carte de crédit."
+    question7: "BookrHub est-il une bonne alternative à Fresha, SetMore ou Timely ?"
+    answer7: "Oui. BookrHub est un système de réservation et de prise de rendez-vous simple qui fait ce dont vous avez besoin sans complications. Si vous cherchez une alternative à Fresha, SetMore ou Timely avec un plan gratuit, des réservations en temps réel et des rappels, BookrHub est conçu pour les petites équipes et les professionnels indépendants. Aucune carte de crédit requise pour commencer."
+    question8: "Obtenez-vous un site web ou juste un formulaire de réservation ?"
+    answer8: "Vous obtenez une landing complète qui sert de site web. Votre page BookrHub a votre marque, vos services, votre disponibilité—ce n'est pas juste un formulaire. De nombreux concurrents vous donnent un formulaire à intégrer ; nous vous donnons une page prête à partager qui ressemble à votre entreprise. Dans les plans payants, vous pouvez utiliser votre propre domaine. Un seul lien pour tout."
+
+  cta:
+    get_started: "Commencer"
+    start_for_free: "Commencer Gratuitement"
+    first_month_on_us: "Premier mois gratuit"
+    no_credit_card: "Aucune carte de crédit requise • Configuration en minutes"
+    ready_to_simplify: "Prêt à Simplifier vos Réservations ?"
+    join_thousands: "Rejoignez les milliers d'entreprises qui utilisent déjà BookrHub."
+    no_credit_card_short: "Aucune carte de crédit requise"
+    setup_in_minutes: "Configuration en minutes"
+    cancel_anytime: "Annulez à tout moment"
+
+  customer_experience:
+    landing_page: "Page de Destination"
+    date_time_selection: "Sélection de Date et Heure"
+    booking_confirmation: "Confirmation de Réservation"
+
+  footer:
+    powered_by: "Propulsé par"
+    product: "Produit"
+    company: "Entreprise"
+    support: "Support"
+    legal: "Mentions Légales"
+    about_us: "À Propos de Nous"
+    blog: "Blog"
+    updates: "Nouveautés"
+    contact_us: "Contactez-nous"
+    help_center: "Centre d'Aide"
+    privacy_policy: "Politique de Confidentialité"
+    terms_of_service: "Conditions d'Utilisation"
+    description: "La façon la plus simple de gérer les réservations et de développer votre entreprise. La confiance de milliers de professionnels à travers le monde."
+    consent_preferences: "Préférences de Consentement"
+    all_rights: "Tous droits réservés."
+
+  contact:
+    page_title: "Contactez-nous"
+    meta_description: "Contactez l'équipe BookrHub. Nous sommes là pour vous aider avec toutes vos questions sur notre système de réservation."
+    title: "Écrivez-nous"
+    subtitle: "Vous avez des questions ? Nous aimerions avoir de vos nouvelles. Envoyez-nous un message et nous répondrons dès que possible."
+    form:
+      name: "Votre Nom"
+      name_placeholder: "Entrez votre nom"
+      email: "Adresse Email"
+      email_placeholder: "Entrez votre email"
+      subject: "Sujet"
+      subject_placeholder: "Sélectionnez un sujet"
+      subject_sales: "Ventes et Tarifs"
+      subject_support: "Support Technique"
+      subject_partnership: "Partenariats"
+      subject_other: "Autre"
+      message: "Message"
+      message_placeholder: "Comment pouvons-nous vous aider ?"
+      submit: "Envoyer le Message"
+    email_subject: "Nouveau Formulaire de Contact depuis BookrHub"
+    info:
+      email_title: "Email"
+      hours_title: "Heures d'Ouverture"
+      hours: "Lundi - Vendredi, 9h - 18h (NZST)"
+      help_title: "Besoin d'Aide ?"
+      help_text: "Notre équipe de support est prête à vous aider avec toutes vos questions."
+      help_link: "Visiter le Centre d'Aide"
+
+  geo:
+    what_is_booking_system_title: "Qu'est-ce qu'un Système de Réservation ?"
+    what_is_booking_system_p1: "Un système de réservation est un logiciel qui permet aux entreprises de gérer les rendez-vous et les réservations en ligne, 24h/24. Selon une étude de 2024 de Capterra, les entreprises utilisant des systèmes de réservation en ligne voient une réduction de 40% des absences et économisent en moyenne 10 heures par semaine en planification téléphonique."
+    modern_booking_systems: "Les systèmes de réservation modernes comme BookrHub incluent également des fonctions comme les rappels automatiques, les paiements en ligne et les pages personnalisées, éliminant le besoin pour les clients d'appeler ou d'envoyer des emails pour réserver."
+    stats:
+      no_shows_reduction: "réduction des absences avec rappels automatiques"
+      hours_saved: "heures économisées par semaine en planification téléphonique"
+      businesses_trust: "entreprises font confiance à BookrHub dans le monde"
+      commission: "commission sur toutes les réservations"
+    quote: "La réservation en ligne est passée de quelque chose d'optionnel à un outil critique. Les entreprises sans cela perdent des clients face aux concurrents qui offrent la commodité de la réservation automatique 24h/24."
+
+  about:
+    page_title: "À Propos de Nous"
+    meta_description: "Découvrez BookrHub - le système de réservation gratuit pour salons, spas, barberies et petites entreprises. La confiance de 700+ entreprises dans le monde avec 0% de commission."
+    org_description: "BookrHub est un système de réservation gratuit et un logiciel de rendez-vous pour les salons, barberies, spas et petites entreprises. La confiance de plus de 700 entreprises."
+    hero_title: "Rendre les Réservations Simples pour Tous"
+    hero_subtitle: "Nous croyons que chaque entreprise mérite des outils de réservation professionnels sans les tarifs élevés."
+    mission_title: "Notre Mission"
+    mission_1_title: "Démocratiser la Réservation en Ligne"
+    mission_1_text: "Nous avons rendu BookrHub gratuit pour que les petites entreprises puissent concurrencer les grandes chaînes. Plus de perte de clients parce que réserver était trop compliqué."
+    mission_2_title: "Réduire les Absences"
+    mission_2_text: "Les rappels automatiques aident les entreprises à réduire les rendez-vous manqués jusqu'à 40%, économisant du temps et des revenus chaque semaine."
+    mission_3_title: "Garder Plus de Ce Que Vous Gagnez"
+    mission_3_text: "Contrairement à d'autres plateformes qui prennent 20-30% de commission, BookrHub est gratuit. Vous gardez 100% de ce que vous percevez."
+    cta_title: "Prêt à Commencer ?"
+    cta_subtitle: "Rejoignez les 700+ entreprises qui utilisent déjà BookrHub."

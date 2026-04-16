@@ -37,8 +37,9 @@ LOCALE_CURRENCY_MAP = {
   'en-GB' => 'GBP',
   'en-NZ' => 'NZD',
   'es-AR' => 'ARS',
-  'es' => 'USD',  # Default for Spanish (can be overridden)
-  'en' => 'USD'   # Default for English
+  'es' => 'USD', # Default for Spanish (can be overridden)
+  'en' => 'USD',   # Default for English
+  'fr' => 'EUR'    # French locale
 }.freeze
 
 before do
@@ -178,6 +179,30 @@ get '/es/:page' do
     session[:locale] = :es
     @content = File.read(page_path)
     @locale = :es
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/fr/:page' do
+  page_path = File.join(settings.public_folder, 'seo', 'fr', "#{params[:page]}.html")
+  if File.exist?(page_path)
+    session[:locale] = :fr
+    @content = File.read(page_path)
+    @locale = :fr
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/fr/' do
+  page_path = File.join(settings.public_folder, 'seo', 'fr', 'index.html')
+  if File.exist?(page_path)
+    session[:locale] = :fr
+    @content = File.read(page_path)
+    @locale = :fr
     erb :seo_wrapper
   else
     pass
