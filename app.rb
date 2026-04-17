@@ -37,9 +37,15 @@ LOCALE_CURRENCY_MAP = {
   'en-GB' => 'GBP',
   'en-NZ' => 'NZD',
   'es-AR' => 'ARS',
-  'es' => 'USD', # Default for Spanish (can be overridden)
-  'en' => 'USD',   # Default for English
-  'fr' => 'EUR'    # French locale
+  'es' => 'USD',
+  'en' => 'USD',
+  'fr' => 'EUR',
+  'pt' => 'BRL',
+  'pt-PT' => 'EUR',
+  'it' => 'EUR',
+  'nl' => 'EUR',
+  'nl-BE' => 'EUR',
+  'ru' => 'RUB'
 }.freeze
 
 before do
@@ -203,6 +209,102 @@ get '/fr/' do
     session[:locale] = :fr
     @content = File.read(page_path)
     @locale = :fr
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/pt/' do
+  page_path = File.join(settings.public_folder, 'seo', 'pt', 'index.html')
+  if File.exist?(page_path)
+    session[:locale] = :pt
+    @content = File.read(page_path)
+    @locale = :pt
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/pt/:page' do
+  page_path = File.join(settings.public_folder, 'seo', 'pt', "#{params[:page]}.html")
+  if File.exist?(page_path)
+    session[:locale] = :pt
+    @content = File.read(page_path)
+    @locale = :pt
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/it/' do
+  page_path = File.join(settings.public_folder, 'seo', 'it', 'index.html')
+  if File.exist?(page_path)
+    session[:locale] = :it
+    @content = File.read(page_path)
+    @locale = :it
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/it/:page' do
+  page_path = File.join(settings.public_folder, 'seo', 'it', "#{params[:page]}.html")
+  if File.exist?(page_path)
+    session[:locale] = :it
+    @content = File.read(page_path)
+    @locale = :it
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/nl/' do
+  page_path = File.join(settings.public_folder, 'seo', 'nl', 'index.html')
+  if File.exist?(page_path)
+    session[:locale] = :nl
+    @content = File.read(page_path)
+    @locale = :nl
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/nl/:page' do
+  page_path = File.join(settings.public_folder, 'seo', 'nl', "#{params[:page]}.html")
+  if File.exist?(page_path)
+    session[:locale] = :nl
+    @content = File.read(page_path)
+    @locale = :nl
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/ru/' do
+  page_path = File.join(settings.public_folder, 'seo', 'ru', 'index.html')
+  if File.exist?(page_path)
+    session[:locale] = :ru
+    @content = File.read(page_path)
+    @locale = :ru
+    erb :seo_wrapper
+  else
+    pass
+  end
+end
+
+get '/ru/:page' do
+  page_path = File.join(settings.public_folder, 'seo', 'ru', "#{params[:page]}.html")
+  if File.exist?(page_path)
+    session[:locale] = :ru
+    @content = File.read(page_path)
+    @locale = :ru
     erb :seo_wrapper
   else
     pass

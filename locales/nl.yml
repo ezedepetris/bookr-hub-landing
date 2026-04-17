@@ -1,0 +1,354 @@
+nl:
+  site:
+    title: "BookrHub - Gratis Boekingssysteem voor Kappers, Salons, Spa's & Klinieken"
+    description: "Het nr. 1 gratis boekingssysteem met 0% commissie. Voor kappers, salons, spa's, masseurs, klinieken, fitness & meer. Geautomatiseerde e-mail herinneringen, 12+ templates. Vertrouwd door 700+ bedrijven."
+    tagline: "Eenvoudig Afspraken Beheren voor Moderne Bedrijven"
+    subtitle: "Alles wat je nodig hebt om afspraken te beheren, je bedrijf te laten groeien en klanten tevreden te stellen."
+    hero_subtitle: "Krijg een premium, merkspecifieke landingspagina, geautomatiseerde planning en betalingen op één plek. Vervang Fresha en houd 100% van je omzet."
+    keywords: "boekingssoftware, afspraken plannen, online boekingssysteem, afsprakensysteem, boekingssysteem, boekingsbeheer, afspraak boeken, zakelijke planningssoftware, Fresha alternatief, SetMore alternatief, GetTimely alternatief, gratis boekingssoftware, salon boeking, kapper boeking, fresha, setmore, gettimely, turnos, reservas, citas, agendamiento, agenda, calendario, horarios"
+    author: "BookrHub"
+    canonical_url: "https://www.bookrhub.com"
+
+  navigation:
+    features: "Functies"
+    why_us: "Waarom Wij"
+    how_it_works: "Hoe Het Werkt"
+    live_templates: "Sjablonen"
+    examples: "Voorbeelden"
+    pricing: "Prijzen"
+    sign_in: "Inloggen"
+    get_started: "Aan de slag"
+
+  buttons:
+    start_free_trial: "Start Gratis Proefperiode"
+    watch_demo: "Bekijk Demo"
+
+  hero:
+    social_proof: "bedrijven vertrouwen BookrHub"
+    headline_line_1: "Stop met 20% Betalen aan Fresha"
+    headline_line_2: "Je Eigen Website + Boekingen"
+    headline_line_3: "Bespaar €200+/Maand"
+    headline_line_4: "Houd 100% van Je Geld"
+    headline_line_5: "Setup in 5 Minuten"
+    headline_line_6: "Geen Code Nodig"
+    headline_line_7: "Eigen Domein Inbegrepen"
+    headline_line_8: "De Slimme Keuze"
+    tagline: "Zelfde krachtige boekingen. 100% van je geld."
+    stats_free: "Geen commissie"
+    stats_setup: "5 min setup"
+    stats_nocode: "Eigen domein gratis"
+    no_credit_card: "Geen creditcard nodig"
+    setup_minutes: "Setup in 5 minuten"
+
+  comparison:
+    title: "Waarom Slimme Bedrijven Overstappen"
+    subtitle: "Zie hoeveel je elke maand kunt besparen vs Fresha, SetMore & Timely"
+    features: "Functies"
+    starting_price: "Startprijs"
+    fresha_price: "Vanaf €19/maand"
+    setmore_price: "€12/gebruiker/maand"
+    timely_price: "€26/medewerker/maand"
+    free: "GRATIS"
+    commission: "Commissie op Nieuwe Klanten"
+    custom_domain: "Eigen Domein"
+    fresha_domain: "+€49/maand extra"
+    setmore_domain: "Alleen Pro-plan"
+    timely_domain: "Extra kosten"
+    your_website: "Je Eigen Website"
+    just_form: "Gewoon een formulier"
+    widget_only: "Alleen widget"
+    basic: "Basis"
+    full_landing: "Volledige landingspagina"
+    staff: "Aantal Medewerkers"
+    per_staff: "Per medewerker"
+    setmore_staff: "Tot 4 (gratis)"
+    unlimited: "Onbeperkt"
+    setup: "Setup Tijd"
+    5_min: "5 minuten"
+    savings: "Gemiddelde besparing: €150-400/maand voor een drukke salon"
+    stats_free: "Geen commissie"
+    stats_setup: "5 min setup"
+    stats_nocode: "Eigen domein gratis"
+    no_credit_card: "Geen creditcard nodig"
+    setup_minutes: "Setup in 5 minuten"
+
+  logos:
+    trusted_by: "Vertrouwd door bedrijven wereldwijd"
+
+  live_templates:
+    title: "Zie hoe jouw bedrijf eruit kan zien."
+    view_live_demo: "Bekijk live demo"
+    carousel_prev: "Vorige templates"
+    carousel_next: "Volgende templates"
+    find_more_badge: "+ Meer templates"
+    find_more_title: "Vind nog meer templates in BookrHub"
+    find_more_description: "Probeer je favoriete stijl in minuten. Geen code, geen kaart nodig."
+    find_more_cta: "Start nu"
+    templates:
+      barber:
+        title: "Kapperszaak"
+        description: "Premium landing met diensten, boekingen en je merk."
+      medical-clinic:
+        title: "Medische Kliniek"
+        description: "Professionele kliniek landing met online boekingen."
+      dental:
+        title: "Tandarts"
+        description: "Tandartspraktijk landing & planning."
+      fitness:
+        title: "Fitness"
+        description: "Fitnessstudio landing met boekingen."
+      fitness-pro:
+        title: "Fitness Pro"
+        description: "Pro fitness merk landing & planning."
+      hair-salon:
+        title: "Kapsalon"
+        description: "Salon landing met diensten & boekingen."
+      high-converting:
+        title: "Hoog Converterend"
+        description: "Conversie-gerichte landing template."
+      modern-ux:
+        title: "Modern UX"
+        description: "Moderne, strakke landing voor elk bedrijf."
+      nails:
+        title: "Nagelstudio"
+        description: "Nagelstudio landing met boekingen."
+      pet-grooming:
+        title: "Hondentrimsalon"
+        description: "Huisdierendiensten landing & planning."
+      photography:
+        title: "Fotografie"
+        description: "Portfolio & boekingen voor fotografen."
+      spa-massage:
+        title: "Spa & Massage"
+        description: "Spa & wellness landing met boekingen."
+
+  section_labels:
+    features: "Functies"
+    how_it_works: "Hoe Het Werkt"
+    your_brand: "Je Merk"
+    why_us: "Waarom BookrHub"
+    testimonials: "Getuigenissen"
+    pricing: "Prijzen"
+    faq: "Veelgestelde Vragen"
+
+  features:
+    title: "Alles Wat Je Nodig Hebt in een Boekingssysteem"
+    subtitle: "Krachtige boekingssysteem tools die eenvoudig te gebruiken zijn"
+    easy_scheduling:
+      title: "Eenvoudig Plannen"
+      description: "Real-time beschikbaarheid, geautomatiseerde boekingen en conflictpreventie."
+    team_management:
+      title: "Team Beheer"
+      description: "Beheer medewerker schema's, volg prestaties, wijs diensten toe."
+    smart_reminders:
+      title: "Slimme Herinneringen"
+      description: "Verminder no-shows met automatische e-mail herinneringen."
+    clear_analytics:
+      title: "Duidelijke Analyses"
+      description: "Volg boekingen, omzet en klantentrends in één oogopslag."
+    mobile_ready:
+      title: "Mobiel Gereed"
+      description: "Werkt perfect op alle apparaten. Boek altijd, overal."
+    your_brand:
+      title: "Je Merk"
+      description: "Eigen domein en merkgebonden boekingspagina's voor je bedrijf."
+
+  why_us:
+    title: "Gebouwd voor moderne bedrijven."
+    subtitle: "Stabiel, prachtig ontworpen en alles-in-één. Upgrade van verouderde boekingstools en patchwork sites—krijg een premium website met ingebouwde planning en betalingen."
+    card_parity:
+      title: "Zelfde kracht als de grote namen"
+      description: "We matchen wat Fresha, SetMore en GetTimely doen: real-time planning, herinneringen, betalingen, team beheer. Je krijgt de functies die je nodig hebt zonder de ballast of het prijskaartje."
+    card_landing:
+      title: "Je boekingspagina is je website"
+      description: "Wie geeft je nog meer een complete landingspagina die als je website dient? Met BookrHub is je boekingspagina geen kaal formulier—het is een merkpagina met je diensten, je stijl en je domein. Eén link doet het allemaal."
+    card_growth:
+      title: "We zijn nog maar net begonnen"
+      description: "Dit is onze basis. Alles wat we hiervandaan verzenden—nieuwe functies, integraties, tools—maakt ook jouw platform groter. Je koopt geen afgerond product; je stapt op een platform dat veel met je mee zal groeien."
+    card_payments:
+      title: "Zero commissie. Je eigen betaalprovider. Geld gaat naar jou."
+      description: "We nemen geen percentage of commissie van je verkopen. Je verbindt je eigen betaalmethode—we ondersteunen veel providers. Het geld gaat rechtstreeks naar jou. Stel je favoriete integratie in en houd elk euro dat je verdient."
+    card_underdog:
+      title: "Gebouwd voor echte bedrijven"
+      description: "We zijn geen reus. We bouwen dit voor salons, kappers, consultants en kleine teams die iets willen dat werkt en steeds beter wordt. Jouw feedback bepaalt wat we hierna bouwen."
+
+  how_it_works:
+    title: "Hoe Ons Boekingssysteem Werkt"
+    subtitle: "Bekijk het boekingssysteem in actie"
+    admin_dashboard: "Admin Dashboard"
+    customer_experience: "Klant Ervaring"
+    calendar_management: "Kalender Beheer"
+    booking_overview: "Boekingen Overzicht"
+    company_settings: "Bedrijfsinstellingen"
+
+  business_pages:
+    title: "Een landingspagina die je website is—niet zomaar een formulier"
+    subtitle: "Je boekingspagina is een complete landingspagina: je merk, je diensten, je link. Geen aparte website nodig. Wie doet dat nog meer?"
+    customized_brand:
+      title: "Je boekingspagina is je website"
+      description: "Elk bedrijf krijgt een echte landingspagina die als hun website dient—custom kleuren, diensten en branding. Eén link om te delen. Van kappers tot consultants, we hebben je gedekt. Geen aparte site nodig."
+    features:
+      custom_colors: "Custom kleuren en branding"
+      own_domain: "Je eigen domein"
+      mobile_optimized: "Mobiel geoptimaliseerd"
+      seo_friendly: "SEO-vriendelijk"
+
+  testimonials:
+    title: "Geliefd door bedrijven overal"
+    subtitle: "Zie wat onze klanten zeggen over BookrHub"
+    testimonial1:
+      quote: "BookrHub heeft onze afsprakenbeheer getransformeerd. Onze no-shows daalden met 60% dankzij de geautomatiseerde herinneringen. De setup was ongelooflijk eenvoudig."
+      name: "Maria de Vries"
+      role: "Eigenaar, Beautysalon"
+    testimonial2:
+      quote: "Eindelijk een boekingssysteem dat niet aanvoelt als ondernemerssoftware. Strak, modern en mijn klanten houden van hoe gemakkelijk het is om te boeken. Elke cent waard."
+      name: "Jan Jansen"
+      role: "Kapperszaak Eigenaar"
+    testimonial3:
+      quote: "We zijn overgestapt van een ander platform en hebben niet meer omgekeken. Het gratis niveau is echt nuttig en de betaalde plannen zijn ongelooflijk betaalbaar voor kleine teams."
+      name: "Sophie van Berg"
+      role: "Wellness Consultant"
+
+  pricing:
+    title: "Prijzen"
+    subtitle: "Kies het plan dat bij je past"
+    independent: "Zelfstandig"
+    business: "Business"
+    free: "Gratis"
+    free_forever: "Gratis voor altijd"
+    per_month: "per maand"
+    for_ever: "voor altijd"
+    most_popular: "Meest Populair"
+    founders_banner: "Founders Club: Vergrendel deze early-bird tarieven voor het leven voordat we meer functies toevoegen!"
+    billing_monthly: "Maandelijks"
+    billing_annual: "Jaarlijks"
+    per_month_billed_annual: "per maand, jaarlijks gefactureerd"
+    yearly_savings_callout: "2 Maanden Gratis!"
+    business_annual_bonus: "Jaarlijkse Bonus: We ontwerpen je landingspagina voor je!"
+
+  plan_features:
+    independent:
+      - "Tot 150 boekingen/maand"
+      - "1 Medewerker"
+      - "E-mail herinneringen"
+      - "Standaard BookrHub boekingspagina (uw_naam.bookrhub.com/app/bookings)"
+    business:
+      - "Onbeperkte boekingen"
+      - "Onbeperkte medewerkers"
+      - "Inschrijvingen vanaf je landingspagina"
+      - "Online betalingen — geen commissie: verbind je provider, geld gaat naar jou"
+      - "Premium Landingspagina Website (zoals onze Kapper template)"
+      - "Analyses"
+      - "Verbind je Eigen Domein (uwbedrijf.com)"
+      - "Toegewijde ondersteuning"
+
+  faq:
+    title: "Veelgestelde vragen"
+    subtitle: "Alles wat je moet weten over BookrHub"
+    question1: "Wat is een boekingssysteem en waarom heb ik er een nodig?"
+    answer1: "Een boekingssysteem is software die bedrijven helpt om afspraken, schema's en klantboekingen online te beheren. BookrHub is een compleet boekingssysteem dat je planning automatiseert, no-shows met herinneringen vermindert en je helpt je bedrijf te laten groeien. Ons gratis plan is perfect om te starten zonder creditcard."
+    question2: "Hoe werkt het gratis plan?"
+    answer2: "Ons gratis Zelfstandig plan is compleet gratis voor altijd - geen creditcard nodig. Je krijgt tot 150 boekingen per maand, e-mail herinneringen en een boekingspagina op ons subdomein. Het is perfect voor solo professionals die beginnen met een boekingssysteem."
+    question3: "Kan ik mijn abonnement altijd annuleren?"
+    answer3: "Ja! Je kunt je abonnement altijd annuleren zonder vragen. Er zijn geen langetermijncontracten of annuleringkosten. Je behoudt toegang tot het einde van je facturatieperiode."
+    question4: "Bieden jullie aangepaste oplossingen voor grotere teams?"
+    answer4: "Absoluut! Ons Business plan ondersteunt onbeperkte medewerkers. Voor ondernemingen met specifieke behoeften, neem contact op via admin@bookrhub.com en we maken een aangepaste oplossing voor je."
+    question5: "Rekenen jullie commissie of percentage van mijn verkopen?"
+    answer5: "Nee. We rekenen geen commissie of percentage van je verkopen. Je verbindt je eigen betaalprovider—we ondersteunen veel integraties. Het geld gaat rechtstreeks naar jou. Stel je favoriete provider in en houd elk euro dat je verdient."
+    question6: "Hoe lang duurt de setup?"
+    answer6: "De meeste bedrijven zijn binnen 5 minuten up en running! Maak gewoon een account aan, voeg je diensten en beschikbaarheid toe en deel je boekingslink. Zo simpel is het."
+    question7: "Is BookrHub een goed alternatief voor Fresha, SetMore of GetTimely?"
+    answer7: "Ja. BookrHub is een eenvoudig afsprakensysteem en boekingssoftware dat doet wat je nodig hebt zonder de complexiteit. Als je een Fresha alternatief, SetMore alternatief of GetTimely alternatief zoekt met een gratis plan, real-time planning en herinneringen, is BookrHub gebouwd voor kleine teams en solo pros. Geen creditcard nodig om te starten."
+    question8: "Krijg ik een website of alleen een boekingsformulier?"
+    answer8: "Je krijgt een complete landingspagina die als je website dient. Je BookrHub pagina heeft je merk, je diensten, je beschikbaarheid—het is niet zomaar een kaal boekingsformulier. Veel concurrenten geven je een formulier om ergens anders in te bedden; wij geven je een kant-en-klare pagina die eruitziet als je bedrijf. Je kunt je eigen domein gebruiken op betaalde plannen. Eén link doet het allemaal."
+
+  cta:
+    get_started: "Aan de Slag"
+    start_for_free: "Start Gratis"
+    first_month_on_us: "Eerste maand op ons"
+    no_credit_card: "Geen creditcard nodig • Setup in minuten"
+    ready_to_simplify: "Klaar om je Boekingen te Vereenvoudigen?"
+    join_thousands: "Sluit je aan bij duizenden bedrijven die al BookrHub gebruiken."
+    no_credit_card_short: "Geen creditcard nodig"
+    setup_in_minutes: "Setup in minuten"
+    cancel_anytime: "Annuleer altijd"
+
+  customer_experience:
+    landing_page: "Landingspagina"
+    date_time_selection: "Datum & Tijd Selectie"
+    booking_confirmation: "Boeking Bevestiging"
+
+  footer:
+    powered_by: "Aangedreven door"
+    product: "Product"
+    company: "Bedrijf"
+    support: "Ondersteuning"
+    legal: "Juridisch"
+    about_us: "Over Ons"
+    blog: "Blog"
+    updates: "Wat is Nieuw"
+    contact_us: "Neem Contact Op"
+    help_center: "Help Center"
+    privacy_policy: "Privacybeleid"
+    terms_of_service: "Servicevoorwaarden"
+    description: "Gratis boekingssysteem en afsprakensysteem voor salons, kappers en klein bedrijf. Eenvoudig alternatief voor Fresha, SetMore en GetTimely. Vertrouwd wereldwijd."
+    consent_preferences: "Toestemmingsvoorkeuren"
+    copyright: "© 2024 BookrHub. Alle rechten voorbehouden."
+    privacy: "Privacy"
+    terms: "Voorwaarden"
+    contact: "Contact"
+
+  contact:
+    page_title: "Neem Contact Op"
+    meta_description: "Neem contact op met het BookrHub team. We zijn hier om te helpen met alle vragen over ons boekingssysteem voor salons, spa's en kappers."
+    title: "Neem Contact Op"
+    subtitle: "Heb je vragen? We horen graag van je. Stuur ons een bericht en we reageren zo snel mogelijk."
+    form:
+      name: "Je Naam"
+      name_placeholder: "Voer je naam in"
+      email: "E-mailadres"
+      email_placeholder: "Voer je e-mail in"
+      subject: "Onderwerp"
+      subject_placeholder: "Selecteer een onderwerp"
+      subject_sales: "Verkoop & Prijzen"
+      subject_support: "Technische Ondersteuning"
+      subject_partnership: "Partnerschappen"
+      subject_other: "Anders"
+      message: "Bericht"
+      message_placeholder: "Hoe kunnen we je helpen?"
+      submit: "Bericht Verzenden"
+    email_subject: "Nieuw Contactformulier van BookrHub"
+    info:
+      email_title: "E-mail"
+      hours_title: "Openingstijden"
+      hours: "Maandag - Vrijdag, 9:00 - 18:00 (NZST)"
+      help_title: "Hulp Nodig?"
+      help_text: "Ons ondersteuningsteam staat klaar om je te helpen met alle vragen."
+      help_link: "Bezoek Help Center"
+
+  geo:
+    what_is_booking_system_title: "Wat is een Boekingssysteem?"
+    what_is_booking_system_p1: "Een boekingssysteem is software waarmee bedrijven afspraken en reserveringen online kunnen beheren, 24/7. Volgens een onderzoek van Capterra uit 2024 zien bedrijven die online boekingssystemen gebruiken een reductie van 40% in no-shows en besparen ze gemiddeld 10 uur per week op telefoonplanning."
+    modern_booking_systems: "Moderne boekingssystemen zoals BookrHub omvatten ook functies zoals geautomatiseerde herinneringen, online betalingen en aangepaste landingspagina's—waardoor klanten niet meer hoeven te bellen of e-mailen om een afspraak te maken."
+    stats:
+      no_shows_reduction: "reductie in no-shows met geautomatiseerde herinneringen"
+      hours_saved: "uur bespaard per week op telefoonplanning"
+      businesses_trust: "bedrijven vertrouwen BookrHub wereldwijd"
+      commission: "commissie op alle boekingen"
+    quote: "Online boeken is verschoven van nice-to-have naar een cruciaal bedrijfstool. Bedrijven zonder dit verliezen klanten aan concurrenten die het gemak van 24/7 zelf-plannen bieden."
+
+  about:
+    page_title: "Over Ons"
+    meta_description: "Leer over BookrHub - het gratis boekingssysteem voor salons, spa's, kappers en klein bedrijf. Vertrouwd door 700+ bedrijven wereldwijd met 0% commissie."
+    org_description: "BookrHub is een gratis boekingssysteem en afspraaksoftware voor salons, kappers, spa's en klein bedrijf. Vertrouwd door 700+ bedrijven wereldwijd."
+    hero_title: "Boekingen Simpel Maken voor Iedereen"
+    hero_subtitle: "We geloven dat elk bedrijf professionele boekingstools verdient zonder de dure kosten."
+    mission_title: "Onze Missie"
+    mission_1_title: "Democratiseer Online Boeken"
+    mission_1_text: "We hebben BookrHub gratis gemaakt zodat klein bedrijf kan concurreren met grote ketens. Geen gemiste klanten meer omdat boeken te ingewikkeld was."
+    mission_2_title: "Verminder No-Shows"
+    mission_2_text: "Geautomatiseerde herinneringen helpen bedrijven gemiste afspraken tot 40% te verminderen, wat tijd en omzet elke week bespaart."
+    mission_3_title: "Houd Meer van Wat Je Verdient"
+    mission_3_text: "In tegenstelling tot andere platforms die 20-30% commissie rekenen, is BookrHub gratis. Je houdt 100% van wat je rekent."
+    cta_title: "Klaar om te Starten?"
+    cta_subtitle: "Sluit je aan bij 700+ bedrijven die al BookrHub gebruiken."

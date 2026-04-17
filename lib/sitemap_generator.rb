@@ -197,7 +197,6 @@ module SitemapGenerator
     if Dir.exist?(fr_seo_dir)
       Dir.glob(File.join(fr_seo_dir, '*.html')).each do |file|
         basename = File.basename(file, '.html')
-        # Skip index.html as it's the directory root
         next if basename == 'index'
 
         xml << '  <url>'
@@ -207,9 +206,96 @@ module SitemapGenerator
         xml << '    <priority>0.7</priority>'
         xml << '  </url>'
       end
-      # Add index page with higher priority
       xml << '  <url>'
       xml << "    <loc>#{base_url}/fr/</loc>"
+      xml << "    <lastmod>#{today}</lastmod>"
+      xml << '    <changefreq>weekly</changefreq>'
+      xml << '    <priority>0.9</priority>'
+      xml << '  </url>'
+    end
+
+    # Italian articles
+    it_seo_dir = File.join(seo_dir, 'it')
+    if Dir.exist?(it_seo_dir)
+      Dir.glob(File.join(it_seo_dir, '*.html')).each do |file|
+        basename = File.basename(file, '.html')
+        next if basename == 'index'
+
+        xml << '  <url>'
+        xml << "    <loc>#{base_url}/it/#{basename}</loc>"
+        xml << "    <lastmod>#{today}</lastmod>"
+        xml << '    <changefreq>monthly</changefreq>'
+        xml << '    <priority>0.7</priority>'
+        xml << '  </url>'
+      end
+      xml << '  <url>'
+      xml << "    <loc>#{base_url}/it/</loc>"
+      xml << "    <lastmod>#{today}</lastmod>"
+      xml << '    <changefreq>weekly</changefreq>'
+      xml << '    <priority>0.9</priority>'
+      xml << '  </url>'
+    end
+
+    # Portuguese articles
+    pt_seo_dir = File.join(seo_dir, 'pt')
+    if Dir.exist?(pt_seo_dir)
+      Dir.glob(File.join(pt_seo_dir, '*.html')).each do |file|
+        basename = File.basename(file, '.html')
+        next if basename == 'index'
+
+        xml << '  <url>'
+        xml << "    <loc>#{base_url}/pt/#{basename}</loc>"
+        xml << "    <lastmod>#{today}</lastmod>"
+        xml << '    <changefreq>monthly</changefreq>'
+        xml << '    <priority>0.7</priority>'
+        xml << '  </url>'
+      end
+      xml << '  <url>'
+      xml << "    <loc>#{base_url}/pt/</loc>"
+      xml << "    <lastmod>#{today}</lastmod>"
+      xml << '    <changefreq>weekly</changefreq>'
+      xml << '    <priority>0.9</priority>'
+      xml << '  </url>'
+    end
+
+    # Dutch articles
+    nl_seo_dir = File.join(seo_dir, 'nl')
+    if Dir.exist?(nl_seo_dir)
+      Dir.glob(File.join(nl_seo_dir, '*.html')).each do |file|
+        basename = File.basename(file, '.html')
+        next if basename == 'index'
+
+        xml << '  <url>'
+        xml << "    <loc>#{base_url}/nl/#{basename}</loc>"
+        xml << "    <lastmod>#{today}</lastmod>"
+        xml << '    <changefreq>monthly</changefreq>'
+        xml << '    <priority>0.7</priority>'
+        xml << '  </url>'
+      end
+      xml << '  <url>'
+      xml << "    <loc>#{base_url}/nl/</loc>"
+      xml << "    <lastmod>#{today}</lastmod>"
+      xml << '    <changefreq>weekly</changefreq>'
+      xml << '    <priority>0.9</priority>'
+      xml << '  </url>'
+    end
+
+    # Russian articles
+    ru_seo_dir = File.join(seo_dir, 'ru')
+    if Dir.exist?(ru_seo_dir)
+      Dir.glob(File.join(ru_seo_dir, '*.html')).each do |file|
+        basename = File.basename(file, '.html')
+        next if basename == 'index'
+
+        xml << '  <url>'
+        xml << "    <loc>#{base_url}/ru/#{basename}</loc>"
+        xml << "    <lastmod>#{today}</lastmod>"
+        xml << '    <changefreq>monthly</changefreq>'
+        xml << '    <priority>0.7</priority>'
+        xml << '  </url>'
+      end
+      xml << '  <url>'
+      xml << "    <loc>#{base_url}/ru/</loc>"
       xml << "    <lastmod>#{today}</lastmod>"
       xml << '    <changefreq>weekly</changefreq>'
       xml << '    <priority>0.9</priority>'

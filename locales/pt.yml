@@ -1,0 +1,351 @@
+pt:
+  site:
+    title: "BookrHub - Sistema de Agendamento Gratuito | 0% Comissão"
+    description: "Sistema de agendamento gratuito para barbearias, salões e empresas. Sem comissão, lembretes automáticos, página personalizada. Mais de 700 empresas confiam em nós."
+    tagline: "Gestão Simples de Agendamentos para Empresas Modernas"
+    subtitle: "Tudo o que você precisa para gerenciar agendamentos, crescer seu negócio e encantrar seus clientes."
+    hero_subtitle: "Uma landing page sua, agendamentos automáticos e pagamentos em um só lugar."
+    keywords: "software de agendamento, marcação de horários, sistema de agendamento online, gestão de reservas, sistema de reservas online"
+    author: "BookrHub"
+    canonical_url: "https://www.bookrhub.com"
+
+  navigation:
+    features: "Recursos"
+    why_us: "Por Que Nós"
+    how_it_works: "Como Funciona"
+    live_templates: "Modelos"
+    examples: "Exemplos"
+    pricing: "Preços"
+    sign_in: "Entrar"
+    get_started: "Começar"
+
+  buttons:
+    start_free_trial: "Teste Grátis"
+    watch_demo: "Ver Demonstração"
+
+  hero:
+    social_proof: "empresas confiam no BookrHub"
+    headline_line_1: "Pare de Pagar 20% ao Fresha"
+    headline_line_2: "Seu Site + Agendamento"
+    headline_line_3: "Economize R$400+/Mês"
+    headline_line_4: "Fique com 100% do Seu Dinheiro"
+    headline_line_5: "Configure em 5 Minutos"
+    headline_line_6: "Sem Precisar Programar"
+    headline_line_7: "Domínio Personalizado Grátis"
+    headline_line_8: "A Escolha Inteligente"
+    tagline: "Agendamentos simples. 100% do seu dinheiro."
+    stats_free: "Sem comissão"
+    stats_setup: "Config em 5 min"
+    stats_nocode: "Domínio grátis"
+    no_credit_card: "Sem cartão de crédito"
+    setup_minutes: "Configure em 5 minutos"
+
+  comparison:
+    title: "Por Que Empresas Inteligentes Mudam"
+    subtitle: "Veja quanto você pode economizar todo mês vs Fresha e outros"
+    features: "Recursos"
+    starting_price: "Preço Inicial"
+    fresha_price: "A partir de R$49/mês"
+    setmore_price: "R$30/usuário/mês"
+    timely_price: "R$60/funcionário/mês"
+    free: "GRÁTIS"
+    commission: "Comissão em Clientes Novos"
+    custom_domain: "Domínio Personalizado"
+    fresha_domain: "+R$99/mês extra"
+    setmore_domain: "Apenas plano Pro"
+    timely_domain: "Custo adicional"
+    your_website: "Seu Próprio Site"
+    just_form: "Apenas um formulário"
+    widget_only: "Apenas widget"
+    basic: "Básico"
+    full_landing: "Landing page completa"
+    staff: "No. de Funcionários"
+    per_staff: "Por funcionário"
+    setmore_staff: "Até 4 (grátis)"
+    unlimited: "Ilimitado"
+    setup: "Tempo de Configuração"
+    5_min: "5 minutos"
+    savings: "Economia média: R$200-500/mês para um salão ocupado"
+    stats_free: "Sem comissão"
+    stats_setup: "Config em 5 min"
+    stats_nocode: "Domínio próprio grátis"
+    no_credit_card: "Sem cartão de crédito"
+    setup_minutes: "Configure em 5 minutos"
+
+  logos:
+    trusted_by: "A confiança de empresas do mundo inteiro"
+
+  live_templates:
+    title: "Veja como sua empresa pode parecer."
+    view_live_demo: "Ver demonstração ao vivo"
+    carousel_prev: "Modelos anteriores"
+    carousel_next: "Próximos modelos"
+    find_more_badge: "+ Mais modelos"
+    find_more_title: "Encontre mais modelos no BookrHub"
+    find_more_description: "Experimente seu estilo favorito em minutos. Sem código, sem cartão."
+    find_more_cta: "Começar agora"
+    templates:
+      barber:
+        title: "Barbearia"
+        description: "Landing premium com serviços, agendamentos e sua marca."
+      medical-clinic:
+        title: "Clínica Médica"
+        description: "Landing profissional para clínicas com agendamento online."
+      dental:
+        title: "Odontológico"
+        description: "Landing para consultórios odontológicos e agendamento."
+      fitness:
+        title: "Fitness"
+        description: "Landing de academia com agendamento."
+      fitness-pro:
+        title: "Fitness Pro"
+        description: "Landing de marca fitness profissional com agendamento."
+      hair-salon:
+        title: "Salão de Beleza"
+        description: "Landing de salão com serviços e agendamento."
+      high-converting:
+        title: "Alta Conversão"
+        description: "Modelo de landing otimizado para conversão."
+      modern-ux:
+        title: "UX Moderno"
+        description: "Landing moderna e limpa para qualquer empresa."
+      nails:
+        title: "Manicure"
+        description: "Landing de manicure com agendamento."
+      pet-grooming:
+        title: "Pet Shop"
+        description: "Landing para serviços pet com agendamento."
+      photography:
+        title: "Fotografia"
+        description: "Portfólio e agendamento para fotógrafos."
+      spa-massage:
+        title: "Spa e Massagens"
+        description: "Landing de spa e bem-estar com agendamento."
+
+  section_labels:
+    features: "Recursos"
+    how_it_works: "Como Funciona"
+    your_brand: "Sua Marca"
+    why_us: "Por Que BookrHub"
+    testimonials: "Depoimentos"
+    pricing: "Preços"
+    faq: "Perguntas Frequentes"
+
+  features:
+    title: "Tudo o Que Você Precisa"
+    subtitle: "Ferramentas poderosas que são simples de usar"
+    easy_scheduling:
+      title: "Agendamento Fácil"
+      description: "Disponibilidade em tempo real, agendamento automatizado e prevenção de conflitos."
+    team_management:
+      title: "Gestão de Equipe"
+      description: "Gerencie horários da equipe, acompanhe desempenho, atribua serviços."
+    smart_reminders:
+      title: "Lembretes Inteligentes"
+      description: "Reduza faltosos com lembretes automáticos por email."
+    clear_analytics:
+      title: "Análises Claras"
+      description: "Acompanhe agendamentos, receita e tendências dos clientes em um piscar de olhos."
+    mobile_ready:
+      title: "Pronto para Mobile"
+      description: "Funciona perfeitamente em todos os dispositivos. Agende a qualquer hora, em qualquer lugar."
+    your_brand:
+      title: "Sua Marca"
+      description: "Domínio personalizado e páginas de agendamento com sua marca para seu negócio."
+
+  why_us:
+    title: "Feito para empresas modernas."
+    subtitle: "Estável, bem projetado e completo. Substitua ferramentas de agendamento obsoletas e sites improvisados: obtenha um site premium com agendamento e pagamentos integrados."
+    card_parity:
+      title: "A mesma potência dos grandes"
+      description: "Combinamos o que Fresha e outros oferecem: agendamento em tempo real, lembretes, pagamentos, gestão de equipe. Você tem os recursos que precisa sem a complexidade ou o preço alto."
+    card_landing:
+      title: "Sua página de agendamento é seu site"
+      description: "Quem mais te dá uma landing page completa que serve como seu site? Com o BookrHub, sua página não é só um formulário: é uma página com sua marca, seus serviços e seu domínio. Um único link faz tudo."
+    card_growth:
+      title: "Estamos apenas começando"
+      description: "Esta é nossa base. Tudo o que adicionamos—novos recursos, integrações, ferramentas—também faz sua plataforma crescer. Você não está comprando um produto fechado; está entrando em uma plataforma que vai crescer muito com você."
+    card_payments:
+      title: "Zero comissão. Seu método de pagamento. O dinheiro vai para você."
+      description: "Nãoomos porcentaje nem comissão das suas vendas. Você conecta seu próprio método de pagamento—suportamos várias integrações. O dinheiro vai diretamente para você. Configure o que preferir e fique com cada centavo que ganha."
+    card_underdog:
+      title: "Feito para empresas reais"
+      description: "Não somos um gigante. Construímos isto para salões, barbearias, consultores e pequenas equipes que querem algo que funcione e continue melhorando. Seu feedback define o que construímos a seguir."
+
+  how_it_works:
+    title: "Como o BookrHub Funciona"
+    subtitle: "Veja a plataforma em ação"
+    admin_dashboard: "Painel Admin"
+    customer_experience: "Experiência do Cliente"
+    calendar_management: "Gestão de Calendário"
+    booking_overview: "Visão Geral de Agendamentos"
+    company_settings: "Configurações da Empresa"
+
+  business_pages:
+    title: "Uma landing que é seu site—não apenas um formulário"
+    subtitle: "Sua página de agendamento é uma landing completa: sua marca, seus serviços, seu link. Sem site separado. Quem mais faz isso?"
+    customized_brand:
+      title: "Sua página de agendamento é seu site"
+      description: "Cada empresa tem uma landing real que funciona como seu site: cores, serviços e marca. Um único link para compartilhar. De barbearias a consultores. Sem necessidade de site separado."
+    features:
+      custom_colors: "Cores e marca personalizadas"
+      own_domain: "Seu próprio domínio"
+      mobile_optimized: "Otimizado para mobile"
+      seo_friendly: "Amigo do SEO"
+
+  testimonials:
+    title: "Amado por empresas em todo lugar"
+    subtitle: "Veja o que nossos clientes dizem sobre o BookrHub"
+    testimonial1:
+      quote: "O BookrHub transformou nossa gestão de agendamentos. Nossos faltosos diminuíram 60% graças aos lembretes automatizados. A configuração foi incrivelmente fácil."
+      name: "Maria Silva"
+      role: "Proprietária, Estúdio de Beleza"
+    testimonial2:
+      quote: "Finalmente um sistema de agendamento que não parece software corporativo. Limpo, moderno, e meus clientes adoram como é fácil agendar. Vale cada centavo."
+      name: "João Santos"
+      role: "Proprietário de Barbearia"
+    testimonial3:
+      quote: "Mudamos de outra plataforma e não olhamos para trás. O plano gratuito é genuinamente útil, e os planos pagos são incrivelmente acessíveis para pequenas equipes."
+      name: "Ana Costa"
+      role: "Consultora de Bem-estar"
+
+  pricing:
+    title: "Preços"
+    subtitle: "Escolha o plano certo para você"
+    independent: "Independente"
+    business: "Business"
+    free: "Grátis"
+    free_forever: "Grátis para sempre"
+    per_month: "por mês"
+    for_ever: "para sempre"
+    most_popular: "Mais Popular"
+    founders_banner: "Clube Fundadores: Tranque estes preços de lançamento para sempre antes de adicionarmos mais recursos."
+    billing_monthly: "Mensal"
+    billing_annual: "Anual"
+    per_month_billed_annual: "por mês, cobrado anualmente"
+    yearly_savings_callout: "2 meses grátis!"
+    business_annual_bonus: "Bônus anual: Vamos desenhar sua landing page para você!"
+
+  plan_features:
+    independent:
+      - "Até 150 agendamentos/mês"
+      - "1 Membro da equipe"
+      - "Lembretes por email"
+      - "Página de agendamento padrão (seudenome.bookrhub.com/app/bookings)"
+    business:
+      - "Agendamentos ilimitados"
+      - "Equipe ilimitada"
+      - "Consultas da sua landing page"
+      - "Pagamentos online — sem comissão: conecte seu provedor, dinheiro vai para você"
+      - "Landing page premium (como nosso modelo Barbearia)"
+      - "Análises"
+      - "Conecte seu Domínio Personalizado (seubusiness.com)"
+      - "Suporte dedicado"
+
+  faq:
+    title: "Perguntas frequentes"
+    subtitle: "Tudo o que você precisa saber sobre o BookrHub"
+    question1: "Como funciona o plano gratuito?"
+    answer1: "Nosso plano Independente gratuito é completamente gratuito para sempre—sem cartão de crédito. Você obtém até 150 agendamentos por mês, lembretes por email e uma página de agendamento em nosso subdomínio. É perfeito para profissionais independentes que estão começando."
+    question2: "Posso cancelar minha assinatura a qualquer momento?"
+    answer2: "Sim! Você pode cancelar sua assinatura a qualquer momento sem perguntas. Sem contratos de longo prazo ou taxas de cancelamento. Você continuará tendo acesso até o final do seu período de faturamento."
+    question3: "Vocês oferecem soluções personalizadas para equipes maiores?"
+    answer3: "Com certeza! Nosso plano Business suporta membros de equipe ilimitados. Para empresas com necessidades específicas, entre em contato pelo admin@bookrhub.com e criaremos uma solução personalizada para você."
+    question4: "Vocês cobram comissão ou porcentaje das minhas vendas?"
+    answer4: "Não. Não cobramos nenhuma comissão ou porcentaje das suas vendas. Você conecta seu próprio método de pagamento—suportamos várias integrações. O dinheiro vai diretamente para você. Configure o que preferir e fique com cada centavo que ganha."
+    question5: "Quanto tempo leva para configurar?"
+    answer5: "A maioria das empresas está funcionando em menos de 5 minutos! Basta criar uma conta, adicionar seus serviços e disponibilidade e compartilhar seu link de agendamento. É simples assim."
+    question6: "O que é um sistema de agendamento e por que preciso de um?"
+    answer6: "Um sistema de agendamento é um software que ajuda empresas a gerenciar horários, agendamentos e reservas de clientes online. O BookrHub é um sistema de agendamento completo que automatiza sua agenda, reduz faltosos com lembretes e ajuda você a crescer seu negócio. Nosso plano gratuito é ideal para começar sem cartão de crédito."
+    question7: "O BookrHub é uma boa alternativa ao Fresha?"
+    answer7: "Sim. O BookrHub é um sistema de agendamento e marcação de horários simples que faz o que você precisa sem complicações. Se você procura uma alternativa ao Fresha com plano gratuito, agendamento em tempo real e lembretes, o BookrHub é feito para pequenas equipes e profissionais independentes. Sem cartão de crédito para começar."
+    question8: "Eu ganho um site ou apenas um formulário de agendamento?"
+    answer8: "Você ganha uma landing page completa que serve como seu site. Sua página BookrHub tem sua marca, seus serviços, sua disponibilidade—não é apenas um formulário. Muitos concorrentes te dão um formulário para embutir; nós te damos uma página pronta para compartilhar que parece seu negócio. Nos planos pagos, você pode usar seu próprio domínio. Um único link faz tudo."
+
+  cta:
+    get_started: "Começar"
+    start_for_free: "Começar Gratuitamente"
+    first_month_on_us: "Primeiro mês grátis"
+    no_credit_card: "Sem cartão de crédito • Configure em minutos"
+    ready_to_simplify: "Pronto para Simplificar seus Agendamentos?"
+    join_thousands: "Junte-se a milhares de empresas que já usam o BookrHub."
+    no_credit_card_short: "Sem cartão de crédito"
+    setup_in_minutes: "Configure em minutos"
+    cancel_anytime: "Cancele a qualquer momento"
+
+  customer_experience:
+    landing_page: "Landing Page"
+    date_time_selection: "Seleção de Data e Hora"
+    booking_confirmation: "Confirmação de Agendamento"
+
+  footer:
+    powered_by: "Desenvolvido por"
+    product: "Produto"
+    company: "Empresa"
+    support: "Suporte"
+    legal: "Legal"
+    about_us: "Sobre Nós"
+    blog: "Blog"
+    updates: "Novidades"
+    contact_us: "Fale Conosco"
+    help_center: "Central de Ajuda"
+    privacy_policy: "Política de Privacidade"
+    terms_of_service: "Termos de Serviço"
+    description: "A forma mais simples de gerenciar agendamentos e crescer seu negócio. A confiança de milhares de profissionais ao redor do mundo."
+    consent_preferences: "Preferências de Consentimento"
+    all_rights: "Todos os direitos reservados."
+
+  contact:
+    page_title: "Fale Conosco"
+    meta_description: "Entre em contato com a equipe BookrHub. Estamos aqui para ajudar com todas as suas perguntas sobre nosso sistema de agendamento."
+    title: "Escreva para nós"
+    subtitle: "Tem perguntas? Adoraríamos ouvir você. Envie-nos uma mensagem e responderemos o mais rápido possível."
+    form:
+      name: "Seu Nome"
+      name_placeholder: "Digite seu nome"
+      email: "Endereço de Email"
+      email_placeholder: "Digite seu email"
+      subject: "Assunto"
+      subject_placeholder: "Selecione um assunto"
+      subject_sales: "Vendas e Preços"
+      subject_support: "Suporte Técnico"
+      subject_partnership: "Parcerias"
+      subject_other: "Outro"
+      message: "Mensagem"
+      message_placeholder: "Como podemos ajudá-lo?"
+      submit: "Enviar Mensagem"
+    email_subject: "Novo Formulário de Contato do BookrHub"
+    info:
+      email_title: "Email"
+      hours_title: "Horário de Funcionamento"
+      hours: "Segunda - Sexta, 9h - 18h (NZST)"
+      help_title: "Precisa de Ajuda?"
+      help_text: "Nossa equipe de suporte está pronta para ajudá-lo com todas as suas perguntas."
+      help_link: "Visite a Central de Ajuda"
+
+  geo:
+    what_is_booking_system_title: "O Que é um Sistema de Agendamento?"
+    what_is_booking_system_p1: "Um sistema de agendamento é um software que permite empresas gerenciar agendamentos e reservas online, 24h/dia. Segundo estudos recentes, empresas que usam sistemas de agendamento online veem uma redução de 40% em faltosos e economizam em média 10 horas por semana em agendamentos por telefone."
+    modern_booking_systems: "Sistemas de agendamento modernos como o BookrHub também incluem recursos como lembretes automáticos, pagamentos online e páginas personalizadas, eliminando a necessidade de clientes ligarem ou enviarem emails para marcar horário."
+    stats:
+      no_shows_reduction: "redução em faltosos com lembretes automáticos"
+      hours_saved: "horas economizadas por semana em agendamentos telefônicos"
+      businesses_trust: "empresas confiam no BookrHub no mundo"
+      commission: "comissão em todos os agendamentos"
+    quote: "O agendamento online mudou de algo opcional para uma ferramenta crítica para negócios. Empresas sem isso estão perdendo clientes para concorrentes que oferecem a conveniência do autoagendamento 24h/dia."
+
+  about:
+    page_title: "Sobre Nós"
+    meta_description: "Conheça o BookrHub - o sistema de agendamento gratuito para salões, spas, barbearias e pequenas empresas. A confiança de 700+ empresas no mundo com 0% de comissão."
+    org_description: "BookrHub é um sistema de agendamento gratuito e software de marcação de horários para salões, barbearias, spas e pequenas empresas. A confiança de mais de 700 empresas."
+    hero_title: "Tornando Agendamentos Simples para Todos"
+    hero_subtitle: " acreditamos que toda empresa merece ferramentas de agendamento profissionais sem as taxas altas."
+    mission_title: "Nossa Missão"
+    mission_1_title: "Democratizar o Agendamento Online"
+    mission_1_text: "Tornamos o BookrHub gratuito para que pequenas empresas possam competir com grandes redes. Sem mais perder clientes porque agendar era muito complicado."
+    mission_2_title: "Reduzir Faltosos"
+    mission_2_text: "Lembretes automatizados ajudam empresas a reduzir consultas perdidas em até 40%, economizando tempo e receita toda semana."
+    mission_3_title: "Guardar Mais do Que Você Ganha"
+    mission_3_text: "Diferente de outras plataformas que cobram 20-30% de comissão, o BookrHub é gratuito. Você fica com 100% do que cobra."
+    cta_title: "Pronto para Começar?"
+    cta_subtitle: "Junte-se às 700+ empresas que já usam o BookrHub."

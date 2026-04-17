@@ -1,0 +1,351 @@
+it:
+  site:
+    title: "BookrHub - Sistema di Prenotazione Gratuito | 0% Commissione"
+    description: "Sistema di prenotazione gratuito per barbieri, saloni e aziende. Senza commissione, promemoria automatici, pagina personalizzata. Più di 700 aziende si fidano di noi."
+    tagline: "Gestione Semplice delle Prenotazioni per Aziende Moderne"
+    subtitle: "Tutto ciò di cui hai bisogno per gestire appuntamenti, far crescere la tua attività e accontentare i clienti."
+    hero_subtitle: "Una landing page tutta tua, prenotazioni automatiche e pagamenti in un unico posto."
+    keywords: "software di prenotazione, appuntamenti online, sistema di prenotazione online, gestione prenotazioni, sistema di prenotazioni"
+    author: "BookrHub"
+    canonical_url: "https://www.bookrhub.com"
+
+  navigation:
+    features: "Funzionalità"
+    why_us: "Perché Noi"
+    how_it_works: "Come Funziona"
+    live_templates: "Template"
+    examples: "Esempi"
+    pricing: "Prezzi"
+    sign_in: "Accedi"
+    get_started: "Inizia"
+
+  buttons:
+    start_free_trial: "Prova Gratis"
+    watch_demo: "Vedi Demo"
+
+  hero:
+    social_proof: "aziende si fidano di BookrHub"
+    headline_line_1: "Smetti di Pagare il 20% a Fresha"
+    headline_line_2: "Il Tuo Sito + Prenotazioni"
+    headline_line_3: "Risparmia €300+/Mese"
+    headline_line_4: "Tieni il 100% dei Tuoi Soldi"
+    headline_line_5: "Configura in 5 Minuti"
+    headline_line_6: "Senza Competenze Tecniche"
+    headline_line_7: "Dominio Personalizzato Incluso"
+    headline_line_8: "La Scelta Intelligente"
+    tagline: "Prenotazioni semplici. 100% dei tuoi soldi."
+    stats_free: "Senza commissione"
+    stats_setup: "Setup in 5 min"
+    stats_nocode: "Dominio gratis"
+    no_credit_card: "Senza carta di credito"
+    setup_minutes: "Configura in 5 minuti"
+
+  comparison:
+    title: "Perché le Aziende Intelligenti Cambiano"
+    subtitle: "Scopri quanto potresti risparmiare ogni mese vs Fresha e altri"
+    features: "Funzionalità"
+    starting_price: "Prezzo Base"
+    fresha_price: "Da €29/mese"
+    setmore_price: "€19/utente/mese"
+    timely_price: "€35/personale/mese"
+    free: "GRATIS"
+    commission: "Commissione Clienti Nuovi"
+    custom_domain: "Dominio Personalizzato"
+    fresha_domain: "+€49/mese extra"
+    setmore_domain: "Solo piano Pro"
+    timely_domain: "Costo aggiuntivo"
+    your_website: "Il Tuo Sito Web"
+    just_form: "Solo un modulo"
+    widget_only: "Solo widget"
+    basic: "Base"
+    full_landing: "Landing page completa"
+    staff: "N. di Personale"
+    per_staff: "Per personale"
+    setmore_staff: "Fino a 4 (gratis)"
+    unlimited: "Illimitato"
+    setup: "Tempo di Configurazione"
+    5_min: "5 minuti"
+    savings: "Risparmio medio: €150-400/mese per un salone affollato"
+    stats_free: "Senza commissione"
+    stats_setup: "Setup in 5 min"
+    stats_nocode: "Dominio personalizzato gratis"
+    no_credit_card: "Senza carta di credito"
+    setup_minutes: "Configura in 5 minuti"
+
+  logos:
+    trusted_by: "La fiducia di aziende in tutto il mondo"
+
+  live_templates:
+    title: "Vedi come potrebbe apparire la tua azienda."
+    view_live_demo: "Vedi demo dal vivo"
+    carousel_prev: "Template precedenti"
+    carousel_next: "Template successivi"
+    find_more_badge: "+ Altri template"
+    find_more_title: "Trova altri template su BookrHub"
+    find_more_description: "Prova il tuo stile preferito in pochi minuti. Senza codice, senza carta."
+    find_more_cta: "Inizia ora"
+    templates:
+      barber:
+        title: "Barbiere"
+        description: "Landing premium con servizi, prenotazioni e il tuo brand."
+      medical-clinic:
+        title: "Clinica Medica"
+        description: "Landing professionale per cliniche con prenotazioni online."
+      dental:
+        title: "Odontoiatrico"
+        description: "Landing per studi dentistici e prenotazioni."
+      fitness:
+        title: "Fitness"
+        description: "Landing per palestre con prenotazioni."
+      fitness-pro:
+        title: "Fitness Pro"
+        description: "Landing per marchio fitness professionale con prenotazioni."
+      hair-salon:
+        title: "Salone di Parrucchiere"
+        description: "Landing per salone con servizi e prenotazioni."
+      high-converting:
+        title: "Alta Conversione"
+        description: "Template di landing ottimizzato per la conversione."
+      modern-ux:
+        title: "UX Moderno"
+        description: "Landing moderna e pulita per qualsiasi azienda."
+      nails:
+        title: "Nails"
+        description: "Landing per nails salon con prenotazioni."
+      pet-grooming:
+        title: "Pet Grooming"
+        description: "Landing per servizi pet con prenotazioni."
+      photography:
+        title: "Fotografia"
+        description: "Portfolio e prenotazioni per fotografi."
+      spa-massage:
+        title: "Spa e Massaggi"
+        description: "Landing per spa e benessere con prenotazioni."
+
+  section_labels:
+    features: "Funzionalità"
+    how_it_works: "Come Funziona"
+    your_brand: "Il Tuo Brand"
+    why_us: "Perché BookrHub"
+    testimonials: "Testimonianze"
+    pricing: "Prezzi"
+    faq: "Domande Frequenti"
+
+  features:
+    title: "Tutto ciò di cui hai bisogno"
+    subtitle: "Strumenti potenti che sono semplici da usare"
+    easy_scheduling:
+      title: "Prenotazioni Facili"
+      description: "Disponibilità in tempo reale, prenotazioni automatizzate e prevenzione conflitti."
+    team_management:
+      title: "Gestione Team"
+      description: "Gestisci orari dello staff, monitora performance, assegna servizi."
+    smart_reminders:
+      title: "Promemoria Intelligenti"
+      description: "Riduci le assenze con promemoria automatici via email."
+    clear_analytics:
+      title: "Analisi Dettagliate"
+      description: "Monitora prenotazioni, ricavi e trend dei clienti a colpo d'occhio."
+    mobile_ready:
+      title: "Mobile Ready"
+      description: "Funziona perfettamente su tutti i dispositivi. Prenota sempre, ovunque."
+    your_brand:
+      title: "Il Tuo Brand"
+      description: "Dominio personalizzato e pagine di prenotazione branded per la tua attività."
+
+  why_us:
+    title: "Progettato per aziende moderne."
+    subtitle: "Stabile, ben progettato e tutto in uno. Sostituisci strumenti di prenotazione obsoleti: ottieni un sito web premium con prenotazioni e pagamenti integrati."
+    card_parity:
+      title: "La stessa potenza dei grandi"
+      description: "Combiniamo ciò che Fresha e altri offrono: prenotazioni in tempo reale, promemoria, pagamenti, gestione team. Ottieni le funzionalità di cui hai bisogno senza complessità o costi elevati."
+    card_landing:
+      title: "La tua pagina di prenotazione è il tuo sito"
+      description: "Chi altro ti dà una landing page completa che funge da sito web? Con BookrHub, la tua pagina non è solo un modulo: è una pagina con il tuo brand, i tuoi servizi e il tuo dominio. Un solo link per tutto."
+    card_growth:
+      title: "Stiamo appena iniziando"
+      description: "Questa è la nostra base. Tutto ciò che aggiungiamo—nuove funzionalità, integrazioni, strumenti—fa crescere anche la tua piattaforma. Non stai acquistando un prodotto chiuso; stai salendo su una piattaforma che crescerà molto con te."
+    card_payments:
+      title: "Zero commissioni. Il tuo metodo di pagamento. I soldi vanno a te."
+      description: "Non prendiamo percentuali né commissioni sulle tue vendite. Colleghi il tuo metodo di pagamento—supportiamo diverse integrazioni. I soldi vanno direttamente a te. Configura quello che preferisci e tieni ogni euro che guadagni."
+    card_underdog:
+      title: "Progettato per aziende reali"
+      description: "Non siamo un gigante. Lo costruiamo per saloni, barbieri, consulenti e piccoli team che vogliono qualcosa che funzioni e continui a migliorare. I tuoi feedback definiscono cosa costruiamo dopo."
+
+  how_it_works:
+    title: "Come Funziona BookrHub"
+    subtitle: "Vedi la piattaforma in azione"
+    admin_dashboard: "Dashboard Admin"
+    customer_experience: "Esperienza Cliente"
+    calendar_management: "Gestione Calendario"
+    booking_overview: "Panoramica Prenotazioni"
+    company_settings: "Impostazioni Azienda"
+
+  business_pages:
+    title: "Una landing che è il tuo sito—non solo un modulo"
+    subtitle: "La tua pagina di prenotazione è una landing completa: il tuo brand, i tuoi servizi, il tuo link. Senza sito separato. Chi altro lo fa?"
+    customized_brand:
+      title: "La tua pagina di prenotazione è il tuo sito"
+      description: "Ogni azienda ottiene una landing reale che funge da sito web: colori, servizi e brand. Un solo link da condividere. Da barbieri a consulenti. Senza necessità di sito separato."
+    features:
+      custom_colors: "Colori e brand personalizzati"
+      own_domain: "Il tuo dominio"
+      mobile_optimized: "Ottimizzato per mobile"
+      seo_friendly: "Amico del SEO"
+
+  testimonials:
+    title: "Amato da aziende ovunque"
+    subtitle: "Vedi cosa dicono i nostri clienti di BookrHub"
+    testimonial1:
+      quote: "BookrHub ha trasformato la gestione dei nostri appuntamenti. Le nostre assenze sono diminuite del 60% grazie ai promemoria automatizzati. La configurazione è stata incredibilmente facile."
+      name: "Maria Rossi"
+      role: "Proprietaria, Studio di Bellezza"
+    testimonial2:
+      quote: "Finalmente un sistema di prenotazione che non sembra software aziendale. Pulito, moderno e i miei clienti adorano quanto sia facile prenotare. Vale ogni centesimo."
+      name: "Giovanni Bianchi"
+      role: "Proprietario di Barberia"
+    testimonial3:
+      quote: "Abbiamo cambiato da un'altra piattaforma e non ci siamo voltati indietro. Il piano gratuito è genuinamente utile ei piani a pagamento sono incredibilmente convenienti per i piccoli team."
+      name: "Sofia Verdi"
+      role: "Consulente Benessere"
+
+  pricing:
+    title: "Prezzi"
+    subtitle: "Scegli il piano giusto per te"
+    independent: "Indipendente"
+    business: "Business"
+    free: "Gratis"
+    free_forever: "Gratis per sempre"
+    per_month: "al mese"
+    for_ever: "per sempre"
+    most_popular: "Il Più Popolare"
+    founders_banner: "Club Fondatori: Blocca questi prezzi early-bird per sempre prima di aggiungere altre funzionalità!"
+    billing_monthly: "Mensile"
+    billing_annual: "Annuale"
+    per_month_billed_annual: "al mese, fatturato annualmente"
+    yearly_savings_callout: "2 mesi gratis!"
+    business_annual_bonus: "Bonus annuale: Progetteremo la tua landing page per te!"
+
+  plan_features:
+    independent:
+      - "Fino a 150 prenotazioni/mese"
+      - "1 Membro dello staff"
+      - "Promemoria via email"
+      - "Pagina di prenotazione standard (iltuonome.bookrhub.com/app/bookings)"
+    business:
+      - "Prenotazioni illimitate"
+      - "Staff illimitato"
+      - "Richieste dalla tua landing page"
+      - "Pagamenti online — senza commissione: collega il tuo provider, i soldi vanno a te"
+      - "Landing page premium (come il nostro template Barbiere)"
+      - "Analisi"
+      - "Collega il tuo Dominio Personalizzato (latuaattività.com)"
+      - "Supporto dedicato"
+
+  faq:
+    title: "Domande frequenti"
+    subtitle: "Tutto ciò che devi sapere su BookrHub"
+    question1: "Come funziona il piano gratuito?"
+    answer1: "Il nostro piano Indipendente gratuito è completamente gratuito per sempre—senza carta di credito. Ottieni fino a 150 prenotazioni al mese, promemoria via email e una pagina di prenotazione sul nostro subdomain. È perfetto per professionisti indipendenti che iniziano."
+    question2: "Posso cancellare il mio abbonamento in qualsiasi momento?"
+    answer2: "Sì! Puoi cancellare il tuo abbonamento in qualsiasi momento senza domande. Nessun contratto a lungo termine né penali di cancellazione. Continuarai ad avere accesso fino alla fine del tuo periodo di fatturazione."
+    question3: "Offrite soluzioni personalizzate per team più grandi?"
+    answer3: "Assolutamente! Il nostro piano Business supporta membri dello staff illimitati. Per aziende con esigenze specifiche, contattaci a admin@bookrhub.com e creeremo una soluzione personalizzata per te."
+    question4: "Prendete una commissione o percentuale sulle mie vendite?"
+    answer4: "No. Non prendiamo alcuna commissione o percentuale sulle tue vendite. Colleghi il tuo metodo di pagamento—supportiamo diverse integrazioni. I soldi vanno direttamente a te. Configura quello che preferisci e tieni ogni euro che guadagni."
+    question5: "Quanto tempo richiede la configurazione?"
+    answer5: "La maggior parte delle aziende è operativa in meno di 5 minuti! Crea semplicemente un account, aggiungi i tuoi servizi e disponibilità e condividi il tuo link di prenotazione. È così semplice."
+    question6: "Cos'è un sistema di prenotazione e perché ne ho bisogno?"
+    answer6: "Un sistema di prenotazione è un software che aiuta le aziende a gestire appuntamenti, orari e prenotazioni dei clienti online. BookrHub è un sistema di prenotazione completo che automatizza il tuo calendario, riduce le assenze con promemoria e ti aiuta a far crescere la tua attività. Il nostro piano gratuito è ideale per iniziare senza carta di credito."
+    question7: "BookrHub è una buona alternativa a Fresha?"
+    answer7: "Sì. BookrHub è un sistema di prenotazione e appuntamenti semplice che fa ciò di cui hai bisogno senza complessità. Se cerchi un'alternativa a Fresha con piano gratuito, prenotazioni in tempo reale e promemoria, BookrHub è progettato per piccoli team e professionisti indipendenti. Senza carta di credito per iniziare."
+    question8: "Ottengo un sito web o solo un modulo di prenotazione?"
+    answer8: "Ottieni una landing page completa che funge da sito web. La tua pagina BookrHub ha il tuo brand, i tuoi servizi, la tua disponibilità—non è solo un modulo. Molti concorrenti ti danno un modulo da integrare altrove; noi ti diamo una pagina pronta da condividere che sembra la tua attività. Nei piani a pagamento puoi usare il tuo dominio. Un solo link per tutto."
+
+  cta:
+    get_started: "Inizia"
+    start_for_free: "Inizia Gratis"
+    first_month_on_us: "Primo mese gratis"
+    no_credit_card: "Senza carta di credito • Configura in pochi minuti"
+    ready_to_simplify: "Pronto a Semplificare le Tue Prenotazioni?"
+    join_thousands: "Unisciti alle migliaia di aziende che già usano BookrHub."
+    no_credit_card_short: "Senza carta di credito"
+    setup_in_minutes: "Configura in pochi minuti"
+    cancel_anytime: "Cancella in qualsiasi momento"
+
+  customer_experience:
+    landing_page: "Landing Page"
+    date_time_selection: "Selezione Data e Ora"
+    booking_confirmation: "Conferma Prenotazione"
+
+  footer:
+    powered_by: "Powered by"
+    product: "Prodotto"
+    company: "Azienda"
+    support: "Supporto"
+    legal: "Legale"
+    about_us: "Chi Siamo"
+    blog: "Blog"
+    updates: "Novità"
+    contact_us: "Contattaci"
+    help_center: "Centro Assistenza"
+    privacy_policy: "Privacy Policy"
+    terms_of_service: "Termini di Servizio"
+    description: "Il modo più semplice per gestire prenotazioni e far crescere la tua attività. La fiducia di migliaia di professionisti in tutto il mondo."
+    consent_preferences: "Preferenze Consenso"
+    all_rights: "Tutti i diritti riservati."
+
+  contact:
+    page_title: "Contattaci"
+    meta_description: "Mettiti in contatto con il team BookrHub. Siamo qui per aiutarti con qualsiasi domanda sul nostro sistema di prenotazione."
+    title: "Scrivici"
+    subtitle: "Hai domande? Ci piacerebbe sentirti. Inviaci un messaggio e risponderemo il prima possibile."
+    form:
+      name: "Il Tuo Nome"
+      name_placeholder: "Inserisci il tuo nome"
+      email: "Indirizzo Email"
+      email_placeholder: "Inserisci la tua email"
+      subject: "Oggetto"
+      subject_placeholder: "Seleziona un argomento"
+      subject_sales: "Vendite e Prezzi"
+      subject_support: "Supporto Tecnico"
+      subject_partnership: "Partnership"
+      subject_other: "Altro"
+      message: "Messaggio"
+      message_placeholder: "Come possiamo aiutarti?"
+      submit: "Invia Messaggio"
+    email_subject: "Nuovo Modulo di Contatto da BookrHub"
+    info:
+      email_title: "Email"
+      hours_title: "Orari di Apertura"
+      hours: "Lunedì - Venerdì, 9:00 - 18:00 (NZST)"
+      help_title: "Hai Bisogno di Aiuto?"
+      help_text: "Il nostro team di supporto è pronto ad assisterti con qualsiasi domanda."
+      help_link: "Visita il Centro Assistenza"
+
+  geo:
+    what_is_booking_system_title: "Cos'è un Sistema di Prenotazione?"
+    what_is_booking_system_p1: "Un sistema di prenotazione è un software che consente alle aziende di gestire appuntamenti e prenotazioni online, 24/7. Secondo studi recenti, le aziende che utilizzano sistemi di prenotazione online vedono una riduzione del 40% delle assenze e risparmiano in media 10 ore a settimana sulla pianificazione telefonica."
+    modern_booking_systems: "I sistemi di prenotazione moderni come BookrHub includono anche funzionalità come promemoria automatici, pagamenti online e landing page personalizzate—eliminando la necessità per i clienti di chiamare o inviare email per prenotare."
+    stats:
+      no_shows_reduction: "riduzione delle assenze con promemoria automatici"
+      hours_saved: "ore risparmiate a settimana sulla pianificazione telefonica"
+      businesses_trust: "aziende si fidano di BookrHub nel mondo"
+      commission: "commissione su tutte le prenotazioni"
+    quote: "La prenotazione online è passata da un'opzione a uno strumento critico per le aziende. Le aziende senza di essa stanno perdendo clienti a favore di concorrenti che offrono la comodità dell'auto-prenotazione 24/7."
+
+  about:
+    page_title: "Chi Siamo"
+    meta_description: "Scopri BookrHub - il sistema di prenotazione gratuito per saloni, spa, barbieri e piccole aziende. La fiducia di 700+ aziende nel mondo con 0% di commissione."
+    org_description: "BookrHub è un sistema di prenotazione gratuito e software di appuntamenti per saloni, barbieri, spa e piccole aziende. La fiducia di più di 700 aziende."
+    hero_title: "Semplificare le Prenotazioni per Tutti"
+    hero_subtitle: "Riteniamo che ogni azienda meriti strumenti di prenotazione professionali senza le tariffe elevate."
+    mission_title: "La Nostra Missione"
+    mission_1_title: "Democratizzare la Prenotazione Online"
+    mission_1_text: "Abbiamo reso BookrHub gratuito così che le piccole aziende possano competere con le grandi catene. Niente più perdere clienti perché prenotare era troppo complicato."
+    mission_2_title: "Ridurre le Assenze"
+    mission_2_text: "I promemoria automatici aiutano le aziende a ridurre gli appuntamenti mancati fino al 40%, risparmiando tempo e ricavi ogni settimana."
+    mission_3_title: "Tenere Più di Quello che Guadagni"
+    mission_3_text: "A differenza di altre piattaforme che addebitano il 20-30% di commissione, BookrHub è gratuito. Tieni il 100% di ciò che addebiti."
+    cta_title: "Pronto a Iniziare?"
+    cta_subtitle: "Unisciti alle 700+ aziende che già usano BookrHub."
