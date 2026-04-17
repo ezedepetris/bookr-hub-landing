@@ -28,6 +28,11 @@ fr:
     headline_line_1: "Arrêtez de Payer 20% à Fresha"
     headline_line_2: "Votre Site + Réservation"
     headline_line_3: "Gardez 100% de Votre Argent"
+    headline_line_4: "Gardez 100% de Votre Argent"
+    headline_line_5: "Config en 5 Minutes"
+    headline_line_6: "Sans Code Requis"
+    headline_line_7: "Domaine Personnalisé Inclus"
+    headline_line_8: "Le Choix Plus Intelligent"
     tagline: "Réservations simples. 100% de votre argent."
     stats_free: "Sans commission"
     stats_setup: "Config en 5 min"
@@ -40,15 +45,23 @@ fr:
     subtitle: "Vérifiez combien vous pourriez économiser chaque mois vs Fresha, SetMore et Timely"
     features: "Caractéristiques"
     starting_price: "Prix de Départ"
+    fresha_price: "À partir de 18€/mois"
+    setmore_price: "10€/utilisateur/mois"
+    timely_price: "24€/employé/mois"
     free: "GRATUIT"
     commission: "Commission Clients Nouveaux"
     custom_domain: "Domaine Personnalisé"
+    fresha_domain: "+45€/mois supplémentaire"
+    setmore_domain: "Plan Pro uniquement"
+    timely_domain: "Coût supplémentaire"
     your_website: "Votre Propre Site Web"
     just_form: "Juste un formulaire"
+    widget_only: "Widget uniquement"
     basic: "Basique"
     full_landing: "Landing page complète"
     staff: "No. de Personnel"
     per_staff: "Par personnel"
+    setmore_staff: "Jusqu'à 4 (gratuit)"
     unlimited: "Illimité"
     setup: "Temps de Configuration"
     5_min: "5 minutes"
@@ -84,9 +97,27 @@ fr:
       fitness:
         title: "Fitness"
         description: "Landing de salle de fitness avec réservations."
+      fitness-pro:
+        title: "Fitness Pro"
+        description: "Landing de marque fitness professionnelle avec réservations."
       hair-salon:
         title: "Salon de Coiffure"
         description: "Landing de salon avec services et réservations."
+      high-converting:
+        title: "Haute Conversion"
+        description: "Modèle de landing optimisé pour la conversion."
+      modern-ux:
+        title: "UX Moderne"
+        description: "Landing moderne et épurée pour toute entreprise."
+      nails:
+        title: "Onglerie"
+        description: "Landing d'onglerie avec réservations."
+      pet-grooming:
+        title: "Toilettage Animal"
+        description: "Landing pour services animaliers avec réservations."
+      photography:
+        title: "Photographie"
+        description: "Portfolio et réservations pour photographes."
       spa-massage:
         title: "Spa et Massages"
         description: "Landing de spa et bien-être avec réservations."
