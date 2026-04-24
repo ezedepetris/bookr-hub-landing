@@ -302,6 +302,28 @@ module SitemapGenerator
       xml << '  </url>'
     end
 
+    # German articles
+    de_seo_dir = File.join(seo_dir, 'de')
+    if Dir.exist?(de_seo_dir)
+      Dir.glob(File.join(de_seo_dir, '*.html')).each do |file|
+        basename = File.basename(file, '.html')
+        next if basename == 'index'
+
+        xml << '  <url>'
+        xml << "    <loc>#{base_url}/de/#{basename}</loc>"
+        xml << "    <lastmod>#{today}</lastmod>"
+        xml << '    <changefreq>monthly</changefreq>'
+        xml << '    <priority>0.7</priority>'
+        xml << '  </url>'
+      end
+      xml << '  <url>'
+      xml << "    <loc>#{base_url}/de/</loc>"
+      xml << "    <lastmod>#{today}</lastmod>"
+      xml << '    <changefreq>weekly</changefreq>'
+      xml << '    <priority>0.9</priority>'
+      xml << '  </url>'
+    end
+
     xml << '</urlset>'
     xml.join("\n")
   end
