@@ -1,0 +1,354 @@
+de:
+  site:
+    title: "BookrHub - Kostenloses Buchungssystem für Friseure, Salons, Spas & Kliniken"
+    description: "Das #1 kostenlose Buchungssystem mit 0% Provision. Für Friseure, Salons, Spas, Massagetherapeuten, Kliniken, Fitness & mehr."
+    tagline: "Einfaches Buchungsmanagement für moderne Unternehmen"
+    subtitle: "Das komplette Buchungssystem, das Sie für Terminverwaltung, Geschäftswachstum und Kundenzufriedenheit benötigen."
+    hero_subtitle: "Erhalten Sie eine premium-markenseite, automatische Terminplanung und Zahlungen an einem Ort."
+    keywords: "Buchungssoftware, Terminplanung, Online-Buchungssystem"
+    author: "BookrHub"
+    canonical_url: "https://www.bookrhub.com"
+
+  navigation:
+    features: "Funktionen"
+    why_us: "Warum wir"
+    how_it_works: "So funktioniert es"
+    live_templates: "Vorlagen"
+    examples: "Beispiele"
+    pricing: "Preise"
+    sign_in: "Anmelden"
+    get_started: "Loslegen"
+
+  buttons:
+    start_free_trial: "Kostenloser Test starten"
+    watch_demo: "Demo ansehen"
+
+  hero:
+    social_proof: "Unternehmen vertrauen BookrHub"
+    headline_line_1: "Spare 20% für Fresha"
+    headline_line_2: "Eigene Website + Buchung"
+    headline_line_3: "Sparen Sie 200+/Monat"
+    headline_line_4: "Behalten Sie 100% Ihres Geldes"
+    headline_line_5: "Einrichtung in 5 Minuten"
+    headline_line_6: "Kein Code erforderlich"
+    headline_line_7: "Eigene Domain inklusive"
+    headline_line_8: "Die smartere Buchungswahl"
+    tagline: "Same powerful booking. 100% of your money."
+    stats_free: "Keine Provision"
+    stats_setup: "5 min Einrichtung"
+    stats_nocode: "Eigene Domain kostenlos"
+    no_credit_card: "Keine Kreditkarte erforderlich"
+    setup_minutes: "Einrichtung in 5 Minuten"
+
+  logos:
+    trusted_by: "Vertraut von Unternehmen weltweit"
+
+  live_templates:
+    title: "Sehen Sie, wie Ihr Geschäft aussehen könnte."
+    view_live_demo: "Live-Demo ansehen"
+    carousel_prev: "Vorherige Vorlagen"
+    carousel_next: "Nächste Vorlagen"
+    find_more_badge: "+ Mehr Vorlagen"
+    find_more_title: "Noch mehr Vorlagen finden"
+    find_more_description: "Probieren Sie Ihren Lieblingsstil in Minuten."
+    find_more_cta: "Jetzt starten"
+    templates:
+      barber:
+        title: "Barbershop"
+        description: "Premium Landing mit Services, Buchung und Ihrer Marke."
+      medical-clinic:
+        title: "Medizinische Klinik"
+        description: "Professionelle Klinik-Landing mit Online-Buchung."
+      dental:
+        title: "Zahnarzt"
+        description: "Professionelle Zahnarzt-Website mit Buchung."
+      fitness:
+        title: "Fitness"
+        description: "Fitness-Studio Booking mit Training-Planung."
+      fitness-pro:
+        title: "Fitness Pro"
+        description: "Premium Fitness-Buchung mit allen Funktionen."
+      hair-salon:
+        title: "Friseursalon"
+        description: "Schöner Friseur-Salon mit allen Services."
+      high-converting:
+        title: "Hoch konvertierend"
+        description: "Optimiert für mehr Buchungen."
+      modern-ux:
+        title: "Modernes Design"
+        description: "Modernes, minimalistisches Design."
+      nails:
+        title: "Nagelstudio"
+        description: "Schönes Nagelstudio-Design."
+      pet-grooming:
+        title: "Tierpflege"
+        description: "Tierpflege und Grooming Buchung."
+      photography:
+        title: "Fotografie"
+        description: "Fotograf booking portfolio."
+      spa-massage:
+        title: "Spa & Massage"
+        description: "Entspannendes Spa- und Massage-Buchung."
+
+  features:
+    title: "Alles was Sie in einem Buchungssystem brauchen"
+    subtitle: "Leistungsstarke Buchungssystem-Tools die einfach zu nutzen sind"
+    easy_scheduling:
+      title: "Einfache Terminplanung"
+      description: "Echtzeit-Verfügbarkeit, automatische Buchung und Konfliktvermeidung."
+    team_management:
+      title: "Teamverwaltung"
+      description: "Verwalten Sie Mitarbeiterpläne, verfolgen Sie Leistungen."
+    smart_reminders:
+      title: "Intelligente Erinnerungen"
+      description: "Reduzieren Sie No-Shows mit automatischen E-Mail-Erinnerungen."
+    clear_analytics:
+      title: "Klare Analysen"
+      description: "Verfolgen Sie Buchungen, Einnahmen und Tendenzen auf einen Blick."
+    mobile_ready:
+      title: "Mobil bereit"
+      description: "Funktioniert perfekt auf allen Geräten."
+    your_brand:
+      title: "Ihre Marke"
+      description: "Eigene Domain und Marken-Buchungsseiten."
+    online_booking:
+      title: "Online-Buchung"
+      description: "Ihre Kunden können 24/7 online buchen"
+    reminders:
+      title: "Automatische Erinnerungen"
+      description: "Reduzieren Sie No-Shows um bis zu 40%"
+    payments:
+      title: "Online-Zahlungen"
+      description: "Akzeptieren Sie Zahlungen direkt online"
+    templates:
+      title: "12+ Vorlagen"
+      description: "Professionelle Designs für jedes Geschäft"
+    domain:
+      title: "Eigene Domain"
+      description: "Verwenden Sie Ihre eigene Domain"
+    staff:
+      title: "Unbegrenzte Mitarbeiter"
+      description: "Verwalten Sie Ihr ganzes Team"
+
+  why_us:
+    title: "Für moderne Unternehmen"
+    subtitle: "Stabil, schön designed und Alles-in-Einem."
+    card_parity:
+      title: "Gleiche Leistung wie die Großen"
+      description: "Wir bieten das Gleiche wie Fresha: Echtzeit-Terminplanung, Erinnerungen, Zahlungen."
+    card_landing:
+      title: "Ihre Buchungsseite ist Ihre Website"
+      description: "Wer gibt Ihnen eine vollständige Landing Page? Mit BookrHub ist Ihre Buchungsseite eine Markenseite."
+    card_growth:
+      title: "Wir fangen gerade erst an"
+      description: "Dies ist unsere Basis. Alles was wir entwickeln wächst mit Ihnen mit."
+    card_payments:
+      title: "0% Provision. Ihr Zahlungsanbieter."
+      description: "Wir nehmen keine Provision. Sie verbinden Ihren eigenen Zahlungsanbieter."
+    card_underdog:
+      title: "Für echte Unternehmen"
+      description: "Wir bauen dies für Salons, Friseure und kleine Teams."
+
+  how_it_works:
+    title: "So funktioniert unser Buchungssystem"
+    subtitle: "Sehen Sie das Buchungssystem in Aktion"
+    admin_dashboard: "Admin-Dashboard"
+    customer_experience: "Kundenerlebnis"
+    calendar_management: "Kalenderverwaltung"
+    booking_overview: "Buchungsübersicht"
+    company_settings: "Firmeneinstellungen"
+
+  testimonials:
+    title: "Das sagen unsere Kunden"
+    subtitle: "Was unsere Kunden über BookrHub sagen"
+    testimonial1:
+      quote: "BookrHub hat mein Geschäft verändert. Ich spare 5 Stunden pro Woche!"
+      name: "Maria Garcia"
+      role: "Inhaberin, Beauty Studio"
+    testimonial2:
+      quote: "Endlich ein Buchungssystem das sich nicht wie Unternehmenssoftware anfühlt."
+      name: "James Wilson"
+      role: "Barbershop Inhaber"
+    testimonial3:
+      quote: "Wir sind von einer anderen Plattform gewechselt und nicht zurückgeblickt."
+      name: "Sofia Chen"
+      role: "Wellness Consultant"
+
+  geo:
+    what_is_booking_system_title: "Was ist ein Buchungssystem?"
+    what_is_booking_system_p1: "Ein Buchungssystem ermöglicht es Kunden, Termine online zu buchen."
+    modern_booking_systems: "Moderne Systeme wie BookrHub bieten 24/7 Buchung."
+    stats:
+      no_shows_reduction: "-40% No-Shows"
+      hours_saved: "5+ Stunden/Woche gespart"
+      businesses_trust: "700+ Unternehmen vertrauen uns"
+      commission: "0% Provision"
+    quote: "BookrHub hat mein Geschäft revolutioniert."
+
+  comparison:
+    title: "Warum schlaue Unternehmen wechseln"
+    subtitle: "Sehen Sie, wie viel Sie jeden Monat sparen können"
+    features: "Funktionen"
+    starting_price: "Anfangpreis"
+    fresha_price: "Ab 19,95€/Mo"
+    setmore_price: "12€/Nutzer/Mo"
+    timely_price: "26€/Mitarbeiter/Mo"
+    free: "KOSTENLOS"
+    commission: "Provision"
+    custom_domain: "Eigene Domain"
+    fresha_domain: "Extra Kosten"
+    setmore_domain: "Nur Pro"
+    timely_domain: "Extra Kosten"
+    your_website: "Ihre Website"
+    just_form: "Nur ein Formular"
+    widget_only: "Nur Widget"
+    basic: "Basic"
+    full_landing: "Volle Landing Page"
+    staff: "Mitarbeiter"
+    per_staff: "Pro Mitarbeiter"
+    setmore_staff: "Bis 4 (kostenlos)"
+    unlimited: "Unbegrenzt"
+    setup: "Einrichtungszeit"
+    5_min: "5 Minuten"
+    savings: "Durchschnittliche Ersparnis: 200-500€/Monat"
+
+  pricing:
+    title: "Preise"
+    subtitle: "Wählen Sie den Plan, der zu Ihnen passt"
+    independent: "Kostenlos"
+    business: "Business"
+    free: "Kostenlos"
+    free_forever: "Kostenlos für immer"
+    per_month: "pro Monat"
+    for_ever: "für immer"
+    most_popular: "Am beliebtesten"
+    founders_banner: "Early Bird: Sichern Sie sich diese Raten fürs Leben!"
+    billing_monthly: "Monatlich"
+    billing_annual: "Jährlich"
+    per_month_billed_annual: "pro Monat, jährlich abgerechnet"
+    yearly_savings_callout: "2 Monate gratis!"
+    business_annual_bonus: "Jährlicher Bonus: Wir gestalten Ihre Landing Page!"
+
+  plan_features:
+    independent:
+      - "Bis zu 150 Buchungen/Monat"
+      - "1 Mitarbeiter"
+      - "E-Mail-Erinnerungen"
+      - "Standard Buchungsseite"
+    business:
+      - "Unbegrenzte Buchungen"
+      - "Unbegrenzte Mitarbeiter"
+      - "Anfragen von Ihrer Seite"
+      - "Online-Zahlungen - keine Provision"
+      - "Premium Landing Page"
+      - "Analyse"
+      - "Eigene Domain"
+      - "Dedizierter Support"
+
+  faq:
+    title: "Häufig gestellte Fragen"
+    subtitle: "Alles was Sie über BookrHub wissen müssen"
+    question1: "Was ist ein Buchungssystem und warum brauche ich eines?"
+    answer1: "Ein Buchungssystem hilft Unternehmen, Termine und Kundenbuchungen online zu verwalten."
+    question2: "Funktioniert der kostenlose Plan?"
+    answer2: "Unser kostenloser Independent-Plan ist komplett kostenlos."
+    question3: "Kann ich mein Abo jederzeit kündigen?"
+    answer3: "Ja! Sie können jederzeit kündigen ohne Fragen."
+    question4: "Gibt es Lösungen für größere Teams?"
+    answer4: "Absolut! Unser Business-Plan unterstützt unbegrenzte Mitarbeiter."
+    question5: "Berechnet ihr Provision?"
+    answer5: "Nein. Wir berechnen keine Provision."
+    question6: "Wie lange dauert die Einrichtung?"
+    answer6: "Die meisten Unternehmen sind in unter 5 Minuten startklar!"
+    question7: "Ist BookrHub eine Alternative zu Fresha?"
+    answer7: "Ja. BookrHub ist eine einfache Alternative zu Fresha."
+    question8: "Erhalte ich eine Website?"
+    answer8: "Sie erhalten eine vollständige Landing Page als Ihre Website."
+
+  cta:
+    get_started: "Loslegen"
+    start_for_free: "Kostenlos starten"
+    first_month_on_us: "Erster Monat gratis"
+    no_credit_card: "Keine Kreditkarte erforderlich"
+    ready_to_simplify: "Bereit, Ihre Buchungen zu vereinfachen?"
+    join_thousands: "Tausende Unternehmen nutzen bereits BookrHub."
+    no_credit_card_short: "Keine Kreditkarte erforderlich"
+    setup_in_minutes: "Einrichtung in Minuten"
+    cancel_anytime: "Jederzeit kündigen"
+
+  customer_experience:
+    landing_page: "Landing Page"
+    date_time_selection: "Datum & Zeitauswahl"
+    booking_confirmation: "Buchungsbestätigung"
+
+  business_pages:
+    title: "Eine Landing Page die Ihre Website ist"
+    subtitle: "Ihre Buchungsseite ist eine vollständige Landing Page."
+    customized_brand:
+      title: "Ihre Buchungsseite ist Ihre Website"
+      description: "Jedes Unternehmen erhält eine echte Landing Page."
+    features:
+      custom_colors: "Eigene Farben"
+      own_domain: "Eigene Domain"
+      mobile_optimized: "Mobil optimiert"
+      seo_friendly: "SEO freundlich"
+
+  footer:
+    copyright: "Alle Rechte vorbehalten"
+    privacy: "Datenschutz"
+    terms: "AGB"
+    contact: "Kontakt"
+    support: "Support"
+    powered_by: "Betrieben von"
+    product: "Produkt"
+    company: "Unternehmen"
+    legal: "Rechtliches"
+    about_us: "Über uns"
+    blog: "Blog"
+    updates: "Neues"
+    contact_us: "Kontakt"
+    help_center: "Hilfe"
+    privacy_policy: "Datenschutzerklärung"
+    terms_of_service: "Nutzungsbedingungen"
+    description: "Kostenloses Buchungssystem für Salons, Friseure und kleine Unternehmen."
+    consent_preferences: "Consent-Einstellungen"
+
+  contact:
+    page_title: "Kontakt"
+    title: "Kontaktieren Sie uns"
+    subtitle: "Haben Sie Fragen? Wir freuen uns von Ihnen zu hören."
+    form:
+      name: "Ihr Name"
+      name_placeholder: "Namen eingeben"
+      email: "E-Mail-Adresse"
+      email_placeholder: "E-Mail eingeben"
+      subject: "Betreff"
+      subject_placeholder: "Thema wählen"
+      subject_sales: "Vertrieb & Preise"
+      subject_support: "Technischer Support"
+      subject_partnership: "Partnerschaften"
+      subject_other: "Sonstiges"
+      message: "Nachricht"
+      message_placeholder: "Wie können wir helfen?"
+      submit: "Nachricht senden"
+    email_subject: "Neue Kontaktanfrage von BookrHub"
+    info:
+      email_title: "E-Mail"
+      hours_title: "Geschäftszeiten"
+      hours: "Montag - Freitag, 9-18 Uhr"
+      help_title: "Brauchen Sie Hilfe?"
+      help_text: "Unser Support-Team ist bereit, bei Fragen zu helfen."
+      help_link: "Hilfe-Center besuchen"
+
+  section_labels:
+    features: "Funktionen"
+    why_us: "Warum wir"
+    how_it_works: "So funktioniert es"
+    testimonials: "Kundenstimmen"
+    pricing: "Preise"
+    faq: "FAQ"
+    your_brand: "Ihre Marke"
+
+  about:
+    title: "Über uns"
+    subtitle: "Wir helfen Unternehmen, schneller zu wachsen"
