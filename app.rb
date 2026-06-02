@@ -15,6 +15,7 @@ require_relative 'lib/stripe_service'
 require_relative 'lib/sitemap_generator'
 
 use Rack::Deflater
+
 enable :sessions
 
 # Configure Stripe
