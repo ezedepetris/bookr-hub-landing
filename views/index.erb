@@ -792,6 +792,26 @@
           <div class="screenshot-text"><%= I18n.t('how_it_works.company_settings') %></div>
         </div>
       </div>
+      <div class="screenshot-grid" id="screenshot-grid-customer" style="display: none;">
+        <div class="screenshot-item animate-on-scroll visible">
+          <div class="screenshot-placeholder">
+<video autoplay loop muted playsinline><source src="/videos/barber-landing.mp4" type="video/mp4"></video>
+          </div>
+          <div class="screenshot-text"><%= I18n.t('customer_experience.landing_page') %></div>
+        </div>
+        <div class="screenshot-item animate-on-scroll visible stagger-1">
+          <div class="screenshot-placeholder">
+<video autoplay loop muted playsinline><source src="/videos/barber-book.mp4" type="video/mp4"></video>
+          </div>
+          <div class="screenshot-text"><%= I18n.t('customer_experience.date_time_selection') %></div>
+        </div>
+        <div class="screenshot-item animate-on-scroll visible stagger-2">
+          <div class="screenshot-placeholder">
+<video autoplay loop muted playsinline><source src="/videos/barber-confirmation.mp4" type="video/mp4"></video>
+          </div>
+          <div class="screenshot-text"><%= I18n.t('customer_experience.booking_confirmation') %></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1150,238 +1170,6 @@
 
   <!-- Scripts -->
   <script src="https://app.termly.io/resource-blocker/6a469ab6-c037-4332-9386-5953a0166dc7?autoBlock=on"></script>
-  <script>
-    // Pricing: Monthly vs Annual billing toggle
-    const pricingToggleBtns = document.querySelectorAll('.pricing-toggle-btn');
-    const planPeriods = document.querySelectorAll('.plan-period[data-monthly][data-annual]');
-    const businessAnnualBonus = document.getElementById('pricing-business-annual-bonus');
-
-    function setPricingInterval(interval) {
-      const isAnnual = interval === 'annual';
-      pricingToggleBtns.forEach(btn => {
-        const active = btn.dataset.interval === interval;
-        btn.classList.toggle('active', active);
-        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
-      planPeriods.forEach(p => {
-        p.textContent = p.dataset[interval] || p.textContent;
-      });
-      // Show monthly price or annual/12 price
-      document.querySelectorAll('.pricing-price-toggle').forEach(el => {
-        const value = el.getAttribute(isAnnual ? 'data-annual' : 'data-monthly');
-        if (value) el.textContent = value;
-      });
-      if (businessAnnualBonus) {
-        businessAnnualBonus.hidden = !isAnnual;
-      }
-      // Update signup links with current plan + interval so schedule-me receives both
-      document.querySelectorAll('.pricing-signup-link[data-signup-base]').forEach(link => {
-        const base = link.getAttribute('data-signup-base');
-        link.href = base + (isAnnual ? '&interval=annual' : '&interval=month');
-      });
-    }
-
-    pricingToggleBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
-        setPricingInterval(this.dataset.interval);
-      });
-    });
-
-    // Set initial state: Yearly selected by default
-    setPricingInterval('annual');
-
-    // Tab functionality for screenshots
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const screenshotGrid = document.getElementById('screenshot-grid');
-
-    const adminContent = `
-      <div class="screenshot-item animate-on-scroll visible">
-        <div class="screenshot-placeholder">
-          <video autoplay loop muted playsinline><source src="/videos/my-calendar.mp4" type="video/mp4"></video>
-        </div>
-        <div class="screenshot-text"><%= I18n.t('how_it_works.calendar_management') %></div>
-      </div>
-      <div class="screenshot-item animate-on-scroll visible stagger-1">
-        <div class="screenshot-placeholder">
-          <video autoplay loop muted playsinline><source src="/videos/my-overview.mp4" type="video/mp4"></video>
-        </div>
-        <div class="screenshot-text"><%= I18n.t('how_it_works.booking_overview') %></div>
-      </div>
-      <div class="screenshot-item animate-on-scroll visible stagger-2">
-        <div class="screenshot-placeholder">
-          <video autoplay loop muted playsinline><source src="/videos/my-configuration.mp4" type="video/mp4"></video>
-        </div>
-        <div class="screenshot-text"><%= I18n.t('how_it_works.company_settings') %></div>
-      </div>
-    `;
-
-    const customerContent = `
-      <div class="screenshot-item animate-on-scroll visible">
-        <div class="screenshot-placeholder">
-          <video autoplay loop muted playsinline><source src="/videos/barber-landing.mp4" type="video/mp4"></video>
-        </div>
-        <div class="screenshot-text"><%= I18n.t('customer_experience.landing_page') %></div>
-      </div>
-      <div class="screenshot-item animate-on-scroll visible stagger-1">
-        <div class="screenshot-placeholder">
-          <video autoplay loop muted playsinline><source src="/videos/barber-book.mp4" type="video/mp4"></video>
-        </div>
-        <div class="screenshot-text"><%= I18n.t('customer_experience.date_time_selection') %></div>
-      </div>
-      <div class="screenshot-item animate-on-scroll visible stagger-2">
-        <div class="screenshot-placeholder">
-          <video autoplay loop muted playsinline><source src="/videos/barber-confirmation.mp4" type="video/mp4"></video>
-        </div>
-        <div class="screenshot-text"><%= I18n.t('customer_experience.booking_confirmation') %></div>
-      </div>
-    `;
-
-    tabButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        tabButtons.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-
-        const tab = this.dataset.tab;
-        screenshotGrid.innerHTML = tab === 'admin' ? adminContent : customerContent;
-      });
-    });
-
-    // FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', function() {
-        const item = this.parentElement;
-        const isActive = item.classList.contains('active');
-
-        // Close all items
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-
-        // Open clicked item if it wasn't active
-        if (!isActive) {
-          item.classList.add('active');
-        }
-      });
-    });
-
-    // Templates carousel prev/next
-    const templatesTrack = document.getElementById('templates-carousel-track');
-    const templatesPrev = document.querySelector('.templates-carousel-prev');
-    const templatesNext = document.querySelector('.templates-carousel-next');
-    if (templatesTrack && templatesPrev && templatesNext) {
-      function updateTemplatesCarouselButtons() {
-        const { scrollLeft, scrollWidth, clientWidth } = templatesTrack;
-        templatesPrev.disabled = scrollLeft <= 0;
-        templatesNext.disabled = scrollLeft >= scrollWidth - clientWidth - 2;
-      }
-      templatesPrev.addEventListener('click', function() {
-        templatesTrack.scrollBy({ left: -templatesTrack.clientWidth, behavior: 'smooth' });
-      });
-      templatesNext.addEventListener('click', function() {
-        templatesTrack.scrollBy({ left: templatesTrack.clientWidth, behavior: 'smooth' });
-      });
-      templatesTrack.addEventListener('scroll', updateTemplatesCarouselButtons);
-      updateTemplatesCarouselButtons();
-    }
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href === '#') return;
-
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Scroll animations with Intersection Observer
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Mobile menu toggle
-    const mobileToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (mobileToggle && mobileMenu) {
-      mobileToggle.addEventListener('click', () => {
-        mobileToggle.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-      });
-
-      // Close mobile menu when clicking a link
-      mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileToggle.classList.remove('active');
-          mobileMenu.classList.remove('active');
-          document.body.style.overflow = '';
-        });
-      });
-    }
-
-    // Scroll progress bar
-    const scrollProgress = document.getElementById('scroll-progress');
-    function updateScrollProgress() {
-      if (!scrollProgress) return;
-      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      scrollProgress.style.transform = `scaleX(${height ? winScroll / height : 0})`;
-    }
-    window.addEventListener('scroll', updateScrollProgress, { passive: true });
-    updateScrollProgress();
-
-    // Nav: add .nav-scrolled when past hero
-    const mainNav = document.getElementById('main-nav');
-    function updateNavScroll() {
-      if (mainNav) mainNav.classList.toggle('nav-scrolled', window.scrollY > 80);
-    }
-    window.addEventListener('scroll', updateNavScroll, { passive: true });
-    updateNavScroll();
-
-    // Floating CTA: show after scrolling past hero
-    const floatingCta = document.getElementById('floating-cta');
-    function updateFloatingCta() {
-      if (!floatingCta) return;
-      const hero = document.querySelector('.hero');
-      const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400;
-      const show = window.scrollY > heroBottom - 100;
-      floatingCta.classList.toggle('floating-cta-visible', show);
-      floatingCta.setAttribute('aria-hidden', show ? 'false' : 'true');
-    }
-    window.addEventListener('scroll', updateFloatingCta, { passive: true });
-    updateFloatingCta();
-
-    // Back to top
-    const backToTop = document.getElementById('back-to-top');
-    if (backToTop) {
-      function updateBackToTop() {
-        backToTop.classList.toggle('back-to-top-visible', window.scrollY > 600);
-      }
-      window.addEventListener('scroll', updateBackToTop, { passive: true });
-      updateBackToTop();
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
-  </script>
+  <script src="/js/main.js" defer></script>
 </body>
 </html>

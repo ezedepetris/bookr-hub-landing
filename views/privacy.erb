@@ -11,8 +11,6 @@
   <!-- End Google Tag Manager -->
   <% end %>
 
-  <script src='https://www.noupe.com/embed/019cdffb374a730e9ac8447d57a7f6ffa0ee.js'></script>
-
   <link rel="stylesheet" href="/css/styles.min.css?v=2.6.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -166,21 +164,8 @@
       <span><%= I18n.t('footer.powered_by') %> <a href="https://www.bookrhub.com" target="_blank" class="copyright-link">BookrHub</a></span>
     </div>
   </footer>
+  <script src="https://www.noupe.com/embed/019cdffb374a730e9ac8447d57a7f6ffa0ee.js" async></script>
   <script src="https://app.termly.io/resource-blocker/6a469ab6-c037-4332-9386-5953a0166dc7?autoBlock=on"></script>
-  <script>
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-  </script>
+  <script src="/js/main.js" defer></script>
 </body>
 </html>
