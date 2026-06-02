@@ -10,8 +10,11 @@
   })(window,document,'script','dataLayer','<%= ENV['GOOGLE_TAG_MANAGER_ID'] %>');</script>
   <!-- End Google Tag Manager -->
   <% end %>
-  <script src='https://www.noupe.com/embed/019cdffb374a730e9ac8447d57a7f6ffa0ee.js'></script>
-  <link rel="stylesheet" href="/css/styles.css?v=2.5.1">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://js.stripe.com">
+  <link rel="dns-prefetch" href="https://my.bookrhub.com">
+  <link rel="stylesheet" href="/css/styles.min.css?v=2.6.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
@@ -430,7 +433,7 @@
         <div class="hero-phone-mockup">
           <div class="iphone-mockup">
             <div class="iphone-screen">
-              <img src="/gifs/iphone.gif" alt="BookrHub Demo" style="width: 100%; height: 100%; object-fit: cover;">
+              <video autoplay loop muted playsinline><source src="/videos/iphone.mp4" type="video/mp4"></video>
             </div>
           </div>
         </div>
@@ -443,7 +446,7 @@
             <span class="browser-url">barber.bookrhub.com</span>
           </div>
           <div class="browser-screen">
-            <img src="/gifs/barber-landing.gif" alt="Premium landing page template — Barbershop" style="width: 100%; height: 100%; object-fit: cover;">
+            <video autoplay loop muted playsinline><source src="/videos/barber-landing.mp4" type="video/mp4"></video>
           </div>
         </div>
       </div>
@@ -602,7 +605,7 @@
           <% %w[barber medical-clinic dental fitness fitness-pro hair-salon high-converting modern-ux nails pet-grooming photography spa-massage].each_with_index do |slug, idx| %>
           <div class="template-card <%= 'template-card-featured' if idx == 0 %>">
             <div class="template-card-preview">
-              <img src="/gifs/<%= slug %>-landing.gif" alt="<%= I18n.t("live_templates.templates.#{slug}.title") %> template">
+              <video autoplay loop muted playsinline><source src="/videos/<%= slug %>-landing.mp4" type="video/mp4"></video>
             </div>
             <div class="template-card-content">
               <h3><%= I18n.t("live_templates.templates.#{slug}.title") %></h3>
@@ -702,7 +705,7 @@
             <p><%= I18n.t('features.easy_scheduling.description') %></p>
           </div>
           <div class="feature-visual">
-            <img src="/gifs/my-calendar.gif" alt="Calendar Management">
+            <video autoplay loop muted playsinline><source src="/videos/my-calendar.mp4" type="video/mp4"></video>
           </div>
         </div>
         <div class="feature-card animate-on-scroll stagger-1">
@@ -772,19 +775,19 @@
       <div class="screenshot-grid" id="screenshot-grid">
         <div class="screenshot-item animate-on-scroll">
           <div class="screenshot-placeholder">
-            <img src="/gifs/my-calendar.gif" alt="Calendar Management" style="width: 100%; height: 100%; object-fit: cover;">
+<video autoplay loop muted playsinline><source src="/videos/my-calendar.mp4" type="video/mp4"></video>
           </div>
           <div class="screenshot-text"><%= I18n.t('how_it_works.calendar_management') %></div>
         </div>
         <div class="screenshot-item animate-on-scroll stagger-1">
           <div class="screenshot-placeholder">
-            <img src="/gifs/my-overview.gif" alt="Booking Overview" style="width: 100%; height: 100%; object-fit: cover;">
+<video autoplay loop muted playsinline><source src="/videos/my-overview.mp4" type="video/mp4"></video>
           </div>
           <div class="screenshot-text"><%= I18n.t('how_it_works.booking_overview') %></div>
         </div>
         <div class="screenshot-item animate-on-scroll stagger-2">
           <div class="screenshot-placeholder">
-            <img src="/gifs/my-configuration.gif" alt="Service Configuration" style="width: 100%; height: 100%; object-fit: cover;">
+<video autoplay loop muted playsinline><source src="/videos/my-configuration.mp4" type="video/mp4"></video>
           </div>
           <div class="screenshot-text"><%= I18n.t('how_it_works.company_settings') %></div>
         </div>
@@ -828,7 +831,7 @@
         </div>
         <div class="example-preview">
           <div class="screenshot-placeholder">
-            <img src="/gifs/barber-landing.gif" alt="Landing Page" style="width: 100%; height: 100%; object-fit: cover;">
+<video autoplay loop muted playsinline><source src="/videos/barber-landing.mp4" type="video/mp4"></video>
           </div>
         </div>
       </div>
@@ -1105,7 +1108,7 @@
     <div class="footer-content">
       <div class="footer-brand">
         <a href="https://bookrhub.com" class="logo">
-          <img src="/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120">
+          <img src="/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120" loading="lazy">
         </a>
         <p><%= I18n.t('footer.description') %></p>
       </div>
@@ -1141,7 +1144,7 @@
     <div class="footer-bottom">
       <p>&copy; <%= Time.now.year %> BookrHub. All rights reserved.</p>
       <span class="last-updated" style="font-size: 0.8rem; opacity: 0.7;">Last updated: March 2026</span>
-      <span style="display: flex; align-items: center; gap: 6px;"><%= I18n.t('footer.powered_by') %> <a href="https://www.bookrhub.com" target="_blank" class="copyright-link" style="display: flex; align-items: center; gap: 6px;">BookrHub <img src="https://www.bookrhub.com/images/icon.svg" alt="BookrHub" style="height: 16px;"></a></span>
+      <span style="display: flex; align-items: center; gap: 6px;"><%= I18n.t('footer.powered_by') %> <a href="https://www.bookrhub.com" target="_blank" class="copyright-link" style="display: flex; align-items: center; gap: 6px;">BookrHub <img src="https://www.bookrhub.com/images/icon.svg" alt="BookrHub" style="height: 16px;" loading="lazy" decoding="async"></a></span>
     </div>
   </footer>
 
@@ -1194,19 +1197,19 @@
     const adminContent = `
       <div class="screenshot-item animate-on-scroll visible">
         <div class="screenshot-placeholder">
-          <img src="/gifs/my-calendar.gif" alt="Calendar Management" style="width: 100%; height: 100%; object-fit: cover;">
+          <video autoplay loop muted playsinline><source src="/videos/my-calendar.mp4" type="video/mp4"></video>
         </div>
         <div class="screenshot-text"><%= I18n.t('how_it_works.calendar_management') %></div>
       </div>
       <div class="screenshot-item animate-on-scroll visible stagger-1">
         <div class="screenshot-placeholder">
-          <img src="/gifs/my-overview.gif" alt="Booking Overview" style="width: 100%; height: 100%; object-fit: cover;">
+          <video autoplay loop muted playsinline><source src="/videos/my-overview.mp4" type="video/mp4"></video>
         </div>
         <div class="screenshot-text"><%= I18n.t('how_it_works.booking_overview') %></div>
       </div>
       <div class="screenshot-item animate-on-scroll visible stagger-2">
         <div class="screenshot-placeholder">
-          <img src="/gifs/my-configuration.gif" alt="Service Configuration" style="width: 100%; height: 100%; object-fit: cover;">
+          <video autoplay loop muted playsinline><source src="/videos/my-configuration.mp4" type="video/mp4"></video>
         </div>
         <div class="screenshot-text"><%= I18n.t('how_it_works.company_settings') %></div>
       </div>
@@ -1215,19 +1218,19 @@
     const customerContent = `
       <div class="screenshot-item animate-on-scroll visible">
         <div class="screenshot-placeholder">
-          <img src="/gifs/barber-landing.gif" alt="Landing Page" style="width: 100%; height: 100%; object-fit: cover;">
+          <video autoplay loop muted playsinline><source src="/videos/barber-landing.mp4" type="video/mp4"></video>
         </div>
         <div class="screenshot-text"><%= I18n.t('customer_experience.landing_page') %></div>
       </div>
       <div class="screenshot-item animate-on-scroll visible stagger-1">
         <div class="screenshot-placeholder">
-          <img src="/gifs/barber-book.gif" alt="Date & Time Selection" style="width: 100%; height: 100%; object-fit: cover;">
+          <video autoplay loop muted playsinline><source src="/videos/barber-book.mp4" type="video/mp4"></video>
         </div>
         <div class="screenshot-text"><%= I18n.t('customer_experience.date_time_selection') %></div>
       </div>
       <div class="screenshot-item animate-on-scroll visible stagger-2">
         <div class="screenshot-placeholder">
-          <img src="/gifs/barber-confirmation.gif" alt="Booking Confirmation" style="width: 100%; height: 100%; object-fit: cover;">
+          <video autoplay loop muted playsinline><source src="/videos/barber-confirmation.mp4" type="video/mp4"></video>
         </div>
         <div class="screenshot-text"><%= I18n.t('customer_experience.booking_confirmation') %></div>
       </div>

@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="<%= session[:locale] %>">
 <head>
+  <% if ENV['GOOGLE_TAG_MANAGER_ID'].to_s.strip != '' %>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5GLSJ749');</script>
+  })(window,document,'script','dataLayer','<%= ENV['GOOGLE_TAG_MANAGER_ID'] %>');</script>
   <!-- End Google Tag Manager -->
+  <% end %>
 
   <script src='https://www.noupe.com/embed/019cdffb374a730e9ac8447d57a7f6ffa0ee.js'></script>
 
-  <link rel="stylesheet" href="/css/styles.css?v=1.0.0">
+  <link rel="stylesheet" href="/css/styles.min.css?v=2.6.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
@@ -40,19 +42,22 @@
   <meta name="theme-color" content="#2563eb">
 </head>
 <body>
+  <% if ENV['GOOGLE_TAG_MANAGER_ID'].to_s.strip != '' %>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GLSJ749"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<%= ENV['GOOGLE_TAG_MANAGER_ID'] %>"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+  <% end %>
+  <% if ENV['GOOGLE_ANALYTICS_ID'].to_s.strip != '' %>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L48GXS7KT4"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= ENV['GOOGLE_ANALYTICS_ID'] %>"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    gtag('config', 'G-L48GXS7KT4');
+    gtag('config', '<%= ENV['GOOGLE_ANALYTICS_ID'] %>');
   </script>
+  <% end %>
   <!-- Navigation -->
   <nav>
     <div class="nav-container">

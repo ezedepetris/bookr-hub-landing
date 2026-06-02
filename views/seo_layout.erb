@@ -12,6 +12,20 @@
     <% end %>
   <% end %>
   
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://js.stripe.com">
+  <link rel="dns-prefetch" href="https://my.bookrhub.com">
+
+  <!-- Geo Tags -->
+  <% if @geo_region %>
+  <meta name="geo.region" content="<%= @geo_region %>">
+  <% end %>
+  <% if @geo_placename %>
+  <meta name="geo.placename" content="<%= @geo_placename %>">
+  <% end %>
+
   <!-- Favicon -->
   <link rel="icon" href="/images/icon.png" type="image/png">
   <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
@@ -24,17 +38,19 @@
   <meta property="og:image" content="https://www.bookrhub.com/images/og-image.png">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/styles.css?v=2.5.1">
-  <link rel="stylesheet" href="/css/seo-layout.css">
+  <link rel="stylesheet" href="/css/styles.min.css?v=2.6.0">
+  <link rel="stylesheet" href="/css/seo-layout.min.css">
   
+  <% if ENV['GOOGLE_ANALYTICS_ID'].to_s.strip != '' %>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L48GXS7KT4"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= ENV['GOOGLE_ANALYTICS_ID'] %>"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-L48GXS7KT4');
+    gtag('config', '<%= ENV['GOOGLE_ANALYTICS_ID'] %>');
   </script>
+  <% end %>
 
   <%= yield_content :head_scripts %>
 </head>
@@ -101,7 +117,7 @@
     <div class="footer-content">
       <div class="footer-brand">
         <a href="https://www.bookrhub.com/?locale=<%= @locale %>" class="logo">
-          <img src="https://www.bookrhub.com/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120">
+          <img src="https://www.bookrhub.com/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120" loading="lazy">
         </a>
         <p>Free booking software for salons, barbershops, spas, and small businesses. Get your own website with online reservations, email reminders, and zero commission.</p>
       </div>
@@ -135,7 +151,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 BookrHub | Last updated: <%= @last_updated || 'March 2026' %>. All rights reserved.</p>
-      <span style="display: flex; align-items: center; gap: 6px;">Powered by <a href="https://www.bookrhub.com" target="_blank" class="copyright-link" style="display: flex; align-items: center; gap: 6px;">BookrHub <img src="https://www.bookrhub.com/images/icon.svg" alt="BookrHub" style="height: 20px;"></a></span>
+      <span style="display: flex; align-items: center; gap: 6px;">Powered by <a href="https://www.bookrhub.com" target="_blank" class="copyright-link" style="display: flex; align-items: center; gap: 6px;">BookrHub <img src="https://www.bookrhub.com/images/icon.svg" alt="BookrHub" style="height: 20px;" loading="lazy" decoding="async"></a></span>
     </div>
   </footer>
 

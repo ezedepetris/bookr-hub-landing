@@ -10,7 +10,7 @@
   })(window,document,'script','dataLayer','<%= ENV['GOOGLE_TAG_MANAGER_ID'] %>');</script>
   <!-- End Google Tag Manager -->
   <% end %>
-  <link rel="stylesheet" href="/css/styles.css?v=2.5.1">
+  <link rel="stylesheet" href="/css/styles.min.css?v=2.6.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
@@ -154,7 +154,7 @@
     <div class="footer-content">
       <div class="footer-brand">
         <a href="https://bookrhub.com/?locale=<%= session[:locale] %>&currency=<%= session[:currency] %>" class="logo">
-          <img src="/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120">
+          <img src="/images/isologo.svg" alt="BookrHub" class="isologo-image" width="120" loading="lazy">
         </a>
         <p><%= I18n.t('footer.description') %></p>
       </div>

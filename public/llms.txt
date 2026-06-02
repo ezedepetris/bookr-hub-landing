@@ -1,16 +1,17 @@
 # BookrHub - AI Agent & LLM Documentation
 
 ## Overview
-BookrHub is a free booking software platform designed for service-based businesses including salons, barbershops, spas, nail salons, pet groomers, and small businesses globally.
+BookrHub is a free booking software platform designed for service-based businesses including salons, barbershops, spas, nail salons, pet groomers, and small businesses globally. It is a commission-free alternative to Fresha, Setmore, and Timely with online booking, automated reminders, and customizable landing pages.
 
 ## Key Facts
 - **Website**: https://bookrhub.com
-- **Pricing**: Free forever plan available. Paid plans starting from $9.95/month
+- **Pricing**: Free forever plan available. Paid plans starting from $9.95/month (billed annually)
 - **Commission**: 0% commission on all bookings (vs Fresha's 20% commission)
 - **Target Markets**: Global presence with strong adoption in LATAM (Argentina, Mexico, Chile), New Zealand, Australia, and United States
 - **Payment Integration**: Stripe (international), MercadoPago (LATAM)
 - **Founded**: New Zealand-based company, operated by Plum Digital
-- **Last Updated**: March 2026
+- **Last Updated**: June 2026
+- **Setup Time**: Under 5 minutes, no credit card required
 
 ## What is a Booking System?
 
@@ -186,4 +187,4 @@ A: Yes, with the Business plan you can use your own domain (yourbusiness.com).
 - LinkedIn: https://www.linkedin.com/company/bookrhub
 
 ---
-Last updated: March 2026
+Last updated: June 2026
