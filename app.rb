@@ -14,6 +14,8 @@ require_relative 'lib/price_formatter'
 require_relative 'lib/stripe_service'
 require_relative 'lib/sitemap_generator'
 
+use Rack::Deflater
+
 enable :sessions
 
 # Configure Stripe
@@ -50,7 +52,35 @@ LOCALE_CURRENCY_MAP = {
   'de-CH' => 'CHF'
 }.freeze
 
+# Static asset caching
+CACHE_ASSETS = { 'Cache-Control' => 'public, max-age=31536000, immutable' }.freeze
+
+# Country → geo region mapping
+COUNTRY_GEO = {
+  'argentina' => { region: 'AR', placename: 'Argentina' },
+  'chile'     => { region: 'CL', placename: 'Chile' },
+  'new-zealand' => { region: 'NZ', placename: 'New Zealand' },
+  'nz'        => { region: 'NZ', placename: 'New Zealand' },
+}.freeze
+
+helpers do
+  def set_geo_from_path(path)
+    COUNTRY_GEO.each do |key, geo|
+      if path.include?(key)
+        @geo_region = geo[:region]
+        @geo_placename = geo[:placename]
+        break
+      end
+    end
+  end
+end
+
 before do
+  # Cache static assets aggressively
+  if request.path.start_with?('/images/', '/css/', '/gifs/', '/videos/')
+    headers CACHE_ASSETS
+  end
+
   # Force HTTPS and canonical www domain
   if request.env['HTTP_X_FORWARDED_PROTO'] == 'http' || request.host.match(/^bookrhub\.com$/)
     redirect "https://www.bookrhub.com#{request.path}#{request.query_string.empty? ? '' : '?' + request.query_string}",
@@ -175,6 +205,7 @@ get '/en/:page' do
   if File.exist?(page_path)
     @content = File.read(page_path)
     @locale = :en
+    set_geo_from_path(request.path_info)
     erb :seo_wrapper
   else
     pass
@@ -187,6 +218,7 @@ get '/es/:page' do
     session[:locale] = :es
     @content = File.read(page_path)
     @locale = :es
+    set_geo_from_path(request.path_info)
     erb :seo_wrapper
   else
     pass
@@ -934,6 +966,7 @@ get '/nz' do
   if File.exist?(page_path)
     @content = File.read(page_path)
     @locale = :en
+    set_geo_from_path(request.path_info)
     erb :seo_wrapper
   else
     pass

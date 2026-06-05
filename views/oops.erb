@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/styles.min.css?v=2.6.0">
   <link rel="icon" href="/images/icon.png" type="image/png">
   <link rel="icon" href="/images/icon.svg" type="image/svg+xml">
 
@@ -90,6 +90,88 @@
       }
     }
 
+    .search-box {
+      display: flex;
+      max-width: 400px;
+      margin: 0 auto 30px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .search-box:focus-within {
+      border-color: #6366f1;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 12px 16px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+      background: #fff;
+    }
+
+    .search-box button {
+      padding: 12px 20px;
+      background: #6366f1;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .search-box button:hover {
+      background: #4f46e5;
+    }
+
+    .popular-links {
+      margin-top: 30px;
+    }
+
+    .popular-links h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 15px;
+    }
+
+    .popular-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+    }
+
+    .popular-links-grid a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      color: #4a5568;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .popular-links-grid a:hover {
+      border-color: #6366f1;
+      color: #6366f1;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.12);
+    }
+
+    .popular-links-grid a svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
     @media (max-width: 768px) {
       .container {
         padding: 20px;
@@ -105,6 +187,10 @@
 
       p {
         font-size: 16px;
+      }
+
+      .popular-links-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
@@ -122,9 +208,47 @@
     <h1>Page Not Found</h1>
     <p>The page you're looking for doesn't exist or has been moved. Let's get you back on track!</p>
     <a href="https://bookrhub.com" class="btn">Go to Homepage</a>
-    
+
+    <form class="search-box" action="https://www.google.com/search" method="GET" target="_blank" role="search">
+      <input type="hidden" name="q" value="site:bookrhub.com">
+      <input type="text" name="q" placeholder="Search BookrHub..." aria-label="Search BookrHub">
+      <button type="submit" aria-label="Search">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      </button>
+    </form>
+
+    <div class="popular-links">
+      <h2>Popular Pages</h2>
+      <div class="popular-links-grid">
+        <a href="https://my.bookrhub.com/signup">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+          Sign Up Free
+        </a>
+        <a href="https://bookrhub.com#pricing">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Pricing
+        </a>
+        <a href="https://bookrhub.com#features">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+          Features
+        </a>
+        <a href="https://bookrhub.com#live-templates">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
+          Templates
+        </a>
+        <a href="https://blog.bookrhub.com">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+          Blog
+        </a>
+        <a href="https://bookrhub.com/contact">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          Contact Us
+        </a>
+      </div>
+    </div>
+
     <p style="margin-top: 30px; font-size: 14px; color: #718096; text-align: center;">
-      Powered by <a href="https://www.bookrhub.com" style="display: inline-flex; align-items: center; gap: 6px; color: #6366f1;">BookrHub <img src="https://www.bookrhub.com/images/icon.svg" alt="BookrHub" style="height: 16px;"></a>
+      Powered by <a href="https://www.bookrhub.com" style="display: inline-flex; align-items: center; gap: 6px; color: #6366f1;">BookrHub <img src="https://www.bookrhub.com/images/icon.svg" alt="BookrHub" style="height: 16px;" loading="lazy" decoding="async"></a>
     </p>
   </div>
 </body>

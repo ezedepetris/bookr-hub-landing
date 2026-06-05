@@ -759,6 +759,13 @@ button:focus-visible,
     position: relative;
 }
 
+.iphone-screen video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .iphone-screen::before {
     content: '';
     position: absolute;
@@ -838,10 +845,12 @@ button:focus-visible,
     background: var(--color-bg);
 }
 
-.browser-screen img {
+.browser-screen img,
+.browser-screen video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 @media (min-width: 769px) {
@@ -1001,15 +1010,16 @@ button:focus-visible,
 }
 
 .template-card-preview {
-    aspect-ratio: 16 / 10;
     overflow: hidden;
     background: var(--color-surface);
+    line-height: 0;
 }
 
-.template-card-preview img {
+.template-card-preview img,
+.template-card-preview video {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
 
 .template-card-content {
@@ -1360,17 +1370,17 @@ button:focus-visible,
 }
 
 .feature-card.featured .feature-visual {
-    height: 180px;
     background: var(--color-surface);
     border-radius: var(--radius-md);
     overflow: hidden;
     border: 1px solid var(--color-border);
 }
 
-.feature-card.featured .feature-visual img {
+.feature-card.featured .feature-visual img,
+.feature-card.featured .feature-visual video {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -1452,17 +1462,15 @@ button:focus-visible,
 }
 
 .screenshot-placeholder {
-    aspect-ratio: 16/10;
     background: var(--color-surface);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height: 0;
 }
 
-.screenshot-placeholder img {
+.screenshot-placeholder img,
+.screenshot-placeholder video {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
 
 .screenshot-text {
