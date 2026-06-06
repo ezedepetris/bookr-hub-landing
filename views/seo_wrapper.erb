@@ -35,7 +35,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/styles.min.css?v=2.6.0">
-  <link rel="stylesheet" href="/css/seo-layout.min.css">
+  <link rel="stylesheet" href="/css/seo-layout.min.css?v=2.6.0">
 
   <% if ENV['GOOGLE_ANALYTICS_ID'].to_s.strip != '' %>
   <!-- Google tag (gtag.js) -->
@@ -105,6 +105,59 @@
   <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
   </button>
+
+  <!-- Internal Linking: Popular Resources (for SEO discovery) -->
+  <section class="seo-internal-links">
+    <div class="container">
+      <div class="internal-links-grid">
+        <div class="internal-links-col">
+          <h3><%= @locale == :es ? 'Industrias' : 'Industries' %></h3>
+          <ul>
+            <li><a href="https://www.bookrhub.com/booking-system-for-barbers">Barbers</a></li>
+            <li><a href="https://www.bookrhub.com/booking-system-for-hair-salons">Hair Salons</a></li>
+            <li><a href="https://www.bookrhub.com/booking-system-for-nail-salons">Nail Salons</a></li>
+            <li><a href="https://www.bookrhub.com/booking-system-for-massage-spa">Massage & Spa</a></li>
+            <li><a href="https://www.bookrhub.com/booking-system-for-personal-trainers">Fitness</a></li>
+            <li><a href="https://www.bookrhub.com/booking-system-for-cleaners">Cleaners</a></li>
+            <li><a href="https://www.bookrhub.com/booking-system-for-beauty-salons">Beauty Salons</a></li>
+          </ul>
+        </div>
+        <div class="internal-links-col">
+          <h3><%= @locale == :es ? 'Comparaciones' : 'Comparisons' %></h3>
+          <ul>
+            <li><a href="https://www.bookrhub.com/vs-fresha">BookrHub vs Fresha</a></li>
+            <li><a href="https://www.bookrhub.com/vs-setmore">BookrHub vs Setmore</a></li>
+            <li><a href="https://www.bookrhub.com/vs-calendly">BookrHub vs Calendly</a></li>
+            <li><a href="https://www.bookrhub.com/vs-timely">BookrHub vs Timely</a></li>
+            <li><a href="https://www.bookrhub.com/vs-square">BookrHub vs Square</a></li>
+            <li><a href="https://www.bookrhub.com/vs-acuity">BookrHub vs Acuity</a></li>
+          </ul>
+        </div>
+        <div class="internal-links-col">
+          <h3><%= @locale == :es ? 'Recursos' : 'Resources' %></h3>
+          <ul>
+            <li><a href="https://www.bookrhub.com/use-cases"><%= @locale == :es ? 'Casos de Uso' : 'Use Cases' %></a></li>
+            <li><a href="https://www.bookrhub.com/all-booking-system-solutions"><%= @locale == :es ? 'Todas las Soluciones' : 'All Solutions' %></a></li>
+            <li><a href="https://www.bookrhub.com/why-bookrhub"><%= @locale == :es ? 'Por Qué BookrHub' : 'Why BookrHub' %></a></li>
+            <li><a href="https://www.bookrhub.com/best-free-booking-system"><%= @locale == :es ? 'Mejor Sistema Gratis' : 'Best Free System' %></a></li>
+            <li><a href="https://www.bookrhub.com/free-booking"><%= @locale == :es ? 'Reservas Gratis' : 'Free Booking' %></a></li>
+            <li><a href="https://www.bookrhub.com/no-shows-solution"><%= @locale == :es ? 'Reducir Inasistencias' : 'Reduce No-Shows' %></a></li>
+          </ul>
+        </div>
+        <div class="internal-links-col">
+          <h3><%= @locale == :es ? 'Ciudades' : 'Cities' %></h3>
+          <ul>
+            <li><a href="https://www.bookrhub.com/booking-system-for-barbers-in-auckland">Auckland</a></li>
+            <li><a href="https://www.bookrhub.com/booking-system-for-barbers-in-sydney">Sydney</a></li>
+            <li><a href="https://www.bookrhub.com/booking-system-for-barbers-in-melbourne">Melbourne</a></li>
+            <li><a href="https://www.bookrhub.com/es/sistema-de-turnos-para-barbers-en-buenos-aires">Buenos Aires</a></li>
+            <li><a href="https://www.bookrhub.com/es/sistema-de-turnos-para-barbers-en-santiago">Santiago</a></li>
+            <li><a href="https://www.bookrhub.com/es/sistema-de-turnos-para-barbers-en-montevideo">Montevideo</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>

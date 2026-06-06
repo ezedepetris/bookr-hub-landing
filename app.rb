@@ -82,7 +82,7 @@ before do
   end
 
   # Force HTTPS and canonical www domain
-  if request.env['HTTP_X_FORWARDED_PROTO'] == 'http' || request.host.match(/^bookrhub\.com$/)
+  if request.env['HTTP_X_FORWARDED_PROTO'] == 'http' || request.host == 'bookrhub.com' || request.host == 'bookr-hub-landing.fly.dev'
     redirect "https://www.bookrhub.com#{request.path}#{request.query_string.empty? ? '' : '?' + request.query_string}",
              301
   end
@@ -379,7 +379,7 @@ get '/:howto_page' do
     calendly-alternative appointment-scheduler-free online-booking-system-free
     booking-widget-for-website salon-software-reviews barber-shop-software spa-booking-software
     nailsalon-management fitness-booking-system cleaning-business-software personal-trainer-app
-    free-booking use-cases why-bookrhub booking-software-for-small-business
+    free-booking why-bookrhub booking-software-for-small-business
     appointment-booking-software salon-booking-software barber-shop-app booking-app-for-business
     no-shows-solution booking-website-maker free-online-booking-system online-booking-system
   ]
@@ -983,7 +983,14 @@ get '/contact' do
 end
 
 get '/use-cases' do
-  redirect 'https://www.bookrhub.com/', 301
+  page_path = File.join(settings.public_folder, 'seo', 'en', 'use-cases.html')
+  if File.exist?(page_path)
+    @content = File.read(page_path)
+    @locale = :en
+    erb :seo_wrapper
+  else
+    redirect 'https://www.bookrhub.com/', 301
+  end
 end
 
 get '/pricing' do
@@ -1000,6 +1007,31 @@ end
 
 get '/terms' do
   redirect 'https://www.bookrhub.com/privacy', 301
+end
+
+# Known 404 redirects from Search Console data
+get '/best-free-online-booking-system' do
+  redirect 'https://www.bookrhub.com/best-free-booking-system', 301
+end
+
+get '/how-to-get-more-clients' do
+  redirect 'https://www.bookrhub.com/how-to-grow-my-business', 301
+end
+
+get '/booking-system-for-saloons' do
+  redirect 'https://www.bookrhub.com/booking-system-for-hair-salons', 301
+end
+
+get '/booking-system-for-massage' do
+  redirect 'https://www.bookrhub.com/booking-system-for-massage-spa', 301
+end
+
+get '/booking-system-for-nails' do
+  redirect 'https://www.bookrhub.com/booking-system-for-nail-salons', 301
+end
+
+get '/booking-system-for-fitness' do
+  redirect 'https://www.bookrhub.com/booking-system-for-personal-trainers', 301
 end
 
 not_found do

@@ -162,13 +162,23 @@ module SitemapGenerator
 
     # ===== LINKABLE ASSET SEO ARTICLES =====
     # Automatically include all static SEO articles from public/seo/
+    # EXCLUDING pages already listed in explicit sections above
     seo_dir = File.expand_path('../public/seo', __dir__)
 
-    # English articles
+    # English articles (exclude duplicates already listed in niche, how-to, general, competitor sections)
     en_seo_dir = File.join(seo_dir, 'en')
+    already_listed_en = %w[
+      index
+    ] + SEOConfig::NICHES.keys.map { |k| "booking-system-for-#{k}" } \
+      + SEOConfig::HOW_TO_EN.map { |h| h[:slug] } \
+      + SEOConfig::COMPETITORS.keys.map { |k| "vs-#{k}" } \
+      + SEOConfig::GENERAL_PAGES_EN.map { |g| g[:slug] } \
+      + ['barbershop-industry-report-australia-2026', 'salon-staff-management-guide', 'all-booking-system-solutions']
+
     if Dir.exist?(en_seo_dir)
       Dir.glob(File.join(en_seo_dir, '*.html')).each do |file|
         basename = File.basename(file, '.html')
+        next if already_listed_en.include?(basename)
         xml << '  <url>'
         xml << "    <loc>#{base_url}/en/#{basename}</loc>"
         xml << "    <lastmod>#{today}</lastmod>"
@@ -180,9 +190,18 @@ module SitemapGenerator
 
     # Spanish articles
     es_seo_dir = File.join(seo_dir, 'es')
+    already_listed_es = %w[
+      index
+    ] + SEOConfig::NICHES.keys.map { |k| "sistema-de-turnos-para-#{k}" } \
+      + SEOConfig::HOW_TO_ES.map { |h| h[:slug] } \
+      + SEOConfig::COMPETITORS.keys.map { |k| "alternativa-a-#{k}" } \
+      + SEOConfig::GENERAL_PAGES_ES.map { |g| g[:slug] } \
+      + ['soluciones-sistema-de-turnos']
+
     if Dir.exist?(es_seo_dir)
       Dir.glob(File.join(es_seo_dir, '*.html')).each do |file|
         basename = File.basename(file, '.html')
+        next if already_listed_es.include?(basename)
         xml << '  <url>'
         xml << "    <loc>#{base_url}/es/#{basename}</loc>"
         xml << "    <lastmod>#{today}</lastmod>"
