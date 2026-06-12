@@ -98,6 +98,70 @@ module SEOTemplates
     HTML
   end
 
+  # ---- Internal Linking Helpers ----
+
+  # Generate breadcrumb HTML
+  def self.breadcrumb_html(items)
+    items_html = items.map.with_index do |(name, url), i|
+      if i == items.length - 1
+        "<span class=\"breadcrumb-current\">#{name}</span>"
+      else
+        "<a href=\"#{url}\">#{name}</a> <span class=\"breadcrumb-sep\">›</span> "
+      end
+    end.join
+    "<nav class=\"breadcrumbs\" aria-label=\"Breadcrumb\">#{items_html}</nav>"
+  end
+
+  # Generate related niches section (excludes current niche)
+  def self.related_niches_html(current_niche_key, locale: "en")
+    other_niches = SEOConfig::NICHES.reject { |k, _| k == current_niche_key }
+    links = other_niches.map do |key, data|
+      name = locale == "es" ? data[:name_es] : data[:name_en]
+      url = locale == "es" ? "/sistema-de-turnos-para-#{key}" : "/booking-system-for-#{key}"
+      "<li><a href=\"https://www.bookrhub.com#{url}\">#{name}</a></li>"
+    end.join
+    heading = locale == "es" ? "Otros Rubros" : "Other Industries"
+    "<section class=\"related-section\"><h3>#{heading}</h3><ul class=\"related-links\">#{links}</ul></section>"
+  end
+
+  # Generate competitor comparison links
+  def self.related_comparisons_html(locale: "en", limit: 4)
+    comparisons = SEOConfig::COMPETITORS.first(limit)
+    links = comparisons.map do |key, data|
+      url = locale == "es" ? "/alternativa-a-#{key}" : "/vs-#{key}"
+      "<li><a href=\"https://www.bookrhub.com#{url}\">BookrHub vs #{data[:name]}</a></li>"
+    end.join
+    heading = locale == "es" ? "Comparaciones Populares" : "Popular Comparisons"
+    "<section class=\"related-section\"><h3>#{heading}</h3><ul class=\"related-links\">#{links}</ul></section>"
+  end
+
+  # Generate related how-to / resource links
+  def self.related_resources_html(locale: "en", limit: 4)
+    pages = SEOConfig::HOW_TO_EN.first(limit)
+    links = pages.map do |page|
+      url = locale == "es" ? "/#{page[:slug]}" : "/#{page[:slug]}"
+      "<li><a href=\"https://www.bookrhub.com#{url}\">#{page[:h1]}</a></li>"
+    end.join
+    heading = locale == "es" ? "Guías Útiles" : "Helpful Guides"
+    "<section class=\"related-section\"><h3>#{heading}</h3><ul class=\"related-links\">#{links}</ul></section>"
+  end
+
+  # Generate related cities for a niche in same country
+  def self.related_cities_html(niche_key, country_key, current_city_slug, locale: "en")
+    country_data = SEOConfig::CITIES[country_key]
+    return "" unless country_data
+    other_cities = country_data[:cities].reject { |c| c[:slug] == current_city_slug }.first(10)
+    return "" if other_cities.empty?
+    links = other_cities.map do |city|
+      url = locale == "es" ?
+        "/sistema-de-turnos-para-#{niche_key}-en-#{city[:slug]}" :
+        "/booking-system-for-#{niche_key}-in-#{city[:slug]}"
+      "<li><a href=\"https://www.bookrhub.com#{url}\">#{city[:name]}</a></li>"
+    end.join
+    heading = locale == "es" ? "También Disponible en" : "Also Available in"
+    "<section class=\"related-section\"><h3>#{heading}</h3><ul class=\"related-links\">#{links}</ul></section>"
+  end
+
   # Niche page content template (English)
   def self.niche_page_en(niche_key:, niche_data:, locale: "en")
     services_list = niche_data[:services_en].map { |s| "<li>#{s.titleize}</li>" }.join

@@ -552,3 +552,67 @@
 .seo-article .references a {
   color: #e94560;
 }
+
+/* Internal Links Section */
+.seo-internal-links {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 3rem 0;
+  margin-top: 2rem;
+}
+
+.seo-internal-links .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.internal-links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.internal-links-col h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.internal-links-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.internal-links-col li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.internal-links-col a {
+  color: #475569;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.internal-links-col a:hover {
+  color: #6366f1;
+}
+
+@media (max-width: 768px) {
+  .internal-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .internal-links-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
